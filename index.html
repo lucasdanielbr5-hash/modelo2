@@ -1,1 +1,2271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
+
+  <meta name="description" content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento acolhedor e individualizado para crianças e adolescentes, com foco em aprendizagem, atenção, leitura, escrita, raciocínio lógico e funções executivas.">
+
+  <meta name="theme-color" content="#6048AC">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       CORES DA IDENTIDADE VISUAL
+       ========================================================= */
+
+    :root {
+      --roxo: #6048AC;
+      --roxo-escuro: #49348d;
+      --roxo-claro: #eeeafa;
+
+      --azul: #005387;
+      --azul-escuro: #003d63;
+      --azul-claro: #e8f2f7;
+
+      --bege: #F7F3EE;
+      --bege-escuro: #eee7df;
+
+      --branco: #ffffff;
+      --texto: #30303a;
+      --texto-suave: #6d6b75;
+
+      --sombra: 0 18px 50px rgba(44, 31, 81, 0.10);
+      --sombra-hover: 0 25px 60px rgba(44, 31, 81, 0.16);
+
+      --raio: 24px;
+      --transicao: all 0.3s ease;
+    }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bege);
+      color: var(--texto);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       ELEMENTOS GERAIS
+       ========================================================= */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--roxo);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--roxo);
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--azul);
+      font-weight: 600;
+    }
+
+    .section-title span {
+      color: var(--roxo);
+    }
+
+    .section-description {
+      color: var(--texto-suave);
+      max-width: 650px;
+      margin-top: 20px;
+      font-size: 1.05rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .center .section-label {
+      justify-content: center;
+    }
+
+    .center .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* =========================================================
+       BOTÕES
+       ========================================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transicao);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--roxo);
+      color: white;
+      box-shadow: 0 10px 25px rgba(96, 72, 172, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--roxo-escuro);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(96, 72, 172, 0.30);
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--azul);
+      color: var(--azul);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--azul);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1db954;
+      transform: translateY(-3px);
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 15px 0;
+      transition: var(--transicao);
+    }
+
+    header.scrolled {
+      background: rgba(247, 243, 238, 0.94);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 5px 25px rgba(40, 30, 70, 0.08);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Playfair Display", serif;
+      color: var(--azul);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--azul);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transicao);
+    }
+
+    .nav-links a:hover {
+      color: var(--roxo);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: var(--roxo-claro);
+      color: var(--roxo);
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 145px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      background: rgba(96, 72, 172, 0.06);
+      right: -280px;
+      top: 80px;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(0, 83, 135, 0.05);
+      left: -150px;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-small {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--roxo);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-small span {
+      width: 35px;
+      height: 2px;
+      background: var(--roxo);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5.3rem);
+      color: var(--azul);
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .hero h1 em {
+      color: var(--roxo);
+      font-style: normal;
+    }
+
+    .hero-text {
+      font-size: 1.15rem;
+      color: var(--texto-suave);
+      margin: 28px 0 34px;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      width: 88%;
+      height: 95%;
+      right: -25px;
+      top: 25px;
+      background: var(--roxo);
+      border-radius: 180px 180px 35px 35px;
+      opacity: 0.13;
+      transform: rotate(4deg);
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--roxo);
+      border-radius: 50%;
+      right: -20px;
+      bottom: 35px;
+      opacity: 0.5;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-width: 480px;
+      height: 570px;
+      object-fit: cover;
+      object-position: center;
+      margin-left: auto;
+      border-radius: 180px 180px 35px 35px;
+      position: relative;
+      z-index: 2;
+      box-shadow: var(--sombra);
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      left: -35px;
+      bottom: 35px;
+      background: white;
+      padding: 18px 22px;
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .floating-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--roxo-claro);
+      display: grid;
+      place-items: center;
+      color: var(--roxo);
+      font-size: 1.3rem;
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--azul);
+      font-size: 0.9rem;
+    }
+
+    .floating-card small {
+      color: var(--texto-suave);
+      font-size: 0.75rem;
+    }
+
+    /* =========================================================
+       SOBRE
+       ========================================================= */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+      min-height: 550px;
+    }
+
+    .about-photo-main {
+      width: 82%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 35px;
+      box-shadow: var(--sombra);
+    }
+
+    .about-decoration {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 2px solid var(--roxo);
+      border-radius: 50%;
+      right: 0;
+      top: -25px;
+      opacity: 0.3;
+    }
+
+    .about-box {
+      position: absolute;
+      right: -5px;
+      bottom: 25px;
+      background: var(--azul);
+      color: white;
+      padding: 25px;
+      width: 210px;
+      border-radius: 25px;
+      box-shadow: var(--sombra);
+    }
+
+    .about-box strong {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      display: block;
+    }
+
+    .about-box span {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .about-text p {
+      color: var(--texto-suave);
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    .about-text p:first-of-type {
+      margin-top: 28px;
+    }
+
+    .about-highlight {
+      margin-top: 30px;
+      padding: 22px 25px;
+      background: var(--bege);
+      border-left: 4px solid var(--roxo);
+      border-radius: 0 15px 15px 0;
+      color: var(--azul);
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       SERVIÇOS
+       ========================================================= */
+
+    .services {
+      background: var(--bege);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 55px;
+    }
+
+    .services-header .section-description {
+      margin: 0;
+      max-width: 450px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: var(--raio);
+      transition: var(--transicao);
+      border: 1px solid rgba(96, 72, 172, 0.06);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-hover);
+    }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: var(--roxo-claro);
+      color: var(--roxo);
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+    }
+
+    .service-card:nth-child(even) .service-icon {
+      background: var(--azul-claro);
+      color: var(--azul);
+    }
+
+    .service-card h3 {
+      font-family: "Playfair Display", serif;
+      color: var(--azul);
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--texto-suave);
+      font-size: 0.92rem;
+    }
+
+    /* =========================================================
+       DIFERENCIAIS
+       ========================================================= */
+
+    .approach {
+      background: var(--azul);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .approach::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      right: -200px;
+      top: -200px;
+    }
+
+    .approach::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      left: -180px;
+      bottom: -180px;
+    }
+
+    .approach .section-label {
+      color: #d8cfff;
+    }
+
+    .approach .section-label::before {
+      background: #d8cfff;
+    }
+
+    .approach .section-title {
+      color: white;
+    }
+
+    .approach .section-title span {
+      color: #c9bcff;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .approach-text {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      margin-top: 25px;
+    }
+
+    .approach-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .approach-item {
+      padding: 25px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+    }
+
+    .approach-item .check {
+      width: 35px;
+      height: 35px;
+      background: var(--roxo);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+    }
+
+    .approach-item h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .approach-item p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* =========================================================
+       PROCESSO
+       ========================================================= */
+
+    .process {
+      background: white;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 55px;
+    }
+
+    .process-card {
+      text-align: center;
+      position: relative;
+      padding: 10px;
+    }
+
+    .process-number {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--roxo-claro);
+      color: var(--roxo);
+      display: grid;
+      place-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .process-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 1px;
+      background: #ddd7ec;
+      top: 37px;
+      left: 65%;
+      z-index: 0;
+    }
+
+    .process-number {
+      z-index: 1;
+    }
+
+    .process-card h3 {
+      color: var(--azul);
+      font-family: "Playfair Display", serif;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+    }
+
+    /* =========================================================
+       GALERIA
+       ========================================================= */
+
+    .gallery {
+      background: var(--bege);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      grid-template-rows: 260px 260px;
+      gap: 18px;
+      margin-top: 50px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 25px;
+      position: relative;
+      background: var(--roxo-claro);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .cta {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--roxo), #7661bd);
+      border-radius: 35px;
+      padding: 65px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      right: -100px;
+      top: -150px;
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 50%;
+      left: -120px;
+      bottom: -150px;
+    }
+
+    .cta-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-box h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      line-height: 1.15;
+    }
+
+    .cta-box p {
+      margin: 20px 0 30px;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+    }
+
+    .cta .btn {
+      background: white;
+      color: var(--roxo);
+    }
+
+    .cta .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    /* =========================================================
+       CONTATO
+       ========================================================= */
+
+    .contact {
+      background: var(--bege);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-info {
+      margin-top: 35px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: white;
+      color: var(--roxo);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 20px rgba(40,30,70,0.05);
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--azul);
+      font-size: 0.85rem;
+    }
+
+    .contact-item span {
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: var(--sombra);
+    }
+
+    .contact-card h3 {
+      color: var(--azul);
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .contact-card .btn {
+      width: 100%;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      background: #f0ebe5;
+      padding: 45px 0 25px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--azul);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+    }
+
+    .footer-logo img {
+      width: 55px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      color: var(--texto-suave);
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--roxo);
+    }
+
+    .copyright {
+      text-align: center;
+      color: #88838a;
+      font-size: 0.75rem;
+      padding-top: 22px;
+    }
+
+    /* =========================================================
+       BOTÃO WHATSAPP FLUTUANTE
+       ========================================================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+      transition: var(--transicao);
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(37,211,102,0.4);
+    }
+
+    /* =========================================================
+       ANIMAÇÕES
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVO
+       ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 45px;
+      }
+
+      .process-card::after {
+        display: none;
+      }
+
+      .approach-grid {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .container {
+        width: min(100% - 30px, 600px);
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 88px;
+        left: 15px;
+        right: 15px;
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: var(--sombra);
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin: auto;
+      }
+
+      .hero-small {
+        justify-content: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        max-width: 470px;
+        margin: 30px auto 0;
+        width: 90%;
+      }
+
+      .hero-photo {
+        height: 500px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-images {
+        max-width: 500px;
+        width: 90%;
+        margin: auto;
+      }
+
+      .services-header {
+        display: block;
+      }
+
+      .services-header .section-description {
+        margin-top: 20px;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 260px 260px;
+      }
+
+      .gallery-item:first-child {
+        grid-row: span 2;
+      }
+
+      .gallery-item:last-child {
+        grid-column: span 2;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 45px 30px;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .hero h1 {
+        font-size: 2.9rem;
+      }
+
+      .hero-photo {
+        height: 430px;
+      }
+
+      .floating-card {
+        left: -10px;
+        bottom: 20px;
+      }
+
+      .about-images {
+        min-height: 450px;
+      }
+
+      .about-photo-main {
+        height: 430px;
+      }
+
+      .about-box {
+        right: -5px;
+        bottom: 10px;
+        width: 175px;
+        padding: 18px;
+      }
+
+      .about-box strong {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-list {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 260px);
+      }
+
+      .gallery-item:first-child {
+        grid-row: auto;
+      }
+
+      .gallery-item:last-child {
+        grid-column: auto;
+      }
+
+      .contact-card {
+        padding: 30px 22px;
+      }
+
+      .whatsapp {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+       ======================================================== -->
+
+  <header id="header">
+
+    <div class="container nav">
+
+      <a href="#inicio" class="logo">
+
+        <img
+          src="https://i.imgur.com/J1b0lX4.png"
+          alt="Logo Jaqueline Caldi"
+        >
+
+        <span>Jaqueline Caldi</span>
+
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+
+          <li>
+            <a href="#inicio">Início</a>
+          </li>
+
+          <li>
+            <a href="#sobre">Sobre mim</a>
+          </li>
+
+          <li>
+            <a href="#atendimento">Atendimento</a>
+          </li>
+
+          <li>
+            <a href="#processo">Como funciona</a>
+          </li>
+
+          <li>
+            <a href="#contato" class="btn btn-primary nav-cta">
+              Agendar conversa
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+         ====================================================== -->
+
+    <section class="hero" id="inicio">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-small">
+            <span></span>
+            Psicopedagogia Clínica
+          </div>
+
+          <h1>
+            Olá, eu sou
+            <em>Jaqueline Caldi!</em>
+          </h1>
+
+          <p class="hero-text">
+            Um olhar acolhedor e individualizado para compreender
+            cada criança e adolescente em sua maneira única de
+            aprender, desenvolver-se e descobrir seu potencial.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#contato"
+              class="btn btn-primary"
+            >
+              Quero saber mais
+              <span>→</span>
+            </a>
+
+            <a
+              href="#sobre"
+              class="btn btn-outline"
+            >
+              Conheça meu trabalho
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image reveal">
+
+          <!--
+            FOTO PRINCIPAL
+            Você pode trocar esta URL pela foto que preferir.
+          -->
+
+          <img
+            class="hero-photo"
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Jaqueline Caldi - Psicopedagoga Clínica"
+          >
+
+          <div class="floating-card">
+
+            <div class="floating-icon">
+              ✦
+            </div>
+
+            <div>
+              <strong>
+                Atendimento individualizado
+              </strong>
+
+              <small>
+                Acolhimento, escuta e desenvolvimento
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SOBRE
+         ====================================================== -->
+
+    <section class="section about" id="sobre">
+
+      <div class="container about-grid">
+
+        <div class="about-images reveal">
+
+          <div class="about-decoration"></div>
+
+          <img
+            class="about-photo-main"
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Jaqueline Caldi"
+          >
+
+          <div class="about-box">
+
+            <strong>6+</strong>
+
+            <span>
+              anos dedicados à educação e ao desenvolvimento
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-text reveal">
+
+          <div class="section-label">
+            Sobre mim
+          </div>
+
+          <h2 class="section-title">
+            Cada criança tem uma
+            <span>forma única de aprender.</span>
+          </h2>
+
+          <p>
+            Sou casada, mãe atípica e profissional da educação
+            há mais de 6 anos. Minha trajetória pessoal e
+            profissional me levou a aprofundar meus estudos na
+            área das neurodivergências, buscando compreender e
+            apoiar o desenvolvimento de cada criança de forma
+            individualizada e acolhedora.
+          </p>
+
+          <p>
+            Sou Psicopedagoga Clínica e acadêmica de Psicologia,
+            dedicada a auxiliar crianças e adolescentes que
+            enfrentam desafios relacionados à aprendizagem,
+            atenção, leitura, escrita, raciocínio lógico e
+            funções executivas.
+          </p>
+
+          <div class="about-highlight">
+            Meu propósito é olhar além da dificuldade,
+            compreendendo o indivíduo como um todo e construindo
+            caminhos possíveis para que ele possa aprender com
+            mais confiança.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ATENDIMENTO / SERVIÇOS
+         ====================================================== -->
+
+    <section class="section services" id="atendimento">
+
+      <div class="container">
+
+        <div class="services-header reveal">
+
+          <div>
+
+            <div class="section-label">
+              Meu atendimento
+            </div>
+
+            <h2 class="section-title">
+              Um cuidado pensado para
+              <span>cada necessidade.</span>
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            O acompanhamento psicopedagógico busca compreender
+            como cada criança ou adolescente aprende, identificando
+            potencialidades e desafios para construir estratégias
+            individualizadas.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              ♡
+            </div>
+
+            <h3>
+              Aprendizagem
+            </h3>
+
+            <p>
+              Investigação e acompanhamento das dificuldades
+              relacionadas ao processo de aprendizagem,
+              respeitando o ritmo individual.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              ◉
+            </div>
+
+            <h3>
+              Atenção
+            </h3>
+
+            <p>
+              Estratégias para auxiliar crianças e adolescentes
+              que apresentam dificuldades relacionadas à atenção
+              e concentração.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              Aa
+            </div>
+
+            <h3>
+              Leitura e escrita
+            </h3>
+
+            <p>
+              Apoio no desenvolvimento das habilidades de leitura,
+              escrita, compreensão e construção do conhecimento.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              ∑
+            </div>
+
+            <h3>
+              Raciocínio lógico
+            </h3>
+
+            <p>
+              Atividades e estratégias para estimular o pensamento
+              lógico, resolução de problemas e construção de
+              conceitos.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              ✦
+            </div>
+
+            <h3>
+              Funções executivas
+            </h3>
+
+            <p>
+              Estímulo de habilidades como planejamento,
+              organização, memória de trabalho, flexibilidade
+              cognitiva e autocontrole.
+            </p>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-icon">
+              ♧
+            </div>
+
+            <h3>
+              Desenvolvimento
+            </h3>
+
+            <p>
+              Um olhar integral para as potencialidades,
+              necessidades e particularidades de cada criança
+              ou adolescente.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABORDAGEM
+         ====================================================== -->
+
+    <section class="section approach">
+
+      <div class="container approach-grid">
+
+        <div class="reveal">
+
+          <div class="section-label">
+            Um olhar individualizado
+          </div>
+
+          <h2 class="section-title">
+            Acolher também faz parte do
+            <span>processo de aprender.</span>
+          </h2>
+
+          <p class="approach-text">
+            Cada pessoa possui uma história, um ritmo e uma maneira
+            própria de aprender. Por isso, o trabalho psicopedagógico
+            é construído de maneira individualizada, considerando
+            não apenas as dificuldades, mas também as habilidades,
+            interesses e potencialidades.
+          </p>
+
+        </div>
+
+
+        <div class="approach-list reveal">
+
+          <div class="approach-item">
+
+            <div class="check">✓</div>
+
+            <h4>
+              Escuta
+            </h4>
+
+            <p>
+              Um espaço seguro para compreender cada história.
+            </p>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="check">✓</div>
+
+            <h4>
+              Individualidade
+            </h4>
+
+            <p>
+              Estratégias pensadas para cada necessidade.
+            </p>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="check">✓</div>
+
+            <h4>
+              Acolhimento
+            </h4>
+
+            <p>
+              Relações baseadas em respeito, cuidado e confiança.
+            </p>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="check">✓</div>
+
+            <h4>
+              Potencialidades
+            </h4>
+
+            <p>
+              Valorizar aquilo que cada criança já consegue fazer.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESSO
+         ====================================================== -->
+
+    <section class="section process" id="processo">
+
+      <div class="container">
+
+        <div class="center reveal">
+
+          <div class="section-label">
+            Como funciona
+          </div>
+
+          <h2 class="section-title">
+            Um processo construído
+            <span>com cuidado.</span>
+          </h2>
+
+          <p class="section-description">
+            O acompanhamento começa com a escuta e a compreensão
+            das necessidades para que, juntos, possamos definir
+            os melhores caminhos.
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              01
+            </div>
+
+            <h3>
+              Conversa inicial
+            </h3>
+
+            <p>
+              Primeiro contato para conhecer a demanda,
+              compreender a história e esclarecer dúvidas.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              02
+            </div>
+
+            <h3>
+              Avaliação
+            </h3>
+
+            <p>
+              Investigação das habilidades e dificuldades
+              relacionadas ao processo de aprendizagem.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              03
+            </div>
+
+            <h3>
+              Plano individual
+            </h3>
+
+            <p>
+              Definição de estratégias de intervenção de acordo
+              com as necessidades identificadas.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-number">
+              04
+            </div>
+
+            <h3>
+              Acompanhamento
+            </h3>
+
+            <p>
+              Desenvolvimento contínuo, acompanhamento dos
+              avanços e ajustes das estratégias.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALERIA
+         ====================================================== -->
+
+    <section class="section gallery">
+
+      <div class="container">
+
+        <div class="center reveal">
+
+          <div class="section-label">
+            Meu espaço
+          </div>
+
+          <h2 class="section-title">
+            Um ambiente pensado para
+            <span>acolher.</span>
+          </h2>
+
+          <p class="section-description">
+            Um espaço onde a criança pode se sentir segura,
+            respeitada e confortável para aprender e se desenvolver.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/fqEDfKr.png"
+              alt="Espaço de atendimento psicopedagógico"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/J1b0lX4.png"
+              alt="Identidade visual Jaqueline Caldi"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/fqEDfKr.png"
+              alt="Atendimento Jaqueline Caldi"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/fqEDfKr.png"
+              alt="Psicopedagogia Clínica"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/J1b0lX4.png"
+              alt="Jaqueline Caldi Psicopedagogia"
+              loading="lazy"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+         ====================================================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box reveal">
+
+          <div class="cta-content">
+
+            <h2>
+              Vamos conversar sobre o desenvolvimento do seu filho?
+            </h2>
+
+            <p>
+              Se você percebe desafios relacionados à aprendizagem,
+              atenção, leitura, escrita ou outras habilidades,
+              entre em contato. Será um prazer conhecer a sua história
+              e conversar sobre como posso ajudar.
+            </p>
+
+            <a
+              href="#contato"
+              class="btn"
+            >
+              Quero conversar
+              →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTATO
+         ====================================================== -->
+
+    <section class="section contact" id="contato">
+
+      <div class="container contact-grid">
+
+        <div class="reveal">
+
+          <div class="section-label">
+            Entre em contato
+          </div>
+
+          <h2 class="section-title">
+            Vamos dar o primeiro
+            <span>passo juntos?</span>
+          </h2>
+
+          <p class="section-description">
+            Entre em contato para saber mais sobre os atendimentos
+            e verificar a disponibilidade de horários.
+          </p>
+
+
+          <div class="contact-info">
+
+            <div class="contact-item">
+
+              <div class="contact-icon">
+                ✆
+              </div>
+
+              <div>
+                <strong>
+                  WhatsApp
+                </strong>
+
+                <span>
+                  Fale comigo pelo WhatsApp
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">
+                @
+              </div>
+
+              <div>
+                <strong>
+                  Instagram
+                </strong>
+
+                <span>
+                  Acompanhe meu trabalho
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-icon">
+                ♡
+              </div>
+
+              <div>
+                <strong>
+                  Atendimento
+                </strong>
+
+                <span>
+                  Crianças e adolescentes
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-card reveal">
+
+          <h3>
+            Agende uma conversa
+          </h3>
+
+          <p>
+            Clique no botão abaixo e envie uma mensagem.
+            Vou retornar assim que possível.
+          </p>
+
+          <!--
+            IMPORTANTE:
+            TROQUE 5543999999999 PELO NÚMERO REAL DO WHATSAPP.
+
+            Formato:
+            55 + DDD + número
+            Exemplo: 5543999999999
+          -->
+
+          <a
+            href="https://wa.me/5543999999999?text=Olá%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-whatsapp"
+          >
+            <span>◉</span>
+            Conversar pelo WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <a href="#inicio" class="footer-logo">
+
+          <img
+            src="https://i.imgur.com/J1b0lX4.png"
+            alt="Logo Jaqueline Caldi"
+          >
+
+          <span>
+            Jaqueline Caldi
+          </span>
+
+        </a>
+
+
+        <div class="footer-links">
+
+          <a href="#sobre">
+            Sobre mim
+          </a>
+
+          <a href="#atendimento">
+            Atendimento
+          </a>
+
+          <a href="#processo">
+            Como funciona
+          </a>
+
+          <a href="#contato">
+            Contato
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © <span id="year"></span>
+        Jaqueline Caldi — Psicopedagoga Clínica.
+        Todos os direitos reservados.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP FLUTUANTE
+       ======================================================== -->
+
+  <a
+    href="https://wa.me/5543999999999?text=Olá%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
+    target="_blank"
+    rel="noopener"
+    class="whatsapp"
+    aria-label="Falar pelo WhatsApp"
+  >
+    ◉
+  </a>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================== -->
+
+  <script>
+
+    /* ---------------------------------------------------------
+       MENU MOBILE
+       --------------------------------------------------------- */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("active")
+          ? "×"
+          : "☰";
+    });
+
+
+    /* ---------------------------------------------------------
+       FECHAR MENU AO CLICAR
+       --------------------------------------------------------- */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuBtn.textContent = "☰";
+
+      });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       HEADER AO ROLAR
+       --------------------------------------------------------- */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* ---------------------------------------------------------
+       ANIMAÇÕES
+       --------------------------------------------------------- */
+
+    const observer = new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+
+    /* ---------------------------------------------------------
+       ANO AUTOMÁTICO
+       --------------------------------------------------------- */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
