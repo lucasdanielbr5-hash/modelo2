@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -10,17 +11,10 @@
 
   <meta
     name="description"
-    content="Jaqueline Caldi — Psicopedagoga Clínica. Um olhar individualizado para aprendizagem, desenvolvimento e neurodivergências."
+    content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes."
   >
 
-  <meta
-    name="theme-color"
-    content="#F7F3EE"
-  >
-
-  <title>
-    Jaqueline Caldi | Psicopedagoga Clínica
-  </title>
+  <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -31,34 +25,37 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
     rel="stylesheet"
   >
 
   <style>
 
     /* =========================================================
-       CORES DA MARCA
-       ========================================================= */
+       VARIÁVEIS
+    ========================================================= */
 
     :root {
+
       --purple: #6048AC;
       --blue: #005387;
       --cream: #F7F3EE;
 
-      --dark: #1D3039;
-      --gray: #68747A;
-      --line: rgba(0, 83, 135, .16);
-
       --white: #FFFFFF;
 
-      --max: 1240px;
+      --text: #18333F;
+      --muted: #718087;
+
+      --border: rgba(0, 83, 135, .13);
+
+      --max: 1180px;
+
     }
 
 
     /* =========================================================
        RESET
-       ========================================================= */
+    ========================================================= */
 
     * {
       margin: 0;
@@ -66,45 +63,48 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
+
       background: var(--cream);
-      color: var(--dark);
+
+      color: var(--text);
+
       font-family: "DM Sans", sans-serif;
+
       overflow-x: hidden;
+
     }
 
+
+    body,
+    button,
     a {
-      color: inherit;
-      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
     }
+
 
     img {
       display: block;
       max-width: 100%;
     }
 
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
     button {
       font-family: inherit;
     }
 
-
-    .container {
-      width: min(
-        var(--max),
-        calc(100% - 70px)
-      );
-
-      margin: auto;
-    }
-
-
-    /* =========================================================
-       CURSOR / SELECTION
-       ========================================================= */
 
     ::selection {
       background: var(--purple);
@@ -112,96 +112,142 @@
     }
 
 
+    .container {
+
+      width: min(
+        var(--max),
+        calc(100% - 64px)
+      );
+
+      margin: 0 auto;
+
+    }
+
+
     /* =========================================================
        HEADER
-       ========================================================= */
+    ========================================================= */
 
-    header {
+    .header {
+
       position: fixed;
-      left: 0;
+
       top: 0;
+      left: 0;
 
       width: 100%;
 
       z-index: 1000;
 
       transition:
-        background .4s ease,
-        border .4s ease;
+        background .35s ease,
+        box-shadow .35s ease;
+
     }
 
-    header.scrolled {
+
+    .header.scrolled {
+
       background:
         rgba(247,243,238,.92);
 
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(18px);
 
-      border-bottom:
-        1px solid rgba(0,83,135,.08);
+      box-shadow:
+        0 1px 0 rgba(0,83,135,.08);
+
     }
 
+
     .nav {
-      height: 100px;
+
+      height: 92px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
     }
 
 
     /* =========================================================
        LOGO
-       ========================================================= */
+    ========================================================= */
 
-    .logo {
+    .brand {
+
       display: flex;
+
       align-items: center;
-      gap: 13px;
+
+      gap: 12px;
+
     }
 
-    .logo img {
-      width: 62px;
-      height: 62px;
+
+    .brand img {
+
+      width: 53px;
+      height: 53px;
+
       object-fit: contain;
+
     }
 
-    .logo-text {
+
+    .brand-name {
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 18px;
+      font-size: 17px;
 
-      line-height: 1.1;
+      letter-spacing: -.2px;
+
     }
 
 
     /* =========================================================
        MENU
-       ========================================================= */
+    ========================================================= */
 
-    .nav-links {
+    .nav-menu {
+
       display: flex;
+
       align-items: center;
-      gap: 35px;
+
+      gap: 34px;
 
       list-style: none;
+
     }
 
-    .nav-links a {
-      position: relative;
+
+    .nav-menu a {
 
       color: var(--blue);
 
-      font-size: 12px;
+      font-size: 11px;
+
       font-weight: 500;
 
-      letter-spacing: .3px;
+      letter-spacing: .7px;
+
+      text-transform: uppercase;
+
+      position: relative;
+
     }
 
-    .nav-links a::after {
+
+    .nav-menu a:not(.nav-button)::after {
+
       content: "";
 
       position: absolute;
@@ -215,422 +261,534 @@
       background: var(--purple);
 
       transition: width .3s ease;
+
     }
 
-    .nav-links a:hover::after {
+
+    .nav-menu a:not(.nav-button):hover::after {
       width: 100%;
     }
 
-    .nav-contact {
-      padding:
-        11px 20px;
 
-      border:
-        1px solid
-        var(--blue);
+    .nav-button {
 
-      border-radius: 50px;
+      border: 1px solid var(--blue);
+
+      padding: 11px 18px;
+
+      border-radius: 30px;
+
+      transition:
+        background .3s ease,
+        color .3s ease;
+
     }
 
-    .nav-contact::after {
-      display: none;
-    }
 
-    .nav-contact:hover {
+    .nav-button:hover {
+
       background: var(--blue);
-      color: white !important;
+
+      color: white;
+
     }
 
 
-    .menu-button {
-      display: none;
+    .mobile-menu {
 
-      width: 45px;
-      height: 45px;
+      display: none;
 
       border: 0;
-      border-radius: 50%;
 
-      background: white;
+      background: transparent;
 
       color: var(--blue);
 
+      font-size: 25px;
+
       cursor: pointer;
+
     }
 
 
     /* =========================================================
        HERO
-       ========================================================= */
+    ========================================================= */
 
     .hero {
+
       min-height: 100vh;
 
+      position: relative;
+
       display: flex;
+
       align-items: center;
 
+      overflow: hidden;
+
       padding:
-        150px 0
+        130px 0
         80px;
 
-      position: relative;
     }
 
 
-    .hero-grid {
+    /*
+      TIPOGRAFIA FANTASMA
+      O elemento que você pediu:
+      grande, quase apagado e no fundo.
+    */
+
+    .hero-watermark {
+
+      position: absolute;
+
+      left: -30px;
+      top: 48%;
+
+      transform:
+        translateY(-50%);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          120px,
+          18vw,
+          270px
+        );
+
+      line-height: .8;
+
+      color: var(--blue);
+
+      opacity: .035;
+
+      white-space: nowrap;
+
+      pointer-events: none;
+
+      user-select: none;
+
+      letter-spacing: -12px;
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
       display: grid;
 
       grid-template-columns:
-        1fr
-        .78fr;
+        1.02fr
+        .98fr;
 
       gap: 90px;
 
       align-items: center;
+
     }
 
 
-    .hero-left {
-      position: relative;
-      z-index: 2;
-    }
+    /* =========================================================
+       HERO TEXTO
+    ========================================================= */
 
+    .hero-label {
 
-    .mini-label {
       display: flex;
+
       align-items: center;
-      gap: 12px;
+
+      gap: 13px;
 
       color: var(--purple);
-
-      text-transform: uppercase;
-
-      letter-spacing: 3px;
 
       font-size: 10px;
 
       font-weight: 600;
 
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
       margin-bottom: 28px;
+
     }
 
-    .mini-label::before {
+
+    .hero-label::before {
+
       content: "";
 
-      width: 35px;
+      width: 34px;
       height: 1px;
 
       background: var(--purple);
+
     }
 
 
-    /* =========================================================
-       NOME ANIMADO
-       ========================================================= */
-
     .hero-title {
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-weight: 400;
-
       font-size:
         clamp(
-          64px,
-          8vw,
-          125px
+          55px,
+          7vw,
+          92px
         );
 
-      line-height: .87;
+      font-weight: 400;
 
-      letter-spacing:
-        -5px;
+      line-height: .94;
 
-      overflow: hidden;
+      letter-spacing: -4px;
+
     }
 
-    .hero-title-line {
+
+    .hero-title .line {
       display: block;
       overflow: hidden;
     }
 
-    .hero-title span {
+
+    .hero-title .word {
+
       display: inline-block;
 
       transform:
-        translateY(120%);
+        translateY(105%);
 
       opacity: 0;
 
       animation:
-        letterUp
-        .9s cubic-bezier(.2,.7,.2,1)
+        titleIn
+        1s
+        cubic-bezier(.2,.75,.2,1)
         forwards;
+
     }
 
-    .hero-title-line:nth-child(1)
-    span {
-      animation-delay: .15s;
+
+    .hero-title .line:nth-child(1) .word {
+      animation-delay: .1s;
     }
 
-    .hero-title-line:nth-child(2)
-    span {
-      animation-delay: .35s;
+
+    .hero-title .line:nth-child(2) .word {
+      animation-delay: .22s;
     }
 
-    @keyframes letterUp {
+
+    .hero-title em {
+
+      color: var(--purple);
+
+      font-style: italic;
+
+    }
+
+
+    @keyframes titleIn {
+
       to {
+
         transform: translateY(0);
+
         opacity: 1;
+
       }
+
     }
 
 
-    .hero-subtitle {
-      margin-top: 36px;
+    .hero-description {
 
-      max-width: 510px;
+      max-width: 490px;
 
-      color: var(--gray);
+      margin-top: 31px;
 
-      font-size: 16px;
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.9;
 
       font-weight: 300;
 
-      line-height: 1.8;
+      opacity: 0;
+
+      animation:
+        fadeIn .9s
+        .5s
+        forwards;
+
+    }
+
+
+    @keyframes fadeIn {
+
+      to {
+        opacity: 1;
+      }
+
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 27px;
+
+      margin-top: 32px;
 
       opacity: 0;
 
       transform:
-        translateY(20px);
+        translateY(12px);
 
       animation:
-        fadeUp
-        .9s
-        .65s
-        forwards;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-
-    .hero-buttons {
-      display: flex;
-      align-items: center;
-
-      gap: 28px;
-
-      margin-top: 34px;
-
-      opacity: 0;
-
-      animation:
-        fadeUp
-        .9s
+        actionIn
         .8s
+        .7s
         forwards;
+
     }
 
 
-    .primary-button {
+    @keyframes actionIn {
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    .button-primary {
+
       display: inline-flex;
 
       align-items: center;
-      justify-content: center;
 
-      gap: 10px;
+      gap: 14px;
 
       padding:
-        14px 24px;
+        13px 21px;
 
-      border-radius: 50px;
+      border-radius: 40px;
 
       background: var(--purple);
 
       color: white;
 
-      font-size: 12px;
+      font-size: 11px;
+
       font-weight: 600;
 
       transition:
         transform .3s ease,
         background .3s ease;
-    }
 
-    .primary-button:hover {
-      background: #503A96;
-      transform: translateY(-2px);
     }
 
 
-    .text-button {
+    .button-primary:hover {
+
+      background:
+        #523C99;
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .button-primary span {
+
+      font-size: 16px;
+
+      line-height: 1;
+
+    }
+
+
+    .button-link {
+
       color: var(--blue);
 
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 11px;
 
-      padding-bottom: 4px;
+      font-weight: 500;
 
       border-bottom:
         1px solid var(--blue);
+
+      padding-bottom: 4px;
+
     }
 
 
     /* =========================================================
        HERO FOTO
-       ========================================================= */
+    ========================================================= */
 
-    .hero-right {
+    .hero-image-area {
+
       position: relative;
 
-      min-height: 650px;
+      min-height: 610px;
 
       display: flex;
 
       justify-content: center;
+
       align-items: center;
+
     }
 
 
-    .hero-photo {
-      width: 430px;
-      height: 610px;
+    .hero-image {
+
+      width: 390px;
+
+      height: 560px;
 
       object-fit: cover;
 
-      /*
-        A foto fica livre na composição.
-        Não existe card ou fundo atrás dela.
-      */
+      object-position: center;
 
       border-radius:
-        220px
-        220px
+        195px
+        195px
         8px
         8px;
 
       opacity: 0;
 
+      transform:
+        translateY(25px);
+
       animation:
-        photoReveal
-        1.3s
-        .35s
+        imageIn
+        1.2s
+        .25s
         forwards;
+
     }
 
-    @keyframes photoReveal {
-      from {
-        opacity: 0;
-        transform:
-          translateY(40px)
-          scale(.97);
-      }
+
+    @keyframes imageIn {
 
       to {
+
         opacity: 1;
+
         transform:
-          translateY(0)
-          scale(1);
+          translateY(0);
+
       }
+
     }
 
 
-    .vertical-text {
+    /*
+      Pequeno detalhe gráfico,
+      não um card atrás da foto.
+    */
+
+    .image-line {
+
       position: absolute;
 
-      right: -12px;
+      width: 120px;
+
+      height: 1px;
+
+      background: var(--purple);
+
+      right: 0;
+
+      bottom: 60px;
+
+    }
+
+
+    .image-caption {
+
+      position: absolute;
+
+      right: -8px;
+
       top: 50%;
 
       transform:
         translateY(-50%)
         rotate(90deg);
 
-      transform-origin: center;
-
       color: var(--purple);
-
-      text-transform: uppercase;
-
-      letter-spacing: 4px;
 
       font-size: 9px;
 
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
       white-space: nowrap;
-    }
 
-
-    .hero-number {
-      position: absolute;
-
-      bottom: 30px;
-      left: 10px;
-
-      color: var(--blue);
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-    }
-
-
-    .hero-line {
-      position: absolute;
-
-      width: 120px;
-      height: 1px;
-
-      background: var(--purple);
-
-      right: 25px;
-      bottom: 38px;
     }
 
 
     /* =========================================================
-       MARQUEE
-       ========================================================= */
+       LINHA DE FRASES
+    ========================================================= */
 
-    .marquee {
-      overflow: hidden;
+    .intro-line {
 
       border-top:
-        1px solid var(--line);
+        1px solid var(--border);
 
       border-bottom:
-        1px solid var(--line);
+        1px solid var(--border);
 
-      padding:
-        18px 0;
+      padding: 17px 0;
 
-      white-space: nowrap;
+      overflow: hidden;
+
     }
 
-    .marquee-track {
-      display: inline-flex;
+
+    .intro-line-inner {
+
+      display: flex;
+
+      justify-content: center;
 
       align-items: center;
 
-      animation:
-        marquee 28s
-        linear infinite;
-    }
-
-    .marquee-item {
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 25px;
-
-      margin-right: 25px;
+      gap: 35px;
 
       color: var(--blue);
 
@@ -638,58 +796,57 @@
         "Playfair Display",
         serif;
 
-      font-size: 19px;
+      font-size: 17px;
+
     }
 
-    .marquee-item::after {
-      content: "✦";
+
+    .intro-dot {
 
       color: var(--purple);
 
-      font-family: Arial, sans-serif;
+      font-family:
+        "DM Sans",
+        sans-serif;
 
-      font-size: 10px;
-    }
+      font-size: 9px;
 
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
     }
 
 
     /* =========================================================
        SEÇÕES
-       ========================================================= */
-
-    section {
-      position: relative;
-    }
+    ========================================================= */
 
     .section {
+
       padding:
-        150px 0;
+        135px 0;
+
+      position: relative;
+
     }
 
 
     .section-number {
+
       color: var(--purple);
 
-      font-size: 10px;
-
-      letter-spacing: 3px;
+      font-size: 9px;
 
       font-weight: 600;
 
-      margin-bottom: 24px;
+      letter-spacing: 2.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+
     }
 
 
-    .section-heading {
+    .section-title {
+
       color: var(--blue);
 
       font-family:
@@ -700,125 +857,145 @@
 
       font-size:
         clamp(
-          45px,
-          6vw,
-          82px
+          43px,
+          5.3vw,
+          72px
         );
 
       line-height: 1;
 
-      letter-spacing: -2px;
+      letter-spacing: -2.5px;
+
     }
 
 
-    .section-heading em {
+    .section-title em {
+
       color: var(--purple);
+
       font-style: italic;
+
     }
 
 
-    .section-intro {
-      color: var(--gray);
+    .body-text {
 
-      font-size: 15px;
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.95;
 
       font-weight: 300;
 
-      line-height: 1.9;
-
-      max-width: 570px;
-
-      margin-top: 28px;
     }
 
 
     /* =========================================================
        SOBRE
-       ========================================================= */
+    ========================================================= */
 
     .about {
+
       background: white;
+
     }
 
 
     .about-grid {
+
       display: grid;
 
       grid-template-columns:
-        .65fr
-        1.35fr;
+        .7fr
+        1.3fr;
 
       gap: 100px;
 
-      align-items: start;
     }
 
 
-    .about-left {
-      padding-top: 15px;
+    .about-intro {
+
+      padding-top: 8px;
+
     }
 
 
-    .about-left::before {
+    .about-intro::before {
+
       content: "";
 
       display: block;
 
-      width: 90px;
+      width: 65px;
       height: 1px;
 
       background: var(--purple);
 
       margin-bottom: 20px;
+
     }
 
 
-    .about-left p {
+    .about-intro p {
+
+      max-width: 260px;
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 20px;
+      font-size: 21px;
 
-      line-height: 1.55;
+      line-height: 1.5;
+
     }
 
 
-    .about-text {
-      color: var(--gray);
+    .about-content .section-title {
 
-      font-size: 15px;
+      margin-bottom: 35px;
 
-      font-weight: 300;
-
-      line-height: 1.95;
     }
 
 
-    .about-text + .about-text {
-      margin-top: 22px;
+    .about-content .body-text {
+
+      max-width: 660px;
+
     }
 
 
-    .about-highlight {
+    .about-content .body-text + .body-text {
+
+      margin-top: 20px;
+
+    }
+
+
+    .about-stat {
+
       margin-top: 45px;
 
-      padding-top: 24px;
+      padding-top: 22px;
 
       border-top:
-        1px solid var(--line);
+        1px solid var(--border);
 
       display: flex;
 
-      align-items: baseline;
+      align-items: center;
 
       gap: 18px;
+
     }
 
 
-    .about-highlight strong {
+    .about-stat strong {
+
       color: var(--purple);
 
       font-family:
@@ -828,280 +1005,405 @@
       font-size: 42px;
 
       font-weight: 400;
+
     }
 
 
-    .about-highlight span {
-      color: var(--gray);
+    .about-stat span {
 
-      font-size: 11px;
+      color: var(--muted);
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
 
       text-transform: uppercase;
 
-      letter-spacing: 1.5px;
     }
 
 
     /* =========================================================
-       FOTO SOBRE
-       ========================================================= */
+       FOTO SECUNDÁRIA
+    ========================================================= */
 
-    .about-photo-section {
-      padding:
-        0 0 150px;
+    .photo-section {
 
       background: white;
+
+      padding:
+        0 0 135px;
+
     }
 
 
-    .about-photo-wrapper {
+    .photo-layout {
+
       display: grid;
 
       grid-template-columns:
-        .45fr
-        1.55fr;
+        .62fr
+        1.38fr;
 
       gap: 80px;
 
       align-items: end;
+
     }
 
 
-    .about-photo-caption {
-      padding-bottom: 25px;
+    .photo-copy {
+
+      padding-bottom: 28px;
+
     }
 
 
-    .about-photo-caption span {
+    .photo-copy small {
+
       display: block;
 
       color: var(--purple);
 
-      text-transform: uppercase;
+      font-size: 9px;
 
       letter-spacing: 2px;
 
-      font-size: 9px;
+      text-transform: uppercase;
 
-      margin-bottom: 12px;
+      margin-bottom: 17px;
+
     }
 
 
-    .about-photo-caption p {
+    .photo-copy h3 {
+
+      max-width: 300px;
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 26px;
+      font-size: 32px;
 
-      line-height: 1.35;
+      line-height: 1.2;
+
+      font-weight: 400;
+
     }
 
 
-    .about-photo {
+    .photo-copy h3 em {
+
+      color: var(--purple);
+
+      font-style: italic;
+
+    }
+
+
+    .second-photo {
+
       width: 100%;
 
-      height: 650px;
+      height: 570px;
 
       object-fit: cover;
 
-      object-position: center;
-
       border-radius:
-        4px 4px 100px 4px;
+        5px
+        5px
+        90px
+        5px;
+
     }
 
 
     /* =========================================================
-       MANIFESTO
-       ========================================================= */
+       FRASE / WATERMARK
+    ========================================================= */
 
-    .manifesto {
-      background: var(--blue);
+    .statement {
 
-      color: white;
+      min-height: 580px;
 
-      padding:
-        150px 0;
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      background: var(--cream);
+
     }
 
 
-    .manifesto-inner {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
+    .statement-watermark {
 
+      position: absolute;
 
-    .manifesto-small {
-      color: #CFC6EA;
+      left: 50%;
 
-      text-transform: uppercase;
+      top: 50%;
 
-      letter-spacing: 3px;
+      transform:
+        translate(-50%,-50%);
 
-      font-size: 9px;
+      color: var(--blue);
 
-      margin-bottom: 35px;
-    }
+      opacity: .035;
 
-
-    .manifesto-title {
       font-family:
         "Playfair Display",
         serif;
 
       font-size:
         clamp(
-          42px,
-          6vw,
-          78px
+          140px,
+          23vw,
+          340px
         );
 
-      line-height: 1.1;
+      letter-spacing: -15px;
 
-      font-weight: 400;
+      white-space: nowrap;
 
-      letter-spacing: -2px;
+      pointer-events: none;
+
     }
 
 
-    .manifesto-title span {
-      color: #D7CDEE;
+    .statement-content {
 
-      font-style: italic;
+      position: relative;
+
+      z-index: 2;
+
+      width: min(
+        900px,
+        100%
+      );
+
+      margin: auto;
+
+      text-align: center;
+
     }
 
 
-    /* =========================================================
-       ÁREAS DE ATUAÇÃO
-       ========================================================= */
+    .statement-label {
 
-    .areas {
-      background: var(--cream);
-    }
-
-
-    .areas-header {
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap: 100px;
-
-      margin-bottom: 80px;
-    }
-
-
-    .areas-list {
-      border-top:
-        1px solid var(--line);
-    }
-
-
-    .area {
-      display: grid;
-
-      grid-template-columns:
-        80px
-        1fr
-        35px;
-
-      align-items: center;
-
-      gap: 25px;
-
-      padding:
-        28px 0;
-
-      border-bottom:
-        1px solid var(--line);
-
-      cursor: default;
-
-      transition:
-        padding .35s ease;
-    }
-
-
-    .area:hover {
-      padding-left: 15px;
-    }
-
-
-    .area-number {
       color: var(--purple);
 
-      font-size: 10px;
+      font-size: 9px;
 
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 27px;
+
     }
 
 
-    .area-name {
+    .statement h2 {
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 28px;
-
       font-weight: 400;
+
+      font-size:
+        clamp(
+          40px,
+          5.4vw,
+          70px
+        );
+
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
     }
 
 
-    .area-arrow {
+    .statement h2 em {
+
       color: var(--purple);
 
-      font-size: 20px;
+      font-style: italic;
 
-      transition:
-        transform .3s ease;
-    }
-
-
-    .area:hover .area-arrow {
-      transform:
-        translateX(7px);
     }
 
 
     /* =========================================================
-       DIFERENCIAL
-       ========================================================= */
+       ATUAÇÃO
+    ========================================================= */
 
-    .difference {
+    .services {
+
       background: white;
+
     }
 
 
-    .difference-grid {
+    .services-top {
+
       display: grid;
 
       grid-template-columns:
         1fr
-        1fr;
+        .8fr;
 
-      gap: 110px;
+      gap: 100px;
+
+      margin-bottom: 70px;
+
     }
 
 
-    .difference-statement {
+    .services-description {
+
+      padding-top: 40px;
+
+    }
+
+
+    .services-list {
+
+      border-top:
+        1px solid var(--border);
+
+    }
+
+
+    .service {
+
+      display: grid;
+
+      grid-template-columns:
+        60px
+        1fr
+        30px;
+
+      align-items: center;
+
+      padding:
+        25px 0;
+
+      border-bottom:
+        1px solid var(--border);
+
+      transition:
+        padding .3s ease;
+
+    }
+
+
+    .service:hover {
+
+      padding-left: 12px;
+
+    }
+
+
+    .service-number {
+
+      color: var(--purple);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .service-name {
+
+      color: var(--blue);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 25px;
+
+      font-weight: 400;
+
+    }
+
+
+    .service-arrow {
+
+      color: var(--purple);
+
+      font-size: 18px;
+
+      transition:
+        transform .3s ease;
+
+    }
+
+
+    .service:hover .service-arrow {
+
+      transform:
+        translateX(6px);
+
+    }
+
+
+    /* =========================================================
+       ABORDAGEM
+    ========================================================= */
+
+    .approach {
+
+      background: var(--blue);
+
+      color: white;
+
+    }
+
+
+    .approach-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        .9fr
+        1.1fr;
+
+      gap: 120px;
+
+    }
+
+
+    .approach-title {
+
       position: sticky;
 
       top: 130px;
 
       align-self: start;
+
     }
 
 
-    .difference-statement h2 {
-      color: var(--blue);
+    .approach-title .section-number {
+
+      color: #D7CDEF;
+
+    }
+
+
+    .approach-title h2 {
+
+      color: white;
 
       font-family:
         "Playfair Display",
@@ -1111,56 +1413,62 @@
         clamp(
           45px,
           5vw,
-          72px
+          68px
         );
-
-      line-height: 1;
 
       font-weight: 400;
 
+      line-height: 1.02;
+
       letter-spacing: -2px;
+
     }
 
 
-    .difference-statement h2 em {
-      color: var(--purple);
+    .approach-title h2 em {
+
+      color: #D8CFF0;
 
       font-style: italic;
+
     }
 
 
-    .difference-items {
-      display: grid;
-
-      gap: 0;
+    .approach-items {
 
       border-top:
-        1px solid var(--line);
+        1px solid rgba(255,255,255,.18);
+
     }
 
 
-    .difference-item {
+    .approach-item {
+
       padding:
         30px 0;
 
       border-bottom:
-        1px solid var(--line);
+        1px solid rgba(255,255,255,.18);
+
     }
 
 
-    .difference-item span {
-      color: var(--purple);
+    .approach-item small {
+
+      color: #D5CCE9;
 
       font-size: 9px;
 
       letter-spacing: 2px;
 
       text-transform: uppercase;
+
     }
 
 
-    .difference-item h3 {
-      color: var(--blue);
+    .approach-item h3 {
+
+      color: white;
 
       font-family:
         "Playfair Display",
@@ -1170,83 +1478,96 @@
 
       font-weight: 400;
 
-      margin:
-        10px 0;
+      margin: 9px 0 10px;
+
     }
 
 
-    .difference-item p {
-      color: var(--gray);
+    .approach-item p {
 
-      font-size: 13px;
+      max-width: 490px;
 
-      line-height: 1.8;
+      color: rgba(255,255,255,.65);
 
-      max-width: 500px;
+      font-size: 12px;
+
+      line-height: 1.85;
+
     }
 
 
     /* =========================================================
        PROCESSO
-       ========================================================= */
+    ========================================================= */
 
     .process {
+
       background: var(--cream);
+
     }
 
 
     .process-header {
-      max-width: 720px;
 
-      margin-bottom: 80px;
+      max-width: 650px;
+
+      margin-bottom: 70px;
+
     }
 
 
-    .process-list {
+    .process-grid {
+
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
       border-top:
-        1px solid var(--line);
+        1px solid var(--border);
+
     }
 
 
     .process-item {
-      min-height: 250px;
+
+      min-height: 230px;
 
       padding:
-        30px 25px 25px 0;
-
-      border-right:
-        1px solid var(--line);
+        27px 28px 20px 0;
 
       margin-right: 25px;
+
+      border-right:
+        1px solid var(--border);
+
     }
 
 
     .process-item:last-child {
+
       border-right: 0;
+
     }
 
 
-    .process-num {
+    .process-number {
+
       color: var(--purple);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 38px;
+      font-size: 37px;
 
-      font-weight: 400;
+      margin-bottom: 28px;
 
-      margin-bottom: 30px;
     }
 
 
     .process-item h3 {
+
       color: var(--blue);
 
       font-family:
@@ -1258,33 +1579,86 @@
       font-weight: 400;
 
       margin-bottom: 10px;
+
     }
 
 
     .process-item p {
-      color: var(--gray);
+
+      color: var(--muted);
 
       font-size: 12px;
 
       line-height: 1.8;
+
     }
 
 
     /* =========================================================
-       FRASE GRANDE
-       ========================================================= */
+       TEXTO FANTASMA FINAL
+    ========================================================= */
 
-    .big-type {
-      padding:
-        110px 0;
+    .final-type {
 
-      background: var(--cream);
+      position: relative;
 
       overflow: hidden;
+
+      padding:
+        100px 0;
+
+      background: white;
+
+      text-align: center;
+
     }
 
 
-    .big-type-text {
+    .final-type-bg {
+
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%,-50%);
+
+      color: var(--blue);
+
+      opacity: .035;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          110px,
+          18vw,
+          250px
+        );
+
+      letter-spacing: -12px;
+
+      white-space: nowrap;
+
+      pointer-events: none;
+
+    }
+
+
+    .final-type-content {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .final-type p {
+
       color: var(--blue);
 
       font-family:
@@ -1293,56 +1667,56 @@
 
       font-size:
         clamp(
-          65px,
-          11vw,
-          160px
+          30px,
+          4vw,
+          51px
         );
 
-      line-height: .82;
+      line-height: 1.15;
 
-      letter-spacing:
-        -7px;
-
-      white-space: nowrap;
-
-      transform:
-        translateX(-5%);
     }
 
 
-    .big-type-text span {
+    .final-type em {
+
       color: var(--purple);
 
       font-style: italic;
+
     }
 
 
     /* =========================================================
        CONTATO
-       ========================================================= */
+    ========================================================= */
 
     .contact {
-      background: white;
+
+      background: var(--cream);
 
       padding:
-        150px 0;
+        135px 0;
+
     }
 
 
     .contact-grid {
+
       display: grid;
 
       grid-template-columns:
-        1.3fr
-        .7fr;
+        1.1fr
+        .9fr;
 
       gap: 100px;
 
       align-items: end;
+
     }
 
 
     .contact-title {
+
       color: var(--blue);
 
       font-family:
@@ -1351,78 +1725,86 @@
 
       font-size:
         clamp(
-          55px,
-          7vw,
-          100px
+          48px,
+          6vw,
+          80px
         );
 
-      line-height: .95;
-
-      letter-spacing: -4px;
-
       font-weight: 400;
+
+      line-height: .98;
+
+      letter-spacing: -3px;
+
     }
 
 
     .contact-title em {
+
       color: var(--purple);
 
       font-style: italic;
+
     }
 
 
     .contact-description {
+
       max-width: 520px;
 
-      margin-top: 30px;
+      margin-top: 27px;
 
-      color: var(--gray);
-
-      font-size: 14px;
-
-      font-weight: 300;
-
-      line-height: 1.8;
     }
 
 
     .contact-box {
+
       border-top:
         1px solid var(--blue);
 
-      padding-top: 22px;
+      padding-top: 21px;
+
     }
 
 
     .contact-label {
+
       color: var(--purple);
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
 
       font-size: 9px;
 
-      margin-bottom: 15px;
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+
     }
 
 
     .contact-box h3 {
+
       color: var(--blue);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 26px;
+      font-size: 27px;
 
       font-weight: 400;
 
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+
     }
 
 
-    .whatsapp {
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp-link {
+
       display: inline-flex;
 
       align-items: center;
@@ -1431,63 +1813,75 @@
 
       color: var(--blue);
 
-      font-size: 12px;
+      font-size: 11px;
 
       font-weight: 600;
 
       border-bottom:
         1px solid var(--blue);
 
-      padding-bottom: 5px;
+      padding-bottom: 6px;
 
       transition:
-        color .3s ease,
-        border .3s ease;
+        color .25s ease,
+        border-color .25s ease;
+
     }
 
 
-    .whatsapp:hover {
+    .whatsapp-link:hover {
+
       color: var(--purple);
 
       border-color: var(--purple);
+
     }
 
 
-    .whatsapp svg {
-      width: 20px;
-      height: 20px;
+    .whatsapp-icon {
+
+      width: 19px;
+      height: 19px;
 
       fill: currentColor;
+
+      flex-shrink: 0;
+
     }
 
 
     /* =========================================================
        FOOTER
-       ========================================================= */
+    ========================================================= */
 
     footer {
-      background: var(--cream);
+
+      background: white;
 
       padding:
-        40px 0 30px;
+        35px 0;
+
     }
 
 
-    .footer-line {
-      display: flex;
+    .footer {
 
-      justify-content: space-between;
+      display: flex;
 
       align-items: center;
 
-      border-top:
-        1px solid var(--line);
+      justify-content: space-between;
 
-      padding-top: 25px;
+      padding-top: 24px;
+
+      border-top:
+        1px solid var(--border);
+
     }
 
 
-    .footer-logo {
+    .footer-brand {
+
       display: flex;
 
       align-items: center;
@@ -1500,41 +1894,46 @@
         "Playfair Display",
         serif;
 
-      font-size: 16px;
+      font-size: 15px;
+
     }
 
 
-    .footer-logo img {
-      width: 45px;
-      height: 45px;
+    .footer-brand img {
+
+      width: 40px;
+      height: 40px;
 
       object-fit: contain;
+
     }
 
 
     .footer-copy {
-      color: var(--gray);
+
+      color: var(--muted);
 
       font-size: 9px;
 
-      letter-spacing: .5px;
     }
 
 
     /* =========================================================
        WHATSAPP FLUTUANTE
-       ========================================================= */
+    ========================================================= */
 
     .floating-whatsapp {
+
       position: fixed;
 
-      right: 25px;
-      bottom: 25px;
+      right: 24px;
+      bottom: 24px;
 
-      width: 56px;
-      height: 56px;
+      width: 53px;
+      height: 53px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -1547,111 +1946,155 @@
       z-index: 999;
 
       box-shadow:
-        0 10px 30px
-        rgba(37,211,102,.25);
+        0 8px 28px
+        rgba(37,211,102,.22);
 
       transition:
-        transform .3s ease;
+        transform .25s ease;
+
     }
 
 
     .floating-whatsapp:hover {
-      transform: scale(1.08);
+
+      transform:
+        translateY(-3px)
+        scale(1.04);
+
     }
 
 
     .floating-whatsapp svg {
+
       width: 25px;
       height: 25px;
 
       fill: currentColor;
+
     }
 
 
     /* =========================================================
-       REVEAL AO ROLAR
-       ========================================================= */
+       REVEAL
+    ========================================================= */
 
     .reveal {
+
       opacity: 0;
 
       transform:
-        translateY(35px);
+        translateY(25px);
 
       transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
+        opacity .8s ease,
+        transform .8s
+        cubic-bezier(.2,.7,.2,1);
+
     }
 
 
-    .reveal.active {
+    .reveal.visible {
+
       opacity: 1;
 
       transform:
         translateY(0);
+
     }
 
 
-    .reveal-delay-1 {
+    .delay-1 {
       transition-delay: .1s;
     }
 
 
-    .reveal-delay-2 {
+    .delay-2 {
       transition-delay: .2s;
     }
 
 
-    .reveal-delay-3 {
+    .delay-3 {
       transition-delay: .3s;
     }
 
 
     /* =========================================================
        MOBILE
-       ========================================================= */
+    ========================================================= */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 950px) {
 
-      .hero-grid {
+      .hero-content {
+
         grid-template-columns: 1fr;
+
         gap: 50px;
+
       }
 
-      .hero-right {
-        min-height: 600px;
+
+      .hero-image-area {
+
+        min-height: 560px;
+
       }
 
-      .hero-photo {
-        width: 390px;
-      }
 
       .about-grid,
-      .difference-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .difference-statement {
-        position: static;
-      }
-
-      .areas-header {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
+      .approach-grid,
       .contact-grid {
+
         grid-template-columns: 1fr;
-        gap: 70px;
+
+        gap: 60px;
+
       }
 
-      .process-list {
-        grid-template-columns: repeat(2,1fr);
+
+      .approach-title {
+
+        position: static;
+
       }
+
+
+      .services-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+      }
+
+
+      .services-description {
+
+        padding-top: 0;
+
+      }
+
+
+      .process-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
 
       .process-item:nth-child(2) {
+
         border-right: 0;
+
+      }
+
+
+      .photo-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
       }
 
     }
@@ -1660,267 +2103,391 @@
     @media (max-width: 700px) {
 
       .container {
+
         width:
           calc(100% - 36px);
+
       }
 
 
       .nav {
-        height: 82px;
+
+        height: 78px;
+
       }
 
 
-      .logo-text {
+      .brand-name {
+
         display: none;
+
       }
 
 
-      .nav-links {
+      .nav-menu {
+
         display: none;
 
         position: absolute;
 
-        top: 75px;
+        top: 70px;
+
         left: 18px;
         right: 18px;
 
         background: white;
 
-        padding: 25px;
+        padding: 24px;
 
         flex-direction: column;
 
         align-items: stretch;
 
-        gap: 22px;
-
-        border-radius: 16px;
+        gap: 20px;
 
         box-shadow:
-          0 20px 50px
+          0 18px 50px
           rgba(0,0,0,.08);
+
       }
 
 
-      .nav-links.active {
+      .nav-menu.active {
+
         display: flex;
+
       }
 
 
-      .nav-contact {
+      .nav-button {
+
         text-align: center;
+
       }
 
 
-      .menu-button {
-        display: flex;
+      .mobile-menu {
 
-        align-items: center;
-        justify-content: center;
+        display: block;
 
-        font-size: 20px;
       }
 
 
       .hero {
-        padding-top: 120px;
+
+        padding:
+          110px 0
+          55px;
+
+      }
+
+
+      .hero-watermark {
+
+        top: 37%;
+
+        left: -15px;
+
+        font-size: 105px;
+
+        letter-spacing: -7px;
+
       }
 
 
       .hero-title {
+
         font-size:
           clamp(
-            56px,
-            17vw,
-            90px
+            53px,
+            16vw,
+            75px
           );
 
-        letter-spacing:
-          -4px;
+        letter-spacing: -3px;
+
       }
 
 
-      .hero-subtitle {
-        font-size: 14px;
+      .hero-description {
+
+        font-size: 13px;
+
       }
 
 
-      .hero-buttons {
-        align-items: flex-start;
+      .hero-actions {
+
         flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 17px;
+
+      }
+
+
+      .hero-image-area {
+
+        min-height: 480px;
+
+      }
+
+
+      .hero-image {
+
+        width: 78%;
+
+        height: 460px;
+
+      }
+
+
+      .image-caption {
+
+        right: -19px;
+
+      }
+
+
+      .image-line {
+
+        right: 5px;
+
+        bottom: 38px;
+
+      }
+
+
+      .intro-line-inner {
+
+        font-size: 14px;
+
         gap: 18px;
-      }
 
-
-      .hero-right {
-        min-height: 500px;
-      }
-
-
-      .hero-photo {
-        width: 80%;
-        height: 500px;
-      }
-
-
-      .vertical-text {
-        right: -8px;
       }
 
 
       .section {
+
         padding:
-          100px 0;
+          95px 0;
+
       }
 
 
-      .section-heading {
+      .section-title {
+
         font-size:
           clamp(
-            43px,
+            42px,
             13vw,
-            65px
+            62px
           );
+
       }
 
 
-      .about-photo-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .about-grid {
+
+        gap: 45px;
+
       }
 
 
-      .about-photo {
-        height: 500px;
+      .about-intro p {
+
+        max-width: 310px;
+
+      }
+
+
+      .second-photo {
+
+        height: 470px;
 
         border-radius:
-          4px 4px 60px 4px;
+          4px
+          4px
+          65px
+          4px;
+
       }
 
 
-      .about-photo-caption p {
-        font-size: 23px;
+      .statement {
+
+        min-height: 480px;
+
       }
 
 
-      .manifesto {
-        padding:
-          100px 0;
+      .statement-watermark {
+
+        font-size: 120px;
+
+        letter-spacing: -9px;
+
       }
 
 
-      .manifesto-title {
+      .statement h2 {
+
         font-size:
           clamp(
-            39px,
-            11vw,
-            60px
+            37px,
+            10vw,
+            55px
           );
+
       }
 
 
-      .area {
+      .service {
+
         grid-template-columns:
-          45px
+          40px
           1fr
           20px;
 
-        gap: 10px;
+        gap: 5px;
+
       }
 
 
-      .area-name {
-        font-size: 22px;
+      .service-name {
+
+        font-size: 21px;
+
       }
 
 
-      .process-list {
+      .approach-grid {
+
+        gap: 55px;
+
+      }
+
+
+      .process-grid {
+
         grid-template-columns: 1fr;
+
       }
 
 
       .process-item {
+
         border-right: 0;
 
         border-bottom:
-          1px solid var(--line);
+          1px solid var(--border);
 
         margin-right: 0;
+
+        padding-right: 0;
+
       }
 
 
       .process-item:last-child {
+
         border-bottom: 0;
+
       }
 
 
-      .big-type {
+      .final-type {
+
         padding:
           80px 0;
+
       }
 
 
-      .big-type-text {
-        font-size:
-          75px;
+      .final-type-bg {
 
-        letter-spacing:
-          -5px;
+        font-size: 100px;
+
+      }
+
+
+      .contact {
+
+        padding:
+          100px 0;
+
+      }
+
+
+      .contact-grid {
+
+        gap: 60px;
+
       }
 
 
       .contact-title {
+
         font-size:
           clamp(
-            55px,
-            15vw,
-            85px
+            48px,
+            14vw,
+            70px
           );
+
       }
 
 
-      .footer-line {
+      .footer {
+
         align-items: flex-start;
 
         flex-direction: column;
 
-        gap: 20px;
+        gap: 18px;
+
       }
 
 
       .floating-whatsapp {
-        right: 18px;
-        bottom: 18px;
 
-        width: 54px;
-        height: 54px;
+        right: 17px;
+
+        bottom: 17px;
+
+        width: 51px;
+        height: 51px;
+
       }
 
     }
 
 
-    @media (max-width: 420px) {
+    /* =========================================================
+       REDUÇÃO DE MOVIMENTO
+    ========================================================= */
 
-      .hero-photo {
-        width: 86%;
-        height: 450px;
-      }
+    @media (prefers-reduced-motion: reduce) {
 
-      .hero-right {
-        min-height: 470px;
-      }
+      *,
+      *::before,
+      *::after {
 
-      .about-photo {
-        height: 440px;
-      }
+        animation-duration: .01ms !important;
 
-      .area-name {
-        font-size: 20px;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+        scroll-behavior: auto !important;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -1929,26 +2496,22 @@
 
   <!-- =======================================================
        HEADER
-       ======================================================= -->
+  ======================================================= -->
 
-  <header id="header">
+  <header class="header" id="header">
 
     <div class="container">
 
       <nav class="nav">
 
-
-        <a
-          href="#inicio"
-          class="logo"
-        >
+        <a href="#inicio" class="brand">
 
           <img
             src="https://i.imgur.com/J1b0lX4.png"
             alt="Jaqueline Caldi"
           >
 
-          <span class="logo-text">
+          <span class="brand-name">
             Jaqueline Caldi
           </span>
 
@@ -1956,18 +2519,16 @@
 
 
         <button
-          class="menu-button"
-          id="menuButton"
+          class="mobile-menu"
+          id="mobileMenu"
           aria-label="Abrir menu"
+          aria-expanded="false"
         >
           ☰
         </button>
 
 
-        <ul
-          class="nav-links"
-          id="navLinks"
-        >
+        <ul class="nav-menu" id="navMenu">
 
           <li>
             <a href="#inicio">
@@ -1996,7 +2557,7 @@
           <li>
             <a
               href="#contato"
-              class="nav-contact"
+              class="nav-button"
             >
               Contato
             </a>
@@ -2016,93 +2577,103 @@
 
     <!-- =====================================================
          HERO
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       class="hero"
       id="inicio"
     >
 
-      <div class="container hero-grid">
+      <div
+        class="hero-watermark"
+        aria-hidden="true"
+      >
+        Jaqueline
+      </div>
 
 
-        <div class="hero-left">
+      <div class="container">
 
-          <div class="mini-label">
-            Psicopedagogia Clínica
-          </div>
+        <div class="hero-content">
 
 
-          <h1 class="hero-title">
+          <div>
 
-            <span class="hero-title-line">
-              <span>
-                Jaqueline
+            <div class="hero-label">
+              Psicopedagogia Clínica
+            </div>
+
+
+            <h1 class="hero-title">
+
+              <span class="line">
+                <span class="word">
+                  Jaqueline
+                </span>
               </span>
-            </span>
 
-            <span class="hero-title-line">
-              <span>
-                Caldi.
+              <span class="line">
+                <span class="word">
+                  <em>Caldi.</em>
+                </span>
               </span>
-            </span>
 
-          </h1>
-
-
-          <p class="hero-subtitle">
-
-            Um olhar individualizado para compreender
-            os desafios da aprendizagem, valorizar
-            potencialidades e acompanhar cada criança
-            em seu próprio processo de desenvolvimento.
-
-          </p>
+            </h1>
 
 
-          <div class="hero-buttons">
+            <p class="hero-description">
 
-            <a
-              href="#contato"
-              class="primary-button"
+              Um olhar individualizado para compreender
+              os desafios da aprendizagem, reconhecer
+              potencialidades e acompanhar cada criança
+              em seu próprio processo de desenvolvimento.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+              <a
+                href="#contato"
+                class="button-primary"
+              >
+                Agendar uma conversa
+
+                <span>→</span>
+
+              </a>
+
+
+              <a
+                href="#sobre"
+                class="button-link"
+              >
+                Conheça meu trabalho
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-image-area">
+
+            <img
+              class="hero-image"
+              src="https://i.imgur.com/Nxb6CG6.png"
+              alt="Jaqueline Caldi — Psicopedagoga Clínica"
             >
-              Agendar uma conversa
-              <span>→</span>
-            </a>
 
 
-            <a
-              href="#sobre"
-              class="text-button"
-            >
-              Conheça meu trabalho
-            </a>
+            <div class="image-caption">
+              acolher · compreender · desenvolver
+            </div>
+
+
+            <div class="image-line"></div>
 
           </div>
 
-        </div>
-
-
-        <div class="hero-right">
-
-          <img
-            class="hero-photo"
-            src="https://i.imgur.com/Nxb6CG6.png"
-            alt="Jaqueline Caldi — Psicopedagoga Clínica"
-          >
-
-
-          <div class="vertical-text">
-            aprender · acolher · desenvolver
-          </div>
-
-
-          <div class="hero-number">
-            01 / 04
-          </div>
-
-
-          <div class="hero-line"></div>
 
         </div>
 
@@ -2112,51 +2683,31 @@
 
 
     <!-- =====================================================
-         MARQUEE
-         ===================================================== -->
+         LINHA
+    ====================================================== -->
 
-    <div class="marquee">
+    <div class="intro-line">
 
-      <div class="marquee-track">
+      <div class="intro-line-inner">
 
-        <span class="marquee-item">
-          Psicopedagogia Clínica
+        <span>
+          aprendizagem
         </span>
 
-        <span class="marquee-item">
-          Desenvolvimento
+        <span class="intro-dot">
+          ✦
         </span>
 
-        <span class="marquee-item">
-          Aprendizagem
+        <span>
+          desenvolvimento
         </span>
 
-        <span class="marquee-item">
-          Neurodivergências
+        <span class="intro-dot">
+          ✦
         </span>
 
-        <span class="marquee-item">
-          Acolhimento
-        </span>
-
-        <span class="marquee-item">
-          Psicopedagogia Clínica
-        </span>
-
-        <span class="marquee-item">
-          Desenvolvimento
-        </span>
-
-        <span class="marquee-item">
-          Aprendizagem
-        </span>
-
-        <span class="marquee-item">
-          Neurodivergências
-        </span>
-
-        <span class="marquee-item">
-          Acolhimento
+        <span>
+          acolhimento
         </span>
 
       </div>
@@ -2166,7 +2717,7 @@
 
     <!-- =====================================================
          SOBRE
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       class="section about"
@@ -2176,10 +2727,10 @@
       <div class="container about-grid">
 
 
-        <div class="about-left reveal">
+        <div class="about-intro reveal">
 
           <div class="section-number">
-            02 — SOBRE
+            01 — SOBRE
           </div>
 
 
@@ -2194,9 +2745,9 @@
         </div>
 
 
-        <div class="about-right reveal reveal-delay-1">
+        <div class="about-content reveal delay-1">
 
-          <h2 class="section-heading">
+          <h2 class="section-title">
 
             Olá, eu sou
             <em>Jaqueline.</em>
@@ -2204,7 +2755,7 @@
           </h2>
 
 
-          <p class="about-text">
+          <p class="body-text">
 
             Sou casada, mãe atípica e profissional da
             educação há mais de 6 anos. Minha trajetória
@@ -2217,7 +2768,7 @@
           </p>
 
 
-          <p class="about-text">
+          <p class="body-text">
 
             Sou Psicopedagoga Clínica e acadêmica de
             Psicologia, dedicada a auxiliar crianças e
@@ -2228,14 +2779,15 @@
           </p>
 
 
-          <div class="about-highlight">
+          <div class="about-stat">
 
             <strong>
               +6
             </strong>
 
             <span>
-              anos na área da educação
+              anos de experiência
+              na área da educação
             </span>
 
           </div>
@@ -2248,40 +2800,37 @@
 
 
     <!-- =====================================================
-         SEGUNDA FOTO
-         ===================================================== -->
+         SEGUNDA E ÚLTIMA FOTO
+    ====================================================== -->
 
-    <section class="about-photo-section">
+    <section class="photo-section">
 
-      <div class="container">
-
-        <div class="about-photo-wrapper">
+      <div class="container photo-layout">
 
 
-          <div class="about-photo-caption reveal">
+        <div class="photo-copy reveal">
 
-            <span>
-              Um olhar individualizado
-            </span>
-
-            <p>
-
-              Acolher antes de
-              intervir.
-
-            </p>
-
-          </div>
+          <small>
+            Um olhar individualizado
+          </small>
 
 
-          <img
-            class="about-photo reveal reveal-delay-1"
-            src="https://i.imgur.com/fqEDfKr.png"
-            alt="Jaqueline Caldi"
-            loading="lazy"
-          >
+          <h3>
+
+            Acolher antes
+            de <em>intervir.</em>
+
+          </h3>
 
         </div>
+
+
+        <img
+          class="second-photo reveal delay-1"
+          src="https://i.imgur.com/fqEDfKr.png"
+          alt="Jaqueline Caldi em atendimento"
+          loading="lazy"
+        >
 
       </div>
 
@@ -2290,22 +2839,30 @@
 
     <!-- =====================================================
          MANIFESTO
-         ===================================================== -->
+    ====================================================== -->
 
-    <section class="manifesto">
+    <section class="statement">
 
-      <div class="container manifesto-inner reveal">
+      <div
+        class="statement-watermark"
+        aria-hidden="true"
+      >
+        aprender
+      </div>
 
-        <div class="manifesto-small">
+
+      <div class="statement-content reveal">
+
+        <div class="statement-label">
           Meu propósito
         </div>
 
 
-        <h2 class="manifesto-title">
+        <h2>
 
           Mais do que olhar para
           a dificuldade, é preciso
-          <span>compreender</span>
+          <em>compreender</em>
           quem está aprendendo.
 
         </h2>
@@ -2317,25 +2874,26 @@
 
     <!-- =====================================================
          ATUAÇÃO
-         ===================================================== -->
+    ====================================================== -->
 
     <section
-      class="section areas"
+      class="section services"
       id="atuacao"
     >
 
       <div class="container">
 
 
-        <div class="areas-header">
+        <div class="services-top">
 
           <div class="reveal">
 
             <div class="section-number">
-              03 — ATUAÇÃO
+              02 — ATUAÇÃO
             </div>
 
-            <h2 class="section-heading">
+
+            <h2 class="section-title">
 
               Onde posso
               <em>auxiliar.</em>
@@ -2345,9 +2903,9 @@
           </div>
 
 
-          <div class="reveal reveal-delay-1">
+          <div class="services-description reveal delay-1">
 
-            <p class="section-intro">
+            <p class="body-text">
 
               O acompanhamento psicopedagógico busca
               compreender as necessidades de cada pessoa
@@ -2361,107 +2919,107 @@
         </div>
 
 
-        <div class="areas-list">
+        <div class="services-list">
 
 
-          <div class="area reveal">
+          <div class="service reveal">
 
-            <div class="area-number">
+            <span class="service-number">
               01
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Aprendizagem
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="area reveal reveal-delay-1">
+          <div class="service reveal delay-1">
 
-            <div class="area-number">
+            <span class="service-number">
               02
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Atenção e concentração
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="area reveal reveal-delay-1">
+          <div class="service reveal delay-1">
 
-            <div class="area-number">
+            <span class="service-number">
               03
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Leitura e escrita
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="area reveal reveal-delay-2">
+          <div class="service reveal delay-2">
 
-            <div class="area-number">
+            <span class="service-number">
               04
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Raciocínio lógico
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="area reveal reveal-delay-2">
+          <div class="service reveal delay-2">
 
-            <div class="area-number">
+            <span class="service-number">
               05
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Funções executivas
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="area reveal reveal-delay-3">
+          <div class="service reveal delay-3">
 
-            <div class="area-number">
+            <span class="service-number">
               06
-            </div>
+            </span>
 
-            <div class="area-name">
+            <span class="service-name">
               Neurodivergências
-            </div>
+            </span>
 
-            <div class="area-arrow">
+            <span class="service-arrow">
               →
-            </div>
+            </span>
 
           </div>
 
@@ -2474,18 +3032,18 @@
 
 
     <!-- =====================================================
-         DIFERENCIAL
-         ===================================================== -->
+         ABORDAGEM
+    ====================================================== -->
 
-    <section class="section difference">
+    <section class="section approach">
 
-      <div class="container difference-grid">
+      <div class="container approach-grid">
 
 
-        <div class="difference-statement reveal">
+        <div class="approach-title reveal">
 
           <div class="section-number">
-            04 — ABORDAGEM
+            03 — ABORDAGEM
           </div>
 
 
@@ -2500,23 +3058,25 @@
         </div>
 
 
-        <div class="difference-items">
+        <div class="approach-items">
 
 
-          <div class="difference-item reveal">
+          <div class="approach-item reveal">
 
-            <span>
-              Escuta
-            </span>
+            <small>
+              01 · Escuta
+            </small>
+
 
             <h3>
               Antes de qualquer estratégia.
             </h3>
 
+
             <p>
 
-              Conhecer a história, as necessidades e
-              o contexto é essencial para compreender
+              Conhecer a história, as necessidades
+              e o contexto é essencial para compreender
               como construir um acompanhamento
               significativo.
 
@@ -2525,15 +3085,17 @@
           </div>
 
 
-          <div class="difference-item reveal reveal-delay-1">
+          <div class="approach-item reveal delay-1">
 
-            <span>
-              Individualidade
-            </span>
+            <small>
+              02 · Individualidade
+            </small>
+
 
             <h3>
               Cada pessoa aprende de um jeito.
             </h3>
+
 
             <p>
 
@@ -2546,20 +3108,22 @@
           </div>
 
 
-          <div class="difference-item reveal reveal-delay-2">
+          <div class="approach-item reveal delay-2">
 
-            <span>
-              Acolhimento
-            </span>
+            <small>
+              03 · Acolhimento
+            </small>
+
 
             <h3>
               Desenvolvimento também é vínculo.
             </h3>
 
+
             <p>
 
-              Um ambiente seguro favorece a confiança,
-              a autonomia e a construção de novas
+              Um ambiente seguro favorece confiança,
+              autonomia e construção de novas
               possibilidades.
 
             </p>
@@ -2567,21 +3131,23 @@
           </div>
 
 
-          <div class="difference-item reveal reveal-delay-3">
+          <div class="approach-item reveal delay-3">
 
-            <span>
-              Família
-            </span>
+            <small>
+              04 · Família
+            </small>
+
 
             <h3>
               Caminhar junto faz diferença.
             </h3>
 
+
             <p>
 
               A família também faz parte do processo,
-              sendo acolhida e orientada ao longo do
-              acompanhamento.
+              sendo acolhida e orientada ao longo
+              do acompanhamento.
 
             </p>
 
@@ -2597,7 +3163,7 @@
 
     <!-- =====================================================
          PROCESSO
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       class="section process"
@@ -2610,11 +3176,11 @@
         <div class="process-header reveal">
 
           <div class="section-number">
-            05 — PROCESSO
+            04 — PROCESSO
           </div>
 
 
-          <h2 class="section-heading">
+          <h2 class="section-title">
 
             Um processo
             construído com
@@ -2623,7 +3189,10 @@
           </h2>
 
 
-          <p class="section-intro">
+          <p
+            class="body-text"
+            style="margin-top:28px; max-width:560px;"
+          >
 
             Cada etapa é pensada para compreender,
             acompanhar e favorecer o desenvolvimento
@@ -2634,12 +3203,12 @@
         </div>
 
 
-        <div class="process-list">
+        <div class="process-grid">
 
 
           <div class="process-item reveal">
 
-            <div class="process-num">
+            <div class="process-number">
               01
             </div>
 
@@ -2649,18 +3218,18 @@
 
             <p>
 
-              Um primeiro momento para conhecer a demanda
-              e compreender as principais questões trazidas
-              pela família.
+              Um primeiro momento para conhecer a
+              demanda e compreender as principais
+              questões trazidas pela família.
 
             </p>
 
           </div>
 
 
-          <div class="process-item reveal reveal-delay-1">
+          <div class="process-item reveal delay-1">
 
-            <div class="process-num">
+            <div class="process-number">
               02
             </div>
 
@@ -2678,9 +3247,9 @@
           </div>
 
 
-          <div class="process-item reveal reveal-delay-2">
+          <div class="process-item reveal delay-2">
 
-            <div class="process-num">
+            <div class="process-number">
               03
             </div>
 
@@ -2698,9 +3267,9 @@
           </div>
 
 
-          <div class="process-item reveal reveal-delay-3">
+          <div class="process-item reveal delay-3">
 
-            <div class="process-num">
+            <div class="process-number">
               04
             </div>
 
@@ -2726,20 +3295,27 @@
 
 
     <!-- =====================================================
-         TIPOGRAFIA
-         ===================================================== -->
+         TEXTO FINAL COM EFEITO FANTASMA
+    ====================================================== -->
 
-    <section class="big-type">
+    <section class="final-type">
 
-      <div class="big-type-text">
+      <div
+        class="final-type-bg"
+        aria-hidden="true"
+      >
+        acolher
+      </div>
 
-        aprender
 
-        <span>
-          também
-        </span>
+      <div class="final-type-content reveal">
 
-        é descobrir.
+        <p>
+
+          Aprender também é
+          <em>descobrir.</em>
+
+        </p>
 
       </div>
 
@@ -2748,7 +3324,7 @@
 
     <!-- =====================================================
          CONTATO
-         ===================================================== -->
+    ====================================================== -->
 
     <section
       class="contact"
@@ -2761,7 +3337,7 @@
         <div class="reveal">
 
           <div class="section-number">
-            06 — CONTATO
+            05 — CONTATO
           </div>
 
 
@@ -2773,7 +3349,7 @@
           </h2>
 
 
-          <p class="contact-description">
+          <p class="body-text contact-description">
 
             Se você percebe desafios relacionados à
             aprendizagem, atenção, leitura, escrita
@@ -2785,7 +3361,7 @@
         </div>
 
 
-        <div class="contact-box reveal reveal-delay-1">
+        <div class="contact-box reveal delay-1">
 
           <div class="contact-label">
             Primeiro passo
@@ -2798,61 +3374,31 @@
 
 
           <!--
-            ALTERE O NÚMERO:
-            5543999999999
+            ===================================================
+            TROQUE O NÚMERO ABAIXO PELO WHATSAPP REAL.
+            Exemplo:
+            5543998765432
+            ===================================================
           -->
 
           <a
+            class="whatsapp-link"
             href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
-            class="whatsapp"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
 
+            <!-- ÍCONE WHATSAPP -->
             <svg
+              class="whatsapp-icon"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
 
-              <path
-                d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
-                C5.48 0 .14 5.34.14 11.9
-                c0 2.1.55 4.15 1.6 5.96L.04 24
-                l6.3-1.65a11.9 11.9 0 0 0
-                5.7 1.45h.01
-                c6.56 0 11.9-5.34 11.9-11.9
-                0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
-                c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
-                -3.74.98 1-3.65-.23-.37
-                a9.9 9.9 0 0 1-1.52-5.25
-                c0-5.46 4.45-9.9 9.91-9.9
-                2.64 0 5.12 1.03 6.99 2.9
-                a9.84 9.84 0 0 1 2.91 7
-                c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
-                c-.3-.15-1.77-.87-2.05-.97
-                -.28-.1-.48-.15-.68.15
-                -.2.3-.77.97-.94 1.17
-                -.17.2-.35.22-.65.07
-                -.3-.15-1.25-.46-2.38-1.47
-                -.88-.78-1.47-1.74-1.64-2.04
-                -.17-.3-.02-.46.13-.61
-                .13-.13.3-.35.45-.52
-                .15-.17.2-.3.3-.5
-                .1-.2.05-.37-.02-.52
-                -.07-.15-.68-1.63-.93-2.23
-                -.24-.58-.49-.5-.68-.51
-                h-.58c-.2 0-.52.07-.79.37
-                -.27.3-1.04 1.02-1.04 2.49
-                0 1.47 1.07 2.89 1.22 3.09
-                .15.2 2.1 3.21 5.08 4.5
-                .71.31 1.27.5 1.7.64
-                .72.23 1.37.2 1.89.12
-                .58-.09 1.77-.72 2.02-1.42
-                .25-.7.25-1.3.17-1.42
-                -.07-.12-.27-.2-.57-.35Z"
-              />
+              <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.15 1.6 5.96L.04 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8c-1.78 0-3.53-.48-5.05-1.4l-.36-.21-3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.84 9.84 0 0 1 2.91 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
 
             </svg>
+
 
             Conversar pelo WhatsApp
 
@@ -2864,29 +3410,28 @@
 
     </section>
 
-
   </main>
 
 
   <!-- =======================================================
        FOOTER
-       ======================================================= -->
+  ====================================================== -->
 
   <footer>
 
     <div class="container">
 
-      <div class="footer-line">
+      <div class="footer">
 
 
         <a
           href="#inicio"
-          class="footer-logo"
+          class="footer-brand"
         >
 
           <img
             src="https://i.imgur.com/J1b0lX4.png"
-            alt="Jaqueline Caldi"
+            alt=""
           >
 
           <span>
@@ -2913,14 +3458,14 @@
 
   <!-- =======================================================
        WHATSAPP FLUTUANTE
-       ======================================================= -->
+  ====================================================== -->
 
   <a
+    class="floating-whatsapp"
     href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
     target="_blank"
-    rel="noopener"
-    class="floating-whatsapp"
-    aria-label="Falar pelo WhatsApp"
+    rel="noopener noreferrer"
+    aria-label="Falar com Jaqueline pelo WhatsApp"
   >
 
     <svg
@@ -2928,162 +3473,110 @@
       aria-hidden="true"
     >
 
-      <path
-        d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
-        C5.48 0 .14 5.34.14 11.9
-        c0 2.1.55 4.15 1.6 5.96L.04 24
-        l6.3-1.65a11.9 11.9 0 0 0
-        5.7 1.45h.01
-        c6.56 0 11.9-5.34 11.9-11.9
-        0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
-        c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
-        -3.74.98 1-3.65-.23-.37
-        a9.9 9.9 0 0 1-1.52-5.25
-        c0-5.46 4.45-9.9 9.91-9.9
-        2.64 0 5.12 1.03 6.99 2.9
-        a9.84 9.84 0 0 1 2.91 7
-        c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
-        c-.3-.15-1.77-.87-2.05-.97
-        -.28-.1-.48-.15-.68.15
-        -.2.3-.77.97-.94 1.17
-        -.17.2-.35.22-.65.07
-        -.3-.15-1.25-.46-2.38-1.47
-        -.88-.78-1.47-1.74-1.64-2.04
-        -.17-.3-.02-.46.13-.61
-        .13-.13.3-.35.45-.52
-        .15-.17.2-.3.3-.5
-        .1-.2.05-.37-.02-.52
-        -.07-.15-.68-1.63-.93-2.23
-        -.24-.58-.49-.5-.68-.51
-        h-.58c-.2 0-.52.07-.79.37
-        -.27.3-1.04 1.02-1.04 2.49
-        0 1.47 1.07 2.89 1.22 3.09
-        .15.2 2.1 3.21 5.08 4.5
-        .71.31 1.27.5 1.7.64
-        .72.23 1.37.2 1.89.12
-        .58-.09 1.77-.72 2.02-1.42
-        .25-.7.25-1.3.17-1.42
-        -.07-.12-.27-.2-.57-.35Z"
-      />
+      <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.15 1.6 5.96L.04 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8c-1.78 0-3.53-.48-5.05-1.4l-.36-.21-3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.84 9.84 0 0 1 2.91 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
 
     </svg>
 
   </a>
 
 
-  <!-- =======================================================
-       JAVASCRIPT
-       ======================================================= -->
-
   <script>
 
-
     /* =======================================================
-       HEADER AO ROLAR
-       ======================================================= */
+       HEADER
+    ======================================================= */
 
     const header =
       document.getElementById("header");
 
 
-    window.addEventListener(
-      "scroll",
-      () => {
+    window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 30) {
+      if (window.scrollY > 25) {
 
-          header.classList.add("scrolled");
+        header.classList.add("scrolled");
 
-        } else {
+      } else {
 
-          header.classList.remove("scrolled");
-
-        }
+        header.classList.remove("scrolled");
 
       }
-    );
+
+    });
 
 
     /* =======================================================
        MENU MOBILE
-       ======================================================= */
+    ======================================================= */
 
-    const menuButton =
-      document.getElementById("menuButton");
+    const mobileMenu =
+      document.getElementById("mobileMenu");
 
-    const navLinks =
-      document.getElementById("navLinks");
+    const navMenu =
+      document.getElementById("navMenu");
 
 
-    menuButton.addEventListener(
-      "click",
-      () => {
+    mobileMenu.addEventListener("click", () => {
 
-        navLinks.classList.toggle("active");
+      const open =
+        navMenu.classList.toggle("active");
 
-        menuButton.textContent =
-          navLinks.classList.contains("active")
-            ? "×"
-            : "☰";
+      mobileMenu.textContent =
+        open ? "×" : "☰";
 
-      }
-    );
+      mobileMenu.setAttribute(
+        "aria-expanded",
+        open
+      );
+
+    });
 
 
     document
-      .querySelectorAll(".nav-links a")
-      .forEach(
-        link => {
+      .querySelectorAll(".nav-menu a")
+      .forEach(link => {
 
-          link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener("click", () => {
 
-              navLinks.classList.remove(
-                "active"
-              );
+          navMenu.classList.remove("active");
 
-              menuButton.textContent =
-                "☰";
+          mobileMenu.textContent = "☰";
 
-            }
+          mobileMenu.setAttribute(
+            "aria-expanded",
+            "false"
           );
 
-        }
-      );
+        });
+
+      });
 
 
     /* =======================================================
-       REVEAL ON SCROLL
-       ======================================================= */
+       REVEAL
+    ======================================================= */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
 
-    const revealObserver =
+    const observer =
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(
-            entry => {
+          entries.forEach(entry => {
 
-              if (
-                entry.isIntersecting
-              ) {
+            if (entry.isIntersecting) {
 
-                entry.target.classList.add(
-                  "active"
-                );
+              entry.target.classList.add("visible");
 
-                revealObserver.unobserve(
-                  entry.target
-                );
-
-              }
+              observer.unobserve(
+                entry.target
+              );
 
             }
-          );
+
+          });
 
         },
         {
@@ -3092,58 +3585,45 @@
       );
 
 
-    revealElements.forEach(
-      element => {
+    revealElements.forEach(element => {
 
-        revealObserver.observe(
-          element
-        );
+      observer.observe(element);
 
-      }
-    );
+    });
 
 
     /* =======================================================
        ANO
-       ======================================================= */
+    ======================================================= */
 
-    document.getElementById("year")
-      .textContent =
+    document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
     /* =======================================================
-       PARALLAX SUAVE NA FOTO PRINCIPAL
-       ======================================================= */
+       PARALLAX MUITO SUTIL
+    ======================================================= */
 
-    const heroPhoto =
-      document.querySelector(".hero-photo");
+    const heroImage =
+      document.querySelector(".hero-image");
 
 
-    window.addEventListener(
-      "scroll",
-      () => {
+    window.addEventListener("scroll", () => {
 
-        if (
-          window.innerWidth > 700
-        ) {
+      if (
+        window.innerWidth > 700 &&
+        window.scrollY < 700
+      ) {
 
-          const scroll =
-            window.scrollY;
-
-          if (scroll < 700) {
-
-            heroPhoto.style.transform =
-              `translateY(${scroll * 0.06}px)`;
-
-          }
-
-        }
+        heroImage.style.transform =
+          `translateY(${window.scrollY * .035}px)`;
 
       }
-    );
+
+    });
 
   </script>
+
 
 </body>
 </html>
