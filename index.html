@@ -50,25 +50,14 @@
     :root {
 
       --purple: #6048AC;
-
-      --purple-dark: #513A99;
-
-      --blue: #005387;
-
+      --blue: #345B70;
       --cream: #F7F3EE;
-
-      --cream-dark: #EFE9E1;
-
       --white: #FFFFFF;
-
-      --black: #17252C;
-
+      --black: #253239;
       --muted: #6F797D;
-
       --soft-purple: #E9E3F5;
-
-      --line: rgba(0,83,135,.13);
-
+      --soft-blue: #EDF3F5;
+      --line: rgba(52,91,112,.13);
       --max: 1240px;
 
     }
@@ -93,11 +82,8 @@
     body {
 
       background: var(--cream);
-
       color: var(--black);
-
       font-family: "Inter", sans-serif;
-
       overflow-x: hidden;
 
     }
@@ -122,14 +108,8 @@
 
     button,
     input,
-    textarea,
-    select {
+    textarea {
       font-family: inherit;
-    }
-
-
-    button {
-      cursor: pointer;
     }
 
 
@@ -158,17 +138,13 @@
     .loader {
 
       position: fixed;
-
       inset: 0;
-
       z-index: 9999;
 
       background: var(--cream);
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       transition:
@@ -181,7 +157,6 @@
     .loader.hide {
 
       opacity: 0;
-
       visibility: hidden;
 
     }
@@ -194,10 +169,7 @@
 
     .loader-logo {
 
-      width: 105px;
-
-      height: auto;
-
+      width: 90px;
       margin: 0 auto 22px;
 
     }
@@ -206,16 +178,12 @@
     .loader-line {
 
       width: 80px;
-
       height: 1px;
 
       background: var(--blue);
 
       position: relative;
-
       overflow: hidden;
-
-      margin: auto;
 
     }
 
@@ -225,7 +193,6 @@
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background: var(--purple);
@@ -259,8 +226,7 @@
       left: 0;
 
       width: 100%;
-
-      height: 94px;
+      height: 96px;
 
       z-index: 1000;
 
@@ -280,7 +246,7 @@
       height: 78px;
 
       background:
-        rgba(247,243,238,.95);
+        rgba(247,243,238,.96);
 
       color: var(--blue);
 
@@ -297,9 +263,7 @@
       height: 100%;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
     }
@@ -312,10 +276,11 @@
     .brand {
 
       display: flex;
-
       align-items: center;
-
       gap: 14px;
+
+      position: relative;
+      z-index: 2;
 
     }
 
@@ -323,7 +288,6 @@
     .brand img {
 
       width: 72px;
-
       height: 72px;
 
       object-fit: contain;
@@ -336,15 +300,14 @@
 
 
     /*
-      SOBRE O HERO:
-      transforma a logo original em branca.
+      SOBRE A PRIMEIRA FOTO:
+      logo branca.
 
-      QUANDO O HEADER RECEBE .scrolled:
-      o filtro é removido e a logo volta
-      para a cor original.
+      AO DESCER:
+      volta para a cor original.
     */
 
-    .header:not(.scrolled) .brand img {
+    .brand img.logo-white {
 
       filter:
         brightness(0)
@@ -353,22 +316,15 @@
     }
 
 
-    .header.scrolled .brand img {
-
-      filter: none;
-
-    }
-
-
     .brand-name {
 
-      font-size: 15px;
-
+      font-size: 16px;
       font-weight: 600;
 
       letter-spacing: -.3px;
 
-      transition: color .4s ease;
+      transition:
+        color .4s ease;
 
     }
 
@@ -380,9 +336,7 @@
     .menu {
 
       display: flex;
-
       align-items: center;
-
       gap: 34px;
 
       list-style: none;
@@ -395,11 +349,9 @@
       position: relative;
 
       font-size: 10px;
-
       font-weight: 500;
 
       letter-spacing: 1.5px;
-
       text-transform: uppercase;
 
       color: inherit;
@@ -417,7 +369,8 @@
 
     .menu-contact {
 
-      border: 1px solid currentColor;
+      border:
+        1px solid currentColor;
 
       padding:
         11px 20px;
@@ -454,7 +407,6 @@
       display: block;
 
       width: 20px;
-
       height: 1px;
 
       margin: 5px auto;
@@ -475,7 +427,6 @@
       position: relative;
 
       height: 100svh;
-
       min-height: 650px;
 
       overflow: hidden;
@@ -490,7 +441,6 @@
     .hero-image {
 
       position: absolute;
-
       inset: 0;
 
       width: 100%;
@@ -528,7 +478,6 @@
     .hero-overlay {
 
       position: absolute;
-
       inset: 0;
 
       background:
@@ -570,13 +519,11 @@
     .hero-content {
 
       position: relative;
-
       z-index: 2;
 
       height: 100%;
 
       display: flex;
-
       align-items: flex-end;
 
       padding-bottom: 105px;
@@ -585,16 +532,13 @@
 
 
     .hero-copy {
-
       max-width: 720px;
-
     }
 
 
     .eyebrow {
 
       display: flex;
-
       align-items: center;
 
       gap: 13px;
@@ -602,11 +546,9 @@
       margin-bottom: 22px;
 
       font-size: 9px;
-
       font-weight: 600;
 
       letter-spacing: 2.7px;
-
       text-transform: uppercase;
 
       opacity: 0;
@@ -654,7 +596,6 @@
     .hero-title-line {
 
       display: block;
-
       overflow: hidden;
 
     }
@@ -696,7 +637,6 @@
       max-width: 510px;
 
       font-size: 13px;
-
       line-height: 1.8;
 
       font-weight: 300;
@@ -714,7 +654,6 @@
     .hero-action {
 
       display: flex;
-
       align-items: center;
 
       gap: 14px;
@@ -722,11 +661,9 @@
       margin-top: 34px;
 
       font-size: 9px;
-
       font-weight: 600;
 
       letter-spacing: 2px;
-
       text-transform: uppercase;
 
       opacity: 0;
@@ -749,9 +686,7 @@
       border-radius: 50%;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       transition:
@@ -800,7 +735,6 @@
       z-index: 3;
 
       right: 42px;
-
       top: 50%;
 
       transform:
@@ -877,7 +811,7 @@
 
 
     /* =====================================================
-       GENERIC SECTION
+       GENERIC
        ===================================================== */
 
     .section {
@@ -926,9 +860,7 @@
 
 
     .section-title strong {
-
       font-weight: 500;
-
     }
 
 
@@ -981,9 +913,7 @@
 
 
     .about-intro {
-
       position: relative;
-
     }
 
 
@@ -994,7 +924,6 @@
       position: absolute;
 
       left: -30px;
-
       top: -55px;
 
       color:
@@ -1016,30 +945,24 @@
     .about-intro > * {
 
       position: relative;
-
       z-index: 1;
 
     }
 
 
     .about-text-wrap {
-
       max-width: 620px;
-
     }
 
 
     .about-text-wrap p + p {
-
       margin-top: 20px;
-
     }
 
 
     .about-signature {
 
       display: flex;
-
       align-items: center;
 
       gap: 18px;
@@ -1052,10 +975,10 @@
     .about-signature-line {
 
       width: 45px;
-
       height: 1px;
 
-      background: var(--purple);
+      background:
+        var(--purple);
 
     }
 
@@ -1074,7 +997,7 @@
 
 
     /* =====================================================
-       MINI STATS
+       STATS
        ===================================================== */
 
     .stats {
@@ -1104,16 +1027,12 @@
 
 
     .stat:not(:first-child) {
-
       padding-left: 25px;
-
     }
 
 
     .stat:last-child {
-
       border-right: 0;
-
     }
 
 
@@ -1202,9 +1121,7 @@
 
 
     .formation-item:hover {
-
       padding-left: 12px;
-
     }
 
 
@@ -1249,13 +1166,12 @@
 
     /* =====================================================
        PARA QUEM
-       SEM FUNDO AZUL
        ===================================================== */
 
     .audience {
 
       background:
-        var(--cream-dark);
+        #EEE8F5;
 
       color: var(--black);
 
@@ -1269,27 +1185,23 @@
       display: grid;
 
       grid-template-columns:
-        .85fr
-        1.15fr;
+        .75fr
+        1.25fr;
 
-      gap: 110px;
+      gap: 100px;
 
-      align-items: center;
+      align-items: start;
 
     }
 
 
     .audience .section-label {
-
       color: var(--purple);
-
     }
 
 
     .audience .section-title {
-
       color: var(--blue);
-
     }
 
 
@@ -1310,8 +1222,6 @@
 
       margin-top: 24px;
 
-      max-width: 470px;
-
     }
 
 
@@ -1323,30 +1233,39 @@
         repeat(2,1fr);
 
       border-top:
-        1px solid var(--line);
-
-      border-left:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
     }
 
 
     .audience-item {
 
-      min-height: 165px;
+      min-height: 150px;
 
       padding:
-        27px 25px;
+        27px 25px 25px 0;
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
       border-right:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
       transition:
         background .35s ease,
-        transform .35s ease;
+        padding .35s ease;
+
+    }
+
+
+    .audience-item:nth-child(even) {
+
+      padding-left: 25px;
+
+      border-right: 0;
 
     }
 
@@ -1356,8 +1275,7 @@
       background:
         rgba(255,255,255,.55);
 
-      transform:
-        translateY(-3px);
+      padding-top: 34px;
 
     }
 
@@ -1375,7 +1293,7 @@
 
     .audience-item h3 {
 
-      margin-top: 40px;
+      margin-top: 14px;
 
       color: var(--blue);
 
@@ -1389,12 +1307,12 @@
 
 
     /* =====================================================
-       COMO FUNCIONA
+       PROCESSO
        ===================================================== */
 
     .process {
 
-      background: white;
+      background: var(--cream);
 
     }
 
@@ -1417,9 +1335,7 @@
 
 
     .process-head p {
-
       max-width: 470px;
-
     }
 
 
@@ -1454,16 +1370,12 @@
 
 
     .step:not(:first-child) {
-
       padding-left: 25px;
-
     }
 
 
     .step:last-child {
-
       border-right: 0;
-
     }
 
 
@@ -1516,7 +1428,6 @@
       bottom: 0;
 
       width: 0;
-
       height: 3px;
 
       background: var(--purple);
@@ -1528,9 +1439,7 @@
 
 
     .step:hover::after {
-
       width: 100%;
-
     }
 
 
@@ -1540,7 +1449,7 @@
 
     .location {
 
-      background: var(--cream);
+      background: white;
 
     }
 
@@ -1553,7 +1462,7 @@
         1fr
         1fr;
 
-      gap: 100px;
+      gap: 90px;
 
       align-items: center;
 
@@ -1562,9 +1471,7 @@
 
     .location-info {
 
-      max-width: 560px;
-
-      order: 1;
+      max-width: 520px;
 
     }
 
@@ -1576,10 +1483,6 @@
       overflow: hidden;
 
       position: relative;
-
-      order: 2;
-
-      background: var(--cream-dark);
 
     }
 
@@ -1600,10 +1503,7 @@
 
 
     .location-photo:hover img {
-
-      transform:
-        scale(1.04);
-
+      transform: scale(1.04);
     }
 
 
@@ -1617,7 +1517,7 @@
 
       border:
         1px solid
-        rgba(255,255,255,.45);
+        rgba(255,255,255,.35);
 
       pointer-events: none;
 
@@ -1701,7 +1601,6 @@
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
       min-height: 44px;
@@ -1724,6 +1623,8 @@
         background .3s ease,
         color .3s ease;
 
+      cursor: pointer;
+
     }
 
 
@@ -1733,13 +1634,14 @@
 
       color: white;
 
+      border: 0;
+
     }
 
 
     .button-primary:hover {
 
-      background:
-        var(--purple-dark);
+      background: #50399A;
 
       transform:
         translateY(-2px);
@@ -1767,15 +1669,15 @@
 
 
     /* =====================================================
-       CONTATO / FORMULÁRIO
+       CONTATO
        ===================================================== */
 
     .contact {
 
-      background: white;
+      background: var(--cream);
 
       padding:
-        135px 0;
+        130px 0;
 
     }
 
@@ -1785,21 +1687,19 @@
       display: grid;
 
       grid-template-columns:
-        .8fr
-        1.2fr;
+        .9fr
+        1.1fr;
 
       gap: 100px;
 
-      align-items: start;
+      align-items: center;
 
     }
 
 
-    .contact-intro {
+    .contact-copy {
 
-      position: sticky;
-
-      top: 130px;
+      max-width: 560px;
 
     }
 
@@ -1850,18 +1750,18 @@
 
 
     /* =====================================================
-       FORM
+       FORMULÁRIO
        ===================================================== */
 
     .contact-form {
 
-      background: var(--cream);
+      background: white;
 
-      padding:
-        42px;
+      padding: 42px;
 
-      border:
-        1px solid rgba(0,83,135,.08);
+      box-shadow:
+        0 25px 70px
+        rgba(35,48,55,.08);
 
     }
 
@@ -1870,47 +1770,40 @@
 
       color: var(--blue);
 
-      font-size: 20px;
+      font-size: 22px;
 
-      font-weight: 500;
-
-      margin-bottom: 28px;
+      font-weight: 400;
 
       letter-spacing: -.5px;
+
+      margin-bottom: 28px;
 
     }
 
 
-    .form-grid {
+    .form-row {
 
       display: grid;
 
       grid-template-columns:
-        repeat(2,1fr);
+        1fr
+        1fr;
 
-      gap: 20px;
+      gap: 18px;
 
     }
 
 
     .form-group {
 
-      display: flex;
-
-      flex-direction: column;
-
-    }
-
-
-    .form-group.full {
-
-      grid-column:
-        1 / -1;
+      margin-bottom: 18px;
 
     }
 
 
     .form-group label {
+
+      display: block;
 
       color: var(--blue);
 
@@ -1918,87 +1811,54 @@
 
       font-weight: 600;
 
-      text-transform: uppercase;
-
       letter-spacing: 1.5px;
 
-      margin-bottom: 9px;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
 
     }
 
 
     .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-group textarea {
 
       width: 100%;
 
-      border:
-        1px solid
-        rgba(0,83,135,.15);
+      border: 1px solid #D9DDE0;
 
-      background: white;
+      background: #FAFAF9;
 
       color: var(--black);
 
-      padding:
-        14px 15px;
+      padding: 14px 15px;
 
       outline: none;
 
-      border-radius: 0;
-
-      font-size: 13px;
+      font-size: 12px;
 
       transition:
         border .3s ease,
-        box-shadow .3s ease;
-
-    }
-
-
-    .form-group input,
-    .form-group select {
-
-      height: 48px;
+        background .3s ease;
 
     }
 
 
     .form-group textarea {
 
-      min-height: 125px;
+      min-height: 115px;
 
       resize: vertical;
-
-      line-height: 1.6;
 
     }
 
 
     .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
+    .form-group textarea:focus {
 
-      border-color:
-        var(--purple);
+      border-color: var(--purple);
 
-      box-shadow:
-        0 0 0 3px
-        rgba(96,72,172,.08);
-
-    }
-
-
-    .form-note {
-
-      margin-top: 18px;
-
-      color: var(--muted);
-
-      font-size: 10px;
-
-      line-height: 1.7;
+      background: white;
 
     }
 
@@ -2007,38 +1867,7 @@
 
       width: 100%;
 
-      border: 0;
-
-      margin-top: 25px;
-
-      min-height: 52px;
-
-      background: var(--purple);
-
-      color: white;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.7px;
-
-      text-transform: uppercase;
-
-      transition:
-        background .3s ease,
-        transform .3s ease;
-
-    }
-
-
-    .form-submit:hover {
-
-      background:
-        var(--purple-dark);
-
-      transform:
-        translateY(-2px);
+      margin-top: 5px;
 
     }
 
@@ -2049,38 +1878,27 @@
 
     footer {
 
-      background:
-        var(--cream);
+      background: #F2EDE7;
 
       padding:
-        55px 0 30px;
+        50px 0 25px;
 
     }
 
 
-    .footer-inner {
-
-      padding-top: 28px;
-
-      border-top:
-        1px solid var(--line);
-
-    }
-
-
-    .footer-top {
+    .footer-main {
 
       display: grid;
 
       grid-template-columns:
         1.2fr
-        .8fr
-        .8fr
-        .8fr;
+        1fr
+        1fr
+        1fr;
 
-      gap: 50px;
+      gap: 45px;
 
-      align-items: start;
+      padding-bottom: 40px;
 
     }
 
@@ -2089,11 +1907,28 @@
 
       display: flex;
 
-      align-items: center;
+      flex-direction: column;
 
-      gap: 13px;
+      align-items: flex-start;
+
+      gap: 12px;
 
       color: var(--blue);
+
+    }
+
+
+    .footer-brand img {
+
+      width: 76px;
+      height: 76px;
+
+      object-fit: contain;
+
+    }
+
+
+    .footer-brand strong {
 
       font-size: 14px;
 
@@ -2102,38 +1937,24 @@
     }
 
 
-    .footer-brand img {
-
-      width: 58px;
-      height: 58px;
-
-      object-fit: contain;
-
-    }
-
-
-    .footer-brand-description {
+    .footer-brand span {
 
       color: var(--muted);
 
-      font-size: 11px;
+      font-size: 10px;
 
-      line-height: 1.7;
+      line-height: 1.6;
 
-      max-width: 300px;
-
-      margin-top: 15px;
+      max-width: 230px;
 
     }
 
 
-    .footer-column-title {
+    .footer-column h4 {
 
-      color: var(--purple);
+      color: var(--blue);
 
       font-size: 9px;
-
-      font-weight: 600;
 
       letter-spacing: 1.8px;
 
@@ -2144,40 +1965,37 @@
     }
 
 
-    .footer-column-text {
+    .footer-column p,
+    .footer-column a {
 
-      color: var(--blue);
+      color: var(--muted);
 
       font-size: 11px;
 
-      line-height: 1.8;
+      line-height: 1.9;
 
     }
 
 
-    .footer-column-text a:hover {
-
+    .footer-column a:hover {
       color: var(--purple);
-
     }
 
 
     .footer-bottom {
 
-      display: flex;
+      border-top:
+        1px solid var(--line);
 
-      justify-content: space-between;
+      padding-top: 20px;
+
+      display: flex;
 
       align-items: center;
 
+      justify-content: space-between;
+
       gap: 20px;
-
-      padding-top: 30px;
-
-      margin-top: 35px;
-
-      border-top:
-        1px solid var(--line);
 
     }
 
@@ -2188,20 +2006,16 @@
 
       font-size: 9px;
 
-      letter-spacing: .5px;
+      letter-spacing: .4px;
 
     }
 
 
-    .footer-link {
+    .footer-professional {
 
-      color: var(--purple);
+      color: var(--muted);
 
       font-size: 9px;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
 
     }
 
@@ -2231,7 +2045,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       box-shadow:
@@ -2308,34 +2121,7 @@
 
 
     /* =====================================================
-       FADE UP
-       ===================================================== */
-
-    @keyframes fadeUp {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(25px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
-
-    }
-
-
-    /* =====================================================
-       RESPONSIVE
+       RESPONSIVE — TABLET
        ===================================================== */
 
     @media (max-width: 1000px) {
@@ -2349,9 +2135,7 @@
 
 
       .menu {
-
         gap: 20px;
-
       }
 
 
@@ -2386,34 +2170,11 @@
 
 
       .step:nth-child(2) {
-
         border-right: 0;
-
       }
 
 
-      .contact-intro {
-
-        position: static;
-
-      }
-
-
-      .location-info {
-
-        order: 1;
-
-      }
-
-
-      .location-photo {
-
-        order: 2;
-
-      }
-
-
-      .footer-top {
+      .footer-main {
 
         grid-template-columns:
           repeat(2,1fr);
@@ -2424,7 +2185,7 @@
 
 
     /* =====================================================
-       CELULAR
+       RESPONSIVE — CELULAR
        ===================================================== */
 
     @media (max-width: 720px) {
@@ -2437,9 +2198,9 @@
       }
 
 
-      /* ---------------------------------------------------
-         HEADER
-         --------------------------------------------------- */
+      /* -----------------------------------------------------
+         HEADER MOBILE
+         ----------------------------------------------------- */
 
       .header {
 
@@ -2448,24 +2209,17 @@
       }
 
 
-      .header.scrolled {
-
-        height: 70px;
-
-      }
-
-
       .brand {
 
-        gap: 9px;
+        gap: 10px;
 
       }
 
 
       .brand img {
 
-        width: 56px;
-        height: 56px;
+        width: 58px;
+        height: 58px;
 
       }
 
@@ -2532,22 +2286,18 @@
 
 
       .menu-contact {
-
         text-align: center;
-
       }
 
 
       .mobile-toggle {
-
         display: block;
-
       }
 
 
-      /* ---------------------------------------------------
-         HERO
-         --------------------------------------------------- */
+      /* -----------------------------------------------------
+         HERO MOBILE
+         ----------------------------------------------------- */
 
       .hero {
 
@@ -2578,7 +2328,8 @@
 
       .hero-content {
 
-        padding-bottom: 75px;
+        padding-bottom:
+          75px;
 
       }
 
@@ -2608,30 +2359,57 @@
 
 
       /*
-        ===================================================
-        NOME VERTICAL — SOMENTE CELULAR
+        ======================================================
+        AJUSTE SOLICITADO
 
-        No desktop ele permanece exatamente na posição
-        original.
+        NO CELULAR O NOME VERTICAL SOBE E VAI MAIS
+        PARA A DIREITA.
 
-        No celular ele é jogado para a direita e um
-        pouco para baixo para não passar pelo rosto/
-        queixo da Jaqueline.
-        ===================================================
+        Assim ele não atravessa a frase:
+        "Acolher antes de intervir."
+
+        NO DESKTOP ELE CONTINUA NA POSIÇÃO ORIGINAL.
+        ======================================================
       */
 
       .vertical-name {
 
-        right: -82px;
+        right: -25px;
 
-        top: 54%;
+        top: 31%;
 
         font-size: 7px;
 
-        letter-spacing: 3px;
+        letter-spacing: 3.4px;
 
-        color:
-          rgba(255,255,255,.68);
+        transform:
+          translateY(-50%)
+          rotate(90deg);
+
+      }
+
+
+      @keyframes verticalIn {
+
+        from {
+
+          opacity: 0;
+
+          transform:
+            translateY(-35%)
+            rotate(90deg);
+
+        }
+
+        to {
+
+          opacity: 1;
+
+          transform:
+            translateY(-50%)
+            rotate(90deg);
+
+        }
 
       }
 
@@ -2645,9 +2423,9 @@
       }
 
 
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          SEÇÕES
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
       .section {
 
@@ -2672,10 +2450,6 @@
       }
 
 
-      /* ---------------------------------------------------
-         SOBRE
-         --------------------------------------------------- */
-
       .about-intro::before {
 
         left: -5px;
@@ -2686,6 +2460,10 @@
 
       }
 
+
+      /* -----------------------------------------------------
+         STATS
+         ----------------------------------------------------- */
 
       .stats {
 
@@ -2723,9 +2501,9 @@
       }
 
 
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          PARA QUEM
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
       .audience-list {
 
@@ -2734,26 +2512,20 @@
       }
 
 
-      .audience-item {
-
-        min-height: auto;
+      .audience-item,
+      .audience-item:nth-child(even) {
 
         padding:
-          25px 20px;
+          25px 0;
+
+        border-right: 0;
 
       }
 
 
-      .audience-item h3 {
-
-        margin-top: 20px;
-
-      }
-
-
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          PROCESSO
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
       .process-steps {
 
@@ -2790,9 +2562,9 @@
       }
 
 
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          LOCALIZAÇÃO
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
       .location-photo {
 
@@ -2801,9 +2573,9 @@
       }
 
 
-      /* ---------------------------------------------------
-         FORMULÁRIO
-         --------------------------------------------------- */
+      /* -----------------------------------------------------
+         CONTATO
+         ----------------------------------------------------- */
 
       .contact {
 
@@ -2817,13 +2589,13 @@
 
         font-size:
           clamp(
-            42px,
-            12vw,
-            60px
+            40px,
+            11vw,
+            55px
           );
 
         letter-spacing:
-          -2.5px;
+          -2px;
 
       }
 
@@ -2831,66 +2603,45 @@
       .contact-form {
 
         padding:
-          25px 20px;
+          28px 20px;
 
       }
 
 
-      .form-grid {
+      .form-row {
 
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        gap: 0;
 
       }
 
 
-      .form-group.full {
-
-        grid-column:
-          auto;
-
-      }
-
-
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          FOOTER
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
-      footer {
+      .footer-main {
 
-        padding:
-          45px 0 25px;
+        grid-template-columns: 1fr;
 
-      }
-
-
-      .footer-top {
-
-        grid-template-columns:
-          1fr;
-
-        gap: 30px;
+        gap: 32px;
 
       }
 
 
       .footer-bottom {
 
-        align-items:
-          flex-start;
+        align-items: flex-start;
 
-        flex-direction:
-          column;
-
-        gap: 15px;
+        flex-direction: column;
 
       }
 
 
-      /* ---------------------------------------------------
+      /* -----------------------------------------------------
          WHATSAPP
-         --------------------------------------------------- */
+         ----------------------------------------------------- */
 
       .whatsapp {
 
@@ -2906,7 +2657,57 @@
 
 
     /* =====================================================
-       ACESSIBILIDADE
+       MOBILE MUITO PEQUENO
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      .vertical-name {
+
+        right: -30px;
+
+        top: 28%;
+
+        font-size: 6.5px;
+
+        letter-spacing: 3px;
+
+      }
+
+
+      .brand img {
+
+        width: 54px;
+        height: 54px;
+
+      }
+
+
+      .brand-name {
+
+        font-size: 12px;
+
+      }
+
+
+      .hero-title {
+
+        font-size: 41px;
+
+      }
+
+
+      .hero-description {
+
+        font-size: 11.5px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUÇÃO DE MOVIMENTO
        ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
@@ -2943,10 +2744,7 @@
        LOADER
        ===================================================== -->
 
-  <div
-    class="loader"
-    id="loader"
-  >
+  <div class="loader" id="loader">
 
     <div class="loader-inner">
 
@@ -2983,8 +2781,10 @@
         >
 
           <img
+            id="brandLogo"
             src="https://i.imgur.com/FQjVmY5.png"
             alt="Jaqueline Caldi"
+            class="logo-white"
           >
 
           <span class="brand-name">
@@ -2998,7 +2798,6 @@
           class="mobile-toggle"
           id="mobileToggle"
           aria-label="Abrir menu"
-          type="button"
         >
 
           <span></span>
@@ -3028,12 +2827,6 @@
           <li>
             <a href="#publico">
               Para quem
-            </a>
-          </li>
-
-          <li>
-            <a href="#processo">
-              Como funciona
             </a>
           </li>
 
@@ -3073,7 +2866,6 @@
       id="inicio"
     >
 
-
       <img
         class="hero-image"
         src="https://i.imgur.com/Nxb6CG6.png"
@@ -3085,6 +2877,11 @@
 
       <div class="hero-bottom"></div>
 
+
+      <!--
+        ESTE NOME CONTINUA NO DESKTOP.
+        NO CELULAR O CSS MOVE ELE PARA CIMA.
+      -->
 
       <div class="vertical-name">
         JAQUELINE CALDI · PSICOPEDAGOGA CLÍNICA
@@ -3109,15 +2906,20 @@
           <h1 class="hero-title">
 
             <span class="hero-title-line">
+
               <span>
                 Acolher antes de
               </span>
+
             </span>
 
+
             <span class="hero-title-line">
+
               <span>
                 intervir.
               </span>
+
             </span>
 
           </h1>
@@ -3423,28 +3225,19 @@
 
           <h2 class="section-title">
 
-            Cada criança
-            aprende de um
-            jeito.
+            Um olhar para
+            diferentes formas
+            de <em>aprender.</em>
 
           </h2>
 
 
           <p>
 
-            O acompanhamento psicopedagógico é indicado
+            O acompanhamento psicopedagógico é pensado
             para crianças e adolescentes que apresentam
             dificuldades ou desafios relacionados à
             aprendizagem e ao desenvolvimento.
-
-          </p>
-
-
-          <p>
-
-            O objetivo é compreender o que está por trás
-            dessas dificuldades e construir estratégias
-            respeitando a singularidade de cada pessoa.
 
           </p>
 
@@ -3456,9 +3249,7 @@
 
           <div class="audience-item reveal">
 
-            <span>
-              01
-            </span>
+            <span>01</span>
 
             <h3>
               Dificuldades de aprendizagem
@@ -3469,9 +3260,7 @@
 
           <div class="audience-item reveal delay-1">
 
-            <span>
-              02
-            </span>
+            <span>02</span>
 
             <h3>
               Atenção e concentração
@@ -3482,9 +3271,7 @@
 
           <div class="audience-item reveal delay-1">
 
-            <span>
-              03
-            </span>
+            <span>03</span>
 
             <h3>
               Leitura e escrita
@@ -3495,9 +3282,7 @@
 
           <div class="audience-item reveal delay-2">
 
-            <span>
-              04
-            </span>
+            <span>04</span>
 
             <h3>
               Raciocínio lógico
@@ -3508,9 +3293,7 @@
 
           <div class="audience-item reveal delay-2">
 
-            <span>
-              05
-            </span>
+            <span>05</span>
 
             <h3>
               Funções executivas
@@ -3521,9 +3304,7 @@
 
           <div class="audience-item reveal delay-3">
 
-            <span>
-              06
-            </span>
+            <span>06</span>
 
             <h3>
               Neurodivergências
@@ -3572,9 +3353,7 @@
           </div>
 
 
-          <p
-            class="section-text reveal delay-1"
-          >
+          <p class="section-text reveal delay-1">
 
             Cada acompanhamento é pensado de acordo
             com a necessidade apresentada, respeitando
@@ -3680,7 +3459,19 @@
       <div class="container location-grid">
 
 
-        <div class="location-info reveal">
+        <div class="location-photo reveal">
+
+          <img
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Espaço de atendimento"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="location-info reveal delay-1">
+
 
           <div class="section-label">
             06 — Localização
@@ -3710,7 +3501,6 @@
 
           <div class="address">
 
-
             <div class="address-label">
               Endereço
             </div>
@@ -3733,7 +3523,6 @@
 
 
             <div class="location-actions">
-
 
               <a
                 class="button button-primary"
@@ -3758,27 +3547,13 @@
 
         </div>
 
-
-        <div
-          class="location-photo reveal delay-1"
-        >
-
-          <img
-            src="https://i.imgur.com/fqEDfKr.png"
-            alt="Espaço de atendimento"
-            loading="lazy"
-          >
-
-        </div>
-
       </div>
 
     </section>
 
 
     <!-- =====================================================
-         CONTATO
-         FORMULÁRIO PSICOPEDAGÓGICO
+         CONTATO + FORMULÁRIO
          ===================================================== -->
 
     <section
@@ -3789,15 +3564,15 @@
       <div class="container contact-grid">
 
 
-        <div class="contact-intro reveal">
+        <div class="contact-copy">
 
 
-          <div class="section-label">
+          <div class="section-label reveal">
             07 — Contato
           </div>
 
 
-          <h2 class="contact-title">
+          <h2 class="contact-title reveal">
 
             Vamos conversar
             sobre o próximo
@@ -3806,39 +3581,39 @@
           </h2>
 
 
-          <p class="contact-description">
+          <p class="contact-description reveal delay-1">
 
-            Preencha algumas informações para que eu
-            possa compreender melhor a sua necessidade.
-            Ao enviar, os dados serão encaminhados
-            diretamente pelo WhatsApp.
+            Preencha seus dados e conte brevemente o
+            que está acontecendo. Ao enviar, as
+            informações serão direcionadas diretamente
+            para o WhatsApp da Jaqueline.
 
           </p>
-
 
         </div>
 
 
+        <!-- =================================================
+             FORMULÁRIO
+             ================================================= -->
+
         <form
-          class="contact-form reveal delay-1"
+          class="contact-form reveal delay-2"
           id="whatsappForm"
         >
 
-
-          <div class="form-heading">
-
-            Fale sobre a necessidade de acompanhamento
-
-          </div>
+          <h3 class="form-heading">
+            Agende uma conversa inicial
+          </h3>
 
 
-          <div class="form-grid">
+          <div class="form-row">
 
 
             <div class="form-group">
 
               <label for="nome">
-                Nome do responsável
+                Nome
               </label>
 
               <input
@@ -3855,7 +3630,7 @@
             <div class="form-group">
 
               <label for="telefone">
-                WhatsApp
+                Telefone
               </label>
 
               <input
@@ -3869,160 +3644,67 @@
             </div>
 
 
-            <div class="form-group">
-
-              <label for="idade">
-                Idade da criança/adolescente
-              </label>
-
-              <input
-                type="number"
-                id="idade"
-                name="idade"
-                min="1"
-                max="18"
-                placeholder="Ex.: 8"
-                required
-              >
-
-            </div>
+          </div>
 
 
-            <div class="form-group">
+          <div class="form-group">
 
-              <label for="escolaridade">
-                Escolaridade
-              </label>
+            <label for="responsavel">
+              Nome da criança ou adolescente
+            </label>
 
-              <select
-                id="escolaridade"
-                name="escolaridade"
-                required
-              >
-
-                <option
-                  value=""
-                  selected
-                  disabled
-                >
-                  Selecione
-                </option>
-
-                <option value="Educação Infantil">
-                  Educação Infantil
-                </option>
-
-                <option value="Ensino Fundamental I">
-                  Ensino Fundamental I
-                </option>
-
-                <option value="Ensino Fundamental II">
-                  Ensino Fundamental II
-                </option>
-
-                <option value="Ensino Médio">
-                  Ensino Médio
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label for="demanda">
-                O que motivou a busca pelo acompanhamento?
-              </label>
-
-              <select
-                id="demanda"
-                name="demanda"
-                required
-              >
-
-                <option
-                  value=""
-                  selected
-                  disabled
-                >
-                  Selecione uma opção
-                </option>
-
-                <option value="Dificuldades de aprendizagem">
-                  Dificuldades de aprendizagem
-                </option>
-
-                <option value="Leitura e escrita">
-                  Leitura e escrita
-                </option>
-
-                <option value="Atenção e concentração">
-                  Atenção e concentração
-                </option>
-
-                <option value="Raciocínio lógico">
-                  Raciocínio lógico
-                </option>
-
-                <option value="Funções executivas">
-                  Funções executivas
-                </option>
-
-                <option value="Neurodivergência">
-                  Neurodivergência
-                </option>
-
-                <option value="Orientação sobre aprendizagem">
-                  Orientação sobre aprendizagem
-                </option>
-
-                <option value="Outra situação">
-                  Outra situação
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label for="mensagem">
-                Conte um pouco sobre a situação
-              </label>
-
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                placeholder="Conte brevemente o que vocês têm observado e o que motivou a busca pelo atendimento."
-                required
-              ></textarea>
-
-            </div>
-
+            <input
+              type="text"
+              id="responsavel"
+              name="responsavel"
+              placeholder="Nome"
+              required
+            >
 
           </div>
 
 
-          <div class="form-note">
+          <div class="form-group">
 
-            Suas informações serão utilizadas apenas para
-            facilitar o primeiro contato e compreender a
-            demanda apresentada.
+            <label for="idade">
+              Idade
+            </label>
+
+            <input
+              type="text"
+              id="idade"
+              name="idade"
+              placeholder="Idade"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="mensagem">
+              Conte brevemente sobre a situação
+            </label>
+
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              placeholder="Ex.: dificuldades de aprendizagem, leitura, escrita, atenção..."
+              required
+            ></textarea>
 
           </div>
 
 
           <button
             type="submit"
-            class="form-submit"
+            class="button button-primary form-submit"
           >
 
             Enviar pelo WhatsApp
 
           </button>
-
 
         </form>
 
@@ -4041,132 +3723,120 @@
 
     <div class="container">
 
-      <div class="footer-inner">
+
+      <div class="footer-main">
 
 
-        <div class="footer-top">
+        <div class="footer-brand">
 
+          <img
+            src="https://i.imgur.com/FQjVmY5.png"
+            alt="Jaqueline Caldi"
+          >
 
-          <div>
+          <strong>
+            Jaqueline Caldi
+          </strong>
 
-            <a
-              href="#inicio"
-              class="footer-brand"
-            >
-
-              <img
-                src="https://i.imgur.com/FQjVmY5.png"
-                alt="Jaqueline Caldi"
-              >
-
-              <span>
-                Jaqueline Caldi
-              </span>
-
-            </a>
-
-
-            <p class="footer-brand-description">
-
-              Psicopedagogia Clínica com um olhar
-              individualizado para crianças,
-              adolescentes e suas famílias.
-
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <div class="footer-column-title">
-              Atendimento
-            </div>
-
-            <div class="footer-column-text">
-
-              Psicopedagogia Clínica<br>
-              Crianças e adolescentes<br>
-              Atendimento com horário agendado
-
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div class="footer-column-title">
-              Localização
-            </div>
-
-            <div class="footer-column-text">
-
-              <!-- ALTERE A CIDADE ABAIXO -->
-
-              Cidade — Estado
-
-            </div>
-
-          </div>
-
-
-          <div>
-
-            <div class="footer-column-title">
-              Contato
-            </div>
-
-            <div class="footer-column-text">
-
-              <!-- ALTERE O E-MAIL ABAIXO -->
-
-              <a href="mailto:contato@jaquelinecaldi.com.br">
-                contato@jaquelinecaldi.com.br
-              </a>
-
-              <br><br>
-
-              <!-- ALTERE O TELEFONE ABAIXO -->
-
-              <a
-                href="tel:+5543999999999"
-              >
-                (43) 99999-9999
-              </a>
-
-            </div>
-
-          </div>
-
+          <span>
+            Psicopedagoga Clínica · Atendimento
+            individualizado para crianças,
+            adolescentes e suas famílias.
+          </span>
 
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="footer-column">
+
+          <h4>
+            Atendimento
+          </h4>
+
+          <p>
+            Psicopedagogia Clínica
+          </p>
+
+          <p>
+            Crianças e adolescentes
+          </p>
+
+          <p>
+            Atendimento com horário agendado
+          </p>
+
+        </div>
 
 
-          <div class="footer-copy">
+        <div class="footer-column">
 
-            ©
-            <span id="year"></span>
-            Jaqueline Caldi · Psicopedagoga Clínica
+          <h4>
+            Localização
+          </h4>
 
-          </div>
+          <p>
+            Cidade — Estado
+          </p>
+
+          <p>
+            Rua / Avenida do consultório
+          </p>
+
+          <p>
+            Número · Bairro
+          </p>
+
+        </div>
 
 
-          <a
-            href="#inicio"
-            class="footer-link"
-          >
-            Voltar ao início
-          </a>
+        <div class="footer-column">
 
+          <h4>
+            Contato
+          </h4>
+
+          <p>
+            <a href="mailto:contato@jaquelinecaldi.com.br">
+              contato@jaquelinecaldi.com.br
+            </a>
+          </p>
+
+          <p>
+            <a href="tel:+5543999999999">
+              (43) 99999-9999
+            </a>
+          </p>
+
+          <p>
+            <a href="#contato">
+              Falar pelo WhatsApp
+            </a>
+          </p>
 
         </div>
 
 
       </div>
+
+
+      <div class="footer-bottom">
+
+        <div class="footer-copy">
+
+          © <span id="year"></span>
+          Jaqueline Caldi · Psicopedagoga Clínica
+
+        </div>
+
+
+        <div class="footer-professional">
+
+          Atendimento profissional e individualizado
+
+        </div>
+
+      </div>
+
 
     </div>
 
@@ -4178,7 +3848,7 @@
        ===================================================== -->
 
   <a
-    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
+    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais."
     class="whatsapp"
     target="_blank"
     rel="noopener"
@@ -4257,11 +3927,14 @@
 
 
     /* =====================================================
-       HEADER
+       HEADER + LOGO
        ===================================================== */
 
     const header =
       document.getElementById("header");
+
+    const brandLogo =
+      document.getElementById("brandLogo");
 
 
     function updateHeader() {
@@ -4270,9 +3943,27 @@
 
         header.classList.add("scrolled");
 
+        /*
+          Quando sai da primeira foto,
+          a logo volta à cor original.
+        */
+
+        brandLogo.classList.remove(
+          "logo-white"
+        );
+
       } else {
 
         header.classList.remove("scrolled");
+
+        /*
+          Sobre a primeira foto,
+          a logo fica branca.
+        */
+
+        brandLogo.classList.add(
+          "logo-white"
+        );
 
       }
 
@@ -4282,7 +3973,9 @@
     window.addEventListener(
       "scroll",
       updateHeader,
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
@@ -4387,38 +4080,13 @@
 
 
     /* =====================================================
-       PARALLAX HERO
-       ===================================================== */
-
-    const heroImage =
-      document.querySelector(".hero-image");
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (
-          window.innerWidth > 720 &&
-          window.scrollY < window.innerHeight
-        ) {
-
-          heroImage.style.transform =
-            `scale(1.035) translateY(${window.scrollY * .035}px)`;
-
-        }
-
-      },
-      { passive: true }
-    );
-
-
-    /* =====================================================
        FORMULÁRIO → WHATSAPP
        ===================================================== */
 
     const whatsappForm =
-      document.getElementById("whatsappForm");
+      document.getElementById(
+        "whatsappForm"
+      );
 
 
     whatsappForm.addEventListener(
@@ -4442,23 +4110,16 @@
             .trim();
 
 
+        const crianca =
+          document
+            .getElementById("responsavel")
+            .value
+            .trim();
+
+
         const idade =
           document
             .getElementById("idade")
-            .value
-            .trim();
-
-
-        const escolaridade =
-          document
-            .getElementById("escolaridade")
-            .value
-            .trim();
-
-
-        const demanda =
-          document
-            .getElementById("demanda")
             .value
             .trim();
 
@@ -4471,47 +4132,60 @@
 
 
         const texto =
-
-`Olá, Jaqueline! Vim pelo site e gostaria de saber mais sobre o acompanhamento psicopedagógico.
-
-*Nome do responsável:* ${nome}
-
-*WhatsApp:* ${telefone}
-
-*Idade da criança/adolescente:* ${idade} anos
-
-*Escolaridade:* ${escolaridade}
-
-*Motivo da busca:* ${demanda}
-
-*Sobre a situação:*
-${mensagem}`;
+          `Olá Jaqueline!%0A%0A` +
+          `Meu nome é ${nome}.%0A` +
+          `Telefone: ${telefone}%0A%0A` +
+          `Nome da criança/adolescente: ${crianca}%0A` +
+          `Idade: ${idade}%0A%0A` +
+          `Gostaria de conversar sobre:%0A` +
+          `${mensagem}`;
 
 
-        /*
-          NÚMERO DO WHATSAPP
-
-          Atualmente está usando:
-          55 43 99999-9999
-
-          SUBSTITUA somente os números
-          quando tiver o telefone definitivo.
-        */
-
-        const numeroWhatsApp =
+        const numero =
           "5543999999999";
 
 
         const url =
-          `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+          `https://wa.me/${numero}?text=${texto}`;
 
 
         window.open(
           url,
-          "_blank",
-          "noopener"
+          "_blank"
         );
 
+      }
+    );
+
+
+    /* =====================================================
+       PARALLAX HERO
+       ===================================================== */
+
+    const heroImage =
+      document.querySelector(
+        ".hero-image"
+      );
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (
+          window.innerWidth > 720 &&
+          window.scrollY <
+          window.innerHeight
+        ) {
+
+          heroImage.style.transform =
+            `scale(1.035) translateY(${window.scrollY * .035}px)`;
+
+        }
+
+      },
+      {
+        passive: true
       }
     );
 
