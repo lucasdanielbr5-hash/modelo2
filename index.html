@@ -51,8 +51,6 @@
 
       --purple: #6048AC;
 
-      --purple-soft: #EEEAF8;
-
       --blue: #005387;
 
       --cream: #F7F3EE;
@@ -63,7 +61,11 @@
 
       --muted: #6F797D;
 
-      --line: rgba(23,37,44,.12);
+      --soft-purple: #E9E3F5;
+
+      --soft-blue: #EAF1F4;
+
+      --line: rgba(0,83,135,.13);
 
       --max: 1240px;
 
@@ -105,28 +107,46 @@
 
 
     img {
+
       display: block;
+
       max-width: 100%;
+
     }
 
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
 
 
     button,
     input,
-    select,
-    textarea {
+    textarea,
+    select {
+
       font-family: inherit;
+
+    }
+
+
+    button {
+
+      cursor: pointer;
+
     }
 
 
     ::selection {
+
       background: var(--purple);
+
       color: white;
+
     }
 
 
@@ -179,17 +199,15 @@
 
 
     .loader-inner {
+
       text-align: center;
+
     }
 
 
     .loader-logo {
 
-      width: 82px;
-
-      height: 82px;
-
-      object-fit: contain;
+      width: 95px;
 
       margin: 0 auto 22px;
 
@@ -202,7 +220,7 @@
 
       height: 1px;
 
-      background: rgba(0,83,135,.18);
+      background: var(--blue);
 
       position: relative;
 
@@ -232,7 +250,10 @@
     @keyframes loading {
 
       to {
-        transform: translateX(100%);
+
+        transform:
+          translateX(100%);
+
       }
 
     }
@@ -251,7 +272,7 @@
 
       width: 100%;
 
-      height: 92px;
+      height: 105px;
 
       z-index: 1000;
 
@@ -271,11 +292,12 @@
       height: 76px;
 
       background:
-        rgba(247,243,238,.94);
+        rgba(247,243,238,.96);
 
-      color: var(--black);
+      color: var(--blue);
 
-      backdrop-filter: blur(16px);
+      backdrop-filter:
+        blur(16px);
 
       box-shadow:
         0 8px 30px rgba(0,0,0,.04);
@@ -306,17 +328,61 @@
 
       align-items: center;
 
-      gap: 12px;
+      gap: 14px;
 
     }
 
 
     .brand img {
 
-      width: 52px;
-      height: 52px;
+      width: 72px;
+
+      height: 72px;
 
       object-fit: contain;
+
+      background: transparent;
+
+      transition:
+        filter .45s ease,
+        transform .45s ease,
+        width .45s ease,
+        height .45s ease;
+
+    }
+
+
+    /*
+      SOBRE O HERO:
+      transforma a logo original em branca.
+    */
+
+    .header:not(.scrolled) .brand img {
+
+      filter:
+        brightness(0)
+        invert(1);
+
+    }
+
+
+    /*
+      AO ROLAR:
+      volta para as cores originais.
+    */
+
+    .header.scrolled .brand img {
+
+      filter: none;
+
+    }
+
+
+    .header.scrolled .brand img {
+
+      width: 58px;
+
+      height: 58px;
 
     }
 
@@ -329,7 +395,8 @@
 
       letter-spacing: -.3px;
 
-      transition: color .4s ease;
+      transition:
+        color .4s ease;
 
     }
 
@@ -365,19 +432,23 @@
 
       color: inherit;
 
-      transition: opacity .3s ease;
+      transition:
+        opacity .3s ease;
 
     }
 
 
     .menu a:hover {
+
       opacity: .65;
+
     }
 
 
     .menu-contact {
 
-      border: 1px solid currentColor;
+      border:
+        1px solid currentColor;
 
       padding:
         11px 20px;
@@ -388,7 +459,7 @@
 
 
     /* =====================================================
-       MOBILE
+       MOBILE BUTTON
        ===================================================== */
 
     .mobile-toggle {
@@ -396,6 +467,7 @@
       display: none;
 
       width: 44px;
+
       height: 44px;
 
       border: 0;
@@ -454,6 +526,7 @@
       inset: 0;
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -469,17 +542,25 @@
         cubic-bezier(.2,.6,.2,1)
         forwards;
 
+      will-change: transform;
+
     }
 
 
     @keyframes heroZoom {
 
       from {
-        transform: scale(1.09);
+
+        transform:
+          scale(1.09);
+
       }
 
       to {
-        transform: scale(1.035);
+
+        transform:
+          scale(1.035);
+
       }
 
     }
@@ -582,6 +663,7 @@
       content: "";
 
       width: 32px;
+
       height: 1px;
 
       background: currentColor;
@@ -636,14 +718,19 @@
 
 
     .hero-title-line:nth-child(2) span {
+
       animation-delay: .12s;
+
     }
 
 
     @keyframes titleUp {
 
       to {
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
+
       }
 
     }
@@ -661,7 +748,8 @@
 
       font-weight: 300;
 
-      color: rgba(255,255,255,.86);
+      color:
+        rgba(255,255,255,.86);
 
       opacity: 0;
 
@@ -700,6 +788,7 @@
     .scroll-circle {
 
       width: 42px;
+
       height: 42px;
 
       border:
@@ -724,6 +813,7 @@
     .scroll-circle span {
 
       width: 7px;
+
       height: 7px;
 
       border-right:
@@ -739,14 +829,21 @@
     }
 
 
-    .hero-action:hover .scroll-circle {
+    .hero-action:hover
+    .scroll-circle {
 
-      background: var(--purple);
+      background:
+        var(--purple);
 
-      transform: translateY(3px);
+      transform:
+        translateY(3px);
 
     }
 
+
+    /* =====================================================
+       NOME VERTICAL
+       ===================================================== */
 
     .vertical-name {
 
@@ -764,7 +861,8 @@
 
       transform-origin: center;
 
-      color: rgba(255,255,255,.72);
+      color:
+        rgba(255,255,255,.72);
 
       font-size: 9px;
 
@@ -812,6 +910,7 @@
       position: absolute;
 
       right: 40px;
+
       bottom: 46px;
 
       z-index: 3;
@@ -820,13 +919,41 @@
 
       letter-spacing: 2px;
 
-      color: rgba(255,255,255,.7);
+      color:
+        rgba(255,255,255,.7);
 
     }
 
 
     /* =====================================================
-       GENERIC
+       ANIMAÇÕES
+       ===================================================== */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(20px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    /* =====================================================
+       GENERIC SECTION
        ===================================================== */
 
     .section {
@@ -839,7 +966,8 @@
 
     .section-label {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 9px;
 
@@ -856,7 +984,8 @@
 
     .section-title {
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size:
         clamp(
@@ -883,7 +1012,8 @@
 
     .section-title em {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-style: normal;
 
@@ -892,7 +1022,8 @@
 
     .section-text {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 14px;
 
@@ -909,7 +1040,8 @@
 
     .about {
 
-      background: var(--cream);
+      background:
+        var(--cream);
 
     }
 
@@ -919,8 +1051,8 @@
       display: grid;
 
       grid-template-columns:
-        .9fr
-        1.1fr;
+        .8fr
+        1.2fr;
 
       gap: 120px;
 
@@ -946,7 +1078,8 @@
 
       top: -55px;
 
-      color: rgba(96,72,172,.06);
+      color:
+        rgba(96,72,172,.06);
 
       font-size: 150px;
 
@@ -1003,14 +1136,16 @@
 
       height: 1px;
 
-      background: var(--purple);
+      background:
+        var(--purple);
 
     }
 
 
     .about-signature span {
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size: 10px;
 
@@ -1020,6 +1155,10 @@
 
     }
 
+
+    /* =====================================================
+       STATS
+       ===================================================== */
 
     .stats {
 
@@ -1063,7 +1202,8 @@
 
     .stat-number {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 28px;
 
@@ -1076,7 +1216,8 @@
 
     .stat-label {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 9px;
 
@@ -1097,7 +1238,8 @@
 
     .formation {
 
-      background: white;
+      background:
+        white;
 
     }
 
@@ -1107,15 +1249,26 @@
       display: grid;
 
       grid-template-columns:
-        .65fr
-        1.35fr;
+        1.25fr
+        .75fr;
 
       gap: 100px;
+
+      align-items: start;
+
+    }
+
+
+    .formation-heading {
+
+      order: 2;
 
     }
 
 
     .formation-list {
+
+      order: 1;
 
       border-top:
         1px solid var(--line);
@@ -1154,7 +1307,8 @@
 
     .formation-number {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 9px;
 
@@ -1167,7 +1321,8 @@
 
     .formation-item h3 {
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size: 19px;
 
@@ -1180,7 +1335,8 @@
 
     .formation-item p {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 12px;
 
@@ -1192,88 +1348,18 @@
 
 
     /* =====================================================
-       PARA QUEM — NOVO DESIGN
+       PARA QUEM
        ===================================================== */
 
     .audience {
 
-      background: var(--cream);
+      background:
+        #EEE8F5;
 
-      color: var(--black);
+      color:
+        var(--black);
 
       overflow: hidden;
-
-      position: relative;
-
-    }
-
-
-    .audience::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 420px;
-
-      height: 420px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(96,72,172,.12);
-
-      right: -150px;
-
-      top: 50%;
-
-      transform: translateY(-50%);
-
-      animation:
-        orbitPulse 7s ease-in-out infinite;
-
-    }
-
-
-    .audience::after {
-
-      content: "";
-
-      position: absolute;
-
-      width: 260px;
-
-      height: 260px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(0,83,135,.10);
-
-      right: -65px;
-
-      top: 50%;
-
-      transform: translateY(-50%);
-
-      animation:
-        orbitPulse 5s ease-in-out infinite reverse;
-
-    }
-
-
-    @keyframes orbitPulse {
-
-      0%,
-      100% {
-        transform:
-          translateY(-50%)
-          scale(1);
-      }
-
-      50% {
-        transform:
-          translateY(-50%)
-          scale(1.08);
-      }
 
     }
 
@@ -1283,16 +1369,12 @@
       display: grid;
 
       grid-template-columns:
-        1fr
+        .85fr
         1.15fr;
 
-      gap: 120px;
+      gap: 100px;
 
       align-items: center;
-
-      position: relative;
-
-      z-index: 2;
 
     }
 
@@ -1306,7 +1388,8 @@
 
     .audience-copy p {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 13px;
 
@@ -1325,7 +1408,8 @@
         repeat(2,1fr);
 
       border-top:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
     }
 
@@ -1338,19 +1422,17 @@
         27px 25px 25px 0;
 
       border-bottom:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
       border-right:
-        1px solid var(--line);
+        1px solid
+        rgba(96,72,172,.18);
 
       transition:
-        background .35s ease,
-        transform .35s ease,
-        padding .35s ease;
-
-      position: relative;
-
-      overflow: hidden;
+        background .4s ease,
+        transform .4s ease,
+        padding .4s ease;
 
     }
 
@@ -1364,54 +1446,21 @@
     }
 
 
-    .audience-item::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 6px;
-      height: 6px;
-
-      border-radius: 50%;
-
-      background: var(--purple);
-
-      top: 31px;
-      right: 25px;
-
-      box-shadow:
-        0 0 0 0 rgba(96,72,172,.25);
-
-      transition:
-        box-shadow .45s ease,
-        transform .45s ease;
-
-    }
-
-
     .audience-item:hover {
 
-      background: white;
+      background:
+        rgba(255,255,255,.55);
 
-      transform: translateY(-5px);
-
-    }
-
-
-    .audience-item:hover::before {
-
-      transform: scale(1.5);
-
-      box-shadow:
-        0 0 0 9px rgba(96,72,172,.08);
+      transform:
+        translateY(-4px);
 
     }
 
 
     .audience-item span {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 9px;
 
@@ -1424,31 +1473,14 @@
 
       margin-top: 14px;
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size: 18px;
 
-      font-weight: 500;
+      font-weight: 400;
 
       letter-spacing: -.3px;
-
-    }
-
-
-    .audience-note {
-
-      margin-top: 28px;
-
-      padding-left: 18px;
-
-      border-left:
-        2px solid var(--purple);
-
-      color: var(--muted);
-
-      font-size: 11px;
-
-      line-height: 1.8;
 
     }
 
@@ -1459,7 +1491,8 @@
 
     .process {
 
-      background: white;
+      background:
+        var(--cream);
 
     }
 
@@ -1469,8 +1502,8 @@
       display: grid;
 
       grid-template-columns:
-        1fr
-        1fr;
+        1.2fr
+        .8fr;
 
       gap: 100px;
 
@@ -1515,6 +1548,9 @@
 
       overflow: hidden;
 
+      transition:
+        transform .35s ease;
+
     }
 
 
@@ -1532,9 +1568,18 @@
     }
 
 
+    .step:hover {
+
+      transform:
+        translateY(-5px);
+
+    }
+
+
     .step-number {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 10px;
 
@@ -1547,7 +1592,8 @@
 
       margin-top: 55px;
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size: 19px;
 
@@ -1558,7 +1604,8 @@
 
     .step p {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 11px;
 
@@ -1578,15 +1625,18 @@
       position: absolute;
 
       left: 0;
+
       bottom: 0;
 
       width: 0;
 
       height: 3px;
 
-      background: var(--purple);
+      background:
+        var(--purple);
 
-      transition: width .5s ease;
+      transition:
+        width .5s ease;
 
     }
 
@@ -1599,12 +1649,389 @@
 
 
     /* =====================================================
+       CONTATO
+       ===================================================== */
+
+    .contact {
+
+      background:
+        #FFFFFF;
+
+      padding:
+        130px 0;
+
+    }
+
+
+    .contact-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        .85fr
+        1.15fr;
+
+      gap: 100px;
+
+      align-items: start;
+
+    }
+
+
+    .contact-intro {
+
+      position: sticky;
+
+      top: 130px;
+
+    }
+
+
+    .contact-title {
+
+      color:
+        var(--blue);
+
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          70px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      font-weight: 300;
+
+    }
+
+
+    .contact-title span {
+
+      color:
+        var(--purple);
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-description {
+
+      max-width: 470px;
+
+      margin:
+        25px 0 0;
+
+      color:
+        var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FORMULÁRIO PSICOPEDAGÓGICO
+       ===================================================== */
+
+    .contact-form {
+
+      background:
+        var(--cream);
+
+      padding:
+        42px;
+
+      border:
+        1px solid
+        rgba(0,83,135,.10);
+
+    }
+
+
+    .form-heading {
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .form-heading h3 {
+
+      color:
+        var(--blue);
+
+      font-size: 22px;
+
+      font-weight: 500;
+
+      letter-spacing: -.5px;
+
+    }
+
+
+    .form-heading p {
+
+      color:
+        var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+
+      margin-top: 8px;
+
+    }
+
+
+    .form-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .form-field {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 8px;
+
+    }
+
+
+    .form-field.full {
+
+      grid-column:
+        1 / -1;
+
+    }
+
+
+    .form-field label {
+
+      color:
+        var(--blue);
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+
+      width: 100%;
+
+      border:
+        1px solid
+        rgba(0,83,135,.16);
+
+      background:
+        rgba(255,255,255,.72);
+
+      color:
+        var(--black);
+
+      outline: none;
+
+      border-radius: 0;
+
+      padding:
+        14px 15px;
+
+      font-size: 12px;
+
+      transition:
+        border .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+    }
+
+
+    .form-field textarea {
+
+      min-height: 125px;
+
+      resize: vertical;
+
+    }
+
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+
+      border-color:
+        var(--purple);
+
+      background:
+        white;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(96,72,172,.07);
+
+    }
+
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+
+      color:
+        #9AA1A4;
+
+    }
+
+
+    .form-submit {
+
+      margin-top: 25px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .form-note {
+
+      color:
+        var(--muted);
+
+      font-size: 9px;
+
+      line-height: 1.6;
+
+      max-width: 270px;
+
+    }
+
+
+    /* =====================================================
+       BOTÕES
+       ===================================================== */
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 46px;
+
+      padding:
+        0 23px;
+
+      border-radius: 100px;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+
+      border: 0;
+
+    }
+
+
+    .button-primary {
+
+      background:
+        var(--purple);
+
+      color:
+        white;
+
+    }
+
+
+    .button-primary:hover {
+
+      background:
+        #50399A;
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 25px
+        rgba(96,72,172,.20);
+
+    }
+
+
+    .button-outline {
+
+      color:
+        var(--blue);
+
+      border:
+        1px solid var(--blue);
+
+      background:
+        transparent;
+
+    }
+
+
+    .button-outline:hover {
+
+      background:
+        var(--blue);
+
+      color:
+        white;
+
+    }
+
+
+    /* =====================================================
        LOCALIZAÇÃO
        ===================================================== */
 
     .location {
 
-      background: var(--cream);
+      background:
+        var(--cream);
 
     }
 
@@ -1614,8 +2041,8 @@
       display: grid;
 
       grid-template-columns:
-        1fr
-        1fr;
+        1.15fr
+        .85fr;
 
       gap: 90px;
 
@@ -1625,13 +2052,17 @@
 
 
     .location-info {
-      order: 1;
+
+      order: 2;
+
+      max-width: 470px;
+
     }
 
 
     .location-photo {
 
-      order: 2;
+      order: 1;
 
       height: 530px;
 
@@ -1639,7 +2070,8 @@
 
       position: relative;
 
-      background: #e8e2dc;
+      background:
+        #E6DFD8;
 
     }
 
@@ -1647,6 +2079,7 @@
     .location-photo img {
 
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -1677,16 +2110,9 @@
 
       border:
         1px solid
-        rgba(255,255,255,.55);
+        rgba(255,255,255,.35);
 
       pointer-events: none;
-
-    }
-
-
-    .location-info {
-
-      max-width: 470px;
 
     }
 
@@ -1705,7 +2131,8 @@
 
     .address-label {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
       font-size: 9px;
 
@@ -1722,7 +2149,8 @@
 
     .address-text {
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
       font-size: 15px;
 
@@ -1735,7 +2163,8 @@
 
     .address-note {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 11px;
 
@@ -1760,368 +2189,19 @@
 
 
     /* =====================================================
-       BOTÕES
-       ===================================================== */
-
-    .button {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      min-height: 44px;
-
-      padding:
-        0 21px;
-
-      border-radius: 100px;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease,
-        box-shadow .3s ease;
-
-      cursor: pointer;
-
-      border: 0;
-
-    }
-
-
-    .button-primary {
-
-      background: var(--purple);
-
-      color: white;
-
-    }
-
-
-    .button-primary:hover {
-
-      background: #50399A;
-
-      transform:
-        translateY(-2px);
-
-      box-shadow:
-        0 12px 25px
-        rgba(96,72,172,.18);
-
-    }
-
-
-    .button-outline {
-
-      color: var(--blue);
-
-      border:
-        1px solid var(--blue);
-
-    }
-
-
-    .button-outline:hover {
-
-      background: var(--blue);
-
-      color: white;
-
-    }
-
-
-    /* =====================================================
-       CONTATO / FORMULÁRIO
-       ===================================================== */
-
-    .contact {
-
-      background: white;
-
-      padding:
-        140px 0;
-
-    }
-
-
-    .contact-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .85fr
-        1.15fr;
-
-      gap: 100px;
-
-      align-items: start;
-
-    }
-
-
-    .contact-intro {
-
-      position: sticky;
-
-      top: 120px;
-
-    }
-
-
-    .contact-title {
-
-      color: var(--blue);
-
-      font-size:
-        clamp(
-          42px,
-          5vw,
-          68px
-        );
-
-      line-height: 1;
-
-      letter-spacing: -3px;
-
-      font-weight: 300;
-
-    }
-
-
-    .contact-title span {
-
-      color: var(--purple);
-
-      font-weight: 500;
-
-    }
-
-
-    .contact-description {
-
-      max-width: 450px;
-
-      margin:
-        25px 0 0;
-
-      color: var(--muted);
-
-      font-size: 13px;
-
-      line-height: 1.8;
-
-    }
-
-
-    .contact-form {
-
-      background: var(--cream);
-
-      padding: 42px;
-
-      border:
-        1px solid var(--line);
-
-      position: relative;
-
-    }
-
-
-    .contact-form::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 55px;
-      height: 55px;
-
-      border-top:
-        1px solid var(--purple);
-
-      border-left:
-        1px solid var(--purple);
-
-      top: -1px;
-      left: -1px;
-
-    }
-
-
-    .contact-form-title {
-
-      color: var(--blue);
-
-      font-size: 21px;
-
-      font-weight: 500;
-
-      letter-spacing: -.5px;
-
-      margin-bottom: 8px;
-
-    }
-
-
-    .contact-form-subtitle {
-
-      color: var(--muted);
-
-      font-size: 11px;
-
-      line-height: 1.7;
-
-      margin-bottom: 30px;
-
-    }
-
-
-    .form-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 18px;
-
-    }
-
-
-    .form-group {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 8px;
-
-    }
-
-
-    .form-group.full {
-
-      grid-column: 1 / -1;
-
-    }
-
-
-    .form-group label {
-
-      color: var(--blue);
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.4px;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-
-      width: 100%;
-
-      border:
-        1px solid
-        rgba(23,37,44,.16);
-
-      background: white;
-
-      color: var(--black);
-
-      padding:
-        13px 14px;
-
-      outline: none;
-
-      font-size: 12px;
-
-      transition:
-        border .25s ease,
-        box-shadow .25s ease;
-
-      border-radius: 0;
-
-    }
-
-
-    .form-group textarea {
-
-      min-height: 105px;
-
-      resize: vertical;
-
-    }
-
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-
-      border-color: var(--purple);
-
-      box-shadow:
-        0 0 0 3px
-        rgba(96,72,172,.07);
-
-    }
-
-
-    .form-submit {
-
-      margin-top: 24px;
-
-      width: 100%;
-
-      min-height: 50px;
-
-    }
-
-
-    .form-privacy {
-
-      margin-top: 13px;
-
-      color: var(--muted);
-
-      font-size: 9px;
-
-      line-height: 1.6;
-
-      text-align: center;
-
-    }
-
-
-    /* =====================================================
        FOOTER
        ===================================================== */
 
     footer {
 
-      background: var(--cream);
-
-      color: var(--black);
+      background:
+        #F1ECE6;
 
       padding:
-        60px 0 25px;
+        55px 0 30px;
+
+      color:
+        var(--black);
 
     }
 
@@ -2132,20 +2212,13 @@
 
       grid-template-columns:
         1.2fr
-        1fr
-        1fr
-        1fr;
+        .8fr
+        .8fr
+        .8fr;
 
       gap: 50px;
 
-      padding-bottom: 45px;
-
-    }
-
-
-    .footer-brand-block {
-
-      max-width: 300px;
+      padding-bottom: 42px;
 
     }
 
@@ -2154,53 +2227,66 @@
 
       display: flex;
 
-      align-items: center;
+      flex-direction: column;
 
-      gap: 12px;
+      align-items: flex-start;
 
-      color: var(--blue);
+      gap: 15px;
 
-      font-size: 15px;
-
-      font-weight: 600;
+      color:
+        var(--blue);
 
     }
 
 
     .footer-brand img {
 
-      width: 50px;
-      height: 50px;
+      width: 72px;
+
+      height: 72px;
 
       object-fit: contain;
 
     }
 
 
-    .footer-description {
+    .footer-brand-name {
 
-      color: var(--muted);
+      font-size: 15px;
+
+      font-weight: 600;
+
+      letter-spacing: -.3px;
+
+    }
+
+
+    .footer-brand-description {
+
+      max-width: 300px;
+
+      color:
+        var(--muted);
 
       font-size: 11px;
 
       line-height: 1.8;
 
-      margin-top: 18px;
-
     }
 
 
-    .footer-column-title {
+    .footer-column h4 {
 
-      color: var(--purple);
+      color:
+        var(--blue);
 
       font-size: 9px;
 
       font-weight: 600;
 
-      letter-spacing: 2px;
-
       text-transform: uppercase;
+
+      letter-spacing: 1.8px;
 
       margin-bottom: 17px;
 
@@ -2210,7 +2296,10 @@
     .footer-column p,
     .footer-column a {
 
-      color: var(--muted);
+      display: block;
+
+      color:
+        var(--muted);
 
       font-size: 11px;
 
@@ -2229,7 +2318,8 @@
 
     .footer-column a:hover {
 
-      color: var(--purple);
+      color:
+        var(--purple);
 
     }
 
@@ -2239,22 +2329,24 @@
       padding-top: 22px;
 
       border-top:
-        1px solid var(--line);
+        1px solid
+        rgba(0,83,135,.12);
 
       display: flex;
 
       justify-content: space-between;
 
-      gap: 25px;
-
       align-items: center;
+
+      gap: 20px;
 
     }
 
 
     .footer-copy {
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 9px;
 
@@ -2263,17 +2355,14 @@
     }
 
 
-    .footer-back {
+    .footer-professional {
 
-      color: var(--purple);
+      color:
+        var(--muted);
 
       font-size: 9px;
 
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
+      text-align: right;
 
     }
 
@@ -2287,18 +2376,22 @@
       position: fixed;
 
       right: 25px;
+
       bottom: 24px;
 
       width: 53px;
+
       height: 53px;
 
       z-index: 900;
 
       border-radius: 50%;
 
-      background: #25D366;
+      background:
+        #25D366;
 
-      color: white;
+      color:
+        white;
 
       display: flex;
 
@@ -2328,9 +2421,11 @@
     .whatsapp svg {
 
       width: 23px;
+
       height: 23px;
 
-      fill: currentColor;
+      fill:
+        currentColor;
 
     }
 
@@ -2365,49 +2460,28 @@
 
 
     .delay-1 {
+
       transition-delay: .1s;
+
     }
 
 
     .delay-2 {
+
       transition-delay: .2s;
+
     }
 
 
     .delay-3 {
+
       transition-delay: .3s;
-    }
-
-
-    /* =====================================================
-       FADE UP
-       ===================================================== */
-
-    @keyframes fadeUp {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(20px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
 
     }
 
 
     /* =====================================================
-       RESPONSIVE TABLET
+       RESPONSIVE 1000
        ===================================================== */
 
     @media (max-width: 1000px) {
@@ -2428,7 +2502,10 @@
 
 
       .about-grid,
-      .formation-grid {
+      .formation-grid,
+      .audience-grid,
+      .location-grid,
+      .contact-grid {
 
         grid-template-columns: 1fr;
 
@@ -2437,11 +2514,37 @@
       }
 
 
-      .audience-grid {
+      .formation-heading {
 
-        grid-template-columns: 1fr;
+        order: 1;
 
-        gap: 60px;
+      }
+
+
+      .formation-list {
+
+        order: 2;
+
+      }
+
+
+      .location-info {
+
+        order: 1;
+
+      }
+
+
+      .location-photo {
+
+        order: 2;
+
+      }
+
+
+      .contact-intro {
+
+        position: static;
 
       }
 
@@ -2470,36 +2573,10 @@
       }
 
 
-      .location-grid {
-
-        grid-template-columns:
-          1fr 1fr;
-
-        gap: 50px;
-
-      }
-
-
-      .contact-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-
-      }
-
-
-      .contact-intro {
-
-        position: static;
-
-      }
-
-
       .footer-top {
 
         grid-template-columns:
-          1fr 1fr;
+          repeat(2,1fr);
 
       }
 
@@ -2507,7 +2584,7 @@
 
 
     /* =====================================================
-       RESPONSIVE MOBILE
+       RESPONSIVE 720
        ===================================================== */
 
     @media (max-width: 720px) {
@@ -2522,15 +2599,39 @@
 
       .header {
 
-        height: 76px;
+        height: 86px;
+
+      }
+
+
+      .header.scrolled {
+
+        height: 70px;
+
+      }
+
+
+      .brand {
+
+        gap: 10px;
 
       }
 
 
       .brand img {
 
-        width: 44px;
-        height: 44px;
+        width: 60px;
+
+        height: 60px;
+
+      }
+
+
+      .header.scrolled .brand img {
+
+        width: 52px;
+
+        height: 52px;
 
       }
 
@@ -2546,9 +2647,10 @@
 
         position: fixed;
 
-        top: 76px;
+        top: 86px;
 
         left: 15px;
+
         right: 15px;
 
         padding: 25px;
@@ -2556,7 +2658,8 @@
         background:
           rgba(247,243,238,.98);
 
-        color: var(--blue);
+        color:
+          var(--blue);
 
         display: flex;
 
@@ -2584,6 +2687,13 @@
       }
 
 
+      .header.scrolled .menu {
+
+        top: 70px;
+
+      }
+
+
       .menu.open {
 
         opacity: 1;
@@ -2598,21 +2708,24 @@
 
       .menu-contact {
 
-        text-align: center;
+        text-align:
+          center;
 
       }
 
 
       .mobile-toggle {
 
-        display: block;
+        display:
+          block;
 
       }
 
 
       .hero {
 
-        min-height: 650px;
+        min-height:
+          650px;
 
       }
 
@@ -2639,7 +2752,8 @@
 
       .hero-content {
 
-        padding-bottom: 75px;
+        padding-bottom:
+          75px;
 
       }
 
@@ -2661,27 +2775,33 @@
 
       .hero-description {
 
-        font-size: 12px;
+        font-size:
+          12px;
 
-        max-width: 360px;
+        max-width:
+          360px;
 
       }
 
 
       .vertical-name {
 
-        right: -18px;
+        right:
+          -18px;
 
-        font-size: 8px;
+        font-size:
+          8px;
 
       }
 
 
       .hero-index {
 
-        right: 20px;
+        right:
+          20px;
 
-        bottom: 25px;
+        bottom:
+          25px;
 
       }
 
@@ -2709,22 +2829,16 @@
       }
 
 
-      .about-grid,
-      .formation-grid,
-      .audience-grid {
-
-        gap: 45px;
-
-      }
-
-
       .about-intro::before {
 
-        left: -5px;
+        left:
+          -5px;
 
-        top: -35px;
+        top:
+          -35px;
 
-        font-size: 100px;
+        font-size:
+          100px;
 
       }
 
@@ -2739,55 +2853,40 @@
 
       .stat {
 
-        padding-right: 10px;
+        padding-right:
+          10px;
 
       }
 
 
       .stat:not(:first-child) {
 
-        padding-left: 10px;
+        padding-left:
+          10px;
 
       }
 
 
       .stat-number {
 
-        font-size: 22px;
+        font-size:
+          22px;
 
       }
 
 
       .stat-label {
 
-        font-size: 8px;
-
-      }
-
-
-      .audience::before {
-
-        width: 260px;
-        height: 260px;
-
-        right: -160px;
-
-      }
-
-
-      .audience::after {
-
-        width: 160px;
-        height: 160px;
-
-        right: -105px;
+        font-size:
+          8px;
 
       }
 
 
       .audience-list {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
       }
 
@@ -2795,33 +2894,19 @@
       .audience-item,
       .audience-item:nth-child(even) {
 
-        min-height: 125px;
-
         padding:
           25px 0;
 
-        border-right: 0;
-
-      }
-
-
-      .audience-item::before {
-
-        right: 5px;
-
-      }
-
-
-      .audience-item h3 {
-
-        font-size: 17px;
+        border-right:
+          0;
 
       }
 
 
       .process-steps {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
       }
 
@@ -2829,7 +2914,8 @@
       .step,
       .step:not(:first-child) {
 
-        border-right: 0;
+        border-right:
+          0;
 
         border-bottom:
           1px solid var(--line);
@@ -2842,53 +2928,16 @@
 
       .step:last-child {
 
-        border-bottom: 0;
+        border-bottom:
+          0;
 
       }
 
 
       .step h3 {
 
-        margin-top: 35px;
-
-      }
-
-
-      .location-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-
-      }
-
-
-      .location-info {
-
-        order: 1;
-
-      }
-
-
-      .location-photo {
-
-        order: 2;
-
-        height: 390px;
-
-      }
-
-
-      .location-actions {
-
-        flex-direction: column;
-
-      }
-
-
-      .location-actions .button {
-
-        width: 100%;
+        margin-top:
+          35px;
 
       }
 
@@ -2896,14 +2945,15 @@
       .contact {
 
         padding:
-          100px 0;
+          95px 0;
 
       }
 
 
       .contact-grid {
 
-        gap: 45px;
+        gap:
+          45px;
 
       }
 
@@ -2911,128 +2961,108 @@
       .contact-title {
 
         font-size:
-          clamp(
-            42px,
-            12vw,
-            58px
-          );
+          43px;
 
         letter-spacing:
-          -2.4px;
+          -2px;
 
       }
 
 
       .contact-form {
 
-        padding: 28px 20px;
+        padding:
+          25px 20px;
 
       }
 
 
       .form-grid {
 
-        grid-template-columns: 1fr;
-
-        gap: 17px;
+        grid-template-columns:
+          1fr;
 
       }
 
 
-      .form-group.full {
+      .form-field.full {
 
-        grid-column: auto;
+        grid-column:
+          auto;
+
+      }
+
+
+      .form-submit {
+
+        align-items:
+          stretch;
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .form-submit .button {
+
+        width:
+          100%;
+
+      }
+
+
+      .location-photo {
+
+        height:
+          430px;
 
       }
 
 
       .footer-top {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
 
-        gap: 32px;
-
-      }
-
-
-      footer {
-
-        padding:
-          50px 0 22px;
+        gap:
+          35px;
 
       }
 
 
       .footer-bottom {
 
-        flex-direction: column;
+        align-items:
+          flex-start;
 
-        align-items: flex-start;
+        flex-direction:
+          column;
 
-        gap: 14px;
+      }
+
+
+      .footer-professional {
+
+        text-align:
+          left;
 
       }
 
 
       .whatsapp {
 
-        width: 50px;
-        height: 50px;
-
-        right: 17px;
-        bottom: 17px;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       CELULAR PEQUENO
-       ===================================================== */
-
-    @media (max-width: 390px) {
-
-      .container {
-
         width:
-          calc(100% - 28px);
+          50px;
 
-      }
+        height:
+          50px;
 
+        right:
+          17px;
 
-      .hero-title {
-
-        font-size: 40px;
-
-      }
-
-
-      .stats {
-
-        gap: 0;
-
-      }
-
-
-      .stat-number {
-
-        font-size: 20px;
-
-      }
-
-
-      .stat-label {
-
-        font-size: 7px;
-
-      }
-
-
-      .contact-form {
-
-        padding:
-          24px 16px;
+        bottom:
+          17px;
 
       }
 
@@ -3040,7 +3070,7 @@
 
 
     /* =====================================================
-       REDUÇÃO DE MOVIMENTO
+       REDUCED MOTION
        ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
@@ -3109,6 +3139,7 @@
     <div class="container">
 
       <nav class="nav">
+
 
         <a
           href="#inicio"
@@ -3232,6 +3263,7 @@
 
         <div class="hero-copy">
 
+
           <div class="eyebrow">
             Psicopedagogia Clínica
           </div>
@@ -3293,6 +3325,7 @@
     >
 
       <div class="container about-grid">
+
 
         <div class="about-intro reveal">
 
@@ -3409,28 +3442,9 @@
 
       <div class="container formation-grid">
 
-        <div class="reveal">
-
-          <div class="section-label">
-            03 — Formação
-          </div>
-
-
-          <h2 class="section-title">
-
-            Conhecimento para
-            <strong>
-              compreender
-            </strong>
-            cada
-            <em>história.</em>
-
-          </h2>
-
-        </div>
-
 
         <div class="formation-list">
+
 
           <div class="formation-item reveal">
 
@@ -3522,6 +3536,28 @@
 
           </div>
 
+
+        </div>
+
+
+        <div class="formation-heading reveal">
+
+          <div class="section-label">
+            03 — Formação
+          </div>
+
+
+          <h2 class="section-title">
+
+            Conhecimento para
+            <strong>
+              compreender
+            </strong>
+            cada
+            <em>história.</em>
+
+          </h2>
+
         </div>
 
       </div>
@@ -3540,6 +3576,7 @@
 
       <div class="container audience-grid">
 
+
         <div class="audience-copy reveal">
 
           <div class="section-label">
@@ -3549,35 +3586,27 @@
 
           <h2 class="section-title">
 
-            Para quem precisa
-            de um olhar mais
-            <em>individualizado.</em>
+            Um olhar para
+            diferentes formas
+            de <em>aprender.</em>
 
           </h2>
 
 
           <p>
 
-            A psicopedagogia clínica pode contribuir
-            quando as dificuldades de aprendizagem,
-            atenção ou desenvolvimento começam a
-            interferir na rotina escolar e familiar.
+            O acompanhamento psicopedagógico é destinado
+            a crianças e adolescentes que apresentam
+            dificuldades ou necessidades específicas
+            relacionadas à aprendizagem e ao desenvolvimento.
 
           </p>
-
-
-          <div class="audience-note">
-
-            O acompanhamento considera a história,
-            o ritmo e as características de cada
-            criança ou adolescente.
-
-          </div>
 
         </div>
 
 
         <div class="audience-list">
+
 
           <div class="audience-item reveal">
 
@@ -3656,6 +3685,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -3664,7 +3694,7 @@
 
 
     <!-- =====================================================
-         COMO FUNCIONA
+         PROCESSO
          ===================================================== -->
 
     <section
@@ -3674,7 +3704,9 @@
 
       <div class="container">
 
+
         <div class="process-head">
+
 
           <div class="reveal">
 
@@ -3709,6 +3741,7 @@
 
 
         <div class="process-steps">
+
 
           <div class="step reveal">
 
@@ -3781,6 +3814,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -3799,7 +3833,20 @@
 
       <div class="container location-grid">
 
-        <div class="location-info reveal">
+
+        <div class="location-photo reveal">
+
+          <img
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Espaço de atendimento psicopedagógico"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="location-info reveal delay-1">
+
 
           <div class="section-label">
             06 — Localização
@@ -3829,6 +3876,7 @@
 
           <div class="address">
 
+
             <div class="address-label">
               Endereço
             </div>
@@ -3851,6 +3899,7 @@
 
 
             <div class="location-actions">
+
 
               <a
                 class="button button-primary"
@@ -3875,26 +3924,13 @@
 
         </div>
 
-
-        <div
-          class="location-photo reveal delay-1"
-        >
-
-          <img
-            src="https://i.imgur.com/fqEDfKr.png"
-            alt="Espaço de atendimento"
-            loading="lazy"
-          >
-
-        </div>
-
       </div>
 
     </section>
 
 
     <!-- =====================================================
-         CONTATO
+         CONTATO / FORMULÁRIO
          ===================================================== -->
 
     <section
@@ -3904,14 +3940,15 @@
 
       <div class="container contact-grid">
 
-        <div class="contact-intro">
 
-          <div class="section-label reveal">
+        <div class="contact-intro reveal">
+
+          <div class="section-label">
             07 — Contato
           </div>
 
 
-          <h2 class="contact-title reveal">
+          <h2 class="contact-title">
 
             Vamos conversar
             sobre o próximo
@@ -3920,48 +3957,43 @@
           </h2>
 
 
-          <p
-            class="contact-description reveal delay-1"
-          >
+          <p class="contact-description">
 
-            Se você está buscando acompanhamento
-            psicopedagógico para seu filho ou filha,
-            preencha os dados ao lado. Ao enviar,
-            suas informações serão encaminhadas
-            diretamente pelo WhatsApp.
+            Preencha as informações abaixo para que
+            possamos entender melhor a necessidade e
+            iniciar uma conversa sobre o acompanhamento
+            psicopedagógico.
 
           </p>
 
         </div>
 
 
-        <!-- =================================================
-             FORMULÁRIO
-             ================================================= -->
-
         <form
           class="contact-form reveal delay-1"
           id="contactForm"
         >
 
-          <h3 class="contact-form-title">
-            Vamos conhecer essa necessidade.
-          </h3>
 
+          <div class="form-heading">
 
-          <p class="contact-form-subtitle">
+            <h3>
+              Vamos conhecer melhor a sua demanda
+            </h3>
 
-            Conte brevemente sobre quem você está
-            buscando atendimento. Assim podemos iniciar
-            a conversa de forma mais objetiva.
+            <p>
+              As informações serão organizadas em uma
+              mensagem e encaminhadas diretamente para
+              o WhatsApp.
+            </p>
 
-          </p>
+          </div>
 
 
           <div class="form-grid">
 
 
-            <div class="form-group">
+            <div class="form-field">
 
               <label for="responsavel">
                 Nome do responsável
@@ -3971,17 +4003,17 @@
                 type="text"
                 id="responsavel"
                 name="responsavel"
-                placeholder="Seu nome"
+                placeholder="Digite seu nome"
                 required
               >
 
             </div>
 
 
-            <div class="form-group">
+            <div class="form-field">
 
               <label for="telefone">
-                WhatsApp
+                Telefone
               </label>
 
               <input
@@ -3995,16 +4027,16 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-field">
 
-              <label for="crianca">
+              <label for="nomeCrianca">
                 Nome da criança/adolescente
               </label>
 
               <input
                 type="text"
-                id="crianca"
-                name="crianca"
+                id="nomeCrianca"
+                name="nomeCrianca"
                 placeholder="Nome"
                 required
               >
@@ -4012,7 +4044,7 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-field">
 
               <label for="idade">
                 Idade
@@ -4023,7 +4055,7 @@
                 id="idade"
                 name="idade"
                 min="1"
-                max="30"
+                max="25"
                 placeholder="Idade"
                 required
               >
@@ -4031,15 +4063,15 @@
             </div>
 
 
-            <div class="form-group full">
+            <div class="form-field full">
 
-              <label for="motivo">
-                Principal motivo da busca
+              <label for="demanda">
+                Principal motivo da procura
               </label>
 
               <select
-                id="motivo"
-                name="motivo"
+                id="demanda"
+                name="demanda"
                 required
               >
 
@@ -4075,8 +4107,8 @@
                   Neurodivergência
                 </option>
 
-                <option value="Outra necessidade">
-                  Outra necessidade
+                <option value="Outro motivo">
+                  Outro motivo
                 </option>
 
               </select>
@@ -4084,16 +4116,16 @@
             </div>
 
 
-            <div class="form-group full">
+            <div class="form-field full">
 
               <label for="mensagem">
-                Conte um pouco sobre a situação
+                Conte brevemente o que está acontecendo
               </label>
 
               <textarea
                 id="mensagem"
                 name="mensagem"
-                placeholder="Ex.: dificuldade escolar, atenção, leitura, escrita, rotina de estudos..."
+                placeholder="Escreva aqui, de forma breve, o que motivou a procura pelo atendimento."
                 required
               ></textarea>
 
@@ -4103,22 +4135,29 @@
           </div>
 
 
-          <button
-            type="submit"
-            class="button button-primary form-submit"
-          >
-
-            Enviar pelo WhatsApp
-
-          </button>
+          <div class="form-submit">
 
 
-          <p class="form-privacy">
+            <div class="form-note">
 
-            Ao enviar, o WhatsApp será aberto com as
-            informações preenchidas para iniciar o atendimento.
+              Ao enviar, o WhatsApp será aberto com as
+              informações preenchidas para facilitar o
+              primeiro contato.
 
-          </p>
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+
+              Enviar pelo WhatsApp
+
+            </button>
+
+          </div>
+
 
         </form>
 
@@ -4137,34 +4176,26 @@
 
     <div class="container">
 
+
       <div class="footer-top">
 
 
-        <div class="footer-brand-block">
+        <div class="footer-brand">
 
-          <a
-            href="#inicio"
-            class="footer-brand"
+          <img
+            src="https://i.imgur.com/FQjVmY5.png"
+            alt="Jaqueline Caldi"
           >
 
-            <img
-              src="https://i.imgur.com/FQjVmY5.png"
-              alt="Jaqueline Caldi"
-            >
+          <div class="footer-brand-name">
+            Jaqueline Caldi
+          </div>
 
-            <span>
-              Jaqueline Caldi
-            </span>
+          <p class="footer-brand-description">
 
-          </a>
-
-
-          <p class="footer-description">
-
-            Psicopedagoga Clínica dedicada a compreender
-            diferentes formas de aprender e acompanhar
-            cada criança e adolescente de maneira
-            individualizada e acolhedora.
+            Psicopedagogia Clínica com olhar individualizado,
+            acolhedor e atento às diferentes formas de
+            aprender.
 
           </p>
 
@@ -4173,42 +4204,70 @@
 
         <div class="footer-column">
 
-          <div class="footer-column-title">
+          <h4>
+            Atendimento
+          </h4>
+
+          <a href="#sobre">
+            Sobre mim
+          </a>
+
+          <a href="#formacao">
+            Formação
+          </a>
+
+          <a href="#publico">
+            Para quem
+          </a>
+
+          <a href="#processo">
+            Como funciona
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Contato
+          </h4>
+
+          <!-- SUBSTITUA PELOS DADOS REAIS -->
+
+          <a href="mailto:contato@jaquelinecaldi.com.br">
+            contato@jaquelinecaldi.com.br
+          </a>
+
+          <a href="tel:+5543999999999">
+            (43) 99999-9999
+          </a>
+
+          <a href="#contato">
+            Agendar atendimento
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
             Localização
-          </div>
+          </h4>
+
+          <!-- SUBSTITUA PELA CIDADE REAL -->
 
           <p>
             Londrina — Paraná
           </p>
 
-        </div>
+          <p>
+            Atendimento com horário previamente agendado.
+          </p>
 
-
-        <div class="footer-column">
-
-          <div class="footer-column-title">
-            E-mail
-          </div>
-
-          <a
-            href="mailto:contato@jaquelinecaldi.com.br"
-          >
-            contato@jaquelinecaldi.com.br
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <div class="footer-column-title">
-            Telefone
-          </div>
-
-          <a
-            href="tel:+5543999999999"
-          >
-            (43) 99999-9999
+          <a href="#localizacao">
+            Ver localização
           </a>
 
         </div>
@@ -4219,6 +4278,7 @@
 
       <div class="footer-bottom">
 
+
         <div class="footer-copy">
 
           © <span id="year"></span>
@@ -4227,12 +4287,12 @@
         </div>
 
 
-        <a
-          href="#inicio"
-          class="footer-back"
-        >
-          Voltar ao início ↑
-        </a>
+        <div class="footer-professional">
+
+          Psicopedagogia Clínica · Atendimento individualizado
+
+        </div>
+
 
       </div>
 
@@ -4246,7 +4306,7 @@
        ===================================================== -->
 
   <a
-    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedag%C3%B3gico."
+    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
     class="whatsapp"
     target="_blank"
     rel="noopener"
@@ -4455,7 +4515,7 @@
 
 
     /* =====================================================
-       PARALLAX SUAVE
+       PARALLAX SUAVE DO HERO
        ===================================================== */
 
     const heroImage =
@@ -4510,9 +4570,9 @@
             .trim();
 
 
-        const crianca =
+        const nomeCrianca =
           document
-            .getElementById("crianca")
+            .getElementById("nomeCrianca")
             .value
             .trim();
 
@@ -4524,10 +4584,11 @@
             .trim();
 
 
-        const motivo =
+        const demanda =
           document
-            .getElementById("motivo")
-            .value;
+            .getElementById("demanda")
+            .value
+            .trim();
 
 
         const mensagem =
@@ -4539,33 +4600,46 @@
 
         const texto =
 
-`Olá Jaqueline! Gostaria de informações sobre o acompanhamento psicopedagógico.
+          `Olá, Jaqueline! Conheci seu trabalho pelo site e gostaria de saber mais sobre o acompanhamento psicopedagógico.
 
-*Responsável:* ${responsavel}
-*WhatsApp:* ${telefone}
-*Nome da criança/adolescente:* ${crianca}
-*Idade:* ${idade} anos
-*Principal motivo:* ${motivo}
+Nome do responsável: ${responsavel}
 
-*Sobre a situação:*
+Telefone: ${telefone}
+
+Nome da criança/adolescente: ${nomeCrianca}
+
+Idade: ${idade} anos
+
+Principal motivo da procura: ${demanda}
+
+Sobre a situação:
 ${mensagem}`;
 
 
-        const whatsappNumber =
+        /*
+          NÚMERO DO WHATSAPP.
+
+          SUBSTITUA 5543999999999
+          PELO NÚMERO REAL, COM DDD.
+        */
+
+        const numeroWhatsApp =
           "5543999999999";
 
 
-        const whatsappURL =
-          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(texto)}`;
+        const url =
+          `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
 
 
         window.open(
-          whatsappURL,
-          "_blank"
+          url,
+          "_blank",
+          "noopener,noreferrer"
         );
 
       }
     );
+
 
   </script>
 
