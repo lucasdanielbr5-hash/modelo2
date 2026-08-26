@@ -2,77 +2,38 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
     content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes."
   >
 
-  <meta
-    name="theme-color"
-    content="#F7F3EE"
-  >
+  <meta name="theme-color" content="#F7F3EE">
 
   <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
 
-
-  <!-- =====================================================
-       GOOGLE FONT — INTER
-       ===================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-
   <style>
 
-    /* =====================================================
-       CORES
-       ===================================================== */
-
     :root {
-
       --purple: #6048AC;
-
       --blue: #005387;
-
       --cream: #F7F3EE;
-
       --white: #FFFFFF;
-
       --black: #17252C;
-
       --muted: #6F797D;
-
-      --soft-purple: #E9E3F5;
-
       --line: rgba(0,83,135,.13);
-
       --max: 1240px;
-
     }
-
-
-    /* =====================================================
-       RESET
-       ===================================================== */
 
     * {
       margin: 0;
@@ -80,2551 +41,969 @@
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
       background: var(--cream);
-
       color: var(--black);
-
       font-family: "Inter", sans-serif;
-
       overflow-x: hidden;
-
     }
-
-
-    body.no-scroll {
-      overflow: hidden;
-    }
-
 
     img {
       display: block;
       max-width: 100%;
     }
 
-
     a {
       color: inherit;
       text-decoration: none;
     }
 
-
     button {
       font-family: inherit;
     }
-
 
     ::selection {
       background: var(--purple);
       color: white;
     }
 
-
     .container {
-
-      width: min(
-        var(--max),
-        calc(100% - 80px)
-      );
-
+      width: min(var(--max), calc(100% - 80px));
       margin: auto;
-
     }
 
 
-    /* =====================================================
-       LOADER
-       ===================================================== */
-
-    .loader {
-
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 9999;
-
-      background: var(--cream);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      transition:
-        opacity .8s ease,
-        visibility .8s ease;
-
-    }
-
-
-    .loader.hide {
-
-      opacity: 0;
-
-      visibility: hidden;
-
-    }
-
-
-    .loader-inner {
-      text-align: center;
-    }
-
-
-    .loader-logo {
-
-      width: 72px;
-
-      margin: 0 auto 22px;
-
-    }
-
-
-    .loader-line {
-
-      width: 80px;
-
-      height: 1px;
-
-      background: var(--blue);
-
-      position: relative;
-
-      overflow: hidden;
-
-    }
-
-
-    .loader-line::after {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background: var(--purple);
-
-      transform: translateX(-100%);
-
-      animation:
-        loading 1.2s ease infinite;
-
-    }
-
-
-    @keyframes loading {
-
-      to {
-        transform: translateX(100%);
-      }
-
-    }
-
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
+    /* HEADER */
 
     .header {
-
       position: fixed;
-
-      top: 0;
-      left: 0;
-
+      inset: 0 0 auto;
       width: 100%;
-
-      height: 92px;
-
+      height: 88px;
       z-index: 1000;
-
       color: white;
-
-      transition:
-        background .45s ease,
-        color .45s ease,
-        height .45s ease,
-        box-shadow .45s ease;
-
+      transition: .4s ease;
     }
-
 
     .header.scrolled {
-
-      height: 76px;
-
-      background:
-        rgba(247,243,238,.94);
-
+      height: 74px;
+      background: rgba(247,243,238,.94);
       color: var(--blue);
-
-      backdrop-filter: blur(16px);
-
-      box-shadow:
-        0 8px 30px rgba(0,0,0,.04);
-
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 30px rgba(0,0,0,.04);
     }
-
 
     .nav {
-
       height: 100%;
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
     }
-
-
-    /* =====================================================
-       LOGO
-       ===================================================== */
 
     .brand {
-
       display: flex;
-
       align-items: center;
-
-      gap: 12px;
-
+      gap: 11px;
     }
-
 
     .brand img {
-
-      width: 48px;
-      height: 48px;
-
+      width: 46px;
+      height: 46px;
       object-fit: contain;
-
-      background: rgba(255,255,255,.9);
-
     }
-
 
     .brand-name {
-
-      font-size: 15px;
-
+      font-size: 14px;
       font-weight: 600;
-
-      letter-spacing: -.3px;
-
-      transition: color .4s ease;
-
     }
-
-
-    /* =====================================================
-       MENU
-       ===================================================== */
 
     .menu {
-
       display: flex;
-
       align-items: center;
-
-      gap: 34px;
-
+      gap: 30px;
       list-style: none;
-
     }
-
 
     .menu a {
-
-      position: relative;
-
       font-size: 10px;
-
       font-weight: 500;
-
       letter-spacing: 1.5px;
-
       text-transform: uppercase;
-
-      color: inherit;
-
       transition: opacity .3s ease;
-
     }
-
 
     .menu a:hover {
-      opacity: .65;
+      opacity: .6;
     }
-
 
     .menu-contact {
-
       border: 1px solid currentColor;
-
-      padding:
-        11px 20px;
-
+      padding: 10px 19px;
       border-radius: 100px;
-
     }
-
-
-    /* =====================================================
-       MOBILE BUTTON
-       ===================================================== */
 
     .mobile-toggle {
-
       display: none;
-
-      width: 44px;
-      height: 44px;
-
-      border: 0;
-
-      background: transparent;
-
-      color: inherit;
-
-      cursor: pointer;
-
-    }
-
-
-    .mobile-toggle span {
-
-      display: block;
-
-      width: 20px;
-
-      height: 1px;
-
-      margin: 5px auto;
-
-      background: currentColor;
-
-      transition: .3s;
-
-    }
-
-
-    /* =====================================================
-       HERO
-       ===================================================== */
-
-    .hero {
-
-      position: relative;
-
-      height: 100svh;
-
-      min-height: 650px;
-
-      overflow: hidden;
-
-      background: #4B433E;
-
-      color: white;
-
-    }
-
-
-    .hero-image {
-
-      position: absolute;
-
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      object-position:
-        50% 18%;
-
-      transform:
-        scale(1.035);
-
-      animation:
-        heroZoom 2.2s
-        cubic-bezier(.2,.6,.2,1)
-        forwards;
-
-    }
-
-
-    @keyframes heroZoom {
-
-      from {
-        transform: scale(1.09);
-      }
-
-      to {
-        transform: scale(1.035);
-      }
-
-    }
-
-
-    .hero-overlay {
-
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(12,21,24,.66) 0%,
-          rgba(12,21,24,.30) 48%,
-          rgba(12,21,24,.05) 100%
-        );
-
-    }
-
-
-    .hero-bottom {
-
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      height: 42%;
-
-      background:
-        linear-gradient(
-          transparent,
-          rgba(8,17,20,.28)
-        );
-
-      pointer-events: none;
-
-    }
-
-
-    /* =====================================================
-       LOGO BRANCA SOBRE A FOTO
-       ===================================================== */
-
-    .hero-logo-center {
-
-      position: absolute;
-
-      z-index: 4;
-
-      left: 50%;
-
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      width: clamp(
-        90px,
-        10vw,
-        150px
-      );
-
-      height: auto;
-
-      object-fit: contain;
-
-      /*
-        A imagem já deve ser a versão
-        branca/transparente da logo.
-      */
-
-      filter:
-        brightness(0)
-        invert(1);
-
-      opacity: 0;
-
-      animation:
-        heroLogoIn 1.1s
-        .45s
-        cubic-bezier(.2,.7,.2,1)
-        forwards;
-
-      pointer-events: none;
-
-    }
-
-
-    @keyframes heroLogoIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translate(-50%, -50%)
-          scale(.82);
-
-      }
-
-      to {
-
-        opacity: .96;
-
-        transform:
-          translate(-50%, -50%)
-          scale(1);
-
-      }
-
-    }
-
-
-    /* =====================================================
-       HERO CONTENT
-       ===================================================== */
-
-    .hero-content {
-
-      position: relative;
-
-      z-index: 2;
-
-      height: 100%;
-
-      display: flex;
-
-      align-items: flex-end;
-
-      padding-bottom: 105px;
-
-    }
-
-
-    .hero-copy {
-
-      max-width: 720px;
-
-    }
-
-
-    .eyebrow {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 13px;
-
-      margin-bottom: 22px;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 2.7px;
-
-      text-transform: uppercase;
-
-      opacity: 0;
-
-      animation:
-        fadeUp .9s .3s forwards;
-
-    }
-
-
-    .eyebrow::before {
-
-      content: "";
-
-      width: 32px;
-      height: 1px;
-
-      background: currentColor;
-
-    }
-
-
-    .hero-title {
-
-      font-size:
-        clamp(
-          48px,
-          6vw,
-          86px
-        );
-
-      line-height: .98;
-
-      font-weight: 300;
-
-      letter-spacing: -4px;
-
-      max-width: 850px;
-
-      overflow: hidden;
-
-    }
-
-
-    .hero-title-line {
-
-      display: block;
-
-      overflow: hidden;
-
-    }
-
-
-    .hero-title-line span {
-
-      display: block;
-
-      transform:
-        translateY(110%);
-
-      animation:
-        titleUp 1.05s
-        cubic-bezier(.16,1,.3,1)
-        forwards;
-
-    }
-
-
-    .hero-title-line:nth-child(2) span {
-      animation-delay: .12s;
-    }
-
-
-    @keyframes titleUp {
-
-      to {
-        transform: translateY(0);
-      }
-
-    }
-
-
-    .hero-description {
-
-      margin-top: 27px;
-
-      max-width: 510px;
-
-      font-size: 13px;
-
-      line-height: 1.8;
-
-      font-weight: 300;
-
-      color: rgba(255,255,255,.86);
-
-      opacity: 0;
-
-      animation:
-        fadeUp .9s .65s forwards;
-
-    }
-
-
-    .hero-action {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 14px;
-
-      margin-top: 34px;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      opacity: 0;
-
-      animation:
-        fadeUp .9s .8s forwards;
-
-    }
-
-
-    .scroll-circle {
-
       width: 42px;
       height: 42px;
-
-      border:
-        1px solid
-        rgba(255,255,255,.7);
-
-      border-radius: 50%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      transition:
-        background .3s,
-        transform .3s;
-
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
     }
 
-
-    .scroll-circle span {
-
-      width: 7px;
-      height: 7px;
-
-      border-right:
-        1px solid white;
-
-      border-bottom:
-        1px solid white;
-
-      transform:
-        rotate(45deg)
-        translate(-2px,-2px);
-
-    }
-
-
-    .hero-action:hover .scroll-circle {
-
-      background: var(--purple);
-
-      transform: translateY(3px);
-
-    }
-
-
-    /* =====================================================
-       NOME VERTICAL
-       ===================================================== */
-
-    .vertical-name {
-
-      position: absolute;
-
-      z-index: 3;
-
-      right: 42px;
-
-      top: 50%;
-
-      transform:
-        translateY(-50%)
-        rotate(90deg);
-
-      transform-origin: center;
-
-      color: rgba(255,255,255,.72);
-
-      font-size: 9px;
-
-      letter-spacing: 4px;
-
-      font-weight: 500;
-
-      text-transform: uppercase;
-
-      white-space: nowrap;
-
-      animation:
-        verticalIn 1.3s .8s both;
-
-    }
-
-
-    @keyframes verticalIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(-40%)
-          rotate(90deg);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(-50%)
-          rotate(90deg);
-
-      }
-
-    }
-
-
-    /* =====================================================
-       HERO INDEX
-       ===================================================== */
-
-    .hero-index {
-
-      position: absolute;
-
-      right: 40px;
-      bottom: 46px;
-
-      z-index: 3;
-
-      font-size: 9px;
-
-      letter-spacing: 2px;
-
-      color: rgba(255,255,255,.7);
-
-    }
-
-
-    /* =====================================================
-       GENERIC SECTION
-       ===================================================== */
-
-    .section {
-
-      padding:
-        145px 0;
-
-    }
-
-
-    .section-label {
-
-      color: var(--purple);
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2.4px;
-
-      margin-bottom: 24px;
-
-    }
-
-
-    .section-title {
-
-      color: var(--blue);
-
-      font-size:
-        clamp(
-          38px,
-          4.5vw,
-          62px
-        );
-
-      font-weight: 300;
-
-      letter-spacing: -2.8px;
-
-      line-height: 1.04;
-
-    }
-
-
-    .section-title strong {
-
-      font-weight: 500;
-
-    }
-
-
-    .section-title em {
-
-      color: var(--purple);
-
-      font-style: normal;
-
-    }
-
-
-    .section-text {
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-      line-height: 1.9;
-
-      font-weight: 300;
-
-    }
-
-
-    /* =====================================================
-       SOBRE
-       ===================================================== */
-
-    .about {
-
-      background: var(--cream);
-
-    }
-
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .8fr
-        1.2fr;
-
-      gap: 120px;
-
-      align-items: center;
-
-    }
-
-
-    .about-intro {
-
-      position: relative;
-
-    }
-
-
-    .about-intro::before {
-
-      content: "JC";
-
-      position: absolute;
-
-      left: -30px;
-
-      top: -55px;
-
-      color: rgba(96,72,172,.06);
-
-      font-size: 150px;
-
-      line-height: 1;
-
-      font-weight: 700;
-
-      letter-spacing: -15px;
-
-      z-index: 0;
-
-    }
-
-
-    .about-intro > * {
-
-      position: relative;
-
-      z-index: 1;
-
-    }
-
-
-    .about-text-wrap {
-
-      max-width: 620px;
-
-    }
-
-
-    .about-text-wrap p + p {
-
-      margin-top: 20px;
-
-    }
-
-
-    .about-signature {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 18px;
-
-      margin-top: 40px;
-
-    }
-
-
-    .about-signature-line {
-
-      width: 45px;
-
+    .mobile-toggle span {
+      display: block;
+      width: 20px;
       height: 1px;
-
-      background: var(--purple);
-
+      margin: 5px auto;
+      background: currentColor;
     }
 
 
-    .about-signature span {
+    /* HERO */
 
-      color: var(--blue);
-
-      font-size: 10px;
-
-      letter-spacing: 1.2px;
-
-      font-weight: 500;
-
-    }
-
-
-    /* =====================================================
-       MINI STATS
-       ===================================================== */
-
-    .stats {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      border-top:
-        1px solid var(--line);
-
-      margin-top: 55px;
-
-    }
-
-
-    .stat {
-
-      padding:
-        24px 25px 0 0;
-
-      border-right:
-        1px solid var(--line);
-
-    }
-
-
-    .stat:not(:first-child) {
-
-      padding-left: 25px;
-
-    }
-
-
-    .stat:last-child {
-
-      border-right: 0;
-
-    }
-
-
-    .stat-number {
-
-      color: var(--purple);
-
-      font-size: 28px;
-
-      font-weight: 500;
-
-      letter-spacing: -1px;
-
-    }
-
-
-    .stat-label {
-
-      color: var(--muted);
-
-      font-size: 9px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.2px;
-
-      margin-top: 6px;
-
-      line-height: 1.5;
-
-    }
-
-
-    /* =====================================================
-       FORMAÇÃO
-       ===================================================== */
-
-    .formation {
-
-      background: white;
-
-    }
-
-
-    .formation-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .65fr
-        1.35fr;
-
-      gap: 100px;
-
-    }
-
-
-    .formation-list {
-
-      border-top:
-        1px solid var(--line);
-
-    }
-
-
-    .formation-item {
-
-      display: grid;
-
-      grid-template-columns:
-        70px
-        1fr;
-
-      gap: 25px;
-
-      padding:
-        28px 0;
-
-      border-bottom:
-        1px solid var(--line);
-
-      transition:
-        padding .35s ease;
-
-    }
-
-
-    .formation-item:hover {
-
-      padding-left: 12px;
-
-    }
-
-
-    .formation-number {
-
-      color: var(--purple);
-
-      font-size: 9px;
-
-      letter-spacing: 2px;
-
-      padding-top: 5px;
-
-    }
-
-
-    .formation-item h3 {
-
-      color: var(--blue);
-
-      font-size: 19px;
-
-      font-weight: 500;
-
-      letter-spacing: -.4px;
-
-    }
-
-
-    .formation-item p {
-
-      color: var(--muted);
-
-      font-size: 12px;
-
-      line-height: 1.7;
-
-      margin-top: 7px;
-
-    }
-
-
-    /* =====================================================
-       PARA QUEM
-       ===================================================== */
-
-    .audience {
-
-      background: var(--blue);
-
-      color: white;
-
-      overflow: hidden;
-
-    }
-
-
-    .audience-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .75fr
-        1.25fr;
-
-      gap: 100px;
-
-      align-items: start;
-
-    }
-
-
-    .audience .section-label {
-
-      color: #CFC4EF;
-
-    }
-
-
-    .audience .section-title {
-
-      color: white;
-
-    }
-
-
-    /*
-      A palavra "difícil" não recebe mais
-      a cor roxa nesta seção.
-    */
-
-    .audience .section-title em {
-
-      color: white;
-
-      font-style: normal;
-
-    }
-
-
-    .audience-copy {
-
-      max-width: 540px;
-
-    }
-
-
-    .audience-copy p {
-
-      color: rgba(255,255,255,.68);
-
-      font-size: 13px;
-
-      line-height: 1.9;
-
-      margin-top: 24px;
-
-    }
-
-
-    .audience-list {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      border-top:
-        1px solid
-        rgba(255,255,255,.18);
-
-      /*
-        Pequeno refinamento visual apenas nesta
-        seção para deixá-la mais limpa.
-      */
-
+    .hero {
       position: relative;
-
-    }
-
-
-    .audience-item {
-
-      min-height: 150px;
-
-      padding:
-        27px 25px 25px 0;
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.18);
-
-      border-right:
-        1px solid
-        rgba(255,255,255,.18);
-
-      transition:
-        background .35s ease,
-        padding .35s ease;
-
-    }
-
-
-    .audience-item:nth-child(even) {
-
-      padding-left: 25px;
-
-      border-right: 0;
-
-    }
-
-
-    .audience-item:hover {
-
-      background:
-        rgba(255,255,255,.06);
-
-      padding-top: 34px;
-
-    }
-
-
-    .audience-item span {
-
-      color: #CFC4EF;
-
-      font-size: 9px;
-
-      letter-spacing: 2px;
-
-    }
-
-
-    .audience-item h3 {
-
-      margin-top: 14px;
-
-      color: white;
-
-      font-size: 18px;
-
-      font-weight: 400;
-
-      letter-spacing: -.3px;
-
-    }
-
-
-    /* =====================================================
-       COMO FUNCIONA
-       ===================================================== */
-
-    .process {
-
-      background: var(--cream);
-
-    }
-
-
-    .process-head {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap: 100px;
-
-      align-items: end;
-
-      margin-bottom: 70px;
-
-    }
-
-
-    .process-head p {
-
-      max-width: 470px;
-
-    }
-
-
-    .process-steps {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      border-top:
-        1px solid var(--line);
-
-    }
-
-
-    .step {
-
-      position: relative;
-
-      min-height: 230px;
-
-      padding:
-        27px 25px 25px 0;
-
-      border-right:
-        1px solid var(--line);
-
+      height: 100svh;
+      min-height: 650px;
       overflow: hidden;
-
+      background: #4B433E;
+      color: white;
     }
 
-
-    .step:not(:first-child) {
-
-      padding-left: 25px;
-
-    }
-
-
-    .step:last-child {
-
-      border-right: 0;
-
-    }
-
-
-    .step-number {
-
-      color: var(--purple);
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-    }
-
-
-    .step h3 {
-
-      margin-top: 55px;
-
-      color: var(--blue);
-
-      font-size: 19px;
-
-      font-weight: 500;
-
-    }
-
-
-    .step p {
-
-      color: var(--muted);
-
-      font-size: 11px;
-
-      line-height: 1.8;
-
-      margin-top: 9px;
-
-      max-width: 210px;
-
-    }
-
-
-    .step::after {
-
-      content: "";
-
+    .hero-image {
       position: absolute;
-
-      left: 0;
-      bottom: 0;
-
-      width: 0;
-
-      height: 3px;
-
-      background: var(--purple);
-
-      transition: width .5s ease;
-
-    }
-
-
-    .step:hover::after {
-
-      width: 100%;
-
-    }
-
-
-    /* =====================================================
-       FOTO / FRASE
-       ===================================================== */
-
-    .visual {
-
-      height: 620px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background: #ddd;
-
-    }
-
-
-    .visual img {
-
+      inset: 0;
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
-      object-position: center;
-
-      transform:
-        scale(1.04);
-
-      transition:
-        transform 1.2s
-        cubic-bezier(.2,.6,.2,1);
-
+      object-position: 50% 18%;
+      transform: scale(1.035);
     }
 
-
-    .visual:hover img {
-
-      transform:
-        scale(1.075);
-
-    }
-
-
-    .visual-overlay {
-
+    .hero-overlay {
       position: absolute;
-
       inset: 0;
-
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.52),
-          transparent 75%
+          rgba(12,21,24,.62),
+          rgba(12,21,24,.18) 65%,
+          rgba(12,21,24,.02)
         );
-
     }
 
-
-    .visual-content {
-
-      position: absolute;
-
-      left: max(
-        40px,
-        calc((100vw - var(--max)) / 2)
-      );
-
-      bottom: 70px;
-
-      color: white;
-
-      max-width: 580px;
-
-    }
-
-
-    .visual-content small {
-
-      display: block;
-
-      font-size: 9px;
-
-      letter-spacing: 2.5px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 20px;
-
-    }
-
-
-    .visual-content h2 {
-
-      font-size:
-        clamp(
-          35px,
-          4.5vw,
-          58px
-        );
-
-      font-weight: 300;
-
-      letter-spacing: -2.5px;
-
-      line-height: 1.05;
-
-    }
-
-
-    /* =====================================================
-       LOCALIZAÇÃO
-       ===================================================== */
-
-    .location {
-
-      background: white;
-
-    }
-
-
-    .location-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap: 90px;
-
-      align-items: center;
-
-    }
-
-
-    .location-photo {
-
-      height: 530px;
-
-      overflow: hidden;
-
+    .hero-content {
       position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 95px;
+    }
 
+    .hero-copy {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 6vw, 84px);
+      line-height: .98;
+      font-weight: 300;
+      letter-spacing: -4px;
+    }
+
+    .hero-description {
+      margin-top: 25px;
+      max-width: 500px;
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 300;
+      color: rgba(255,255,255,.86);
+    }
+
+    .hero-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 30px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .scroll-circle {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scroll-circle span {
+      width: 7px;
+      height: 7px;
+      border-right: 1px solid white;
+      border-bottom: 1px solid white;
+      transform: rotate(45deg) translate(-2px,-2px);
     }
 
 
-    .location-photo img {
+    /* LOGO CENTRAL DA FOTO */
 
+    .hero-logo {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      width: 115px;
+      height: 115px;
+      object-fit: contain;
+      transform: translate(-50%, -50%);
+      filter: brightness(0) invert(1);
+      opacity: .96;
+      pointer-events: none;
+    }
+
+
+    /* SEÇÕES */
+
+    .section {
+      padding: 130px 0;
+    }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      color: var(--blue);
+      font-size: clamp(38px, 4.5vw, 62px);
+      font-weight: 300;
+      letter-spacing: -2.8px;
+      line-height: 1.04;
+    }
+
+    .section-title strong {
+      font-weight: 500;
+    }
+
+    .section-title em {
+      color: var(--purple);
+      font-style: normal;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+
+    /* SOBRE */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 110px;
+      align-items: center;
+    }
+
+    .about-text-wrap {
+      max-width: 620px;
+    }
+
+    .about-text-wrap p + p {
+      margin-top: 18px;
+    }
+
+    .about-signature {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .about-signature-line {
+      width: 42px;
+      height: 1px;
+      background: var(--purple);
+    }
+
+    .about-signature span {
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+
+    /* FORMAÇÃO */
+
+    .formation {
+      background: white;
+    }
+
+    .formation-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 100px;
+    }
+
+    .formation-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .formation-item {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .formation-number {
+      color: var(--purple);
+      font-size: 9px;
+      letter-spacing: 2px;
+      padding-top: 4px;
+    }
+
+    .formation-item h3 {
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .formation-item p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+
+
+    /* PARA QUEM */
+
+    .audience {
+      background: white;
+      color: var(--blue);
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .audience-copy {
+      max-width: 520px;
+    }
+
+    .audience-copy p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+      margin-top: 22px;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .audience-item {
+      min-height: 125px;
+      padding: 25px 25px 25px 0;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .audience-item:nth-child(even) {
+      padding-left: 25px;
+      border-right: 0;
+    }
+
+    .audience-item span {
+      color: var(--purple);
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .audience-item h3 {
+      margin-top: 13px;
+      color: var(--blue);
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+
+    /* PROCESSO */
+
+    .process {
+      background: var(--cream);
+    }
+
+    .process-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .process-head p {
+      max-width: 460px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .step {
+      min-height: 210px;
+      padding: 25px 25px 25px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .step:not(:first-child) {
+      padding-left: 25px;
+    }
+
+    .step:last-child {
+      border-right: 0;
+    }
+
+    .step-number {
+      color: var(--purple);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .step h3 {
+      margin-top: 48px;
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+      margin-top: 8px;
+      max-width: 210px;
+    }
+
+
+    /* FOTO */
+
+    .visual {
+      height: 570px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
       object-position: center;
-
-      transition:
-        transform 1s ease;
-
     }
 
-
-    .location-photo:hover img {
-
-      transform:
-        scale(1.04);
-
-    }
-
-
-    .location-photo::after {
-
-      content: "";
-
+    .visual-overlay {
       position: absolute;
-
-      inset: 18px;
-
-      border:
-        1px solid
-        rgba(255,255,255,.35);
-
-      pointer-events: none;
-
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.5),
+        transparent 75%
+      );
     }
 
+    .visual-content {
+      position: absolute;
+      left: max(40px, calc((100vw - var(--max)) / 2));
+      bottom: 65px;
+      color: white;
+      max-width: 560px;
+    }
+
+    .visual-content small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .visual-content h2 {
+      font-size: clamp(35px, 4.5vw, 57px);
+      font-weight: 300;
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+    }
+
+
+    /* LOCALIZAÇÃO */
+
+    .location {
+      background: white;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .location-photo {
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .location-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .location-info {
-
       max-width: 470px;
-
     }
-
 
     .address {
-
-      margin-top: 35px;
-
-      padding-top: 25px;
-
-      border-top:
-        1px solid var(--line);
-
+      margin-top: 30px;
+      padding-top: 23px;
+      border-top: 1px solid var(--line);
     }
-
 
     .address-label {
-
       color: var(--purple);
-
       font-size: 9px;
-
       font-weight: 600;
-
       letter-spacing: 2px;
-
       text-transform: uppercase;
-
-      margin-bottom: 13px;
-
+      margin-bottom: 11px;
     }
-
 
     .address-text {
-
       color: var(--blue);
-
       font-size: 15px;
-
       line-height: 1.7;
-
-      font-weight: 400;
-
     }
-
 
     .address-note {
-
       color: var(--muted);
-
       font-size: 11px;
-
-      line-height: 1.7;
-
-      margin-top: 6px;
-
+      margin-top: 5px;
     }
 
 
-    .location-actions {
-
-      display: flex;
-
-      gap: 15px;
-
-      margin-top: 28px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .button {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      min-height: 44px;
-
-      padding:
-        0 21px;
-
-      border-radius: 100px;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease;
-
-    }
-
-
-    .button-primary {
-
-      background: var(--purple);
-
-      color: white;
-
-    }
-
-
-    .button-primary:hover {
-
-      background: #50399A;
-
-      transform:
-        translateY(-2px);
-
-    }
-
-
-    .button-outline {
-
-      color: var(--blue);
-
-      border:
-        1px solid var(--blue);
-
-    }
-
-
-    .button-outline:hover {
-
-      background: var(--blue);
-
-      color: white;
-
-    }
-
-
-    /* =====================================================
-       CONTATO
-       ===================================================== */
+    /* CONTATO */
 
     .contact {
-
       background: var(--cream);
-
-      padding:
-        120px 0;
-
+      padding: 105px 0;
       text-align: center;
-
     }
 
-
-    .contact .section-label {
-
-      margin-bottom: 20px;
-
+    .contact-title {
+      color: var(--blue);
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 1;
+      letter-spacing: -3px;
+      font-weight: 300;
     }
 
-
-    /*
-      O título "Vamos conversar sobre o próximo passo?"
-      foi removido conforme solicitado.
-    */
+    .contact-title span {
+      color: var(--purple);
+      font-weight: 500;
+    }
 
     .contact-description {
-
-      max-width: 470px;
-
-      margin:
-        0 auto 32px;
-
+      max-width: 440px;
+      margin: 22px auto 30px;
       color: var(--muted);
-
       font-size: 13px;
-
       line-height: 1.8;
+    }
 
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 21px;
+      border-radius: 100px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .button-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #50399A;
+      transform: translateY(-2px);
     }
 
 
-    /* =====================================================
-       FOOTER
-       ===================================================== */
+    /* FOOTER */
 
     footer {
-
       background: var(--cream);
-
-      padding:
-        35px 0;
-
+      padding: 30px 0;
     }
-
 
     .footer-inner {
-
-      padding-top: 22px;
-
-      border-top:
-        1px solid var(--line);
-
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
     }
-
 
     .footer-brand {
-
       display: flex;
-
       align-items: center;
-
-      gap: 10px;
-
+      gap: 9px;
       color: var(--blue);
-
       font-size: 12px;
-
       font-weight: 500;
-
     }
-
 
     .footer-brand img {
-
-      width: 38px;
-      height: 38px;
-
+      width: 35px;
+      height: 35px;
       object-fit: contain;
-
     }
-
 
     .footer-copy {
-
       color: var(--muted);
-
       font-size: 9px;
-
-      letter-spacing: .5px;
-
     }
 
 
-    /* =====================================================
-       WHATSAPP
-       ===================================================== */
+    /* WHATSAPP */
 
     .whatsapp {
-
       position: fixed;
-
-      right: 25px;
-      bottom: 24px;
-
-      width: 53px;
-      height: 53px;
-
+      right: 23px;
+      bottom: 22px;
+      width: 52px;
+      height: 52px;
       z-index: 900;
-
       border-radius: 50%;
-
       background: #25D366;
-
       color: white;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      box-shadow:
-        0 10px 35px
-        rgba(37,211,102,.25);
-
-      transition:
-        transform .3s ease;
-
+      box-shadow: 0 10px 35px rgba(37,211,102,.25);
+      transition: .3s ease;
     }
-
 
     .whatsapp:hover {
-
-      transform:
-        translateY(-4px)
-        scale(1.04);
-
+      transform: translateY(-4px) scale(1.04);
     }
-
 
     .whatsapp svg {
-
       width: 23px;
       height: 23px;
-
       fill: currentColor;
-
     }
 
 
-    /* =====================================================
-       REVEAL
-       ===================================================== */
+    /* ANIMAÇÃO */
 
     .reveal {
-
       opacity: 0;
-
-      transform:
-        translateY(35px);
-
+      transform: translateY(25px);
       transition:
-        opacity .8s ease,
-        transform .9s
-        cubic-bezier(.2,.7,.2,1);
-
+        opacity .7s ease,
+        transform .8s ease;
     }
-
 
     .reveal.visible {
-
       opacity: 1;
-
-      transform:
-        translateY(0);
-
+      transform: translateY(0);
     }
-
 
     .delay-1 {
       transition-delay: .1s;
     }
 
-
     .delay-2 {
       transition-delay: .2s;
     }
-
 
     .delay-3 {
       transition-delay: .3s;
     }
 
 
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
+    /* RESPONSIVO */
 
     @media (max-width: 1000px) {
 
       .container {
-
-        width:
-          calc(100% - 48px);
-
+        width: calc(100% - 48px);
       }
-
 
       .menu {
-
         gap: 20px;
-
       }
-
 
       .about-grid,
       .formation-grid,
       .audience-grid,
       .location-grid {
-
         grid-template-columns: 1fr;
-
         gap: 60px;
-
       }
-
 
       .process-head {
-
         grid-template-columns: 1fr;
-
         gap: 25px;
-
       }
-
 
       .process-steps {
-
-        grid-template-columns:
-          repeat(2,1fr);
-
+        grid-template-columns: repeat(2,1fr);
       }
-
 
       .step:nth-child(2) {
-
         border-right: 0;
-
       }
-
 
       .visual-content {
-
         left: 40px;
-
       }
-
     }
 
 
     @media (max-width: 720px) {
 
       .container {
-
-        width:
-          calc(100% - 36px);
-
+        width: calc(100% - 36px);
       }
-
 
       .header {
-
-        height: 76px;
-
+        height: 74px;
       }
-
 
       .brand img {
-
-        width: 43px;
-        height: 43px;
-
+        width: 42px;
+        height: 42px;
       }
-
 
       .brand-name {
-
         font-size: 13px;
-
       }
-
-
-      .menu {
-
-        position: fixed;
-
-        top: 76px;
-
-        left: 15px;
-        right: 15px;
-
-        padding: 25px;
-
-        background:
-          rgba(247,243,238,.98);
-
-        color: var(--blue);
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 20px;
-
-        transform:
-          translateY(-20px);
-
-        opacity: 0;
-
-        pointer-events: none;
-
-        transition:
-          opacity .3s,
-          transform .3s;
-
-        box-shadow:
-          0 20px 50px
-          rgba(0,0,0,.08);
-
-      }
-
-
-      .menu.open {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-        pointer-events: auto;
-
-      }
-
-
-      .menu-contact {
-
-        text-align: center;
-
-      }
-
 
       .mobile-toggle {
-
         display: block;
-
       }
 
+      .menu {
+        position: fixed;
+        top: 74px;
+        left: 15px;
+        right: 15px;
+        padding: 24px;
+        background: rgba(247,243,238,.98);
+        color: var(--blue);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        opacity: 0;
+        transform: translateY(-15px);
+        pointer-events: none;
+        transition: .3s ease;
+        box-shadow: 0 20px 50px rgba(0,0,0,.08);
+      }
+
+      .menu.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .menu-contact {
+        text-align: center;
+      }
 
       .hero {
-
         min-height: 650px;
-
       }
-
 
       .hero-image {
-
-        object-position:
-          52% 12%;
-
+        object-position: 52% 12%;
       }
-
-
-      .hero-overlay {
-
-        background:
-          linear-gradient(
-            90deg,
-            rgba(12,21,24,.63),
-            rgba(12,21,24,.22)
-          );
-
-      }
-
 
       .hero-content {
-
-        padding-bottom: 75px;
-
+        padding-bottom: 70px;
       }
-
 
       .hero-title {
-
-        font-size:
-          clamp(
-            42px,
-            12vw,
-            62px
-          );
-
-        letter-spacing:
-          -2.8px;
-
+        font-size: clamp(42px, 12vw, 62px);
+        letter-spacing: -2.8px;
       }
-
 
       .hero-description {
-
         font-size: 12px;
-
-        max-width: 360px;
-
+        max-width: 350px;
       }
 
-
-      .vertical-name {
-
-        right: -18px;
-
-        font-size: 8px;
-
+      .hero-logo {
+        width: 82px;
+        height: 82px;
+        top: 42%;
       }
-
-
-      .hero-index {
-
-        right: 20px;
-
-        bottom: 25px;
-
-      }
-
-
-      .hero-logo-center {
-
-        width: 100px;
-
-      }
-
 
       .section {
-
-        padding:
-          95px 0;
-
+        padding: 90px 0;
       }
-
 
       .section-title {
-
-        font-size:
-          clamp(
-            37px,
-            11vw,
-            52px
-          );
-
-        letter-spacing:
-          -2px;
-
+        font-size: clamp(37px, 11vw, 52px);
+        letter-spacing: -2px;
       }
-
-
-      .about-intro::before {
-
-        left: -5px;
-
-        top: -35px;
-
-        font-size: 100px;
-
-      }
-
-
-      .stats {
-
-        grid-template-columns:
-          repeat(3,1fr);
-
-      }
-
-
-      .stat {
-
-        padding-right: 10px;
-
-      }
-
-
-      .stat:not(:first-child) {
-
-        padding-left: 10px;
-
-      }
-
-
-      .stat-number {
-
-        font-size: 22px;
-
-      }
-
-
-      .stat-label {
-
-        font-size: 8px;
-
-      }
-
 
       .audience-list {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .audience-item,
       .audience-item:nth-child(even) {
-
-        padding:
-          25px 0;
-
+        padding: 23px 0;
         border-right: 0;
-
       }
-
 
       .process-steps {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .step,
       .step:not(:first-child) {
-
         border-right: 0;
-
-        border-bottom:
-          1px solid var(--line);
-
-        padding:
-          25px 0;
-
+        border-bottom: 1px solid var(--line);
+        padding: 25px 0;
       }
-
 
       .step:last-child {
-
         border-bottom: 0;
-
       }
-
 
       .step h3 {
-
-        margin-top: 35px;
-
+        margin-top: 32px;
       }
-
 
       .visual {
-
-        height: 500px;
-
+        height: 470px;
       }
-
 
       .visual-content {
-
         left: 22px;
-
         right: 22px;
-
-        bottom: 45px;
-
+        bottom: 42px;
       }
-
 
       .visual-content h2 {
-
-        font-size:
-          38px;
-
-        letter-spacing:
-          -1.8px;
-
+        font-size: 37px;
+        letter-spacing: -1.8px;
       }
-
 
       .location-photo {
-
-        height: 430px;
-
+        height: 420px;
       }
-
 
       .footer-inner {
-
         align-items: flex-start;
-
         flex-direction: column;
-
-        gap: 18px;
-
+        gap: 16px;
       }
-
 
       .whatsapp {
-
         width: 50px;
         height: 50px;
-
         right: 17px;
         bottom: 17px;
-
       }
-
     }
 
-
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
-
-        animation-duration: .01ms !important;
-
-        animation-iteration-count: 1 !important;
-
+        animation: none !important;
+        transition: none !important;
         scroll-behavior: auto !important;
-
-        transition-duration: .01ms !important;
-
       }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-  <!-- =====================================================
-       LOADER
-       ===================================================== -->
+  <!-- HEADER -->
 
-  <div class="loader" id="loader">
-
-    <div class="loader-inner">
-
-      <img
-        class="loader-logo"
-        src="https://i.imgur.com/J1b0lX4.png"
-        alt=""
-      >
-
-      <div class="loader-line"></div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
-
-  <header
-    class="header"
-    id="header"
-  >
+  <header class="header" id="header">
 
     <div class="container">
 
       <nav class="nav">
 
-
-        <a
-          href="#inicio"
-          class="brand"
-        >
+        <a href="#inicio" class="brand">
 
           <img
             src="https://i.imgur.com/J1b0lX4.png"
@@ -2637,55 +1016,29 @@
 
         </a>
 
-
         <button
           class="mobile-toggle"
           id="mobileToggle"
           aria-label="Abrir menu"
         >
-
           <span></span>
           <span></span>
           <span></span>
-
         </button>
 
+        <ul class="menu" id="menu">
 
-        <ul
-          class="menu"
-          id="menu"
-        >
+          <li><a href="#sobre">Sobre</a></li>
 
-          <li>
-            <a href="#sobre">
-              Sobre
-            </a>
-          </li>
+          <li><a href="#formacao">Formação</a></li>
+
+          <li><a href="#publico">Para quem</a></li>
+
+          <li><a href="#localizacao">Localização</a></li>
 
           <li>
-            <a href="#formacao">
-              Formação
-            </a>
-          </li>
-
-          <li>
-            <a href="#publico">
-              Para quem
-            </a>
-          </li>
-
-          <li>
-            <a href="#localizacao">
-              Localização
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contato"
-              class="menu-contact"
-            >
-              Contato
+            <a href="#contato" class="menu-contact">
+              Fale comigo
             </a>
           </li>
 
@@ -2701,15 +1054,9 @@
   <main>
 
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+    <!-- HERO -->
 
-    <section
-      class="hero"
-      id="inicio"
-    >
-
+    <section class="hero" id="inicio">
 
       <img
         class="hero-image"
@@ -2717,78 +1064,43 @@
         alt="Jaqueline Caldi — Psicopedagoga Clínica"
       >
 
-
       <div class="hero-overlay"></div>
 
-      <div class="hero-bottom"></div>
-
-
-      <!-- LOGO BRANCA SEM FUNDO NO CENTRO DA FOTO -->
+      <!-- LOGOMARCA BRANCA SEM FUNDO -->
 
       <img
-        class="hero-logo-center"
+        class="hero-logo"
         src="https://i.imgur.com/xIVkm18.png"
         alt=""
         aria-hidden="true"
       >
 
-
-      <div class="vertical-name">
-        JAQUELINE CALDI · PSICOPEDAGOGA CLÍNICA
-      </div>
-
-
-      <div class="hero-index">
-        01 / 06
-      </div>
-
-
       <div class="container hero-content">
 
         <div class="hero-copy">
-
 
           <div class="eyebrow">
             Psicopedagogia Clínica
           </div>
 
-
           <h1 class="hero-title">
-
-            <span class="hero-title-line">
-              <span>
-                Acolher antes de
-              </span>
-            </span>
-
-            <span class="hero-title-line">
-              <span>
-                intervir.
-              </span>
-            </span>
-
+            Acolher antes de<br>
+            intervir.
           </h1>
 
-
           <p class="hero-description">
-
             Um olhar individualizado para compreender
             os desafios da aprendizagem e acompanhar
             cada criança em seu próprio processo.
-
           </p>
 
-
-          <a
-            href="#sobre"
-            class="hero-action"
-          >
+          <a href="#sobre" class="hero-action">
 
             <span class="scroll-circle">
               <span></span>
             </span>
 
-            Arraste para descobrir
+            Descubra meu trabalho
 
           </a>
 
@@ -2799,61 +1111,40 @@
     </section>
 
 
-    <!-- =====================================================
-         SOBRE
-         ===================================================== -->
+    <!-- SOBRE -->
 
-    <section
-      class="section about"
-      id="sobre"
-    >
+    <section class="section about" id="sobre">
 
       <div class="container about-grid">
 
-
-        <div class="about-intro reveal">
+        <div class="reveal">
 
           <div class="section-label">
-            02 — Sobre mim
+            01 — Sobre mim
           </div>
 
-
           <h2 class="section-title">
-
             Um trabalho que
             começa pela
             <em>escuta.</em>
-
           </h2>
 
         </div>
 
-
         <div class="about-text-wrap reveal delay-1">
 
           <p class="section-text">
-
-            Sou casada, mãe atípica e profissional da
-            educação há mais de 6 anos. Minha trajetória
-            pessoal e profissional me levou a aprofundar
-            meus estudos na área das neurodivergências,
-            buscando compreender e apoiar o desenvolvimento
-            de cada criança de forma individualizada e
-            acolhedora.
-
+            Sou Psicopedagoga Clínica e profissional
+            da educação, com mais de seis anos de
+            experiência.
           </p>
-
 
           <p class="section-text">
-
-            Sou Psicopedagoga Clínica e acadêmica de
-            Psicologia, dedicada a auxiliar crianças e
-            adolescentes que enfrentam desafios relacionados
-            à aprendizagem, atenção, leitura, escrita,
-            raciocínio lógico e funções executivas.
-
+            Meu trabalho busca compreender cada criança
+            de forma individualizada, respeitando seu
+            desenvolvimento, suas dificuldades e suas
+            potencialidades.
           </p>
-
 
           <div class="about-signature">
 
@@ -2865,49 +1156,6 @@
 
           </div>
 
-
-          <div class="stats">
-
-            <div class="stat">
-
-              <div class="stat-number">
-                +6
-              </div>
-
-              <div class="stat-label">
-                anos na educação
-              </div>
-
-            </div>
-
-
-            <div class="stat">
-
-              <div class="stat-number">
-                01
-              </div>
-
-              <div class="stat-label">
-                olhar individualizado
-              </div>
-
-            </div>
-
-
-            <div class="stat">
-
-              <div class="stat-number">
-                100%
-              </div>
-
-              <div class="stat-label">
-                acolhimento
-              </div>
-
-            </div>
-
-          </div>
-
         </div>
 
       </div>
@@ -2915,132 +1163,85 @@
     </section>
 
 
-    <!-- =====================================================
-         FORMAÇÃO
-         ===================================================== -->
+    <!-- FORMAÇÃO -->
 
-    <section
-      class="section formation"
-      id="formacao"
-    >
+    <section class="section formation" id="formacao">
 
       <div class="container formation-grid">
-
 
         <div class="reveal">
 
           <div class="section-label">
-            03 — Formação
+            02 — Formação
           </div>
 
-
           <h2 class="section-title">
-
             Conhecimento para
-            <strong>
-              compreender
-            </strong>
+            <strong>compreender</strong>
             cada
             <em>história.</em>
-
           </h2>
 
         </div>
 
-
         <div class="formation-list">
-
 
           <div class="formation-item reveal">
 
-            <div class="formation-number">
-              01
-            </div>
+            <div class="formation-number">01</div>
 
             <div>
-
-              <h3>
-                Psicopedagogia Clínica
-              </h3>
-
+              <h3>Psicopedagogia Clínica</h3>
               <p>
-                Atuação voltada à compreensão dos
-                processos de aprendizagem e suas
-                particularidades.
+                Compreensão dos processos de aprendizagem
+                e suas particularidades.
               </p>
-
             </div>
 
           </div>
-
 
           <div class="formation-item reveal delay-1">
 
-            <div class="formation-number">
-              02
-            </div>
+            <div class="formation-number">02</div>
 
             <div>
-
-              <h3>
-                Acadêmica de Psicologia
-              </h3>
-
+              <h3>Acadêmica de Psicologia</h3>
               <p>
-                Formação contínua para ampliar o olhar
-                sobre desenvolvimento, comportamento
-                e subjetividade.
+                Formação contínua sobre desenvolvimento,
+                comportamento e subjetividade.
               </p>
-
             </div>
 
           </div>
-
 
           <div class="formation-item reveal delay-2">
 
-            <div class="formation-number">
-              03
-            </div>
+            <div class="formation-number">03</div>
 
             <div>
-
-              <h3>
-                Estudos em neurodivergências
-              </h3>
-
+              <h3>Estudos em neurodivergências</h3>
               <p>
-                Aprofundamento para compreender diferentes
-                formas de aprender, interagir e se desenvolver.
+                Aprofundamento sobre diferentes formas
+                de aprender e se desenvolver.
               </p>
-
             </div>
 
           </div>
-
 
           <div class="formation-item reveal delay-3">
 
-            <div class="formation-number">
-              04
-            </div>
+            <div class="formation-number">04</div>
 
             <div>
-
-              <h3>
-                Educação e experiência prática
-              </h3>
-
+              <h3>Experiência na educação</h3>
               <p>
-                Mais de seis anos de experiência na área
-                da educação e contato direto com diferentes
-                necessidades de aprendizagem.
+                Mais de seis anos de experiência
+                acompanhando diferentes necessidades
+                de aprendizagem.
               </p>
-
             </div>
 
           </div>
-
 
         </div>
 
@@ -3049,126 +1250,63 @@
     </section>
 
 
-    <!-- =====================================================
-         PARA QUEM
-         ===================================================== -->
+    <!-- PARA QUEM -->
 
-    <section
-      class="section audience"
-      id="publico"
-    >
+    <section class="section audience" id="publico">
 
       <div class="container audience-grid">
-
 
         <div class="audience-copy reveal">
 
           <div class="section-label">
-            04 — Para quem
+            03 — Para quem
           </div>
 
-
           <h2 class="section-title">
-
             Quando aprender
             parece mais
-            difícil.
-
+            <em>difícil.</em>
           </h2>
 
-
           <p>
-
-            O acompanhamento é pensado para crianças
-            e adolescentes que apresentam desafios em
-            diferentes áreas relacionadas à aprendizagem
-            e ao desenvolvimento.
-
+            Para crianças e adolescentes que enfrentam
+            desafios relacionados à aprendizagem,
+            atenção e desenvolvimento.
           </p>
 
         </div>
 
-
         <div class="audience-list">
 
-
           <div class="audience-item reveal">
-
-            <span>
-              01
-            </span>
-
-            <h3>
-              Aprendizagem
-            </h3>
-
+            <span>01</span>
+            <h3>Aprendizagem</h3>
           </div>
-
 
           <div class="audience-item reveal delay-1">
-
-            <span>
-              02
-            </span>
-
-            <h3>
-              Atenção e concentração
-            </h3>
-
+            <span>02</span>
+            <h3>Atenção e concentração</h3>
           </div>
-
 
           <div class="audience-item reveal delay-1">
-
-            <span>
-              03
-            </span>
-
-            <h3>
-              Leitura e escrita
-            </h3>
-
+            <span>03</span>
+            <h3>Leitura e escrita</h3>
           </div>
-
 
           <div class="audience-item reveal delay-2">
-
-            <span>
-              04
-            </span>
-
-            <h3>
-              Raciocínio lógico
-            </h3>
-
+            <span>04</span>
+            <h3>Raciocínio lógico</h3>
           </div>
-
 
           <div class="audience-item reveal delay-2">
-
-            <span>
-              05
-            </span>
-
-            <h3>
-              Funções executivas
-            </h3>
-
+            <span>05</span>
+            <h3>Funções executivas</h3>
           </div>
-
 
           <div class="audience-item reveal delay-3">
-
-            <span>
-              06
-            </span>
-
-            <h3>
-              Neurodivergências
-            </h3>
-
+            <span>06</span>
+            <h3>Neurodivergências</h3>
           </div>
-
 
         </div>
 
@@ -3177,127 +1315,72 @@
     </section>
 
 
-    <!-- =====================================================
-         PROCESSO
-         ===================================================== -->
+    <!-- PROCESSO -->
 
-    <section
-      class="section process"
-      id="processo"
-    >
+    <section class="section process" id="processo">
 
       <div class="container">
 
-
         <div class="process-head">
-
 
           <div class="reveal">
 
             <div class="section-label">
-              05 — Como funciona
+              04 — Como funciona
             </div>
 
-
             <h2 class="section-title">
-
               Um processo
               construído com
               <em>cuidado.</em>
-
             </h2>
 
           </div>
 
-
-          <p
-            class="section-text reveal delay-1"
-          >
-
-            Cada acompanhamento é pensado de acordo
-            com a necessidade apresentada, respeitando
-            o tempo, as características e as
-            potencialidades de cada pessoa.
-
+          <p class="section-text reveal delay-1">
+            Cada acompanhamento respeita as necessidades,
+            o tempo e as potencialidades de cada pessoa.
           </p>
 
         </div>
 
-
         <div class="process-steps">
 
-
           <div class="step reveal">
-
-            <div class="step-number">
-              01
-            </div>
-
-            <h3>
-              Conversa inicial
-            </h3>
-
+            <div class="step-number">01</div>
+            <h3>Conversa inicial</h3>
             <p>
               Primeiro contato para compreender a demanda
               e conhecer a história.
             </p>
-
           </div>
 
-
           <div class="step reveal delay-1">
-
-            <div class="step-number">
-              02
-            </div>
-
-            <h3>
-              Avaliação
-            </h3>
-
+            <div class="step-number">02</div>
+            <h3>Avaliação</h3>
             <p>
               Investigação das habilidades e dificuldades
               relacionadas à aprendizagem.
             </p>
-
           </div>
 
-
           <div class="step reveal delay-2">
-
-            <div class="step-number">
-              03
-            </div>
-
-            <h3>
-              Intervenção
-            </h3>
-
+            <div class="step-number">03</div>
+            <h3>Intervenção</h3>
             <p>
               Estratégias desenvolvidas de acordo com
               as necessidades identificadas.
             </p>
-
           </div>
-
 
           <div class="step reveal delay-3">
-
-            <div class="step-number">
-              04
-            </div>
-
-            <h3>
-              Acompanhamento
-            </h3>
-
+            <div class="step-number">04</div>
+            <h3>Acompanhamento</h3>
             <p>
-              Observação dos avanços e ajustes ao longo
-              de todo o processo.
+              Observação dos avanços e ajustes durante
+              todo o processo.
             </p>
-
           </div>
-
 
         </div>
 
@@ -3306,12 +1389,9 @@
     </section>
 
 
-    <!-- =====================================================
-         FOTO DE APOIO
-         ===================================================== -->
+    <!-- FOTO -->
 
     <section class="visual">
-
 
       <img
         src="https://i.imgur.com/fqEDfKr.png"
@@ -3319,9 +1399,7 @@
         loading="lazy"
       >
 
-
       <div class="visual-overlay"></div>
-
 
       <div class="visual-content reveal">
 
@@ -3339,21 +1417,13 @@
     </section>
 
 
-    <!-- =====================================================
-         LOCALIZAÇÃO
-         ===================================================== -->
+    <!-- LOCALIZAÇÃO -->
 
-    <section
-      class="section location"
-      id="localizacao"
-    >
+    <section class="section location" id="localizacao">
 
       <div class="container location-grid">
 
-
-        <div
-          class="location-photo reveal"
-        >
+        <div class="location-photo reveal">
 
           <img
             src="https://i.imgur.com/fqEDfKr.png"
@@ -3363,80 +1433,31 @@
 
         </div>
 
-
         <div class="location-info reveal delay-1">
 
-
           <div class="section-label">
-            06 — Localização
+            05 — Localização
           </div>
 
-
           <h2 class="section-title">
-
             Um espaço pensado
             para acolher.
-
           </h2>
 
-
-          <p
-            class="section-text"
-            style="margin-top:25px;"
-          >
-
-            O atendimento acontece em um ambiente
-            preparado para receber crianças,
-            adolescentes e suas famílias com
-            tranquilidade e acolhimento.
-
-          </p>
-
-
           <div class="address">
-
 
             <div class="address-label">
               Endereço
             </div>
 
-
             <div class="address-text">
-
               Rua / Avenida do consultório<br>
               Número · Bairro<br>
               Cidade — Estado
-
             </div>
-
 
             <div class="address-note">
-
               Atendimento com horário previamente agendado.
-
-            </div>
-
-
-            <div class="location-actions">
-
-
-              <a
-                class="button button-primary"
-                href="https://www.google.com/maps"
-                target="_blank"
-                rel="noopener"
-              >
-                Como chegar
-              </a>
-
-
-              <a
-                class="button button-outline"
-                href="#contato"
-              >
-                Agendar horário
-              </a>
-
             </div>
 
           </div>
@@ -3448,39 +1469,24 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTATO
-         ===================================================== -->
+    <!-- CONTATO -->
 
-    <section
-      class="contact"
-      id="contato"
-    >
+    <section class="contact" id="contato">
 
       <div class="container">
 
-
         <div class="section-label reveal">
-          07 — Contato
+          06 — Fale comigo
         </div>
 
+        <h2 class="contact-title reveal">
+          Vamos conversar<span>?</span>
+        </h2>
 
-        <!--
-          TÍTULO REMOVIDO.
-          O botão "Falar pelo WhatsApp" permanece.
-        -->
-
-
-        <p
-          class="contact-description reveal delay-1"
-        >
-
-          Entre em contato pelo WhatsApp para
-          tirar suas dúvidas e conhecer melhor
+        <p class="contact-description reveal delay-1">
+          Tire suas dúvidas e conheça melhor
           o acompanhamento psicopedagógico.
-
         </p>
-
 
         <a
           href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais."
@@ -3488,9 +1494,7 @@
           target="_blank"
           rel="noopener"
         >
-
           Falar pelo WhatsApp
-
         </a>
 
       </div>
@@ -3500,9 +1504,7 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -3510,11 +1512,7 @@
 
       <div class="footer-inner">
 
-
-        <a
-          href="#inicio"
-          class="footer-brand"
-        >
+        <a href="#inicio" class="footer-brand">
 
           <img
             src="https://i.imgur.com/J1b0lX4.png"
@@ -3527,14 +1525,10 @@
 
         </a>
 
-
         <div class="footer-copy">
-
           © <span id="year"></span>
           Jaqueline Caldi · Psicopedagoga Clínica
-
         </div>
-
 
       </div>
 
@@ -3543,9 +1537,7 @@
   </footer>
 
 
-  <!-- =====================================================
-       WHATSAPP FLUTUANTE
-       ===================================================== -->
+  <!-- WHATSAPP -->
 
   <a
     href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
@@ -3555,46 +1547,9 @@
     aria-label="Falar com Jaqueline pelo WhatsApp"
   >
 
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
 
-      <path
-        d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
-        C5.48 0 .14 5.34.14 11.9
-        c0 2.1.55 4.15 1.6 5.96L.04 24
-        l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01
-        c6.56 0 11.9-5.34 11.9-11.9
-        0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
-        c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
-        -3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25
-        c0-5.46 4.45-9.9 9.91-9.9
-        2.64 0 5.12 1.03 6.99 2.9
-        a9.84 9.84 0 0 1 2.91 7
-        c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
-        c-.3-.15-1.77-.87-2.05-.97
-        -.28-.1-.48-.15-.68.15
-        -.2.3-.77.97-.94 1.17
-        -.17.2-.35.22-.65.07
-        -.3-.15-1.25-.46-2.38-1.47
-        -.88-.78-1.47-1.74-1.64-2.04
-        -.17-.3-.02-.46.13-.61
-        .13-.13.3-.35.45-.52
-        .15-.17.2-.3.3-.5
-        .1-.2.05-.37-.02-.52
-        -.07-.15-.68-1.63-.93-2.23
-        -.24-.58-.49-.5-.68-.51
-        h-.58c-.2 0-.52.07-.79.37
-        -.27.3-1.04 1.02-1.04 2.49
-        0 1.47 1.07 2.89 1.22 3.09
-        .15.2 2.1 3.21 5.08 4.5
-        .71.31 1.27.5 1.7.64
-        .72.23 1.37.2 1.89.12
-        .58-.09 1.77-.72 2.02-1.42
-        .25-.7.25-1.3.17-1.42
-        -.07-.12-.27-.2-.57-.35Z"
-      />
+      <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.15 1.6 5.96L.04 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8c-1.78 0-3.53-.48-5.05-1.4l-.36-.21-3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.84 9.84 0 0 1 2.91 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
 
     </svg>
 
@@ -3603,51 +1558,13 @@
 
   <script>
 
-    /* =====================================================
-       LOADER
-       ===================================================== */
-
-    window.addEventListener(
-      "load",
-      () => {
-
-        setTimeout(
-          () => {
-
-            document
-              .getElementById("loader")
-              .classList.add("hide");
-
-          },
-          500
-        );
-
-      }
-    );
-
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
-
-    const header =
-      document.getElementById("header");
-
+    const header = document.getElementById("header");
+    const toggle = document.getElementById("mobileToggle");
+    const menu = document.getElementById("menu");
 
     function updateHeader() {
-
-      if (window.scrollY > 60) {
-
-        header.classList.add("scrolled");
-
-      } else {
-
-        header.classList.remove("scrolled");
-
-      }
-
+      header.classList.toggle("scrolled", window.scrollY > 50);
     }
-
 
     window.addEventListener(
       "scroll",
@@ -3655,136 +1572,58 @@
       { passive: true }
     );
 
-
     updateHeader();
 
 
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
-
-    const toggle =
-      document.getElementById("mobileToggle");
-
-    const menu =
-      document.getElementById("menu");
-
-
-    toggle.addEventListener(
-      "click",
-      () => {
-
-        menu.classList.toggle("open");
-
-      }
-    );
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
 
 
     document
       .querySelectorAll(".menu a")
-      .forEach(
-        link => {
+      .forEach(link => {
 
-          link.addEventListener(
-            "click",
-            () => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("open");
+        });
 
-              menu.classList.remove("open");
+      });
 
-            }
-          );
-
-        }
-      );
-
-
-    /* =====================================================
-       REVEAL
-       ===================================================== */
 
     const reveals =
       document.querySelectorAll(".reveal");
-
 
     const observer =
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(
-            entry => {
+          entries.forEach(entry => {
 
-              if (
-                entry.isIntersecting
-              ) {
+            if (entry.isIntersecting) {
 
-                entry.target.classList.add(
-                  "visible"
-                );
+              entry.target.classList.add("visible");
 
-                observer.unobserve(
-                  entry.target
-                );
-
-              }
+              observer.unobserve(entry.target);
 
             }
-          );
+
+          });
 
         },
-        {
-          threshold: .12
-        }
+        { threshold: .12 }
       );
 
 
-    reveals.forEach(
-      element => {
-
-        observer.observe(element);
-
-      }
-    );
+    reveals.forEach(element => {
+      observer.observe(element);
+    });
 
 
-    /* =====================================================
-       ANO
-       ===================================================== */
-
-    document
-      .getElementById("year")
-      .textContent =
+    document.getElementById("year").textContent =
       new Date().getFullYear();
-
-
-    /* =====================================================
-       PARALLAX MUITO SUAVE NA FOTO
-       ===================================================== */
-
-    const heroImage =
-      document.querySelector(".hero-image");
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (
-          window.innerWidth > 720 &&
-          window.scrollY < window.innerHeight
-        ) {
-
-          heroImage.style.transform =
-            `scale(1.035) translateY(${window.scrollY * .035}px)`;
-
-        }
-
-      },
-      { passive: true }
-    );
-
 
   </script>
 
 </body>
-
 </html>
