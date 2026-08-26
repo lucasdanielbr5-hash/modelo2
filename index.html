@@ -2,138 +2,79 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-  name="description"
-  content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes."
->
-
 <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
+
+<meta name="description" content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   VARIÁVEIS
+   BASE
 ========================================================= */
 
 :root {
-  --purple: #6048AC;
-  --blue: #005387;
-  --cream: #F7F3EE;
+    --purple: #6048AC;
+    --blue: #005387;
+    --cream: #F7F3EE;
+    --white: #fff;
+    --black: #17252d;
+    --gray: #69747a;
+    --line: rgba(0,83,135,.14);
 
-  --white: #ffffff;
-  --black: #18252c;
-  --gray: #68757c;
+    --serif: "Playfair Display", serif;
+    --sans: "Inter", sans-serif;
 
-  --line: rgba(0,83,135,.16);
-
-  --container: 1280px;
-
-  --ease: cubic-bezier(.22,.61,.36,1);
+    --max: 1240px;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background: var(--cream);
-  color: var(--black);
-  overflow-x: hidden;
+    background: var(--cream);
+    color: var(--black);
+    font-family: var(--sans);
+    overflow-x: hidden;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+    max-width: 100%;
+    display: block;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: inherit;
 }
 
 button,
 input,
 textarea {
-  font-family: inherit;
+    font-family: var(--sans);
 }
 
 ::selection {
-  background: var(--purple);
-  color: white;
+    background: var(--purple);
+    color: white;
 }
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
 
 .container {
-  width: min(
-    calc(100% - 80px),
-    var(--container)
-  );
-
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   CURSOR DECORATIVO
-========================================================= */
-
-.cursor-dot {
-  position: fixed;
-
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: var(--purple);
-
-  pointer-events: none;
-
-  z-index: 9999;
-
-  transform: translate(-50%, -50%);
-
-  opacity: 0;
-
-  transition:
-    width .25s ease,
-    height .25s ease,
-    opacity .3s ease;
-}
-
-@media (pointer: fine) {
-
-  .cursor-dot {
-    opacity: .8;
-  }
-
+    width: min(var(--max), calc(100% - 100px));
+    margin: auto;
 }
 
 
@@ -141,194 +82,122 @@ textarea {
    HEADER
 ========================================================= */
 
-.site-header {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 
-  position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  height: 88px;
-
-  z-index: 1000;
-
-  color: white;
-
-  transition:
-    background .45s ease,
-    color .45s ease,
-    box-shadow .45s ease,
-    height .45s ease;
+    transition:
+        background .5s ease,
+        box-shadow .5s ease,
+        color .5s ease;
 }
 
-.site-header.scrolled {
-
-  height: 76px;
-
-  background:
-    rgba(247,243,238,.94);
-
-  color: var(--blue);
-
-  backdrop-filter: blur(16px);
-
-  box-shadow:
-    0 1px 0 rgba(0,83,135,.08);
+.header.scrolled {
+    background: rgba(247,243,238,.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 30px rgba(0,0,0,.05);
 }
-
-
-/* =========================================================
-   NAV
-========================================================= */
 
 .nav {
+    height: 88px;
 
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
-/* =========================================================
-   LOGO
-========================================================= */
+/* LOGO */
 
-.brand {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  display: flex;
+    color: white;
 
-  align-items: center;
-
-  gap: 12px;
+    transition: color .4s ease;
 }
 
-.brand img {
-
-  width: 46px;
-  height: 46px;
-
-  object-fit: contain;
-
-  background: white;
-
-  border-radius: 3px;
+.header.scrolled .logo {
+    color: var(--blue);
 }
 
-.brand-name {
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
 
-  font-size: 14px;
-
-  font-weight: 500;
-
-  letter-spacing: -.2px;
+.logo-name {
+    font-family: var(--serif);
+    font-size: 17px;
 }
 
 
-/* =========================================================
-   MENU
-========================================================= */
+/* MENU */
 
-.nav-menu {
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 34px;
 
-  display: flex;
-
-  align-items: center;
-
-  gap: 36px;
-
-  list-style: none;
+    list-style: none;
 }
 
-.nav-menu a {
+.menu a {
+    position: relative;
 
-  position: relative;
+    color: white;
 
-  font-size: 10px;
+    font-size: 10px;
+    font-weight: 500;
 
-  font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
 
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
+    transition: color .4s ease;
 }
 
-.nav-menu a::after {
-
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: currentColor;
-
-  transition:
-    width .3s var(--ease);
+.header.scrolled .menu a {
+    color: var(--blue);
 }
 
-.nav-menu a:hover::after {
-  width: 100%;
+.menu a:not(.menu-button)::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: currentColor;
+
+    transition: width .3s ease;
 }
 
-
-.nav-menu .contact-link {
-
-  padding:
-    11px 20px;
-
-  border:
-    1px solid currentColor;
-
-  border-radius: 30px;
+.menu a:hover::after {
+    width: 100%;
 }
 
-.nav-menu .contact-link::after {
-  display: none;
+.menu-button {
+    padding: 12px 21px;
+
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 30px;
 }
 
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
-
-.menu-toggle {
-
-  display: none;
-
-  width: 44px;
-  height: 44px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: inherit;
-
-  cursor: pointer;
+.header.scrolled .menu-button {
+    border-color: var(--blue);
 }
 
-.menu-toggle span {
-
-  display: block;
-
-  width: 20px;
-  height: 1px;
-
-  background: currentColor;
-
-  margin: 5px auto;
-
-  transition: .3s;
+.menu-button::after {
+    display: none !important;
 }
 
 
@@ -337,409 +206,278 @@ textarea {
 ========================================================= */
 
 .hero {
+    height: 100svh;
+    min-height: 680px;
 
-  position: relative;
+    position: relative;
 
-  height: 100svh;
+    display: flex;
+    align-items: flex-end;
 
-  min-height: 680px;
+    overflow: hidden;
 
-  overflow: hidden;
-
-  background: #51473f;
+    background: #473e3b;
 }
 
 
-/* FOTO PRINCIPAL */
+/* FOTO */
 
 .hero-image {
+    position: absolute;
+    inset: 0;
 
-  position: absolute;
+    width: 100%;
+    height: 100%;
 
-  inset: 0;
+    object-fit: cover;
 
-  width: 100%;
-  height: 100%;
+    /*
+      Mantém o rosto melhor enquadrado.
+      No desktop a foto fica centralizada um pouco
+      para a esquerda, evitando cortar o rosto.
+    */
+    object-position: 56% center;
 
-  object-fit: cover;
+    transform: scale(1.015);
 
-  /*
-    Ajuste principal para não cortar o rosto.
-    A imagem permanece inteira na composição,
-    mantendo o foco ligeiramente acima do centro.
-  */
-
-  object-position: center 38%;
-
-  transform:
-    scale(1.035);
-
-  animation:
-    heroZoom 2s var(--ease) forwards;
+    animation: heroZoom 10s ease-out forwards;
 }
 
 @keyframes heroZoom {
+    from {
+        transform: scale(1.08);
+    }
 
-  from {
-    transform: scale(1.08);
-  }
-
-  to {
-    transform: scale(1.035);
-  }
-
+    to {
+        transform: scale(1.015);
+    }
 }
 
 
-/* =========================================================
-   OVERLAY
-========================================================= */
+/* ESCURECIMENTO */
 
 .hero::after {
+    content: "";
 
-  content: "";
+    position: absolute;
+    inset: 0;
 
-  position: absolute;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17,19,21,.72) 0%,
+            rgba(17,19,21,.38) 42%,
+            rgba(17,19,21,.05) 75%
+        );
 
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(12,18,20,.65) 0%,
-      rgba(12,18,20,.38) 36%,
-      rgba(12,18,20,.05) 70%,
-      rgba(12,18,20,.18) 100%
-    );
-
-  pointer-events: none;
+    pointer-events: none;
 }
 
 
-/* =========================================================
-   HERO CONTEÚDO
-========================================================= */
+/* CONTEÚDO */
 
 .hero-content {
+    position: relative;
+    z-index: 2;
 
-  position: relative;
+    width: 100%;
 
-  z-index: 2;
-
-  height: 100%;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  padding-bottom: 105px;
+    padding-bottom: 78px;
 }
 
-
-.hero-copy {
-
-  max-width: 760px;
-
-  color: white;
+.hero-inner {
+    max-width: 720px;
 }
 
+.hero-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-/* =========================================================
-   EYEBROW
-========================================================= */
+    margin-bottom: 25px;
 
-.eyebrow {
+    color: white;
 
-  display: flex;
+    font-size: 10px;
+    font-weight: 600;
 
-  align-items: center;
-
-  gap: 14px;
-
-  margin-bottom: 24px;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 2.8px;
-
-  text-transform: uppercase;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.eyebrow::before {
+.hero-label::before {
+    content: "";
 
-  content: "";
+    width: 28px;
+    height: 1px;
 
-  width: 28px;
-  height: 1px;
-
-  background: currentColor;
+    background: white;
 }
-
-
-/* =========================================================
-   HERO TÍTULO
-========================================================= */
 
 .hero-title {
+    color: white;
 
-  max-width: 780px;
+    font-family: var(--serif);
 
-  font-size:
-    clamp(52px, 6.2vw, 88px);
+    font-size: clamp(55px, 6.5vw, 94px);
 
-  line-height: 1.03;
+    font-weight: 400;
 
-  font-weight: 300;
+    line-height: .94;
 
-  letter-spacing: -4px;
+    letter-spacing: -3px;
 
-  margin-bottom: 25px;
+    max-width: 780px;
 }
-
-.hero-title .line {
-
-  display: block;
-
-  overflow: hidden;
-}
-
-.hero-title .line span {
-
-  display: inline-block;
-
-  transform:
-    translateY(110%);
-
-  animation:
-    titleIn 1.1s var(--ease) forwards;
-}
-
-.hero-title .line:nth-child(2) span {
-
-  animation-delay:
-    .12s;
-}
-
-@keyframes titleIn {
-
-  to {
-
-    transform:
-      translateY(0);
-
-  }
-
-}
-
-
-/* =========================================================
-   HERO TEXTO
-========================================================= */
 
 .hero-description {
+    max-width: 500px;
 
-  max-width: 580px;
+    margin-top: 28px;
 
-  font-size: 13px;
+    color: rgba(255,255,255,.88);
 
-  font-weight: 300;
+    font-size: 13px;
+    font-weight: 300;
 
-  line-height: 1.8;
-
-  color:
-    rgba(255,255,255,.88);
-
-  opacity: 0;
-
-  animation:
-    fadeIn 1s .55s forwards;
+    line-height: 1.8;
 }
 
-@keyframes fadeIn {
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-  to {
-    opacity: 1;
-  }
+    margin-top: 27px;
 
+    color: white;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
+.scroll-circle {
+    width: 38px;
+    height: 38px;
 
-/* =========================================================
-   INDICADOR
-========================================================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.hero-scroll {
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 50%;
 
-  position: absolute;
-
-  right: 50px;
-  bottom: 42px;
-
-  z-index: 3;
-
-  color: white;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-  writing-mode: vertical-rl;
+    animation: scrollPulse 2s ease-in-out infinite;
 }
 
-.scroll-line {
-
-  width: 1px;
-  height: 55px;
-
-  background:
-    rgba(255,255,255,.65);
-
-  animation:
-    scrollLine 1.8s ease-in-out infinite;
+.scroll-circle span {
+    animation: arrowDown 1.5s ease-in-out infinite;
 }
 
-@keyframes scrollLine {
+@keyframes scrollPulse {
+    50% {
+        transform: translateY(4px);
+    }
+}
 
-  0%,
-  100% {
-    transform: scaleY(.45);
-    transform-origin: top;
-  }
-
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-
+@keyframes arrowDown {
+    50% {
+        transform: translateY(4px);
+    }
 }
 
 
-/* =========================================================
-   NOME VERTICAL
-========================================================= */
+/* NOME VERTICAL */
 
 .vertical-name {
+    position: absolute;
 
-  position: absolute;
+    right: 7%;
+    top: 50%;
 
-  z-index: 3;
+    z-index: 3;
 
-  right: 48px;
+    transform:
+        translateY(-50%)
+        rotate(90deg);
 
-  top: 50%;
+    transform-origin: center;
 
-  transform:
-    translateY(-50%)
-    rotate(90deg);
+    color: rgba(255,255,255,.8);
 
-  transform-origin: center;
+    font-size: 9px;
+    font-weight: 600;
 
-  color:
-    rgba(255,255,255,.8);
+    letter-spacing: 5px;
+    text-transform: uppercase;
 
-  font-size: 9px;
-
-  font-weight: 500;
-
-  letter-spacing: 5px;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   HERO NÚMERO
+   INTRO
 ========================================================= */
 
-.hero-number {
+.intro {
+    padding: 130px 0;
 
-  position: absolute;
-
-  left: 40px;
-  bottom: 42px;
-
-  z-index: 3;
-
-  color:
-    rgba(255,255,255,.7);
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
+    background: var(--cream);
 }
 
+.intro-grid {
+    display: grid;
 
-/* =========================================================
-   SEÇÕES
-========================================================= */
+    grid-template-columns: .65fr 1.35fr;
 
-.section {
-
-  padding:
-    125px 0;
+    gap: 100px;
 }
 
-.section-header {
+.eyebrow {
+    color: var(--purple);
 
-  display: grid;
+    font-size: 9px;
+    font-weight: 600;
 
-  grid-template-columns:
-    150px
-    1fr;
-
-  gap: 70px;
-
-  margin-bottom: 80px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-.section-index {
+.intro-title {
+    max-width: 850px;
 
-  color: var(--purple);
+    color: var(--blue);
 
-  font-size: 9px;
+    font-family: var(--serif);
 
-  font-weight: 600;
+    font-size: clamp(40px, 5vw, 70px);
 
-  letter-spacing: 2px;
+    font-weight: 400;
 
-  padding-top: 8px;
+    line-height: 1.04;
+
+    letter-spacing: -2px;
 }
 
-.section-title {
-
-  max-width: 780px;
-
-  color: var(--blue);
-
-  font-size:
-    clamp(34px, 4vw, 57px);
-
-  line-height: 1.08;
-
-  font-weight: 300;
-
-  letter-spacing: -2.5px;
+.intro-title em {
+    color: var(--purple);
+    font-style: italic;
 }
 
-.section-title strong {
+.intro-text {
+    max-width: 650px;
 
-  color: var(--purple);
+    margin-top: 30px;
 
-  font-weight: 400;
+    color: var(--gray);
+
+    font-size: 14px;
+    font-weight: 300;
+
+    line-height: 1.9;
 }
 
 
@@ -748,100 +486,43 @@ textarea {
 ========================================================= */
 
 .about {
+    padding: 0 0 130px;
 
-  background: var(--cream);
+    background: var(--cream);
 }
 
 .about-grid {
+    display: grid;
 
-  display: grid;
+    grid-template-columns: 1fr 1fr;
 
-  grid-template-columns:
-    .9fr
-    1.1fr;
-
-  gap: 120px;
-
-  align-items: start;
+    gap: 100px;
 }
 
-.about-side {
+.about-card {
+    padding-top: 35px;
 
-  padding-top: 10px;
+    border-top: 1px solid var(--line);
 }
 
-.about-side-label {
+.about-card h3 {
+    margin-bottom: 22px;
 
-  font-size: 9px;
+    color: var(--blue);
 
-  font-weight: 600;
+    font-family: var(--serif);
 
-  text-transform: uppercase;
-
-  letter-spacing: 2px;
-
-  color: var(--purple);
-
-  margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 400;
 }
 
-.about-side p {
+.about-card p {
+    color: var(--gray);
 
-  max-width: 260px;
+    font-size: 13px;
+    font-weight: 300;
 
-  font-size: 14px;
-
-  line-height: 1.8;
-
-  color: var(--gray);
-
-  font-weight: 300;
-}
-
-.about-main p {
-
-  max-width: 680px;
-
-  color: var(--gray);
-
-  font-size: 15px;
-
-  font-weight: 300;
-
-  line-height: 2;
-}
-
-.about-main p + p {
-
-  margin-top: 24px;
-}
-
-
-/* =========================================================
-   FRASE CURTA
-========================================================= */
-
-.about-statement {
-
-  margin-top: 60px;
-
-  padding-top: 30px;
-
-  border-top:
-    1px solid var(--line);
-
-  color: var(--blue);
-
-  font-size: 17px;
-
-  font-weight: 400;
-
-  line-height: 1.6;
-}
-
-.about-statement span {
-
-  color: var(--purple);
+    line-height: 1.9;
 }
 
 
@@ -850,76 +531,93 @@ textarea {
 ========================================================= */
 
 .formation {
+    padding: 125px 0;
 
-  background: white;
+    background: white;
 }
 
-.formation-grid {
+.section-head {
+    max-width: 720px;
 
-  display: grid;
+    margin-bottom: 65px;
+}
 
-  grid-template-columns:
-    1fr
-    1fr;
+.section-title {
+    margin-top: 16px;
 
-  border-top:
-    1px solid var(--line);
+    color: var(--blue);
+
+    font-family: var(--serif);
+
+    font-size: clamp(42px, 5vw, 67px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.section-title em {
+    color: var(--purple);
+    font-style: italic;
+}
+
+.formation-list {
+    border-top: 1px solid var(--line);
 }
 
 .formation-item {
+    display: grid;
 
-  min-height: 250px;
+    grid-template-columns: 100px 1fr 40px;
 
-  padding:
-    35px 50px 35px 0;
+    gap: 30px;
 
-  border-bottom:
-    1px solid var(--line);
+    align-items: center;
+
+    padding: 29px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        padding .4s ease,
+        background .4s ease;
 }
 
-.formation-item:nth-child(even) {
-
-  border-left:
-    1px solid var(--line);
-
-  padding-left: 50px;
+.formation-item:hover {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: rgba(96,72,172,.035);
 }
 
 .formation-number {
+    color: var(--purple);
 
-  color: var(--purple);
+    font-size: 10px;
+    font-weight: 600;
 
-  font-size: 10px;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 55px;
+    letter-spacing: 2px;
 }
 
-.formation-item h3 {
+.formation-name {
+    color: var(--blue);
 
-  color: var(--blue);
+    font-family: var(--serif);
 
-  font-size: 23px;
-
-  font-weight: 400;
-
-  letter-spacing: -.7px;
-
-  margin-bottom: 12px;
+    font-size: 25px;
 }
 
-.formation-item p {
+.formation-arrow {
+    color: var(--purple);
 
-  max-width: 420px;
+    font-size: 18px;
 
-  color: var(--gray);
+    transition: transform .3s ease;
+}
 
-  font-size: 12px;
-
-  line-height: 1.8;
-
-  font-weight: 300;
+.formation-item:hover .formation-arrow {
+    transform: translateX(7px);
 }
 
 
@@ -927,384 +625,64 @@ textarea {
    PARA QUEM
 ========================================================= */
 
-.audience {
+.for-who {
+    padding: 130px 0;
 
-  background: var(--blue);
-
-  color: white;
+    background: var(--cream);
 }
 
-.audience .section-index {
+.who-grid {
+    display: grid;
 
-  color: #cfc4eb;
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 110px;
 }
 
-.audience .section-title {
+.who-title {
+    color: var(--blue);
 
-  color: white;
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
 }
 
-.audience .section-title strong {
-
-  color: #d8cef0;
+.who-title em {
+    color: var(--purple);
 }
 
-.audience-intro {
-
-  max-width: 650px;
-
-  margin-left: 220px;
-
-  margin-bottom: 65px;
-
-  color:
-    rgba(255,255,255,.72);
-
-  font-size: 14px;
-
-  line-height: 1.9;
-
-  font-weight: 300;
+.who-list {
+    border-top: 1px solid var(--line);
 }
 
+.who-item {
+    padding: 25px 0;
 
-/* =========================================================
-   AUDIENCE LIST
-========================================================= */
+    border-bottom: 1px solid var(--line);
 
-.audience-list {
-
-  border-top:
-    1px solid
-    rgba(255,255,255,.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.audience-row {
+.who-item span:first-child {
+    color: var(--blue);
 
-  position: relative;
+    font-family: var(--serif);
 
-  display: grid;
-
-  grid-template-columns:
-    80px
-    1fr
-    40px;
-
-  align-items: center;
-
-  min-height: 90px;
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.2);
-
-  overflow: hidden;
-
-  transition:
-    padding .45s var(--ease);
+    font-size: 23px;
 }
 
-.audience-row::before {
+.who-item span:last-child {
+    color: var(--purple);
 
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    rgba(255,255,255,.06);
-
-  transform:
-    translateX(-100%);
-
-  transition:
-    transform .5s var(--ease);
-}
-
-.audience-row:hover::before {
-
-  transform:
-    translateX(0);
-}
-
-.audience-row:hover {
-
-  padding-left: 18px;
-}
-
-.audience-row > * {
-
-  position: relative;
-
-  z-index: 1;
-}
-
-.audience-number {
-
-  color:
-    rgba(255,255,255,.5);
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-}
-
-.audience-name {
-
-  font-size: 20px;
-
-  font-weight: 300;
-
-  letter-spacing: -.4px;
-}
-
-.audience-arrow {
-
-  font-size: 18px;
-
-  color:
-    #cfc4eb;
-
-  transition:
-    transform .3s;
-}
-
-.audience-row:hover .audience-arrow {
-
-  transform:
-    translateX(7px);
-}
-
-
-/* =========================================================
-   ABORDAGEM — SEÇÃO 4
-========================================================= */
-
-.approach {
-
-  background: var(--cream);
-}
-
-.approach-layout {
-
-  display: grid;
-
-  grid-template-columns:
-    .8fr
-    1.2fr;
-
-  gap: 110px;
-}
-
-.approach-intro {
-
-  position: sticky;
-
-  top: 120px;
-
-  align-self: start;
-}
-
-.approach-intro h2 {
-
-  color: var(--blue);
-
-  font-size:
-    clamp(35px, 4vw, 55px);
-
-  line-height: 1.08;
-
-  font-weight: 300;
-
-  letter-spacing: -2px;
-}
-
-.approach-intro h2 span {
-
-  color: var(--purple);
-}
-
-.approach-list {
-
-  border-top:
-    1px solid var(--line);
-}
-
-.approach-item {
-
-  display: grid;
-
-  grid-template-columns:
-    55px
-    1fr;
-
-  gap: 25px;
-
-  padding:
-    32px 0;
-
-  border-bottom:
-    1px solid var(--line);
-
-  transition:
-    transform .4s var(--ease);
-}
-
-.approach-item:hover {
-
-  transform:
-    translateX(10px);
-}
-
-.approach-item-number {
-
-  color: var(--purple);
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-
-  padding-top: 5px;
-}
-
-.approach-item h3 {
-
-  color: var(--blue);
-
-  font-size: 18px;
-
-  font-weight: 500;
-
-  margin-bottom: 9px;
-}
-
-.approach-item p {
-
-  max-width: 520px;
-
-  color: var(--gray);
-
-  font-size: 12px;
-
-  line-height: 1.8;
-
-  font-weight: 300;
-}
-
-
-/* =========================================================
-   PROCESSO — SEÇÃO 5
-========================================================= */
-
-.process {
-
-  background: white;
-
-  overflow: hidden;
-}
-
-.process-track {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  border-top:
-    1px solid var(--line);
-}
-
-.process-card {
-
-  position: relative;
-
-  min-height: 285px;
-
-  padding:
-    30px 35px 30px 0;
-
-  border-right:
-    1px solid var(--line);
-
-  transition:
-    background .4s ease,
-    padding .4s var(--ease);
-}
-
-.process-card + .process-card {
-
-  padding-left: 35px;
-}
-
-.process-card:last-child {
-
-  border-right: 0;
-}
-
-.process-card:hover {
-
-  background:
-    rgba(96,72,172,.035);
-
-  padding-top: 45px;
-}
-
-.process-number {
-
-  color: var(--purple);
-
-  font-size: 10px;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 70px;
-}
-
-.process-card h3 {
-
-  color: var(--blue);
-
-  font-size: 20px;
-
-  font-weight: 400;
-
-  margin-bottom: 13px;
-}
-
-.process-card p {
-
-  color: var(--gray);
-
-  max-width: 250px;
-
-  font-size: 11px;
-
-  line-height: 1.8;
-
-  font-weight: 300;
-}
-
-
-/* =========================================================
-   MICRO ANIMAÇÃO ENTRE SEÇÕES
-========================================================= */
-
-.section-marker {
-
-  height: 1px;
-
-  width: 0;
-
-  background: var(--purple);
-
-  transition:
-    width 1.1s var(--ease);
-}
-
-.section-marker.visible {
-
-  width: 70px;
+    font-size: 17px;
 }
 
 
@@ -1313,166 +691,113 @@ textarea {
 ========================================================= */
 
 .location {
+    padding: 125px 0;
 
-  background: var(--cream);
-
-  padding-bottom: 130px;
+    background: white;
 }
 
 .location-grid {
+    display: grid;
 
-  display: grid;
+    grid-template-columns: 1fr 1fr;
 
-  grid-template-columns:
-    .95fr
-    1.05fr;
+    gap: 90px;
 
-  gap: 85px;
+    align-items: stretch;
+}
 
-  align-items: center;
+.location-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-title {
+    margin-top: 16px;
+
+    color: var(--blue);
+
+    font-family: var(--serif);
+
+    font-size: clamp(43px, 5vw, 67px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.location-title em {
+    color: var(--purple);
+}
+
+.location-address {
+    margin-top: 30px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.location-address strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--blue);
+
+    font-weight: 600;
+}
+
+.location-link {
+    display: inline-flex;
+
+    width: fit-content;
+
+    margin-top: 27px;
+
+    padding-bottom: 5px;
+
+    color: var(--blue);
+
+    border-bottom: 1px solid var(--blue);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 
-/* FOTO LOCALIZAÇÃO */
+/*
+   IMPORTANTE:
+   Esta é a única imagem da seção de localização.
+   A foto que existia depois da seção 5 foi retirada.
+*/
 
 .location-photo {
+    min-height: 430px;
 
-  width: 100%;
+    overflow: hidden;
 
-  height: 560px;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  border-radius: 2px;
-
-  transition:
-    transform .9s var(--ease);
+    background: #ddd;
 }
 
-.location-photo-wrap {
+.location-photo img {
+    width: 100%;
+    height: 100%;
 
-  overflow: hidden;
+    object-fit: cover;
+
+    transition: transform 1s ease;
 }
 
-.location-photo-wrap:hover .location-photo {
-
-  transform:
-    scale(1.025);
-}
-
-
-/* INFO */
-
-.location-info h2 {
-
-  color: var(--blue);
-
-  font-size:
-    clamp(35px, 4vw, 54px);
-
-  font-weight: 300;
-
-  letter-spacing: -2px;
-
-  line-height: 1.08;
-
-  margin-bottom: 30px;
-}
-
-.location-info h2 span {
-
-  color: var(--purple);
-}
-
-.location-description {
-
-  max-width: 480px;
-
-  color: var(--gray);
-
-  font-size: 13px;
-
-  font-weight: 300;
-
-  line-height: 1.9;
-
-  margin-bottom: 40px;
-}
-
-.address {
-
-  border-top:
-    1px solid var(--line);
-
-  border-bottom:
-    1px solid var(--line);
-
-  padding:
-    24px 0;
-}
-
-.address-label {
-
-  display: block;
-
-  color: var(--purple);
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 10px;
-}
-
-.address-text {
-
-  color: var(--blue);
-
-  font-size: 14px;
-
-  line-height: 1.7;
-
-  font-weight: 400;
-}
-
-.location-button {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-top: 25px;
-
-  color: var(--blue);
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
-
-  transition:
-    color .3s;
-}
-
-.location-button:hover {
-
-  color: var(--purple);
-}
-
-.location-button span {
-
-  font-size: 17px;
+.location-photo:hover img {
+    transform: scale(1.04);
 }
 
 
@@ -1481,226 +806,150 @@ textarea {
 ========================================================= */
 
 .contact {
+    padding: 135px 0;
 
-  background: white;
+    background: var(--blue);
 
-  padding:
-    130px 0 120px;
+    color: white;
 }
 
 .contact-grid {
+    display: grid;
 
-  display: grid;
+    grid-template-columns: .8fr 1.2fr;
 
-  grid-template-columns:
-    .75fr
-    1.25fr;
-
-  gap: 110px;
-
-  align-items: start;
+    gap: 110px;
 }
 
-.contact-copy h2 {
+.contact-title {
+    margin-top: 16px;
 
-  color: var(--blue);
+    color: white;
 
-  font-size:
-    clamp(38px, 4.4vw, 61px);
+    font-family: var(--serif);
 
-  line-height: 1.03;
+    font-size: clamp(45px, 5vw, 70px);
 
-  font-weight: 300;
+    font-weight: 400;
 
-  letter-spacing: -2.5px;
+    line-height: 1;
 
-  margin-bottom: 25px;
+    letter-spacing: -2px;
 }
 
-.contact-copy h2 span {
-
-  color: var(--purple);
+.contact-title em {
+    color: #cfc4ee;
 }
 
-.contact-copy p {
+.contact-description {
+    max-width: 430px;
 
-  max-width: 400px;
+    margin-top: 25px;
 
-  color: var(--gray);
+    color: rgba(255,255,255,.7);
 
-  font-size: 13px;
+    font-size: 13px;
 
-  line-height: 1.9;
-
-  font-weight: 300;
+    line-height: 1.9;
 }
 
 
-/* =========================================================
-   FORM
-========================================================= */
+/* FORM */
 
 .contact-form {
+    display: grid;
 
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr;
-
-  gap: 28px 25px;
+    gap: 22px;
 }
 
-.form-group {
-
-  position: relative;
+.field {
+    position: relative;
 }
 
-.form-group.full {
+.field label {
+    display: block;
 
-  grid-column:
-    1 / -1;
+    margin-bottom: 8px;
+
+    color: rgba(255,255,255,.65);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.form-group label {
+.field input,
+.field textarea {
+    width: 100%;
 
-  display: block;
+    padding: 15px 0;
 
-  color: var(--blue);
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.3);
 
-  font-size: 9px;
+    outline: none;
 
-  font-weight: 600;
+    background: transparent;
 
-  letter-spacing: 1.5px;
+    color: white;
 
-  text-transform: uppercase;
+    font-size: 14px;
 
-  margin-bottom: 10px;
+    transition: border-color .3s ease;
 }
 
-.form-group input,
-.form-group textarea {
-
-  width: 100%;
-
-  border: 0;
-
-  border-bottom:
-    1px solid
-    rgba(0,83,135,.25);
-
-  background: transparent;
-
-  outline: none;
-
-  color: var(--blue);
-
-  font-size: 13px;
-
-  font-weight: 400;
-
-  padding:
-    10px 0 14px;
-
-  border-radius: 0;
-
-  transition:
-    border .3s;
+.field input::placeholder,
+.field textarea::placeholder {
+    color: rgba(255,255,255,.35);
 }
 
-.form-group textarea {
-
-  min-height: 120px;
-
-  resize: vertical;
+.field input:focus,
+.field textarea:focus {
+    border-color: white;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.field textarea {
+    min-height: 110px;
 
-  border-color:
-    var(--purple);
+    resize: vertical;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.submit-button {
+    width: fit-content;
 
-  color:
-    rgba(104,117,124,.65);
+    margin-top: 8px;
+
+    padding: 15px 25px;
+
+    border: 1px solid white;
+    border-radius: 40px;
+
+    background: white;
+
+    color: var(--blue);
+
+    cursor: pointer;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
 }
 
+.submit-button:hover {
+    background: transparent;
 
-/* =========================================================
-   BOTÃO WHATSAPP
-========================================================= */
+    color: white;
 
-.form-submit {
-
-  grid-column:
-    1 / -1;
-
-  display: flex;
-
-  justify-content: flex-start;
-
-  margin-top: 10px;
-}
-
-.whatsapp-submit {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 13px;
-
-  border: 0;
-
-  background: var(--purple);
-
-  color: white;
-
-  padding:
-    15px 23px;
-
-  border-radius: 30px;
-
-  font-size: 10px;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition:
-    background .3s,
-    transform .3s,
-    box-shadow .3s;
-}
-
-.whatsapp-submit:hover {
-
-  background:
-    #503b98;
-
-  transform:
-    translateY(-3px);
-
-  box-shadow:
-    0 12px 30px
-    rgba(96,72,172,.2);
-}
-
-.whatsapp-submit svg {
-
-  width: 18px;
-  height: 18px;
-
-  fill: currentColor;
+    transform: translateY(-2px);
 }
 
 
@@ -1709,176 +958,135 @@ textarea {
 ========================================================= */
 
 .footer {
+    padding: 55px 0 28px;
 
-  background: var(--blue);
+    background: #063d60;
 
-  color: white;
-
-  padding:
-    70px 0 28px;
+    color: white;
 }
 
 .footer-top {
+    display: grid;
 
-  display: grid;
+    grid-template-columns: 1.2fr .8fr .8fr .8fr;
 
-  grid-template-columns:
-    1.2fr
-    .8fr
-    .8fr
-    .8fr;
+    gap: 50px;
 
-  gap: 50px;
+    padding-bottom: 45px;
+}
 
-  padding-bottom: 60px;
+.footer-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
 }
 
 .footer-brand img {
+    width: 55px;
+    height: 55px;
 
-  width: 55px;
-  height: 55px;
-
-  object-fit: contain;
-
-  background: white;
-
-  border-radius: 3px;
-
-  margin-bottom: 22px;
+    object-fit: contain;
 }
 
-.footer-brand h3 {
+.footer-brand-name {
+    font-family: var(--serif);
 
-  font-size: 17px;
-
-  font-weight: 400;
-
-  margin-bottom: 10px;
+    font-size: 20px;
 }
 
-.footer-brand p {
+.footer-brand small {
+    display: block;
 
-  max-width: 280px;
+    margin-top: 5px;
 
-  color:
-    rgba(255,255,255,.62);
+    color: rgba(255,255,255,.55);
 
-  font-size: 11px;
+    font-size: 9px;
 
-  line-height: 1.8;
-
-  font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.footer-column-title {
+.footer-column h4 {
+    margin-bottom: 17px;
 
-  color:
-    #d7cdee;
+    color: rgba(255,255,255,.5);
 
-  font-size: 8px;
+    font-size: 9px;
 
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .footer-column p,
 .footer-column a {
+    display: block;
 
-  display: block;
+    color: rgba(255,255,255,.85);
 
-  color:
-    rgba(255,255,255,.72);
+    font-size: 11px;
 
-  font-size: 11px;
-
-  line-height: 1.9;
-
-  font-weight: 300;
-
-  transition:
-    color .3s;
+    line-height: 1.8;
 }
 
 .footer-column a:hover {
-
-  color: white;
+    color: white;
 }
 
 .footer-bottom {
+    padding-top: 22px;
 
-  display: flex;
+    border-top: 1px solid rgba(255,255,255,.13);
 
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  justify-content: space-between;
+    color: rgba(255,255,255,.4);
 
-  padding-top: 24px;
-
-  border-top:
-    1px solid
-    rgba(255,255,255,.15);
-
-  color:
-    rgba(255,255,255,.45);
-
-  font-size: 9px;
+    font-size: 9px;
 }
 
 
 /* =========================================================
-   BOTÃO FLUTUANTE
+   WHATSAPP
 ========================================================= */
 
 .whatsapp-float {
+    position: fixed;
 
-  position: fixed;
+    right: 25px;
+    bottom: 25px;
 
-  right: 25px;
-  bottom: 25px;
+    z-index: 999;
 
-  z-index: 900;
+    width: 56px;
+    height: 56px;
 
-  width: 52px;
-  height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius: 50%;
+    border-radius: 50%;
 
-  background:
-    #25D366;
+    background: #25D366;
 
-  color: white;
+    color: white;
 
-  display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
 
-  align-items: center;
-
-  justify-content: center;
-
-  box-shadow:
-    0 12px 30px
-    rgba(37,211,102,.2);
-
-  transition:
-    transform .3s;
+    transition: transform .3s ease;
 }
 
 .whatsapp-float:hover {
-
-  transform:
-    scale(1.08);
+    transform: scale(1.08);
 }
 
 .whatsapp-float svg {
+    width: 25px;
+    height: 25px;
 
-  width: 24px;
-  height: 24px;
-
-  fill: currentColor;
+    fill: currentColor;
 }
 
 
@@ -1887,111 +1095,19 @@ textarea {
 ========================================================= */
 
 .reveal {
+    opacity: 0;
 
-  opacity: 0;
+    transform: translateY(30px);
 
-  transform:
-    translateY(28px);
-
-  transition:
-    opacity .8s var(--ease),
-    transform .8s var(--ease);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
-.reveal.show {
+.reveal.visible {
+    opacity: 1;
 
-  opacity: 1;
-
-  transform:
-    translateY(0);
-}
-
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media (max-width: 1000px) {
-
-  .container {
-
-    width:
-      calc(100% - 50px);
-  }
-
-  .nav-menu {
-
-    gap: 20px;
-  }
-
-  .hero-title {
-
-    font-size:
-      clamp(48px, 8vw, 72px);
-  }
-
-  .about-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .audience-intro {
-
-    margin-left: 0;
-  }
-
-  .approach-layout {
-
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-
-  .approach-intro {
-
-    position: static;
-  }
-
-  .process-track {
-
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .process-card:nth-child(2) {
-
-    border-right: 0;
-  }
-
-  .process-card:nth-child(3),
-  .process-card:nth-child(4) {
-
-    border-top:
-      1px solid var(--line);
-  }
-
-  .location-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-  }
-
-  .contact-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-  }
-
-  .footer-top {
-
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
+    transform: translateY(0);
 }
 
 
@@ -1999,1699 +1115,904 @@ textarea {
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
-
-  .container {
-
-    width:
-      calc(100% - 36px);
-  }
-
-
-  /* HEADER */
-
-  .site-header {
-
-    height: 75px;
-  }
-
-  .site-header.scrolled {
-
-    height: 68px;
-  }
-
-  .brand-name {
-
-    font-size: 12px;
-  }
-
-  .brand img {
-
-    width: 40px;
-    height: 40px;
-  }
-
-  .menu-toggle {
-
-    display: block;
-  }
-
-  .nav-menu {
-
-    position: absolute;
-
-    top: 68px;
-
-    left: 18px;
-    right: 18px;
-
+.mobile-menu {
     display: none;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-
-    padding: 10px;
-
-    background:
-      rgba(247,243,238,.98);
-
-    color: var(--blue);
-
-    box-shadow:
-      0 20px 50px
-      rgba(0,0,0,.1);
-
-    border-radius: 3px;
-  }
-
-  .nav-menu.open {
-
-    display: flex;
-  }
-
-  .nav-menu li {
-
-    width: 100%;
-  }
-
-  .nav-menu a {
-
-    display: block;
-
-    padding: 15px 12px;
-  }
-
-  .nav-menu .contact-link {
-
-    text-align: center;
-
-    margin-top: 7px;
-  }
-
-
-  /* HERO */
-
-  .hero {
-
-    min-height:
-      720px;
-  }
-
-  .hero-image {
-
-    /*
-      No celular mostramos uma área
-      um pouco mais ampla da imagem.
-    */
-
-    object-position:
-      center 35%;
-  }
-
-  .hero::after {
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(12,18,20,.22),
-        rgba(12,18,20,.15) 35%,
-        rgba(12,18,20,.7) 100%
-      );
-  }
-
-  .hero-content {
-
-    padding-bottom:
-      85px;
-  }
-
-  .hero-title {
-
-    font-size:
-      clamp(43px, 13vw, 65px);
-
-    letter-spacing:
-      -2.8px;
-
-    max-width:
-      100%;
-  }
-
-  .hero-description {
-
-    max-width:
-      100%;
-
-    font-size:
-      12px;
-  }
-
-  .vertical-name {
-
-    right:
-      -18px;
-
-    font-size:
-      7px;
-
-    letter-spacing:
-      3px;
-  }
-
-  .hero-scroll {
-
-    display: none;
-  }
-
-  .hero-number {
-
-    left:
-      18px;
-
-    bottom:
-      25px;
-  }
-
-
-  /* SEÇÕES */
-
-  .section {
-
-    padding:
-      90px 0;
-  }
-
-  .section-header {
-
-    display: block;
-
-    margin-bottom:
-      55px;
-  }
-
-  .section-index {
-
-    margin-bottom:
-      20px;
-  }
-
-  .section-title {
-
-    font-size:
-      clamp(32px, 9vw, 46px);
-
-    letter-spacing:
-      -1.8px;
-  }
-
-
-  /* FORMAÇÃO */
-
-  .formation-grid {
-
-    grid-template-columns:
-      1fr;
-  }
-
-  .formation-item,
-  .formation-item:nth-child(even) {
-
-    border-left: 0;
-
-    padding:
-      30px 0;
-  }
-
-  .formation-number {
-
-    margin-bottom:
-      45px;
-  }
-
-
-  /* AUDIENCE */
-
-  .audience-row {
-
-    grid-template-columns:
-      42px 1fr 25px;
-
-    min-height:
-      76px;
-  }
-
-  .audience-name {
-
-    font-size:
-      16px;
-  }
-
-
-  /* APPROACH */
-
-  .approach-item {
-
-    grid-template-columns:
-      38px 1fr;
-
-    gap: 15px;
-  }
-
-
-  /* PROCESS */
-
-  .process-track {
-
-    grid-template-columns:
-      1fr;
-  }
-
-  .process-card,
-  .process-card + .process-card {
-
-    border-right:
-      0;
-
-    border-bottom:
-      1px solid var(--line);
-
-    padding:
-      28px 0;
-  }
-
-  .process-card:last-child {
-
-    border-bottom:
-      0;
-  }
-
-  .process-card:nth-child(3),
-  .process-card:nth-child(4) {
-
-    border-top:
-      0;
-  }
-
-  .process-number {
-
-    margin-bottom:
-      45px;
-  }
-
-
-  /* LOCALIZAÇÃO */
-
-  .location {
-
-    padding-bottom:
-      90px;
-  }
-
-  .location-photo {
-
-    height:
-      420px;
-  }
-
-
-  /* FORM */
-
-  .contact {
-
-    padding:
-      90px 0;
-  }
-
-  .contact-form {
-
-    grid-template-columns:
-      1fr;
-
-    gap:
-      24px;
-  }
-
-  .form-group.full {
-
-    grid-column:
-      auto;
-  }
-
-  .form-submit {
-
-    grid-column:
-      auto;
-  }
-
-  .whatsapp-submit {
-
-    width:
-      100%;
-
-    justify-content:
-      center;
-  }
-
-
-  /* FOOTER */
-
-  .footer {
-
-    padding:
-      55px 0 25px;
-  }
-
-  .footer-top {
-
-    grid-template-columns:
-      1fr;
-
-    gap:
-      38px;
-
-    padding-bottom:
-      45px;
-  }
-
-  .footer-bottom {
-
-    align-items:
-      flex-start;
-
-    flex-direction:
-      column;
-
-    gap:
-      10px;
-  }
-
-  .whatsapp-float {
-
-    right:
-      17px;
-
-    bottom:
-      17px;
-  }
-
+}
+
+@media(max-width: 900px) {
+
+    .container {
+        width: calc(100% - 42px);
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 8px;
+    }
+
+    .intro-grid,
+    .about-grid,
+    .who-grid,
+    .location-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .vertical-name {
+        right: 2%;
+    }
 }
 
 
-/* =========================================================
-   REDUÇÃO DE MOVIMENTO
-========================================================= */
+@media(max-width: 680px) {
 
-@media (prefers-reduced-motion: reduce) {
+    .container {
+        width: calc(100% - 34px);
+    }
 
-  *,
-  *::before,
-  *::after {
+    .nav {
+        height: 75px;
+    }
 
-    animation-duration:
-      .01ms !important;
+    .logo-name {
+        display: none;
+    }
 
-    animation-iteration-count:
-      1 !important;
+    .menu {
+        display: none;
+    }
 
-    transition-duration:
-      .01ms !important;
+    .mobile-menu {
+        display: flex;
 
-    scroll-behavior:
-      auto !important;
-  }
+        align-items: center;
+        justify-content: center;
 
+        width: 43px;
+        height: 43px;
+
+        border: 1px solid rgba(255,255,255,.6);
+        border-radius: 50%;
+
+        background: transparent;
+
+        color: white;
+
+        cursor: pointer;
+
+        font-size: 18px;
+    }
+
+    .header.scrolled .mobile-menu {
+        border-color: var(--blue);
+        color: var(--blue);
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-image {
+        object-position: 58% center;
+    }
+
+    .hero::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(15,20,23,.42),
+                rgba(15,20,23,.2) 35%,
+                rgba(15,20,23,.72) 100%
+            );
+    }
+
+    .hero-content {
+        padding-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: clamp(47px, 14vw, 72px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+
+        max-width: 360px;
+    }
+
+    .vertical-name {
+        display: none;
+    }
+
+    .intro,
+    .for-who,
+    .location {
+        padding: 95px 0;
+    }
+
+    .formation,
+    .contact {
+        padding: 95px 0;
+    }
+
+    .formation-item {
+        grid-template-columns: 45px 1fr 20px;
+
+        gap: 10px;
+    }
+
+    .formation-name {
+        font-size: 20px;
+    }
+
+    .who-item span:first-child {
+        font-size: 20px;
+    }
+
+    .location-photo {
+        min-height: 300px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .whatsapp-float {
+        right: 17px;
+        bottom: 17px;
+
+        width: 53px;
+        height: 53px;
+    }
 }
 
 </style>
 </head>
 
-
 <body>
 
 
-<!-- =======================================================
-     CURSOR
-======================================================= -->
-
-<div class="cursor-dot" id="cursorDot"></div>
-
-
-<!-- =======================================================
+<!-- =========================================================
      HEADER
-======================================================= -->
+========================================================= -->
 
-<header class="site-header" id="siteHeader">
+<header class="header" id="header">
 
-  <div class="container">
+    <div class="container">
 
-    <nav class="nav">
+        <nav class="nav">
 
-      <a href="#inicio" class="brand">
+            <a href="#inicio" class="logo">
 
-        <img
-          src="https://i.imgur.com/J1b0lX4.png"
-          alt="Logo Jaqueline Caldi"
-        >
+                <img
+                    src="https://i.imgur.com/J1b0lX4.png"
+                    alt="Logo Jaqueline Caldi"
+                >
 
-        <span class="brand-name">
-          Jaqueline Caldi
-        </span>
+                <span class="logo-name">
+                    Jaqueline Caldi
+                </span>
 
-      </a>
-
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Abrir menu"
-      >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
+            </a>
 
 
-      <ul class="nav-menu" id="navMenu">
+            <ul class="menu">
 
-        <li>
-          <a href="#sobre">
-            Sobre
-          </a>
-        </li>
+                <li>
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+                </li>
 
-        <li>
-          <a href="#formacao">
-            Formação
-          </a>
-        </li>
+                <li>
+                    <a href="#formacao">
+                        Formação
+                    </a>
+                </li>
 
-        <li>
-          <a href="#publico">
-            Para quem
-          </a>
-        </li>
+                <li>
+                    <a href="#para-quem">
+                        Para quem
+                    </a>
+                </li>
 
-        <li>
-          <a href="#localizacao">
-            Localização
-          </a>
-        </li>
+                <li>
+                    <a href="#localizacao">
+                        Localização
+                    </a>
+                </li>
 
-        <li>
-          <a
-            href="#contato"
-            class="contact-link"
-          >
-            Contato
-          </a>
-        </li>
+                <li>
+                    <a href="#contato" class="menu-button">
+                        Contato
+                    </a>
+                </li>
 
-      </ul>
+            </ul>
 
-    </nav>
 
-  </div>
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="Abrir menu"
+            >
+                ☰
+            </button>
+
+        </nav>
+
+    </div>
 
 </header>
 
 
-<!-- =======================================================
+<!-- =========================================================
      HERO
-======================================================= -->
+========================================================= -->
 
-<section
-  class="hero"
-  id="inicio"
->
+<section class="hero" id="inicio">
 
-  <img
-    class="hero-image"
-    src="https://i.imgur.com/Nxb6CG6.png"
-    alt="Jaqueline Caldi — Psicopedagoga Clínica"
-  >
+    <img
+        class="hero-image"
+        src="https://i.imgur.com/Nxb6CG6.png"
+        alt="Jaqueline Caldi — Psicopedagoga Clínica"
+    >
 
 
-  <div class="hero-content">
+    <div class="vertical-name">
+        JAQUELINE CALDI
+    </div>
+
+
+    <div class="hero-content">
+
+        <div class="container">
+
+            <div class="hero-inner">
+
+                <div class="hero-label">
+                    Psicopedagogia Clínica
+                </div>
+
+
+                <h1 class="hero-title">
+                    Acolher antes de
+                    intervir.
+                </h1>
+
+
+                <p class="hero-description">
+                    Um olhar individualizado para compreender
+                    os desafios da aprendizagem e acompanhar
+                    cada criança em seu próprio processo.
+                </p>
+
+
+                <div class="hero-bottom">
+
+                    <div class="scroll-circle">
+                        <span>↓</span>
+                    </div>
+
+                    <span>
+                        Arraste para descobrir
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO / HISTÓRIA
+========================================================= -->
+
+<section class="intro" id="sobre">
+
+    <div class="container intro-grid">
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                01 — SOBRE MIM
+            </div>
+
+        </div>
+
+
+        <div class="reveal">
+
+            <h2 class="intro-title">
+                Olá, eu sou
+                <em>Jaqueline Caldi.</em>
+            </h2>
+
+            <p class="intro-text">
+                Sou casada, mãe atípica e profissional da
+                educação há mais de 6 anos. Minha trajetória
+                pessoal e profissional me levou a aprofundar
+                meus estudos na área das neurodivergências,
+                buscando compreender e apoiar o desenvolvimento
+                de cada criança de forma individualizada
+                e acolhedora.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HISTÓRIA / PROFISSÃO
+========================================================= -->
+
+<section class="about">
+
+    <div class="container about-grid">
+
+        <div class="about-card reveal">
+
+            <h3>
+                Um olhar individualizado
+            </h3>
+
+            <p>
+                Cada criança possui sua própria maneira
+                de aprender, se expressar e desenvolver
+                suas habilidades. Por isso, o acompanhamento
+                é pensado de acordo com as necessidades
+                de cada pessoa.
+            </p>
+
+        </div>
+
+
+        <div class="about-card reveal">
+
+            <h3>
+                Minha atuação
+            </h3>
+
+            <p>
+                Sou Psicopedagoga Clínica e acadêmica de
+                Psicologia, dedicada a auxiliar crianças
+                e adolescentes que enfrentam desafios
+                relacionados à aprendizagem, atenção,
+                leitura, escrita, raciocínio lógico e
+                funções executivas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMAÇÃO
+========================================================= -->
+
+<section class="formation" id="formacao">
 
     <div class="container">
 
-      <div class="hero-copy">
+        <div class="section-head reveal">
 
-        <div class="eyebrow">
-          Psicopedagogia Clínica
+            <div class="eyebrow">
+                02 — FORMAÇÃO
+            </div>
+
+            <h2 class="section-title">
+                Conhecimento para
+                <em>compreender.</em>
+            </h2>
+
         </div>
 
 
-        <h1 class="hero-title">
+        <div class="formation-list">
 
-          <span class="line">
-            <span>
-              Acolher antes de
-            </span>
-          </span>
+            <div class="formation-item reveal">
 
-          <span class="line">
-            <span>
-              intervir.
-            </span>
-          </span>
+                <div class="formation-number">
+                    01
+                </div>
 
-        </h1>
+                <div class="formation-name">
+                    Psicopedagogia Clínica
+                </div>
+
+                <div class="formation-arrow">
+                    →
+                </div>
+
+            </div>
 
 
-        <p class="hero-description">
+            <div class="formation-item reveal">
 
-          Um olhar individualizado para compreender
-          os desafios da aprendizagem e acompanhar
-          cada criança em seu próprio processo.
+                <div class="formation-number">
+                    02
+                </div>
 
-        </p>
+                <div class="formation-name">
+                    Acadêmica de Psicologia
+                </div>
 
-      </div>
+                <div class="formation-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="formation-item reveal">
+
+                <div class="formation-number">
+                    03
+                </div>
+
+                <div class="formation-name">
+                    Estudos em neurodivergências
+                </div>
+
+                <div class="formation-arrow">
+                    →
+                </div>
+
+            </div>
+
+
+            <div class="formation-item reveal">
+
+                <div class="formation-number">
+                    04
+                </div>
+
+                <div class="formation-name">
+                    Experiência na área da educação
+                </div>
+
+                <div class="formation-arrow">
+                    →
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
-
-
-  <div class="vertical-name">
-    Jaqueline Caldi
-  </div>
-
-
-  <div class="hero-number">
-    01 — 06
-  </div>
-
-
-  <div class="hero-scroll">
-
-    <span class="scroll-line"></span>
-
-    Arraste para descobrir
-
-  </div>
 
 </section>
 
 
-<!-- =======================================================
-     SOBRE
-======================================================= -->
-
-<section
-  class="section about"
-  id="sobre"
->
-
-  <div class="container">
-
-    <div class="section-header reveal">
-
-      <div class="section-index">
-        02 — SOBRE
-      </div>
-
-      <h2 class="section-title">
-
-        Um trabalho construído
-        a partir de <strong>escuta,
-        vínculo e individualidade.</strong>
-
-      </h2>
-
-    </div>
-
-
-    <div class="about-grid">
-
-      <div class="about-side reveal">
-
-        <div class="about-side-label">
-          Quem sou
-        </div>
-
-        <p>
-
-          Uma profissional da educação
-          que acredita que compreender
-          vem antes de intervir.
-
-        </p>
-
-      </div>
-
-
-      <div class="about-main reveal">
-
-        <p>
-
-          Sou casada, mãe atípica e profissional
-          da educação há mais de 6 anos. Minha
-          trajetória pessoal e profissional me levou
-          a aprofundar meus estudos na área das
-          neurodivergências, buscando compreender
-          e apoiar o desenvolvimento de cada criança
-          de forma individualizada e acolhedora.
-
-        </p>
-
-
-        <p>
-
-          Sou Psicopedagoga Clínica e acadêmica
-          de Psicologia, dedicada a auxiliar crianças
-          e adolescentes que enfrentam desafios
-          relacionados à aprendizagem, atenção,
-          leitura, escrita, raciocínio lógico e
-          funções executivas.
-
-        </p>
-
-
-        <div class="about-statement">
-
-          <span>
-            Meu propósito:
-          </span>
-
-          olhar para cada criança além
-          da dificuldade.
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     FORMAÇÃO
-======================================================= -->
-
-<section
-  class="section formation"
-  id="formacao"
->
-
-  <div class="container">
-
-    <div class="section-header reveal">
-
-      <div class="section-index">
-        03 — FORMAÇÃO
-      </div>
-
-      <h2 class="section-title">
-
-        Conhecimento para
-        transformar o olhar em
-        <strong>estratégia.</strong>
-
-      </h2>
-
-    </div>
-
-
-    <div class="formation-grid">
-
-
-      <article class="formation-item reveal">
-
-        <div class="formation-number">
-          01
-        </div>
-
-        <h3>
-          Psicopedagogia Clínica
-        </h3>
-
-        <p>
-
-          Atuação voltada à compreensão dos
-          processos de aprendizagem e às
-          dificuldades que podem surgir nesse
-          percurso.
-
-        </p>
-
-      </article>
-
-
-      <article class="formation-item reveal">
-
-        <div class="formation-number">
-          02
-        </div>
-
-        <h3>
-          Acadêmica de Psicologia
-        </h3>
-
-        <p>
-
-          Formação em andamento ampliando
-          a compreensão sobre desenvolvimento,
-          comportamento e aspectos emocionais.
-
-        </p>
-
-      </article>
-
-
-      <article class="formation-item reveal">
-
-        <div class="formation-number">
-          03
-        </div>
-
-        <h3>
-          Neurodivergências
-        </h3>
-
-        <p>
-
-          Estudos direcionados à compreensão
-          das diferentes formas de aprender,
-          se desenvolver e perceber o mundo.
-
-        </p>
-
-      </article>
-
-
-      <article class="formation-item reveal">
-
-        <div class="formation-number">
-          04
-        </div>
-
-        <h3>
-          Educação e experiência
-        </h3>
-
-        <p>
-
-          Mais de seis anos de trajetória
-          profissional na área da educação.
-
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
+<!-- =========================================================
      PARA QUEM
-======================================================= -->
+========================================================= -->
 
-<section
-  class="section audience"
-  id="publico"
->
+<section class="for-who" id="para-quem">
 
-  <div class="container">
+    <div class="container who-grid">
 
-    <div class="section-header reveal">
+        <div class="reveal">
 
-      <div class="section-index">
-        04 — PARA QUEM
-      </div>
+            <div class="eyebrow">
+                03 — PARA QUEM
+            </div>
 
-      <h2 class="section-title">
+            <h2 class="who-title">
+                Para quem
+                precisa de um
+                <em>novo olhar.</em>
+            </h2>
 
-        Um acompanhamento
-        pensado para
-        <strong>necessidades reais.</strong>
-
-      </h2>
-
-    </div>
+        </div>
 
 
-    <p class="audience-intro reveal">
+        <div class="who-list">
 
-      O atendimento é direcionado a crianças e
-      adolescentes que apresentam desafios no
-      processo de aprendizagem ou precisam de
-      estratégias para desenvolver suas habilidades.
+            <div class="who-item reveal">
+                <span>
+                    Crianças
+                </span>
 
-    </p>
-
-
-    <div class="audience-list">
-
-
-      <div class="audience-row reveal">
-
-        <span class="audience-number">
-          01
-        </span>
-
-        <span class="audience-name">
-          Dificuldades de aprendizagem
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
+                <span>
+                    +
+                </span>
+            </div>
 
 
-      <div class="audience-row reveal">
+            <div class="who-item reveal">
+                <span>
+                    Adolescentes
+                </span>
 
-        <span class="audience-number">
-          02
-        </span>
-
-        <span class="audience-name">
-          Atenção e concentração
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
+                <span>
+                    +
+                </span>
+            </div>
 
 
-      <div class="audience-row reveal">
+            <div class="who-item reveal">
+                <span>
+                    Dificuldades de aprendizagem
+                </span>
 
-        <span class="audience-number">
-          03
-        </span>
-
-        <span class="audience-name">
-          Leitura e escrita
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
+                <span>
+                    +
+                </span>
+            </div>
 
 
-      <div class="audience-row reveal">
+            <div class="who-item reveal">
+                <span>
+                    Atenção e concentração
+                </span>
 
-        <span class="audience-number">
-          04
-        </span>
-
-        <span class="audience-name">
-          Raciocínio lógico
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
+                <span>
+                    +
+                </span>
+            </div>
 
 
-      <div class="audience-row reveal">
+            <div class="who-item reveal">
+                <span>
+                    Leitura e escrita
+                </span>
 
-        <span class="audience-number">
-          05
-        </span>
-
-        <span class="audience-name">
-          Funções executivas
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
+                <span>
+                    +
+                </span>
+            </div>
 
 
-      <div class="audience-row reveal">
+            <div class="who-item reveal">
+                <span>
+                    Funções executivas
+                </span>
 
-        <span class="audience-number">
-          06
-        </span>
+                <span>
+                    +
+                </span>
+            </div>
 
-        <span class="audience-name">
-          Neurodivergências
-        </span>
-
-        <span class="audience-arrow">
-          →
-        </span>
-
-      </div>
-
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =======================================================
-     ABORDAGEM — 05
-======================================================= -->
-
-<section
-  class="section approach"
-  id="abordagem"
->
-
-  <div class="container">
-
-    <div class="section-header reveal">
-
-      <div class="section-index">
-        05 — ABORDAGEM
-      </div>
-
-      <h2 class="section-title">
-
-        Antes da estratégia,
-        existe a necessidade de
-        <strong>compreender.</strong>
-
-      </h2>
-
-    </div>
-
-
-    <div class="approach-layout">
-
-
-      <div class="approach-intro reveal">
-
-        <h2>
-
-          Cada história
-          pede um
-          <span>olhar diferente.</span>
-
-        </h2>
-
-      </div>
-
-
-      <div class="approach-list">
-
-
-        <article class="approach-item reveal">
-
-          <div class="approach-item-number">
-            01
-          </div>
-
-          <div>
-
-            <h3>
-              Escuta
-            </h3>
-
-            <p>
-
-              Conhecer a história e o contexto
-              antes de definir qualquer estratégia.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="approach-item reveal">
-
-          <div class="approach-item-number">
-            02
-          </div>
-
-          <div>
-
-            <h3>
-              Individualidade
-            </h3>
-
-            <p>
-
-              Cada criança apresenta potencialidades
-              e desafios próprios.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="approach-item reveal">
-
-          <div class="approach-item-number">
-            03
-          </div>
-
-          <div>
-
-            <h3>
-              Acolhimento
-            </h3>
-
-            <p>
-
-              Um ambiente seguro favorece confiança,
-              autonomia e novas possibilidades.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="approach-item reveal">
-
-          <div class="approach-item-number">
-            04
-          </div>
-
-          <div>
-
-            <h3>
-              Família
-            </h3>
-
-            <p>
-
-              A família participa do processo e
-              recebe orientações ao longo do acompanhamento.
-
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     PROCESSO — 06
-     SEM FOTO DEPOIS
-======================================================= -->
-
-<section
-  class="section process"
-  id="processo"
->
-
-  <div class="container">
-
-    <div class="section-header reveal">
-
-      <div class="section-index">
-        06 — PROCESSO
-      </div>
-
-      <h2 class="section-title">
-
-        Um caminho construído
-        <strong>passo a passo.</strong>
-
-      </h2>
-
-    </div>
-
-
-    <div class="process-track">
-
-
-      <article class="process-card reveal">
-
-        <div class="process-number">
-          01
-        </div>
-
-        <h3>
-          Conversa inicial
-        </h3>
-
-        <p>
-
-          Primeiro contato para compreender
-          a demanda e conhecer a família.
-
-        </p>
-
-      </article>
-
-
-      <article class="process-card reveal">
-
-        <div class="process-number">
-          02
-        </div>
-
-        <h3>
-          Avaliação
-        </h3>
-
-        <p>
-
-          Investigação das habilidades,
-          necessidades e dificuldades apresentadas.
-
-        </p>
-
-      </article>
-
-
-      <article class="process-card reveal">
-
-        <div class="process-number">
-          03
-        </div>
-
-        <h3>
-          Intervenção
-        </h3>
-
-        <p>
-
-          Estratégias pensadas de acordo
-          com as necessidades identificadas.
-
-        </p>
-
-      </article>
-
-
-      <article class="process-card reveal">
-
-        <div class="process-number">
-          04
-        </div>
-
-        <h3>
-          Acompanhamento
-        </h3>
-
-        <p>
-
-          Observação dos avanços e ajustes
-          necessários ao longo do processo.
-
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
+<!-- =========================================================
      LOCALIZAÇÃO
-======================================================= -->
+     
+     A FOTO EXTRA QUE EXISTIA DEPOIS DA SEÇÃO 5
+     FOI RETIRADA.
 
-<section
-  class="section location"
-  id="localizacao"
->
+     ESTA É A SEÇÃO DE LOCALIZAÇÃO.
+========================================================= -->
 
-  <div class="container">
+<section class="location" id="localizacao">
 
-    <div class="section-header reveal">
-
-      <div class="section-index">
-        07 — LOCALIZAÇÃO
-      </div>
-
-      <h2 class="section-title">
-
-        Um espaço preparado
-        para <strong>acolher.</strong>
-
-      </h2>
-
-    </div>
+    <div class="container location-grid">
 
 
-    <div class="location-grid">
+        <div class="location-info reveal">
+
+            <div class="eyebrow">
+                04 — LOCALIZAÇÃO
+            </div>
 
 
-      <div class="location-photo-wrap reveal">
-
-        <img
-          class="location-photo"
-          src="https://i.imgur.com/fqEDfKr.png"
-          alt="Espaço de atendimento de Jaqueline Caldi"
-          loading="lazy"
-        >
-
-      </div>
+            <h2 class="location-title">
+                Um espaço para
+                <em>acolher.</em>
+            </h2>
 
 
-      <div class="location-info reveal">
+            <div class="location-address">
 
-        <h2>
+                <strong>
+                    Atendimento presencial
+                </strong>
 
-          Atendimento em
-          <span>ambiente acolhedor.</span>
+                Rua / Avenida do endereço,
+                número — Bairro<br>
 
-        </h2>
+                Cidade — Estado
 
-
-        <p class="location-description">
-
-          Um espaço pensado para que crianças,
-          adolescentes e famílias se sintam
-          confortáveis durante cada etapa do
-          acompanhamento.
-
-        </p>
+            </div>
 
 
-        <div class="address">
-
-          <span class="address-label">
-            Endereço
-          </span>
-
-          <div class="address-text">
-
-            INSIRA AQUI O ENDEREÇO COMPLETO<br>
-            Cidade — Estado
-
-          </div>
+            <a
+                href="#contato"
+                class="location-link"
+            >
+                Quero conhecer o espaço →
+            </a>
 
         </div>
 
 
-        <!-- TROQUE O LINK ABAIXO PELO GOOGLE MAPS -->
+        <div class="location-photo reveal">
 
-        <a
-          class="location-button"
-          href="#"
-          target="_blank"
-          rel="noopener"
-        >
+            <!--
+                SUBSTITUA ESTA FOTO PELA FOTO DO CONSULTÓRIO/
+                ENDEREÇO QUANDO TIVER.
 
-          Ver localização no mapa
+                Ela é somente da localização.
+                Não é uma foto adicional da Jaqueline.
+            -->
 
-          <span>
-            ↗
-          </span>
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     CONTATO
-======================================================= -->
-
-<section
-  class="contact"
-  id="contato"
->
-
-  <div class="container">
-
-    <div class="contact-grid">
-
-
-      <div class="contact-copy reveal">
-
-        <div class="section-index">
-          08 — CONTATO
-        </div>
-
-
-        <h2>
-
-          Vamos conversar
-          sobre o próximo
-          <span>passo?</span>
-
-        </h2>
-
-
-        <p>
-
-          Preencha seus dados ao lado e conte
-          brevemente o que você precisa.
-          Ao enviar, o WhatsApp será aberto
-          automaticamente com sua mensagem.
-
-        </p>
-
-      </div>
-
-
-      <!-- ===================================================
-           FORMULÁRIO
-      ==================================================== -->
-
-      <form
-        class="contact-form reveal"
-        id="contactForm"
-      >
-
-
-        <div class="form-group">
-
-          <label for="nome">
-            Seu nome
-          </label>
-
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder="Digite seu nome"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="telefone">
-            WhatsApp
-          </label>
-
-          <input
-            type="tel"
-            id="telefone"
-            name="telefone"
-            placeholder="(00) 00000-0000"
-            required
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label for="mensagem">
-            Como posso ajudar?
-          </label>
-
-          <textarea
-            id="mensagem"
-            name="mensagem"
-            placeholder="Descreva brevemente o que você precisa..."
-            required
-          ></textarea>
-
-        </div>
-
-
-        <div class="form-submit">
-
-          <button
-            type="submit"
-            class="whatsapp-submit"
-          >
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
+            <img
+                src="https://i.imgur.com/fqEDfKr.png"
+                alt="Espaço de atendimento"
             >
 
-              <path
-                d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
-                C5.48 0 .14 5.34.14 11.9
-                c0 2.1.55 4.15 1.6 5.96L.04 24
-                l6.3-1.65a11.9 11.9 0 0 0
-                5.7 1.45h.01
-                c6.56 0 11.9-5.34 11.9-11.9
-                0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
-                c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
-                -3.74.98 1-3.65-.23-.37
-                a9.9 9.9 0 0 1-1.52-5.25
-                c0-5.46 4.45-9.9 9.91-9.9
-                2.64 0 5.12 1.03 6.99 2.9
-                a9.84 9.84 0 0 1 2.91 7
-                c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
-                c-.3-.15-1.77-.87-2.05-.97
-                -.28-.1-.48-.15-.68.15
-                -.2.3-.77.97-.94 1.17
-                -.17.2-.35.22-.65.07
-                -.3-.15-1.25-.46-2.38-1.47
-                -.88-.78-1.47-1.74-1.64-2.04
-                -.17-.3-.02-.46.13-.61
-                .13-.13.3-.35.45-.52
-                .15-.17.2-.3.3-.5
-                .1-.2.05-.37-.02-.52
-                -.07-.15-.68-1.63-.93-2.23
-                -.24-.58-.49-.5-.68-.51
-                h-.58c-.2 0-.52.07-.79.37
-                -.27.3-1.04 1.02-1.04 2.49
-                0 1.47 1.07 2.89 1.22 3.09
-                .15.2 2.1 3.21 5.08 4.5
-                .71.31 1.27.5 1.7.64
-                .72.23 1.37.2 1.89.12
-                .58-.09 1.77-.72 2.02-1.42
-                .25-.7.25-1.3.17-1.42
-                -.07-.12-.27-.2-.57-.35Z"
-              />
-
-            </svg>
-
-            Enviar pelo WhatsApp
-
-          </button>
-
         </div>
 
-
-      </form>
-
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
+     CONTATO / FORMULÁRIO
+========================================================= -->
+
+<section class="contact" id="contato">
+
+    <div class="container contact-grid">
+
+
+        <div class="reveal">
+
+            <div class="eyebrow" style="color:#cfc4ee;">
+                05 — CONTATO
+            </div>
+
+
+            <h2 class="contact-title">
+                Vamos
+                <em>conversar?</em>
+            </h2>
+
+
+            <p class="contact-description">
+                Preencha seus dados e conte brevemente
+                o que você procura. Ao enviar, sua
+                mensagem será encaminhada diretamente
+                para o WhatsApp da Jaqueline.
+            </p>
+
+        </div>
+
+
+        <form
+            class="contact-form reveal"
+            id="contactForm"
+        >
+
+            <div class="field">
+
+                <label for="nome">
+                    Seu nome
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="telefone">
+                    Seu telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="mensagem">
+                    Como posso ajudar?
+                </label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    placeholder="Conte brevemente o que você precisa..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                Enviar pelo WhatsApp →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      FOOTER
-======================================================= -->
+========================================================= -->
 
 <footer class="footer">
 
-  <div class="container">
+    <div class="container">
 
 
-    <div class="footer-top">
+        <div class="footer-top">
 
 
-      <!-- MARCA -->
+            <div class="footer-brand">
 
-      <div class="footer-brand">
+                <img
+                    src="https://i.imgur.com/J1b0lX4.png"
+                    alt="Logo Jaqueline Caldi"
+                >
 
-        <img
-          src="https://i.imgur.com/J1b0lX4.png"
-          alt="Jaqueline Caldi"
-        >
+                <div>
 
-        <h3>
-          Jaqueline Caldi
-        </h3>
+                    <div class="footer-brand-name">
+                        Jaqueline Caldi
+                    </div>
 
-        <p>
-          Psicopedagoga Clínica
-        </p>
+                    <small>
+                        Psicopedagoga Clínica
+                    </small>
 
-      </div>
+                </div>
+
+            </div>
 
 
-      <!-- ENDEREÇO -->
+            <div class="footer-column">
 
-      <div class="footer-column">
+                <h4>
+                    Endereço
+                </h4>
 
-        <div class="footer-column-title">
-          Endereço
+                <p>
+                    Rua / Avenida do endereço, número
+                </p>
+
+                <p>
+                    Bairro — Cidade / Estado
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Contato
+                </h4>
+
+                <!-- TROQUE PELO TELEFONE REAL -->
+
+                <a href="tel:+5543999999999">
+                    (43) 99999-9999
+                </a>
+
+                <!-- TROQUE PELO E-MAIL REAL -->
+
+                <a href="mailto:contato@jaquelinecaldi.com.br">
+                    contato@jaquelinecaldi.com.br
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Atendimento
+                </h4>
+
+                <p>
+                    Psicopedagogia Clínica
+                </p>
+
+                <p>
+                    Crianças e adolescentes
+                </p>
+
+            </div>
+
         </div>
 
-        <p>
-          INSIRA O ENDEREÇO COMPLETO
-        </p>
 
-        <p>
-          Cidade — Estado
-        </p>
+        <div class="footer-bottom">
 
-      </div>
+            <span>
+                © <span id="year"></span>
+                Jaqueline Caldi. Todos os direitos reservados.
+            </span>
 
+            <span>
+                Psicopedagogia Clínica
+            </span>
 
-      <!-- CONTATO -->
-
-      <div class="footer-column">
-
-        <div class="footer-column-title">
-          Contato
         </div>
-
-        <!-- ALTERE O TELEFONE -->
-
-        <a href="tel:+5500000000000">
-          (00) 00000-0000
-        </a>
-
-        <a href="mailto:contato@jaquelinecaldi.com.br">
-          contato@jaquelinecaldi.com.br
-        </a>
-
-      </div>
-
-
-      <!-- LINKS -->
-
-      <div class="footer-column">
-
-        <div class="footer-column-title">
-          Navegação
-        </div>
-
-        <a href="#sobre">
-          Sobre
-        </a>
-
-        <a href="#formacao">
-          Formação
-        </a>
-
-        <a href="#publico">
-          Para quem
-        </a>
-
-        <a href="#localizacao">
-          Localização
-        </a>
-
-        <a href="#contato">
-          Contato
-        </a>
-
-      </div>
-
 
     </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © <span id="year"></span>
-        Jaqueline Caldi.
-        Todos os direitos reservados.
-      </span>
-
-      <span>
-        Psicopedagogia Clínica
-      </span>
-
-    </div>
-
-
-  </div>
 
 </footer>
 
 
-<!-- =======================================================
+<!-- =========================================================
      WHATSAPP FLUTUANTE
-======================================================= -->
+========================================================= -->
 
 <a
-  href="https://wa.me/5500000000000"
-  target="_blank"
-  rel="noopener"
-  class="whatsapp-float"
-  aria-label="Falar pelo WhatsApp"
+    href="https://wa.me/5543999999999"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar pelo WhatsApp"
 >
 
-  <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
+    <svg viewBox="0 0 24 24">
 
-    <path
-      d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
-      C5.48 0 .14 5.34.14 11.9
-      c0 2.1.55 4.15 1.6 5.96L.04 24
-      l6.3-1.65a11.9 11.9 0 0 0
-      5.7 1.45h.01
-      c6.56 0 11.9-5.34 11.9-11.9
-      0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
-      c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
-      -3.74.98 1-3.65-.23-.37
-      a9.9 9.9 0 0 1-1.52-5.25
-      c0-5.46 4.45-9.9 9.91-9.9
-      2.64 0 5.12 1.03 6.99 2.9
-      a9.84 9.84 0 0 1 2.91 7
-      c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
-      c-.3-.15-1.77-.87-2.05-.97
-      -.28-.1-.48-.15-.68.15
-      -.2.3-.77.97-.94 1.17
-      -.17.2-.35.22-.65.07
-      -.3-.15-1.25-.46-2.38-1.47
-      -.88-.78-1.47-1.74-1.64-2.04
-      -.17-.3-.02-.46.13-.61
-      .13-.13.3-.35.45-.52
-      .15-.17.2-.3.2-.5
-      .1-.2.05-.37-.02-.52
-      -.07-.15-.68-1.63-.93-2.23
-      -.24-.58-.49-.5-.68-.51
-      h-.58c-.2 0-.52.07-.79.37
-      -.27.3-1.04 1.02-1.04 2.49
-      0 1.47 1.07 2.89 1.22 3.09
-      .15.2 2.1 3.21 5.08 4.5
-      .71.31 1.27.5 1.7.64
-      .72.23 1.37.2 1.89.12
-      .58-.09 1.77-.72 2.02-1.42
-      .25-.7.25-1.3.17-1.42
-      -.07-.12-.27-.2-.57-.35Z"
-    />
+        <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.15 1.6 5.96L.04 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8c-1.78 0-3.53-.48-5.05-1.4l-.36-.21-3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.84 9.84 0 0 1 2.91 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
 
-  </svg>
+    </svg>
 
 </a>
 
@@ -3699,115 +2020,95 @@ textarea {
 <script>
 
 /* =========================================================
-   CONFIGURAÇÕES
-========================================================= */
-
-/*
-   COLOQUE AQUI O WHATSAPP REAL DA JAQUELINE.
-
-   Exemplo:
-
-   5543999999999
-
-   Sempre:
-   código do país + DDD + número
-*/
-
-const WHATSAPP =
-  "5500000000000";
-
-
-/* =========================================================
    HEADER
 ========================================================= */
 
-const header =
-  document.getElementById("siteHeader");
-
+const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
-  if (window.scrollY > 50) {
-
-    header.classList.add("scrolled");
-
-  } else {
-
-    header.classList.remove("scrolled");
-
-  }
-
-});
-
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
-
-const menuToggle =
-  document.getElementById("menuToggle");
-
-const navMenu =
-  document.getElementById("navMenu");
-
-
-menuToggle.addEventListener("click", () => {
-
-  navMenu.classList.toggle("open");
-
-});
-
-
-document
-  .querySelectorAll(".nav-menu a")
-  .forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      navMenu.classList.remove("open");
-
-    });
-
-  });
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-const revealElements =
-  document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("show");
-
-          revealObserver.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-    {
-      threshold: .12
+    if (window.scrollY > 60) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
     }
-  );
+
+});
 
 
-revealElements.forEach(element => {
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-  revealObserver.observe(element);
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
+const menu =
+    document.querySelector(".menu");
+
+mobileMenu.addEventListener("click", () => {
+
+    const open =
+        menu.classList.toggle("mobile-open");
+
+    if (open) {
+
+        menu.style.display = "flex";
+        menu.style.position = "absolute";
+        menu.style.top = "75px";
+        menu.style.left = "17px";
+        menu.style.right = "17px";
+        menu.style.padding = "25px";
+        menu.style.flexDirection = "column";
+        menu.style.alignItems = "stretch";
+        menu.style.background = "rgba(247,243,238,.98)";
+        menu.style.borderRadius = "14px";
+        menu.style.boxShadow = "0 20px 50px rgba(0,0,0,.1)";
+
+        menu.querySelectorAll("a").forEach(a => {
+            a.style.color = "#005387";
+        });
+
+    } else {
+
+        menu.style.display = "";
+
+    }
+
+});
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+reveals.forEach(element => {
+    observer.observe(element);
 });
 
 
@@ -3816,106 +2117,56 @@ revealElements.forEach(element => {
 ========================================================= */
 
 const form =
-  document.getElementById("contactForm");
+    document.getElementById("contactForm");
 
 
 form.addEventListener("submit", function(event) {
 
-  event.preventDefault();
+    event.preventDefault();
 
 
-  const nome =
-    document.getElementById("nome").value.trim();
+    const nome =
+        document.getElementById("nome").value.trim();
+
+    const telefone =
+        document.getElementById("telefone").value.trim();
+
+    const mensagem =
+        document.getElementById("mensagem").value.trim();
 
 
-  const telefone =
-    document.getElementById("telefone").value.trim();
+    /*
+       =====================================================
+       TROQUE AQUI PELO WHATSAPP REAL DA JAQUELINE.
+
+       FORMATO:
+       55 + DDD + NÚMERO
+
+       Exemplo:
+       5543999999999
+       =====================================================
+    */
+
+    const numeroWhatsApp =
+        "5543999999999";
 
 
-  const mensagem =
-    document.getElementById("mensagem").value.trim();
+    const texto =
+        `Olá, Jaqueline!%0A%0A` +
+        `Meu nome é ${encodeURIComponent(nome)}.%0A` +
+        `Meu telefone é ${encodeURIComponent(telefone)}.%0A%0A` +
+        `Gostaria de falar sobre:%0A` +
+        `${encodeURIComponent(mensagem)}`;
 
 
-  if (!nome || !telefone || !mensagem) {
-
-    return;
-
-  }
+    const url =
+        `https://wa.me/${numeroWhatsApp}?text=${texto}`;
 
 
-  const texto =
-
-`Olá, Jaqueline! Tudo bem?
-
-Meu nome é ${nome}.
-
-Meu WhatsApp é:
-${telefone}
-
-Gostaria de saber mais sobre o atendimento.
-
-O que preciso:
-${mensagem}`;
-
-
-  const url =
-
-    "https://wa.me/" +
-    WHATSAPP +
-    "?text=" +
-    encodeURIComponent(texto);
-
-
-  window.open(
-    url,
-    "_blank",
-    "noopener"
-  );
-
-});
-
-
-/* =========================================================
-   MÁSCARA WHATSAPP
-========================================================= */
-
-const telefone =
-  document.getElementById("telefone");
-
-
-telefone.addEventListener("input", function() {
-
-  let value =
-    this.value.replace(/\D/g, "");
-
-  if (value.length > 11) {
-
-    value =
-      value.substring(0, 11);
-
-  }
-
-
-  if (value.length <= 10) {
-
-    value =
-      value.replace(
-        /^(\d{2})(\d{4})(\d{0,4}).*/,
-        "($1) $2-$3"
-      );
-
-  } else {
-
-    value =
-      value.replace(
-        /^(\d{2})(\d{5})(\d{0,4}).*/,
-        "($1) $2-$3"
-      );
-
-  }
-
-
-  this.value = value;
+    window.open(
+        url,
+        "_blank"
+    );
 
 });
 
@@ -3924,86 +2175,8 @@ telefone.addEventListener("input", function() {
    ANO
 ========================================================= */
 
-document.getElementById("year")
-  .textContent =
-  new Date().getFullYear();
-
-
-/* =========================================================
-   CURSOR
-========================================================= */
-
-const cursor =
-  document.getElementById("cursorDot");
-
-
-if (window.matchMedia("(pointer: fine)").matches) {
-
-  window.addEventListener("mousemove", event => {
-
-    cursor.style.left =
-      event.clientX + "px";
-
-    cursor.style.top =
-      event.clientY + "px";
-
-  });
-
-
-  document
-    .querySelectorAll("a, button")
-    .forEach(element => {
-
-      element.addEventListener(
-        "mouseenter",
-        () => {
-
-          cursor.style.width = "14px";
-          cursor.style.height = "14px";
-
-        }
-      );
-
-
-      element.addEventListener(
-        "mouseleave",
-        () => {
-
-          cursor.style.width = "7px";
-          cursor.style.height = "7px";
-
-        }
-      );
-
-    });
-
-}
-
-
-/* =========================================================
-   MOVIMENTO SUTIL DA FOTO
-========================================================= */
-
-const heroImage =
-  document.querySelector(".hero-image");
-
-
-window.addEventListener("scroll", () => {
-
-  if (
-    window.innerWidth > 700 &&
-    window.scrollY < window.innerHeight
-  ) {
-
-    const movement =
-      window.scrollY * .025;
-
-    heroImage.style.transform =
-      `scale(1.035) translateY(${movement}px)`;
-
-  }
-
-});
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
 </script>
 
