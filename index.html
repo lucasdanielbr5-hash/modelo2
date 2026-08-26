@@ -1,2184 +1,3744 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Jaqueline Caldi | Psicopedagoga Clínica</title>
-
-<meta name="description" content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   BASE
-========================================================= */
-
-:root {
-    --purple: #6048AC;
-    --blue: #005387;
-    --cream: #F7F3EE;
-    --white: #fff;
-    --black: #17252d;
-    --gray: #69747a;
-    --line: rgba(0,83,135,.14);
-
-    --serif: "Playfair Display", serif;
-    --sans: "Inter", sans-serif;
-
-    --max: 1240px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--cream);
-    color: var(--black);
-    font-family: var(--sans);
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+  <meta charset="UTF-8">
 
-button,
-input,
-textarea {
-    font-family: var(--sans);
-}
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-::selection {
-    background: var(--purple);
-    color: white;
-}
+  <meta
+    name="description"
+    content="Jaqueline Caldi — Psicopedagoga Clínica. Atendimento individualizado para crianças e adolescentes."
+  >
 
-.container {
-    width: min(var(--max), calc(100% - 100px));
-    margin: auto;
-}
+  <meta
+    name="theme-color"
+    content="#F7F3EE"
+  >
 
+  <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
 
-/* =========================================================
-   HEADER
-========================================================= */
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  <!-- =====================================================
+       GOOGLE FONT — INTER
+       ===================================================== -->
 
-    transition:
-        background .5s ease,
-        box-shadow .5s ease,
-        color .5s ease;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-.header.scrolled {
-    background: rgba(247,243,238,.95);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 5px 30px rgba(0,0,0,.05);
-}
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-.nav {
-    height: 88px;
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
+  <style>
 
-/* LOGO */
+    /* =====================================================
+       CORES
+       ===================================================== */
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    :root {
 
-    color: white;
+      --purple: #6048AC;
 
-    transition: color .4s ease;
-}
+      --blue: #005387;
 
-.header.scrolled .logo {
-    color: var(--blue);
-}
+      --cream: #F7F3EE;
 
-.logo img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-}
+      --white: #FFFFFF;
 
-.logo-name {
-    font-family: var(--serif);
-    font-size: 17px;
-}
+      --black: #17252C;
 
+      --muted: #6F797D;
 
-/* MENU */
+      --soft-purple: #E9E3F5;
 
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 34px;
+      --line: rgba(0,83,135,.13);
 
-    list-style: none;
-}
+      --max: 1240px;
 
-.menu a {
-    position: relative;
+    }
 
-    color: white;
 
-    font-size: 10px;
-    font-weight: 500;
+    /* =====================================================
+       RESET
+       ===================================================== */
 
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    transition: color .4s ease;
-}
 
-.header.scrolled .menu a {
-    color: var(--blue);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.menu a:not(.menu-button)::after {
-    content: "";
 
-    position: absolute;
-    left: 0;
-    bottom: -7px;
+    body {
 
-    width: 0;
-    height: 1px;
+      background: var(--cream);
 
-    background: currentColor;
+      color: var(--black);
 
-    transition: width .3s ease;
-}
+      font-family: "Inter", sans-serif;
 
-.menu a:hover::after {
-    width: 100%;
-}
+      overflow-x: hidden;
 
-.menu-button {
-    padding: 12px 21px;
+    }
 
-    border: 1px solid rgba(255,255,255,.7);
-    border-radius: 30px;
-}
 
-.header.scrolled .menu-button {
-    border-color: var(--blue);
-}
+    body.no-scroll {
+      overflow: hidden;
+    }
 
-.menu-button::after {
-    display: none !important;
-}
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-/* =========================================================
-   HERO
-========================================================= */
 
-.hero {
-    height: 100svh;
-    min-height: 680px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    position: relative;
 
-    display: flex;
-    align-items: flex-end;
+    button {
+      font-family: inherit;
+    }
 
-    overflow: hidden;
 
-    background: #473e3b;
-}
+    ::selection {
+      background: var(--purple);
+      color: white;
+    }
 
 
-/* FOTO */
+    .container {
 
-.hero-image {
-    position: absolute;
-    inset: 0;
+      width: min(
+        var(--max),
+        calc(100% - 80px)
+      );
 
-    width: 100%;
-    height: 100%;
+      margin: auto;
 
-    object-fit: cover;
+    }
+
+
+    /* =====================================================
+       LOADER
+       ===================================================== */
+
+    .loader {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9999;
+
+      background: var(--cream);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+    }
+
+
+    .loader.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+    }
+
+
+    .loader-inner {
+      text-align: center;
+    }
+
+
+    .loader-logo {
+
+      width: 72px;
+
+      margin: 0 auto 22px;
+
+    }
+
+
+    .loader-line {
+
+      width: 80px;
+
+      height: 1px;
+
+      background: var(--blue);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .loader-line::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background: var(--purple);
+
+      transform: translateX(-100%);
+
+      animation:
+        loading 1.2s ease infinite;
+
+    }
+
+
+    @keyframes loading {
+
+      to {
+        transform: translateX(100%);
+      }
+
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      height: 92px;
+
+      z-index: 1000;
+
+      color: white;
+
+      transition:
+        background .45s ease,
+        color .45s ease,
+        height .45s ease,
+        box-shadow .45s ease;
+
+    }
+
+
+    .header.scrolled {
+
+      height: 76px;
+
+      background:
+        rgba(247,243,238,.94);
+
+      color: var(--blue);
+
+      backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 8px 30px rgba(0,0,0,.04);
+
+    }
+
+
+    .nav {
+
+      height: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+
+    .brand img {
+
+      width: 48px;
+      height: 48px;
+
+      object-fit: contain;
+
+      background: rgba(255,255,255,.9);
+
+    }
+
+
+    .brand-name {
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      letter-spacing: -.3px;
+
+      transition: color .4s ease;
+
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 34px;
+
+      list-style: none;
+
+    }
+
+
+    .menu a {
+
+      position: relative;
+
+      font-size: 10px;
+
+      font-weight: 500;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: inherit;
+
+      transition: opacity .3s ease;
+
+    }
+
+
+    .menu a:hover {
+      opacity: .65;
+    }
+
+
+    .menu-contact {
+
+      border: 1px solid currentColor;
+
+      padding:
+        11px 20px;
+
+      border-radius: 100px;
+
+    }
+
+
+    /* =====================================================
+       MOBILE BUTTON
+       ===================================================== */
+
+    .mobile-toggle {
+
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+
+      background: transparent;
+
+      color: inherit;
+
+      cursor: pointer;
+
+    }
+
+
+    .mobile-toggle span {
+
+      display: block;
+
+      width: 20px;
+
+      height: 1px;
+
+      margin: 5px auto;
+
+      background: currentColor;
+
+      transition: .3s;
+
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+
+      position: relative;
+
+      height: 100svh;
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      background: #4B433E;
+
+      color: white;
+
+    }
+
+
+    .hero-image {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      /*
+        ENQUADRAMENTO DA FOTO.
+
+        A posição mais alta mantém o rosto
+        melhor enquadrado.
+
+        Se precisar subir:
+        15%, 12%, 10%.
+
+        Se precisar descer:
+        20%, 22%, etc.
+      */
+
+      object-position:
+        50% 18%;
+
+      transform:
+        scale(1.035);
+
+      animation:
+        heroZoom 2.2s
+        cubic-bezier(.2,.6,.2,1)
+        forwards;
+
+    }
+
+
+    @keyframes heroZoom {
+
+      from {
+        transform: scale(1.09);
+      }
+
+      to {
+        transform: scale(1.035);
+      }
+
+    }
+
 
     /*
-      Mantém o rosto melhor enquadrado.
-      No desktop a foto fica centralizada um pouco
-      para a esquerda, evitando cortar o rosto.
+      Camada escura bem suave.
+      Serve apenas para garantir leitura.
     */
-    object-position: 56% center;
 
-    transform: scale(1.015);
+    .hero-overlay {
 
-    animation: heroZoom 10s ease-out forwards;
-}
+      position: absolute;
 
-@keyframes heroZoom {
-    from {
-        transform: scale(1.08);
-    }
+      inset: 0;
 
-    to {
-        transform: scale(1.015);
-    }
-}
-
-
-/* ESCURECIMENTO */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
+      background:
         linear-gradient(
-            90deg,
-            rgba(17,19,21,.72) 0%,
-            rgba(17,19,21,.38) 42%,
-            rgba(17,19,21,.05) 75%
+          90deg,
+          rgba(12,21,24,.66) 0%,
+          rgba(12,21,24,.30) 48%,
+          rgba(12,21,24,.05) 100%
         );
 
-    pointer-events: none;
-}
-
-
-/* CONTEÚDO */
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    padding-bottom: 78px;
-}
-
-.hero-inner {
-    max-width: 720px;
-}
-
-.hero-label {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    margin-bottom: 25px;
-
-    color: white;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.hero-label::before {
-    content: "";
-
-    width: 28px;
-    height: 1px;
-
-    background: white;
-}
-
-.hero-title {
-    color: white;
-
-    font-family: var(--serif);
-
-    font-size: clamp(55px, 6.5vw, 94px);
-
-    font-weight: 400;
-
-    line-height: .94;
-
-    letter-spacing: -3px;
-
-    max-width: 780px;
-}
-
-.hero-description {
-    max-width: 500px;
-
-    margin-top: 28px;
-
-    color: rgba(255,255,255,.88);
-
-    font-size: 13px;
-    font-weight: 300;
-
-    line-height: 1.8;
-}
-
-.hero-bottom {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    margin-top: 27px;
-
-    color: white;
-
-    font-size: 9px;
-    font-weight: 600;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.scroll-circle {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.7);
-    border-radius: 50%;
-
-    animation: scrollPulse 2s ease-in-out infinite;
-}
-
-.scroll-circle span {
-    animation: arrowDown 1.5s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-    50% {
-        transform: translateY(4px);
     }
-}
 
-@keyframes arrowDown {
-    50% {
-        transform: translateY(4px);
+
+    .hero-bottom {
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 42%;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(8,17,20,.28)
+        );
+
+      pointer-events: none;
+
     }
-}
 
 
-/* NOME VERTICAL */
+    /* =====================================================
+       HERO CONTENT
+       ===================================================== */
 
-.vertical-name {
-    position: absolute;
+    .hero-content {
 
-    right: 7%;
-    top: 50%;
+      position: relative;
 
-    z-index: 3;
+      z-index: 2;
 
-    transform:
+      height: 100%;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      padding-bottom: 105px;
+
+    }
+
+
+    .hero-copy {
+
+      max-width: 720px;
+
+    }
+
+
+    .eyebrow {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      margin-bottom: 22px;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 2.7px;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeUp .9s .3s forwards;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 32px;
+      height: 1px;
+
+      background: currentColor;
+
+    }
+
+
+    .hero-title {
+
+      font-size:
+        clamp(
+          48px,
+          6vw,
+          86px
+        );
+
+      line-height: .98;
+
+      font-weight: 300;
+
+      letter-spacing: -4px;
+
+      max-width: 850px;
+
+      overflow: hidden;
+
+    }
+
+
+    .hero-title-line {
+
+      display: block;
+
+      overflow: hidden;
+
+    }
+
+
+    .hero-title-line span {
+
+      display: block;
+
+      transform:
+        translateY(110%);
+
+      animation:
+        titleUp 1.05s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+    }
+
+
+    .hero-title-line:nth-child(2) span {
+      animation-delay: .12s;
+    }
+
+
+    @keyframes titleUp {
+
+      to {
+        transform: translateY(0);
+      }
+
+    }
+
+
+    .hero-description {
+
+      margin-top: 27px;
+
+      max-width: 510px;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      font-weight: 300;
+
+      color: rgba(255,255,255,.86);
+
+      opacity: 0;
+
+      animation:
+        fadeUp .9s .65s forwards;
+
+    }
+
+
+    .hero-action {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 34px;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      animation:
+        fadeUp .9s .8s forwards;
+
+    }
+
+
+    .scroll-circle {
+
+      width: 42px;
+      height: 42px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.7);
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition:
+        background .3s,
+        transform .3s;
+
+    }
+
+
+    .scroll-circle span {
+
+      width: 7px;
+      height: 7px;
+
+      border-right:
+        1px solid white;
+
+      border-bottom:
+        1px solid white;
+
+      transform:
+        rotate(45deg)
+        translate(-2px,-2px);
+
+    }
+
+
+    .hero-action:hover .scroll-circle {
+
+      background: var(--purple);
+
+      transform: translateY(3px);
+
+    }
+
+
+    /* =====================================================
+       NOME VERTICAL
+       ===================================================== */
+
+    .vertical-name {
+
+      position: absolute;
+
+      z-index: 3;
+
+      right: 42px;
+
+      top: 50%;
+
+      transform:
         translateY(-50%)
         rotate(90deg);
 
-    transform-origin: center;
+      transform-origin: center;
 
-    color: rgba(255,255,255,.8);
+      color: rgba(255,255,255,.72);
 
-    font-size: 9px;
-    font-weight: 600;
+      font-size: 9px;
 
-    letter-spacing: 5px;
-    text-transform: uppercase;
+      letter-spacing: 4px;
 
-    white-space: nowrap;
-}
+      font-weight: 500;
 
+      text-transform: uppercase;
 
-/* =========================================================
-   INTRO
-========================================================= */
+      white-space: nowrap;
 
-.intro {
-    padding: 130px 0;
+      animation:
+        verticalIn 1.3s .8s both;
 
-    background: var(--cream);
-}
+    }
 
-.intro-grid {
-    display: grid;
 
-    grid-template-columns: .65fr 1.35fr;
+    @keyframes verticalIn {
 
-    gap: 100px;
-}
+      from {
 
-.eyebrow {
-    color: var(--purple);
+        opacity: 0;
 
-    font-size: 9px;
-    font-weight: 600;
+        transform:
+          translateY(-40%)
+          rotate(90deg);
 
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
+      }
 
-.intro-title {
-    max-width: 850px;
+      to {
 
-    color: var(--blue);
+        opacity: 1;
 
-    font-family: var(--serif);
+        transform:
+          translateY(-50%)
+          rotate(90deg);
 
-    font-size: clamp(40px, 5vw, 70px);
+      }
 
-    font-weight: 400;
+    }
 
-    line-height: 1.04;
 
-    letter-spacing: -2px;
-}
+    /* =====================================================
+       HERO INDEX
+       ===================================================== */
 
-.intro-title em {
-    color: var(--purple);
-    font-style: italic;
-}
+    .hero-index {
 
-.intro-text {
-    max-width: 650px;
+      position: absolute;
 
-    margin-top: 30px;
+      right: 40px;
+      bottom: 46px;
 
-    color: var(--gray);
+      z-index: 3;
 
-    font-size: 14px;
-    font-weight: 300;
+      font-size: 9px;
 
-    line-height: 1.9;
-}
+      letter-spacing: 2px;
 
+      color: rgba(255,255,255,.7);
 
-/* =========================================================
-   SOBRE
-========================================================= */
+    }
 
-.about {
-    padding: 0 0 130px;
 
-    background: var(--cream);
-}
+    /* =====================================================
+       GENERIC SECTION
+       ===================================================== */
 
-.about-grid {
-    display: grid;
+    .section {
 
-    grid-template-columns: 1fr 1fr;
+      padding:
+        145px 0;
 
-    gap: 100px;
-}
+    }
 
-.about-card {
-    padding-top: 35px;
 
-    border-top: 1px solid var(--line);
-}
+    .section-label {
 
-.about-card h3 {
-    margin-bottom: 22px;
+      color: var(--purple);
 
-    color: var(--blue);
+      font-size: 9px;
 
-    font-family: var(--serif);
+      font-weight: 600;
 
-    font-size: 28px;
-    font-weight: 400;
-}
+      text-transform: uppercase;
 
-.about-card p {
-    color: var(--gray);
+      letter-spacing: 2.4px;
 
-    font-size: 13px;
-    font-weight: 300;
+      margin-bottom: 24px;
 
-    line-height: 1.9;
-}
+    }
 
 
-/* =========================================================
-   FORMAÇÃO
-========================================================= */
+    .section-title {
 
-.formation {
-    padding: 125px 0;
+      color: var(--blue);
 
-    background: white;
-}
+      font-size:
+        clamp(
+          38px,
+          4.5vw,
+          62px
+        );
 
-.section-head {
-    max-width: 720px;
+      font-weight: 300;
 
-    margin-bottom: 65px;
-}
+      letter-spacing: -2.8px;
 
-.section-title {
-    margin-top: 16px;
+      line-height: 1.04;
 
-    color: var(--blue);
+    }
 
-    font-family: var(--serif);
 
-    font-size: clamp(42px, 5vw, 67px);
+    .section-title strong {
 
-    font-weight: 400;
+      font-weight: 500;
 
-    line-height: 1;
+    }
 
-    letter-spacing: -2px;
-}
 
-.section-title em {
-    color: var(--purple);
-    font-style: italic;
-}
+    .section-title em {
 
-.formation-list {
-    border-top: 1px solid var(--line);
-}
+      color: var(--purple);
 
-.formation-item {
-    display: grid;
+      font-style: normal;
 
-    grid-template-columns: 100px 1fr 40px;
+    }
 
-    gap: 30px;
 
-    align-items: center;
+    .section-text {
 
-    padding: 29px 0;
+      color: var(--muted);
 
-    border-bottom: 1px solid var(--line);
+      font-size: 14px;
 
-    transition:
-        padding .4s ease,
-        background .4s ease;
-}
+      line-height: 1.9;
 
-.formation-item:hover {
-    padding-left: 15px;
-    padding-right: 15px;
-    background: rgba(96,72,172,.035);
-}
+      font-weight: 300;
 
-.formation-number {
-    color: var(--purple);
+    }
 
-    font-size: 10px;
-    font-weight: 600;
 
-    letter-spacing: 2px;
-}
+    /* =====================================================
+       SOBRE
+       ===================================================== */
 
-.formation-name {
-    color: var(--blue);
+    .about {
 
-    font-family: var(--serif);
+      background: var(--cream);
 
-    font-size: 25px;
-}
+    }
 
-.formation-arrow {
-    color: var(--purple);
 
-    font-size: 18px;
+    .about-grid {
 
-    transition: transform .3s ease;
-}
+      display: grid;
 
-.formation-item:hover .formation-arrow {
-    transform: translateX(7px);
-}
+      grid-template-columns:
+        .8fr
+        1.2fr;
 
+      gap: 120px;
 
-/* =========================================================
-   PARA QUEM
-========================================================= */
+      align-items: center;
 
-.for-who {
-    padding: 130px 0;
+    }
 
-    background: var(--cream);
-}
 
-.who-grid {
-    display: grid;
+    .about-intro {
 
-    grid-template-columns: .8fr 1.2fr;
+      position: relative;
 
-    gap: 110px;
-}
+    }
 
-.who-title {
-    color: var(--blue);
 
-    font-family: var(--serif);
+    .about-intro::before {
 
-    font-size: clamp(45px, 5vw, 70px);
+      content: "JC";
 
-    font-weight: 400;
+      position: absolute;
 
-    line-height: 1;
+      left: -30px;
 
-    letter-spacing: -2px;
-}
+      top: -55px;
 
-.who-title em {
-    color: var(--purple);
-}
+      color: rgba(96,72,172,.06);
 
-.who-list {
-    border-top: 1px solid var(--line);
-}
+      font-size: 150px;
 
-.who-item {
-    padding: 25px 0;
+      line-height: 1;
 
-    border-bottom: 1px solid var(--line);
+      font-weight: 700;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+      letter-spacing: -15px;
 
-.who-item span:first-child {
-    color: var(--blue);
+      z-index: 0;
 
-    font-family: var(--serif);
+    }
 
-    font-size: 23px;
-}
 
-.who-item span:last-child {
-    color: var(--purple);
+    .about-intro > * {
 
-    font-size: 17px;
-}
+      position: relative;
 
+      z-index: 1;
 
-/* =========================================================
-   LOCALIZAÇÃO
-========================================================= */
+    }
 
-.location {
-    padding: 125px 0;
 
-    background: white;
-}
+    .about-text-wrap {
 
-.location-grid {
-    display: grid;
+      max-width: 620px;
 
-    grid-template-columns: 1fr 1fr;
+    }
 
-    gap: 90px;
 
-    align-items: stretch;
-}
+    .about-text-wrap p + p {
 
-.location-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+      margin-top: 20px;
 
-.location-title {
-    margin-top: 16px;
+    }
 
-    color: var(--blue);
 
-    font-family: var(--serif);
+    .about-signature {
 
-    font-size: clamp(43px, 5vw, 67px);
+      display: flex;
 
-    font-weight: 400;
+      align-items: center;
 
-    line-height: 1;
+      gap: 18px;
 
-    letter-spacing: -2px;
-}
+      margin-top: 40px;
 
-.location-title em {
-    color: var(--purple);
-}
+    }
 
-.location-address {
-    margin-top: 30px;
 
-    color: var(--gray);
+    .about-signature-line {
 
-    font-size: 14px;
+      width: 45px;
 
-    line-height: 1.8;
-}
+      height: 1px;
 
-.location-address strong {
-    display: block;
+      background: var(--purple);
 
-    margin-bottom: 5px;
+    }
 
-    color: var(--blue);
 
-    font-weight: 600;
-}
+    .about-signature span {
 
-.location-link {
-    display: inline-flex;
+      color: var(--blue);
 
-    width: fit-content;
+      font-size: 10px;
 
-    margin-top: 27px;
+      letter-spacing: 1.2px;
 
-    padding-bottom: 5px;
+      font-weight: 500;
 
-    color: var(--blue);
+    }
 
-    border-bottom: 1px solid var(--blue);
 
-    font-size: 11px;
-    font-weight: 600;
+    /* =====================================================
+       MINI STATS
+       ===================================================== */
 
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+    .stats {
 
+      display: grid;
 
-/*
-   IMPORTANTE:
-   Esta é a única imagem da seção de localização.
-   A foto que existia depois da seção 5 foi retirada.
-*/
+      grid-template-columns:
+        repeat(3,1fr);
 
-.location-photo {
-    min-height: 430px;
+      border-top:
+        1px solid var(--line);
 
-    overflow: hidden;
+      margin-top: 55px;
 
-    background: #ddd;
-}
+    }
 
-.location-photo img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+    .stat {
 
-    transition: transform 1s ease;
-}
+      padding:
+        24px 25px 0 0;
 
-.location-photo:hover img {
-    transform: scale(1.04);
-}
+      border-right:
+        1px solid var(--line);
 
+    }
 
-/* =========================================================
-   CONTATO / FORMULÁRIO
-========================================================= */
 
-.contact {
-    padding: 135px 0;
+    .stat:not(:first-child) {
 
-    background: var(--blue);
+      padding-left: 25px;
 
-    color: white;
-}
+    }
 
-.contact-grid {
-    display: grid;
 
-    grid-template-columns: .8fr 1.2fr;
+    .stat:last-child {
 
-    gap: 110px;
-}
+      border-right: 0;
 
-.contact-title {
-    margin-top: 16px;
+    }
 
-    color: white;
 
-    font-family: var(--serif);
+    .stat-number {
 
-    font-size: clamp(45px, 5vw, 70px);
+      color: var(--purple);
 
-    font-weight: 400;
+      font-size: 28px;
 
-    line-height: 1;
+      font-weight: 500;
 
-    letter-spacing: -2px;
-}
+      letter-spacing: -1px;
 
-.contact-title em {
-    color: #cfc4ee;
-}
+    }
 
-.contact-description {
-    max-width: 430px;
 
-    margin-top: 25px;
+    .stat-label {
 
-    color: rgba(255,255,255,.7);
+      color: var(--muted);
 
-    font-size: 13px;
+      font-size: 9px;
 
-    line-height: 1.9;
-}
+      text-transform: uppercase;
 
+      letter-spacing: 1.2px;
 
-/* FORM */
+      margin-top: 6px;
 
-.contact-form {
-    display: grid;
+      line-height: 1.5;
 
-    gap: 22px;
-}
+    }
 
-.field {
-    position: relative;
-}
 
-.field label {
-    display: block;
+    /* =====================================================
+       FORMAÇÃO
+       ===================================================== */
 
-    margin-bottom: 8px;
+    .formation {
 
-    color: rgba(255,255,255,.65);
+      background: white;
 
-    font-size: 9px;
-    font-weight: 600;
+    }
 
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
 
-.field input,
-.field textarea {
-    width: 100%;
+    .formation-grid {
 
-    padding: 15px 0;
+      display: grid;
 
-    border: 0;
-    border-bottom: 1px solid rgba(255,255,255,.3);
+      grid-template-columns:
+        .65fr
+        1.35fr;
 
-    outline: none;
+      gap: 100px;
 
-    background: transparent;
+    }
 
-    color: white;
 
-    font-size: 14px;
+    .formation-list {
 
-    transition: border-color .3s ease;
-}
+      border-top:
+        1px solid var(--line);
 
-.field input::placeholder,
-.field textarea::placeholder {
-    color: rgba(255,255,255,.35);
-}
+    }
 
-.field input:focus,
-.field textarea:focus {
-    border-color: white;
-}
 
-.field textarea {
-    min-height: 110px;
+    .formation-item {
 
-    resize: vertical;
-}
+      display: grid;
 
-.submit-button {
-    width: fit-content;
+      grid-template-columns:
+        70px
+        1fr;
 
-    margin-top: 8px;
+      gap: 25px;
 
-    padding: 15px 25px;
+      padding:
+        28px 0;
 
-    border: 1px solid white;
-    border-radius: 40px;
+      border-bottom:
+        1px solid var(--line);
 
-    background: white;
+      transition:
+        padding .35s ease;
 
-    color: var(--blue);
+    }
 
-    cursor: pointer;
 
-    font-size: 10px;
-    font-weight: 700;
+    .formation-item:hover {
 
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+      padding-left: 12px;
 
-    transition:
+    }
+
+
+    .formation-number {
+
+      color: var(--purple);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      padding-top: 5px;
+
+    }
+
+
+    .formation-item h3 {
+
+      color: var(--blue);
+
+      font-size: 19px;
+
+      font-weight: 500;
+
+      letter-spacing: -.4px;
+
+    }
+
+
+    .formation-item p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      margin-top: 7px;
+
+    }
+
+
+    /* =====================================================
+       PARA QUEM
+       ===================================================== */
+
+    .audience {
+
+      background: var(--blue);
+
+      color: white;
+
+      overflow: hidden;
+
+    }
+
+
+    .audience-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        .75fr
+        1.25fr;
+
+      gap: 100px;
+
+      align-items: start;
+
+    }
+
+
+    .audience .section-label {
+
+      color: #CFC4EF;
+
+    }
+
+
+    .audience .section-title {
+
+      color: white;
+
+    }
+
+
+    .audience-copy {
+
+      max-width: 540px;
+
+    }
+
+
+    .audience-copy p {
+
+      color: rgba(255,255,255,.68);
+
+      font-size: 13px;
+
+      line-height: 1.9;
+
+      margin-top: 24px;
+
+    }
+
+
+    .audience-list {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.18);
+
+    }
+
+
+    .audience-item {
+
+      min-height: 150px;
+
+      padding:
+        27px 25px 25px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.18);
+
+      border-right:
+        1px solid
+        rgba(255,255,255,.18);
+
+      transition:
+        background .35s ease,
+        padding .35s ease;
+
+    }
+
+
+    .audience-item:nth-child(even) {
+
+      padding-left: 25px;
+
+      border-right: 0;
+
+    }
+
+
+    .audience-item:hover {
+
+      background:
+        rgba(255,255,255,.04);
+
+      padding-top: 34px;
+
+    }
+
+
+    .audience-item span {
+
+      color: #CFC4EF;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .audience-item h3 {
+
+      margin-top: 14px;
+
+      color: white;
+
+      font-size: 18px;
+
+      font-weight: 400;
+
+      letter-spacing: -.3px;
+
+    }
+
+
+    /* =====================================================
+       COMO FUNCIONA
+       ===================================================== */
+
+    .process {
+
+      background: var(--cream);
+
+    }
+
+
+    .process-head {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 100px;
+
+      align-items: end;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .process-head p {
+
+      max-width: 470px;
+
+    }
+
+
+    .process-steps {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      border-top:
+        1px solid var(--line);
+
+    }
+
+
+    .step {
+
+      position: relative;
+
+      min-height: 230px;
+
+      padding:
+        27px 25px 25px 0;
+
+      border-right:
+        1px solid var(--line);
+
+      overflow: hidden;
+
+    }
+
+
+    .step:not(:first-child) {
+
+      padding-left: 25px;
+
+    }
+
+
+    .step:last-child {
+
+      border-right: 0;
+
+    }
+
+
+    .step-number {
+
+      color: var(--purple);
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .step h3 {
+
+      margin-top: 55px;
+
+      color: var(--blue);
+
+      font-size: 19px;
+
+      font-weight: 500;
+
+    }
+
+
+    .step p {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+      margin-top: 9px;
+
+      max-width: 210px;
+
+    }
+
+
+    .step::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+
+      height: 3px;
+
+      background: var(--purple);
+
+      transition: width .5s ease;
+
+    }
+
+
+    .step:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    /* =====================================================
+       FOTO / FRASE
+       ===================================================== */
+
+    .visual {
+
+      height: 620px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: #ddd;
+
+    }
+
+
+    .visual img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      transform:
+        scale(1.04);
+
+      transition:
+        transform 1.2s
+        cubic-bezier(.2,.6,.2,1);
+
+    }
+
+
+    .visual:hover img {
+
+      transform:
+        scale(1.075);
+
+    }
+
+
+    .visual-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.52),
+          transparent 75%
+        );
+
+    }
+
+
+    .visual-content {
+
+      position: absolute;
+
+      left: max(
+        40px,
+        calc((100vw - var(--max)) / 2)
+      );
+
+      bottom: 70px;
+
+      color: white;
+
+      max-width: 580px;
+
+    }
+
+
+    .visual-content small {
+
+      display: block;
+
+      font-size: 9px;
+
+      letter-spacing: 2.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .visual-content h2 {
+
+      font-size:
+        clamp(
+          35px,
+          4.5vw,
+          58px
+        );
+
+      font-weight: 300;
+
+      letter-spacing: -2.5px;
+
+      line-height: 1.05;
+
+    }
+
+
+    /* =====================================================
+       LOCALIZAÇÃO
+       ===================================================== */
+
+    .location {
+
+      background: white;
+
+    }
+
+
+    .location-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 90px;
+
+      align-items: center;
+
+    }
+
+
+    .location-photo {
+
+      height: 530px;
+
+      overflow: hidden;
+
+      position: relative;
+
+    }
+
+
+    .location-photo img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      transition:
+        transform 1s ease;
+
+    }
+
+
+    .location-photo:hover img {
+
+      transform:
+        scale(1.04);
+
+    }
+
+
+    .location-photo::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.35);
+
+      pointer-events: none;
+
+    }
+
+
+    .location-info {
+
+      max-width: 470px;
+
+    }
+
+
+    .address {
+
+      margin-top: 35px;
+
+      padding-top: 25px;
+
+      border-top:
+        1px solid var(--line);
+
+    }
+
+
+    .address-label {
+
+      color: var(--purple);
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 13px;
+
+    }
+
+
+    .address-text {
+
+      color: var(--blue);
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      font-weight: 400;
+
+    }
+
+
+    .address-note {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+
+      margin-top: 6px;
+
+    }
+
+
+    .location-actions {
+
+      display: flex;
+
+      gap: 15px;
+
+      margin-top: 28px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 44px;
+
+      padding:
+        0 21px;
+
+      border-radius: 100px;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .3s ease,
         background .3s ease,
-        color .3s ease,
+        color .3s ease;
+
+    }
+
+
+    .button-primary {
+
+      background: var(--purple);
+
+      color: white;
+
+    }
+
+
+    .button-primary:hover {
+
+      background: #50399A;
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .button-outline {
+
+      color: var(--blue);
+
+      border:
+        1px solid var(--blue);
+
+    }
+
+
+    .button-outline:hover {
+
+      background: var(--blue);
+
+      color: white;
+
+    }
+
+
+    /* =====================================================
+       CONTATO
+       ===================================================== */
+
+    .contact {
+
+      background: var(--cream);
+
+      padding:
+        120px 0;
+
+      text-align: center;
+
+    }
+
+
+    .contact .section-label {
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .contact-title {
+
+      color: var(--blue);
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          75px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      font-weight: 300;
+
+    }
+
+
+    .contact-title span {
+
+      color: var(--purple);
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-description {
+
+      max-width: 470px;
+
+      margin:
+        25px auto 32px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      background: var(--cream);
+
+      padding:
+        35px 0;
+
+    }
+
+
+    .footer-inner {
+
+      padding-top: 22px;
+
+      border-top:
+        1px solid var(--line);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+    }
+
+
+    .footer-brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--blue);
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+    }
+
+
+    .footer-brand img {
+
+      width: 38px;
+      height: 38px;
+
+      object-fit: contain;
+
+    }
+
+
+    .footer-copy {
+
+      color: var(--muted);
+
+      font-size: 9px;
+
+      letter-spacing: .5px;
+
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+       ===================================================== */
+
+    .whatsapp {
+
+      position: fixed;
+
+      right: 25px;
+      bottom: 24px;
+
+      width: 53px;
+      height: 53px;
+
+      z-index: 900;
+
+      border-radius: 50%;
+
+      background: #25D366;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      box-shadow:
+        0 10px 35px
+        rgba(37,211,102,.25);
+
+      transition:
         transform .3s ease;
-}
 
-.submit-button:hover {
-    background: transparent;
-
-    color: white;
-
-    transform: translateY(-2px);
-}
+    }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+    .whatsapp:hover {
 
-.footer {
-    padding: 55px 0 28px;
+      transform:
+        translateY(-4px)
+        scale(1.04);
 
-    background: #063d60;
-
-    color: white;
-}
-
-.footer-top {
-    display: grid;
-
-    grid-template-columns: 1.2fr .8fr .8fr .8fr;
-
-    gap: 50px;
-
-    padding-bottom: 45px;
-}
-
-.footer-brand {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.footer-brand img {
-    width: 55px;
-    height: 55px;
-
-    object-fit: contain;
-}
-
-.footer-brand-name {
-    font-family: var(--serif);
-
-    font-size: 20px;
-}
-
-.footer-brand small {
-    display: block;
-
-    margin-top: 5px;
-
-    color: rgba(255,255,255,.55);
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.footer-column h4 {
-    margin-bottom: 17px;
-
-    color: rgba(255,255,255,.5);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.footer-column p,
-.footer-column a {
-    display: block;
-
-    color: rgba(255,255,255,.85);
-
-    font-size: 11px;
-
-    line-height: 1.8;
-}
-
-.footer-column a:hover {
-    color: white;
-}
-
-.footer-bottom {
-    padding-top: 22px;
-
-    border-top: 1px solid rgba(255,255,255,.13);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    color: rgba(255,255,255,.4);
-
-    font-size: 9px;
-}
+    }
 
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+    .whatsapp svg {
 
-.whatsapp-float {
-    position: fixed;
+      width: 23px;
+      height: 23px;
 
-    right: 25px;
-    bottom: 25px;
+      fill: currentColor;
 
-    z-index: 999;
-
-    width: 56px;
-    height: 56px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #25D366;
-
-    color: white;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.18);
-
-    transition: transform .3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.08);
-}
-
-.whatsapp-float svg {
-    width: 25px;
-    height: 25px;
-
-    fill: currentColor;
-}
+    }
 
 
-/* =========================================================
-   REVEAL
-========================================================= */
+    /* =====================================================
+       REVEAL
+       ===================================================== */
 
-.reveal {
-    opacity: 0;
+    .reveal {
 
-    transform: translateY(30px);
+      opacity: 0;
 
-    transition:
+      transform:
+        translateY(35px);
+
+      transition:
         opacity .8s ease,
-        transform .8s cubic-bezier(.2,.7,.2,1);
-}
+        transform .9s
+        cubic-bezier(.2,.7,.2,1);
 
-.reveal.visible {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-.mobile-menu {
-    display: none;
-}
-
-@media(max-width: 900px) {
-
-    .container {
-        width: calc(100% - 42px);
     }
 
-    .menu {
-        gap: 18px;
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
     }
 
-    .menu a {
-        font-size: 8px;
+
+    .delay-1 {
+      transition-delay: .1s;
     }
 
-    .intro-grid,
-    .about-grid,
-    .who-grid,
-    .location-grid,
-    .contact-grid {
+
+    .delay-2 {
+      transition-delay: .2s;
+    }
+
+
+    .delay-3 {
+      transition-delay: .3s;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 1000px) {
+
+      .container {
+
+        width:
+          calc(100% - 48px);
+
+      }
+
+
+      .menu {
+
+        gap: 20px;
+
+      }
+
+
+      .about-grid,
+      .formation-grid,
+      .audience-grid,
+      .location-grid {
+
         grid-template-columns: 1fr;
 
-        gap: 55px;
+        gap: 60px;
+
+      }
+
+
+      .process-head {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+      }
+
+
+      .process-steps {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+
+      .step:nth-child(2) {
+
+        border-right: 0;
+
+      }
+
+
+      .visual-content {
+
+        left: 40px;
+
+      }
+
     }
 
-    .footer-top {
-        grid-template-columns: 1fr 1fr;
-    }
 
-    .vertical-name {
-        right: 2%;
-    }
-}
+    @media (max-width: 720px) {
+
+      .container {
+
+        width:
+          calc(100% - 36px);
+
+      }
 
 
-@media(max-width: 680px) {
+      .header {
 
-    .container {
-        width: calc(100% - 34px);
-    }
+        height: 76px;
 
-    .nav {
-        height: 75px;
-    }
+      }
 
-    .logo-name {
-        display: none;
-    }
 
-    .menu {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
+      .brand img {
 
         width: 43px;
         height: 43px;
 
-        border: 1px solid rgba(255,255,255,.6);
-        border-radius: 50%;
+      }
 
-        background: transparent;
 
-        color: white;
+      .brand-name {
 
-        cursor: pointer;
+        font-size: 13px;
 
-        font-size: 18px;
-    }
+      }
 
-    .header.scrolled .mobile-menu {
-        border-color: var(--blue);
-        color: var(--blue);
-    }
 
-    .hero {
-        min-height: 650px;
-    }
+      .menu {
 
-    .hero-image {
-        object-position: 58% center;
-    }
+        position: fixed;
 
-    .hero::after {
+        top: 76px;
+
+        left: 15px;
+        right: 15px;
+
+        padding: 25px;
+
         background:
-            linear-gradient(
-                180deg,
-                rgba(15,20,23,.42),
-                rgba(15,20,23,.2) 35%,
-                rgba(15,20,23,.72) 100%
-            );
-    }
+          rgba(247,243,238,.98);
 
-    .hero-content {
-        padding-bottom: 50px;
-    }
+        color: var(--blue);
 
-    .hero-title {
-        font-size: clamp(47px, 14vw, 72px);
+        display: flex;
 
-        letter-spacing: -2px;
-    }
+        flex-direction: column;
 
-    .hero-description {
+        align-items: stretch;
+
+        gap: 20px;
+
+        transform:
+          translateY(-20px);
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition:
+          opacity .3s,
+          transform .3s;
+
+        box-shadow:
+          0 20px 50px
+          rgba(0,0,0,.08);
+
+      }
+
+
+      .menu.open {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+        pointer-events: auto;
+
+      }
+
+
+      .menu-contact {
+
+        text-align: center;
+
+      }
+
+
+      .mobile-toggle {
+
+        display: block;
+
+      }
+
+
+      .hero {
+
+        min-height: 650px;
+
+      }
+
+
+      .hero-image {
+
+        /*
+          No celular damos um pouco mais
+          de espaço para a parte superior.
+        */
+
+        object-position:
+          52% 12%;
+
+      }
+
+
+      .hero-overlay {
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(12,21,24,.63),
+            rgba(12,21,24,.22)
+          );
+
+      }
+
+
+      .hero-content {
+
+        padding-bottom: 75px;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            42px,
+            12vw,
+            62px
+          );
+
+        letter-spacing:
+          -2.8px;
+
+      }
+
+
+      .hero-description {
+
         font-size: 12px;
 
         max-width: 360px;
-    }
 
-    .vertical-name {
-        display: none;
-    }
+      }
 
-    .intro,
-    .for-who,
-    .location {
-        padding: 95px 0;
-    }
 
-    .formation,
-    .contact {
-        padding: 95px 0;
-    }
+      .vertical-name {
 
-    .formation-item {
-        grid-template-columns: 45px 1fr 20px;
+        right: -18px;
 
-        gap: 10px;
-    }
+        font-size: 8px;
 
-    .formation-name {
-        font-size: 20px;
-    }
+      }
 
-    .who-item span:first-child {
-        font-size: 20px;
-    }
 
-    .location-photo {
-        min-height: 300px;
-    }
+      .hero-index {
 
-    .footer-top {
+        right: 20px;
+
+        bottom: 25px;
+
+      }
+
+
+      .section {
+
+        padding:
+          95px 0;
+
+      }
+
+
+      .section-title {
+
+        font-size:
+          clamp(
+            37px,
+            11vw,
+            52px
+          );
+
+        letter-spacing:
+          -2px;
+
+      }
+
+
+      .about-intro::before {
+
+        left: -5px;
+
+        top: -35px;
+
+        font-size: 100px;
+
+      }
+
+
+      .stats {
+
+        grid-template-columns:
+          repeat(3,1fr);
+
+      }
+
+
+      .stat {
+
+        padding-right: 10px;
+
+      }
+
+
+      .stat:not(:first-child) {
+
+        padding-left: 10px;
+
+      }
+
+
+      .stat-number {
+
+        font-size: 22px;
+
+      }
+
+
+      .stat-label {
+
+        font-size: 8px;
+
+      }
+
+
+      .audience-list {
+
         grid-template-columns: 1fr;
 
-        gap: 35px;
-    }
+      }
 
-    .footer-bottom {
+
+      .audience-item,
+      .audience-item:nth-child(even) {
+
+        padding:
+          25px 0;
+
+        border-right: 0;
+
+      }
+
+
+      .process-steps {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .step,
+      .step:not(:first-child) {
+
+        border-right: 0;
+
+        border-bottom:
+          1px solid var(--line);
+
+        padding:
+          25px 0;
+
+      }
+
+
+      .step:last-child {
+
+        border-bottom: 0;
+
+      }
+
+
+      .step h3 {
+
+        margin-top: 35px;
+
+      }
+
+
+      .visual {
+
+        height: 500px;
+
+      }
+
+
+      .visual-content {
+
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 45px;
+
+      }
+
+
+      .visual-content h2 {
+
+        font-size:
+          38px;
+
+        letter-spacing:
+          -1.8px;
+
+      }
+
+
+      .location-photo {
+
+        height: 430px;
+
+      }
+
+
+      .footer-inner {
+
         align-items: flex-start;
 
         flex-direction: column;
 
-        gap: 10px;
-    }
+        gap: 18px;
 
-    .whatsapp-float {
+      }
+
+
+      .whatsapp {
+
+        width: 50px;
+        height: 50px;
+
         right: 17px;
         bottom: 17px;
 
-        width: 53px;
-        height: 53px;
-    }
-}
+      }
 
-</style>
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+  <!-- =====================================================
+       LOADER
+       ===================================================== -->
 
-<header class="header" id="header">
+  <div class="loader" id="loader">
 
-    <div class="container">
+    <div class="loader-inner">
 
-        <nav class="nav">
+      <img
+        class="loader-logo"
+        src="https://i.imgur.com/J1b0lX4.png"
+        alt=""
+      >
 
-            <a href="#inicio" class="logo">
-
-                <img
-                    src="https://i.imgur.com/J1b0lX4.png"
-                    alt="Logo Jaqueline Caldi"
-                >
-
-                <span class="logo-name">
-                    Jaqueline Caldi
-                </span>
-
-            </a>
-
-
-            <ul class="menu">
-
-                <li>
-                    <a href="#sobre">
-                        Sobre
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#formacao">
-                        Formação
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#para-quem">
-                        Para quem
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#localizacao">
-                        Localização
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contato" class="menu-button">
-                        Contato
-                    </a>
-                </li>
-
-            </ul>
-
-
-            <button
-                class="mobile-menu"
-                id="mobileMenu"
-                aria-label="Abrir menu"
-            >
-                ☰
-            </button>
-
-        </nav>
+      <div class="loader-line"></div>
 
     </div>
 
-</header>
+  </div>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
 
-<section class="hero" id="inicio">
+  <header
+    class="header"
+    id="header"
+  >
 
-    <img
-        class="hero-image"
-        src="https://i.imgur.com/Nxb6CG6.png"
-        alt="Jaqueline Caldi — Psicopedagoga Clínica"
+    <div class="container">
+
+      <nav class="nav">
+
+
+        <a
+          href="#inicio"
+          class="brand"
+        >
+
+          <img
+            src="https://i.imgur.com/J1b0lX4.png"
+            alt="Jaqueline Caldi"
+          >
+
+          <span class="brand-name">
+            Jaqueline Caldi
+          </span>
+
+        </a>
+
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Abrir menu"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+
+        <ul
+          class="menu"
+          id="menu"
+        >
+
+          <li>
+            <a href="#sobre">
+              Sobre
+            </a>
+          </li>
+
+          <li>
+            <a href="#formacao">
+              Formação
+            </a>
+          </li>
+
+          <li>
+            <a href="#publico">
+              Para quem
+            </a>
+          </li>
+
+          <li>
+            <a href="#localizacao">
+              Localização
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contato"
+              class="menu-contact"
+            >
+              Contato
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section
+      class="hero"
+      id="inicio"
     >
 
 
-    <div class="vertical-name">
-        JAQUELINE CALDI
-    </div>
+      <img
+        class="hero-image"
+        src="https://i.imgur.com/Nxb6CG6.png"
+        alt="Jaqueline Caldi — Psicopedagoga Clínica"
+      >
 
 
-    <div class="hero-content">
+      <div class="hero-overlay"></div>
 
-        <div class="container">
-
-            <div class="hero-inner">
-
-                <div class="hero-label">
-                    Psicopedagogia Clínica
-                </div>
+      <div class="hero-bottom"></div>
 
 
-                <h1 class="hero-title">
-                    Acolher antes de
-                    intervir.
-                </h1>
+      <div class="vertical-name">
+        JAQUELINE CALDI · PSICOPEDAGOGA CLÍNICA
+      </div>
 
 
-                <p class="hero-description">
-                    Um olhar individualizado para compreender
-                    os desafios da aprendizagem e acompanhar
-                    cada criança em seu próprio processo.
-                </p>
+      <div class="hero-index">
+        01 / 06
+      </div>
 
 
-                <div class="hero-bottom">
+      <div class="container hero-content">
 
-                    <div class="scroll-circle">
-                        <span>↓</span>
-                    </div>
+        <div class="hero-copy">
 
-                    <span>
-                        Arraste para descobrir
-                    </span>
 
-                </div>
+          <div class="eyebrow">
+            Psicopedagogia Clínica
+          </div>
 
-            </div>
+
+          <h1 class="hero-title">
+
+            <span class="hero-title-line">
+              <span>
+                Acolher antes de
+              </span>
+            </span>
+
+            <span class="hero-title-line">
+              <span>
+                intervir.
+              </span>
+            </span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Um olhar individualizado para compreender
+            os desafios da aprendizagem e acompanhar
+            cada criança em seu próprio processo.
+
+          </p>
+
+
+          <a
+            href="#sobre"
+            class="hero-action"
+          >
+
+            <span class="scroll-circle">
+              <span></span>
+            </span>
+
+            Arraste para descobrir
+
+          </a>
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
 
-<!-- =========================================================
-     INTRO / HISTÓRIA
-========================================================= -->
+    <!-- =====================================================
+         SOBRE
+         ===================================================== -->
 
-<section class="intro" id="sobre">
+    <section
+      class="section about"
+      id="sobre"
+    >
 
-    <div class="container intro-grid">
+      <div class="container about-grid">
+
+
+        <div class="about-intro reveal">
+
+          <div class="section-label">
+            02 — Sobre mim
+          </div>
+
+
+          <h2 class="section-title">
+
+            Um trabalho que
+            começa pela
+            <em>escuta.</em>
+
+          </h2>
+
+        </div>
+
+
+        <div class="about-text-wrap reveal delay-1">
+
+          <p class="section-text">
+
+            Sou casada, mãe atípica e profissional da
+            educação há mais de 6 anos. Minha trajetória
+            pessoal e profissional me levou a aprofundar
+            meus estudos na área das neurodivergências,
+            buscando compreender e apoiar o desenvolvimento
+            de cada criança de forma individualizada e
+            acolhedora.
+
+          </p>
+
+
+          <p class="section-text">
+
+            Sou Psicopedagoga Clínica e acadêmica de
+            Psicologia, dedicada a auxiliar crianças e
+            adolescentes que enfrentam desafios relacionados
+            à aprendizagem, atenção, leitura, escrita,
+            raciocínio lógico e funções executivas.
+
+          </p>
+
+
+          <div class="about-signature">
+
+            <div class="about-signature-line"></div>
+
+            <span>
+              Jaqueline Caldi
+            </span>
+
+          </div>
+
+
+          <div class="stats">
+
+            <div class="stat">
+
+              <div class="stat-number">
+                +6
+              </div>
+
+              <div class="stat-label">
+                anos na educação
+              </div>
+
+            </div>
+
+
+            <div class="stat">
+
+              <div class="stat-number">
+                01
+              </div>
+
+              <div class="stat-label">
+                olhar individualizado
+              </div>
+
+            </div>
+
+
+            <div class="stat">
+
+              <div class="stat-number">
+                100%
+              </div>
+
+              <div class="stat-label">
+                acolhimento
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FORMAÇÃO
+         ===================================================== -->
+
+    <section
+      class="section formation"
+      id="formacao"
+    >
+
+      <div class="container formation-grid">
+
 
         <div class="reveal">
 
-            <div class="eyebrow">
-                01 — SOBRE MIM
-            </div>
-
-        </div>
+          <div class="section-label">
+            03 — Formação
+          </div>
 
 
-        <div class="reveal">
+          <h2 class="section-title">
 
-            <h2 class="intro-title">
-                Olá, eu sou
-                <em>Jaqueline Caldi.</em>
-            </h2>
+            Conhecimento para
+            <strong>
+              compreender
+            </strong>
+            cada
+            <em>história.</em>
 
-            <p class="intro-text">
-                Sou casada, mãe atípica e profissional da
-                educação há mais de 6 anos. Minha trajetória
-                pessoal e profissional me levou a aprofundar
-                meus estudos na área das neurodivergências,
-                buscando compreender e apoiar o desenvolvimento
-                de cada criança de forma individualizada
-                e acolhedora.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     HISTÓRIA / PROFISSÃO
-========================================================= -->
-
-<section class="about">
-
-    <div class="container about-grid">
-
-        <div class="about-card reveal">
-
-            <h3>
-                Um olhar individualizado
-            </h3>
-
-            <p>
-                Cada criança possui sua própria maneira
-                de aprender, se expressar e desenvolver
-                suas habilidades. Por isso, o acompanhamento
-                é pensado de acordo com as necessidades
-                de cada pessoa.
-            </p>
-
-        </div>
-
-
-        <div class="about-card reveal">
-
-            <h3>
-                Minha atuação
-            </h3>
-
-            <p>
-                Sou Psicopedagoga Clínica e acadêmica de
-                Psicologia, dedicada a auxiliar crianças
-                e adolescentes que enfrentam desafios
-                relacionados à aprendizagem, atenção,
-                leitura, escrita, raciocínio lógico e
-                funções executivas.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     FORMAÇÃO
-========================================================= -->
-
-<section class="formation" id="formacao">
-
-    <div class="container">
-
-        <div class="section-head reveal">
-
-            <div class="eyebrow">
-                02 — FORMAÇÃO
-            </div>
-
-            <h2 class="section-title">
-                Conhecimento para
-                <em>compreender.</em>
-            </h2>
+          </h2>
 
         </div>
 
 
         <div class="formation-list">
 
-            <div class="formation-item reveal">
 
-                <div class="formation-number">
-                    01
-                </div>
+          <div class="formation-item reveal">
 
-                <div class="formation-name">
-                    Psicopedagogia Clínica
-                </div>
+            <div class="formation-number">
+              01
+            </div>
 
-                <div class="formation-arrow">
-                    →
-                </div>
+            <div>
+
+              <h3>
+                Psicopedagogia Clínica
+              </h3>
+
+              <p>
+                Atuação voltada à compreensão dos
+                processos de aprendizagem e suas
+                particularidades.
+              </p>
 
             </div>
 
+          </div>
 
-            <div class="formation-item reveal">
 
-                <div class="formation-number">
-                    02
-                </div>
+          <div class="formation-item reveal delay-1">
 
-                <div class="formation-name">
-                    Acadêmica de Psicologia
-                </div>
+            <div class="formation-number">
+              02
+            </div>
 
-                <div class="formation-arrow">
-                    →
-                </div>
+            <div>
+
+              <h3>
+                Acadêmica de Psicologia
+              </h3>
+
+              <p>
+                Formação contínua para ampliar o olhar
+                sobre desenvolvimento, comportamento
+                e subjetividade.
+              </p>
 
             </div>
 
+          </div>
 
-            <div class="formation-item reveal">
 
-                <div class="formation-number">
-                    03
-                </div>
+          <div class="formation-item reveal delay-2">
 
-                <div class="formation-name">
-                    Estudos em neurodivergências
-                </div>
+            <div class="formation-number">
+              03
+            </div>
 
-                <div class="formation-arrow">
-                    →
-                </div>
+            <div>
+
+              <h3>
+                Estudos em neurodivergências
+              </h3>
+
+              <p>
+                Aprofundamento para compreender diferentes
+                formas de aprender, interagir e se desenvolver.
+              </p>
 
             </div>
 
+          </div>
 
-            <div class="formation-item reveal">
 
-                <div class="formation-number">
-                    04
-                </div>
+          <div class="formation-item reveal delay-3">
 
-                <div class="formation-name">
-                    Experiência na área da educação
-                </div>
+            <div class="formation-number">
+              04
+            </div>
 
-                <div class="formation-arrow">
-                    →
-                </div>
+            <div>
+
+              <h3>
+                Educação e experiência prática
+              </h3>
+
+              <p>
+                Mais de seis anos de experiência na área
+                da educação e contato direto com diferentes
+                necessidades de aprendizagem.
+              </p>
 
             </div>
+
+          </div>
+
 
         </div>
 
-    </div>
+      </div>
 
-</section>
+    </section>
 
 
-<!-- =========================================================
-     PARA QUEM
-========================================================= -->
+    <!-- =====================================================
+         PARA QUEM
+         ===================================================== -->
 
-<section class="for-who" id="para-quem">
+    <section
+      class="section audience"
+      id="publico"
+    >
 
-    <div class="container who-grid">
+      <div class="container audience-grid">
 
-        <div class="reveal">
 
-            <div class="eyebrow">
-                03 — PARA QUEM
+        <div class="audience-copy reveal">
+
+          <div class="section-label">
+            04 — Para quem
+          </div>
+
+
+          <h2 class="section-title">
+
+            Quando aprender
+            parece mais
+            <em>difícil.</em>
+
+          </h2>
+
+
+          <p>
+
+            O acompanhamento é pensado para crianças
+            e adolescentes que apresentam desafios em
+            diferentes áreas relacionadas à aprendizagem
+            e ao desenvolvimento.
+
+          </p>
+
+        </div>
+
+
+        <div class="audience-list">
+
+
+          <div class="audience-item reveal">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Aprendizagem
+            </h3>
+
+          </div>
+
+
+          <div class="audience-item reveal delay-1">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Atenção e concentração
+            </h3>
+
+          </div>
+
+
+          <div class="audience-item reveal delay-1">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Leitura e escrita
+            </h3>
+
+          </div>
+
+
+          <div class="audience-item reveal delay-2">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Raciocínio lógico
+            </h3>
+
+          </div>
+
+
+          <div class="audience-item reveal delay-2">
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Funções executivas
+            </h3>
+
+          </div>
+
+
+          <div class="audience-item reveal delay-3">
+
+            <span>
+              06
+            </span>
+
+            <h3>
+              Neurodivergências
+            </h3>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESSO
+         ===================================================== -->
+
+    <section
+      class="section process"
+      id="processo"
+    >
+
+      <div class="container">
+
+
+        <div class="process-head">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              05 — Como funciona
             </div>
 
-            <h2 class="who-title">
-                Para quem
-                precisa de um
-                <em>novo olhar.</em>
+
+            <h2 class="section-title">
+
+              Um processo
+              construído com
+              <em>cuidado.</em>
+
             </h2>
 
-        </div>
+          </div>
 
 
-        <div class="who-list">
+          <p
+            class="section-text reveal delay-1"
+          >
 
-            <div class="who-item reveal">
-                <span>
-                    Crianças
-                </span>
+            Cada acompanhamento é pensado de acordo
+            com a necessidade apresentada, respeitando
+            o tempo, as características e as
+            potencialidades de cada pessoa.
 
-                <span>
-                    +
-                </span>
-            </div>
-
-
-            <div class="who-item reveal">
-                <span>
-                    Adolescentes
-                </span>
-
-                <span>
-                    +
-                </span>
-            </div>
-
-
-            <div class="who-item reveal">
-                <span>
-                    Dificuldades de aprendizagem
-                </span>
-
-                <span>
-                    +
-                </span>
-            </div>
-
-
-            <div class="who-item reveal">
-                <span>
-                    Atenção e concentração
-                </span>
-
-                <span>
-                    +
-                </span>
-            </div>
-
-
-            <div class="who-item reveal">
-                <span>
-                    Leitura e escrita
-                </span>
-
-                <span>
-                    +
-                </span>
-            </div>
-
-
-            <div class="who-item reveal">
-                <span>
-                    Funções executivas
-                </span>
-
-                <span>
-                    +
-                </span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     LOCALIZAÇÃO
-     
-     A FOTO EXTRA QUE EXISTIA DEPOIS DA SEÇÃO 5
-     FOI RETIRADA.
-
-     ESTA É A SEÇÃO DE LOCALIZAÇÃO.
-========================================================= -->
-
-<section class="location" id="localizacao">
-
-    <div class="container location-grid">
-
-
-        <div class="location-info reveal">
-
-            <div class="eyebrow">
-                04 — LOCALIZAÇÃO
-            </div>
-
-
-            <h2 class="location-title">
-                Um espaço para
-                <em>acolher.</em>
-            </h2>
-
-
-            <div class="location-address">
-
-                <strong>
-                    Atendimento presencial
-                </strong>
-
-                Rua / Avenida do endereço,
-                número — Bairro<br>
-
-                Cidade — Estado
-
-            </div>
-
-
-            <a
-                href="#contato"
-                class="location-link"
-            >
-                Quero conhecer o espaço →
-            </a>
+          </p>
 
         </div>
 
 
-        <div class="location-photo reveal">
-
-            <!--
-                SUBSTITUA ESTA FOTO PELA FOTO DO CONSULTÓRIO/
-                ENDEREÇO QUANDO TIVER.
-
-                Ela é somente da localização.
-                Não é uma foto adicional da Jaqueline.
-            -->
-
-            <img
-                src="https://i.imgur.com/fqEDfKr.png"
-                alt="Espaço de atendimento"
-            >
-
-        </div>
-
-    </div>
-
-</section>
+        <div class="process-steps">
 
 
-<!-- =========================================================
-     CONTATO / FORMULÁRIO
-========================================================= -->
+          <div class="step reveal">
 
-<section class="contact" id="contato">
-
-    <div class="container contact-grid">
-
-
-        <div class="reveal">
-
-            <div class="eyebrow" style="color:#cfc4ee;">
-                05 — CONTATO
+            <div class="step-number">
+              01
             </div>
 
+            <h3>
+              Conversa inicial
+            </h3>
 
-            <h2 class="contact-title">
-                Vamos
-                <em>conversar?</em>
-            </h2>
-
-
-            <p class="contact-description">
-                Preencha seus dados e conte brevemente
-                o que você procura. Ao enviar, sua
-                mensagem será encaminhada diretamente
-                para o WhatsApp da Jaqueline.
+            <p>
+              Primeiro contato para compreender a demanda
+              e conhecer a história.
             </p>
 
+          </div>
+
+
+          <div class="step reveal delay-1">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <h3>
+              Avaliação
+            </h3>
+
+            <p>
+              Investigação das habilidades e dificuldades
+              relacionadas à aprendizagem.
+            </p>
+
+          </div>
+
+
+          <div class="step reveal delay-2">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              Intervenção
+            </h3>
+
+            <p>
+              Estratégias desenvolvidas de acordo com
+              as necessidades identificadas.
+            </p>
+
+          </div>
+
+
+          <div class="step reveal delay-3">
+
+            <div class="step-number">
+              04
+            </div>
+
+            <h3>
+              Acompanhamento
+            </h3>
+
+            <p>
+              Observação dos avanços e ajustes ao longo
+              de todo o processo.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOTO DE APOIO
+         ===================================================== -->
+
+    <section class="visual">
+
+
+      <img
+        src="https://i.imgur.com/fqEDfKr.png"
+        alt="Atendimento psicopedagógico"
+        loading="lazy"
+      >
+
+
+      <div class="visual-overlay"></div>
+
+
+      <div class="visual-content reveal">
+
+        <small>
+          Um espaço para desenvolver possibilidades
+        </small>
+
+        <h2>
+          Cada conquista começa
+          com um primeiro passo.
+        </h2>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOCALIZAÇÃO
+         ===================================================== -->
+
+    <section
+      class="section location"
+      id="localizacao"
+    >
+
+      <div class="container location-grid">
+
+
+        <div
+          class="location-photo reveal"
+        >
+
+          <!--
+            FOTO DO ESPAÇO / LOCAL.
+
+            Se tiver uma foto da clínica/consultório,
+            substitua a URL abaixo.
+          -->
+
+          <img
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Espaço de atendimento"
+            loading="lazy"
+          >
+
         </div>
 
 
-        <form
-            class="contact-form reveal"
-            id="contactForm"
+        <div class="location-info reveal delay-1">
+
+
+          <div class="section-label">
+            06 — Localização
+          </div>
+
+
+          <h2 class="section-title">
+
+            Um espaço pensado
+            para acolher.
+
+          </h2>
+
+
+          <p
+            class="section-text"
+            style="margin-top:25px;"
+          >
+
+            O atendimento acontece em um ambiente
+            preparado para receber crianças,
+            adolescentes e suas famílias com
+            tranquilidade e acolhimento.
+
+          </p>
+
+
+          <div class="address">
+
+
+            <div class="address-label">
+              Endereço
+            </div>
+
+
+            <div class="address-text">
+
+              Rua / Avenida do consultório<br>
+              Número · Bairro<br>
+              Cidade — Estado
+
+            </div>
+
+
+            <div class="address-note">
+
+              Atendimento com horário previamente agendado.
+
+            </div>
+
+
+            <div class="location-actions">
+
+
+              <!--
+                ALTERE O LINK DO GOOGLE MAPS
+                PELO ENDEREÇO REAL.
+              -->
+
+              <a
+                class="button button-primary"
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener"
+              >
+                Como chegar
+              </a>
+
+
+              <a
+                class="button button-outline"
+                href="#contato"
+              >
+                Agendar horário
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTATO
+         ===================================================== -->
+
+    <section
+      class="contact"
+      id="contato"
+    >
+
+      <div class="container">
+
+
+        <div class="section-label reveal">
+          07 — Contato
+        </div>
+
+
+        <h2 class="contact-title reveal">
+
+          Vamos conversar
+          sobre o próximo
+          <span>passo?</span>
+
+        </h2>
+
+
+        <p
+          class="contact-description reveal delay-1"
         >
 
-            <div class="field">
+          Entre em contato pelo WhatsApp para
+          tirar suas dúvidas e conhecer melhor
+          o acompanhamento psicopedagógico.
 
-                <label for="nome">
-                    Seu nome
-                </label>
-
-                <input
-                    type="text"
-                    id="nome"
-                    name="nome"
-                    placeholder="Digite seu nome"
-                    required
-                >
-
-            </div>
+        </p>
 
 
-            <div class="field">
+        <!--
+          ALTERE O NÚMERO ABAIXO
+        -->
 
-                <label for="telefone">
-                    Seu telefone
-                </label>
+        <a
+          href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais."
+          class="button button-primary reveal delay-2"
+          target="_blank"
+          rel="noopener"
+        >
 
-                <input
-                    type="tel"
-                    id="telefone"
-                    name="telefone"
-                    placeholder="(00) 00000-0000"
-                    required
-                >
+          Falar pelo WhatsApp
 
-            </div>
+        </a>
 
+      </div>
 
-            <div class="field">
+    </section>
 
-                <label for="mensagem">
-                    Como posso ajudar?
-                </label>
-
-                <textarea
-                    id="mensagem"
-                    name="mensagem"
-                    placeholder="Conte brevemente o que você precisa..."
-                    required
-                ></textarea>
-
-            </div>
+  </main>
 
 
-            <button
-                type="submit"
-                class="submit-button"
-            >
-                Enviar pelo WhatsApp →
-            </button>
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
-        </form>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="footer">
+  <footer>
 
     <div class="container">
 
-
-        <div class="footer-top">
-
-
-            <div class="footer-brand">
-
-                <img
-                    src="https://i.imgur.com/J1b0lX4.png"
-                    alt="Logo Jaqueline Caldi"
-                >
-
-                <div>
-
-                    <div class="footer-brand-name">
-                        Jaqueline Caldi
-                    </div>
-
-                    <small>
-                        Psicopedagoga Clínica
-                    </small>
-
-                </div>
-
-            </div>
+      <div class="footer-inner">
 
 
-            <div class="footer-column">
+        <a
+          href="#inicio"
+          class="footer-brand"
+        >
 
-                <h4>
-                    Endereço
-                </h4>
+          <img
+            src="https://i.imgur.com/J1b0lX4.png"
+            alt="Jaqueline Caldi"
+          >
 
-                <p>
-                    Rua / Avenida do endereço, número
-                </p>
+          <span>
+            Jaqueline Caldi
+          </span>
 
-                <p>
-                    Bairro — Cidade / Estado
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Contato
-                </h4>
-
-                <!-- TROQUE PELO TELEFONE REAL -->
-
-                <a href="tel:+5543999999999">
-                    (43) 99999-9999
-                </a>
-
-                <!-- TROQUE PELO E-MAIL REAL -->
-
-                <a href="mailto:contato@jaquelinecaldi.com.br">
-                    contato@jaquelinecaldi.com.br
-                </a>
-
-            </div>
+        </a>
 
 
-            <div class="footer-column">
+        <div class="footer-copy">
 
-                <h4>
-                    Atendimento
-                </h4>
-
-                <p>
-                    Psicopedagogia Clínica
-                </p>
-
-                <p>
-                    Crianças e adolescentes
-                </p>
-
-            </div>
+          © <span id="year"></span>
+          Jaqueline Caldi · Psicopedagoga Clínica
 
         </div>
 
 
-        <div class="footer-bottom">
-
-            <span>
-                © <span id="year"></span>
-                Jaqueline Caldi. Todos os direitos reservados.
-            </span>
-
-            <span>
-                Psicopedagogia Clínica
-            </span>
-
-        </div>
+      </div>
 
     </div>
 
-</footer>
+  </footer>
 
 
-<!-- =========================================================
-     WHATSAPP FLUTUANTE
-========================================================= -->
+  <!-- =====================================================
+       WHATSAPP FLUTUANTE
+       ===================================================== -->
 
-<a
-    href="https://wa.me/5543999999999"
-    class="whatsapp-float"
+  <a
+    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
+    class="whatsapp"
     target="_blank"
     rel="noopener"
-    aria-label="Falar pelo WhatsApp"
->
+    aria-label="Falar com Jaqueline pelo WhatsApp"
+  >
 
-    <svg viewBox="0 0 24 24">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
 
-        <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.15 1.6 5.96L.04 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8c-1.78 0-3.53-.48-5.05-1.4l-.36-.21-3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.84 9.84 0 0 1 2.91 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+      <path
+        d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
+        C5.48 0 .14 5.34.14 11.9
+        c0 2.1.55 4.15 1.6 5.96L.04 24
+        l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01
+        c6.56 0 11.9-5.34 11.9-11.9
+        0-3.18-1.24-6.17-3.43-8.42ZM12.05 21.8
+        c-1.78 0-3.53-.48-5.05-1.4l-.36-.21
+        -3.74.98 1-3.65-.23-.37a9.9 9.9 0 0 1-1.52-5.25
+        c0-5.46 4.45-9.9 9.91-9.9
+        2.64 0 5.12 1.03 6.99 2.9
+        a9.84 9.84 0 0 1 2.91 7
+        c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.42
+        c-.3-.15-1.77-.87-2.05-.97
+        -.28-.1-.48-.15-.68.15
+        -.2.3-.77.97-.94 1.17
+        -.17.2-.35.22-.65.07
+        -.3-.15-1.25-.46-2.38-1.47
+        -.88-.78-1.47-1.74-1.64-2.04
+        -.17-.3-.02-.46.13-.61
+        .13-.13.3-.35.45-.52
+        .15-.17.2-.3.3-.5
+        .1-.2.05-.37-.02-.52
+        -.07-.15-.68-1.63-.93-2.23
+        -.24-.58-.49-.5-.68-.51
+        h-.58c-.2 0-.52.07-.79.37
+        -.27.3-1.04 1.02-1.04 2.49
+        0 1.47 1.07 2.89 1.22 3.09
+        .15.2 2.1 3.21 5.08 4.5
+        .71.31 1.27.5 1.7.64
+        .72.23 1.37.2 1.89.12
+        .58-.09 1.77-.72 2.02-1.42
+        .25-.7.25-1.3.17-1.42
+        -.07-.12-.27-.2-.57-.35Z"
+      />
 
     </svg>
 
-</a>
+  </a>
 
 
-<script>
+  <script>
 
-/* =========================================================
-   HEADER
-========================================================= */
+    /* =====================================================
+       LOADER
+       ===================================================== */
 
-const header = document.getElementById("header");
+    window.addEventListener(
+      "load",
+      () => {
 
-window.addEventListener("scroll", () => {
+        setTimeout(
+          () => {
 
-    if (window.scrollY > 60) {
+            document
+              .getElementById("loader")
+              .classList.add("hide");
+
+          },
+          500
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    const header =
+      document.getElementById("header");
+
+
+    function updateHeader() {
+
+      if (window.scrollY > 60) {
+
         header.classList.add("scrolled");
-    } else {
+
+      } else {
+
         header.classList.remove("scrolled");
-    }
 
-});
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const menu =
-    document.querySelector(".menu");
-
-mobileMenu.addEventListener("click", () => {
-
-    const open =
-        menu.classList.toggle("mobile-open");
-
-    if (open) {
-
-        menu.style.display = "flex";
-        menu.style.position = "absolute";
-        menu.style.top = "75px";
-        menu.style.left = "17px";
-        menu.style.right = "17px";
-        menu.style.padding = "25px";
-        menu.style.flexDirection = "column";
-        menu.style.alignItems = "stretch";
-        menu.style.background = "rgba(247,243,238,.98)";
-        menu.style.borderRadius = "14px";
-        menu.style.boxShadow = "0 20px 50px rgba(0,0,0,.1)";
-
-        menu.querySelectorAll("a").forEach(a => {
-            a.style.color = "#005387";
-        });
-
-    } else {
-
-        menu.style.display = "";
+      }
 
     }
 
-});
+
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
+    );
 
 
-/* =========================================================
-   REVEAL
-========================================================= */
+    updateHeader();
 
-const reveals =
-    document.querySelectorAll(".reveal");
 
-const observer =
-    new IntersectionObserver(
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
+
+    const toggle =
+      document.getElementById("mobileToggle");
+
+    const menu =
+      document.getElementById("menu");
+
+
+    toggle.addEventListener(
+      "click",
+      () => {
+
+        menu.classList.toggle("open");
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(".menu a")
+      .forEach(
+        link => {
+
+          link.addEventListener(
+            "click",
+            () => {
+
+              menu.classList.remove("open");
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       REVEAL
+       ===================================================== */
+
+    const reveals =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
         entries => {
 
-            entries.forEach(entry => {
+          entries.forEach(
+            entry => {
 
-                if (entry.isIntersecting) {
+              if (
+                entry.isIntersecting
+              ) {
 
-                    entry.target.classList.add("visible");
+                entry.target.classList.add(
+                  "visible"
+                );
 
-                    observer.unobserve(entry.target);
+                observer.unobserve(
+                  entry.target
+                );
 
-                }
+              }
 
-            });
+            }
+          );
 
         },
         {
-            threshold: .12
+          threshold: .12
         }
+      );
+
+
+    reveals.forEach(
+      element => {
+
+        observer.observe(element);
+
+      }
     );
 
-reveals.forEach(element => {
-    observer.observe(element);
-});
+
+    /* =====================================================
+       ANO
+       ===================================================== */
+
+    document
+      .getElementById("year")
+      .textContent =
+      new Date().getFullYear();
 
 
-/* =========================================================
-   FORMULÁRIO → WHATSAPP
-========================================================= */
+    /* =====================================================
+       PARALLAX MUITO SUAVE NA FOTO
+       ===================================================== */
 
-const form =
-    document.getElementById("contactForm");
-
-
-form.addEventListener("submit", function(event) {
-
-    event.preventDefault();
+    const heroImage =
+      document.querySelector(".hero-image");
 
 
-    const nome =
-        document.getElementById("nome").value.trim();
+    window.addEventListener(
+      "scroll",
+      () => {
 
-    const telefone =
-        document.getElementById("telefone").value.trim();
+        if (
+          window.innerWidth > 720 &&
+          window.scrollY < window.innerHeight
+        ) {
 
-    const mensagem =
-        document.getElementById("mensagem").value.trim();
+          heroImage.style.transform =
+            `scale(1.035) translateY(${window.scrollY * .035}px)`;
 
+        }
 
-    /*
-       =====================================================
-       TROQUE AQUI PELO WHATSAPP REAL DA JAQUELINE.
-
-       FORMATO:
-       55 + DDD + NÚMERO
-
-       Exemplo:
-       5543999999999
-       =====================================================
-    */
-
-    const numeroWhatsApp =
-        "5543999999999";
-
-
-    const texto =
-        `Olá, Jaqueline!%0A%0A` +
-        `Meu nome é ${encodeURIComponent(nome)}.%0A` +
-        `Meu telefone é ${encodeURIComponent(telefone)}.%0A%0A` +
-        `Gostaria de falar sobre:%0A` +
-        `${encodeURIComponent(mensagem)}`;
-
-
-    const url =
-        `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-
-
-    window.open(
-        url,
-        "_blank"
+      },
+      { passive: true }
     );
 
-});
 
-
-/* =========================================================
-   ANO
-========================================================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-</script>
+  </script>
 
 </body>
+
 </html>
