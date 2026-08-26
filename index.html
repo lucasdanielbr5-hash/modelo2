@@ -51,9 +51,13 @@
 
       --purple: #6048AC;
 
+      --purple-dark: #513A99;
+
       --blue: #005387;
 
       --cream: #F7F3EE;
+
+      --cream-dark: #EFE9E1;
 
       --white: #FFFFFF;
 
@@ -62,8 +66,6 @@
       --muted: #6F797D;
 
       --soft-purple: #E9E3F5;
-
-      --soft-blue: #EAF1F4;
 
       --line: rgba(0,83,135,.13);
 
@@ -107,20 +109,14 @@
 
 
     img {
-
       display: block;
-
       max-width: 100%;
-
     }
 
 
     a {
-
       color: inherit;
-
       text-decoration: none;
-
     }
 
 
@@ -128,25 +124,18 @@
     input,
     textarea,
     select {
-
       font-family: inherit;
-
     }
 
 
     button {
-
       cursor: pointer;
-
     }
 
 
     ::selection {
-
       background: var(--purple);
-
       color: white;
-
     }
 
 
@@ -199,15 +188,15 @@
 
 
     .loader-inner {
-
       text-align: center;
-
     }
 
 
     .loader-logo {
 
-      width: 95px;
+      width: 105px;
+
+      height: auto;
 
       margin: 0 auto 22px;
 
@@ -225,6 +214,8 @@
       position: relative;
 
       overflow: hidden;
+
+      margin: auto;
 
     }
 
@@ -250,10 +241,7 @@
     @keyframes loading {
 
       to {
-
-        transform:
-          translateX(100%);
-
+        transform: translateX(100%);
       }
 
     }
@@ -272,7 +260,7 @@
 
       width: 100%;
 
-      height: 105px;
+      height: 94px;
 
       z-index: 1000;
 
@@ -289,15 +277,14 @@
 
     .header.scrolled {
 
-      height: 76px;
+      height: 78px;
 
       background:
-        rgba(247,243,238,.96);
+        rgba(247,243,238,.95);
 
       color: var(--blue);
 
-      backdrop-filter:
-        blur(16px);
+      backdrop-filter: blur(16px);
 
       box-shadow:
         0 8px 30px rgba(0,0,0,.04);
@@ -341,13 +328,9 @@
 
       object-fit: contain;
 
-      background: transparent;
-
       transition:
         filter .45s ease,
-        transform .45s ease,
-        width .45s ease,
-        height .45s ease;
+        transform .45s ease;
 
     }
 
@@ -355,6 +338,10 @@
     /*
       SOBRE O HERO:
       transforma a logo original em branca.
+
+      QUANDO O HEADER RECEBE .scrolled:
+      o filtro é removido e a logo volta
+      para a cor original.
     */
 
     .header:not(.scrolled) .brand img {
@@ -366,23 +353,9 @@
     }
 
 
-    /*
-      AO ROLAR:
-      volta para as cores originais.
-    */
-
     .header.scrolled .brand img {
 
       filter: none;
-
-    }
-
-
-    .header.scrolled .brand img {
-
-      width: 58px;
-
-      height: 58px;
 
     }
 
@@ -395,8 +368,7 @@
 
       letter-spacing: -.3px;
 
-      transition:
-        color .4s ease;
+      transition: color .4s ease;
 
     }
 
@@ -439,16 +411,13 @@
 
 
     .menu a:hover {
-
       opacity: .65;
-
     }
 
 
     .menu-contact {
 
-      border:
-        1px solid currentColor;
+      border: 1px solid currentColor;
 
       padding:
         11px 20px;
@@ -467,7 +436,6 @@
       display: none;
 
       width: 44px;
-
       height: 44px;
 
       border: 0;
@@ -526,7 +494,6 @@
       inset: 0;
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -542,25 +509,17 @@
         cubic-bezier(.2,.6,.2,1)
         forwards;
 
-      will-change: transform;
-
     }
 
 
     @keyframes heroZoom {
 
       from {
-
-        transform:
-          scale(1.09);
-
+        transform: scale(1.09);
       }
 
       to {
-
-        transform:
-          scale(1.035);
-
+        transform: scale(1.035);
       }
 
     }
@@ -663,7 +622,6 @@
       content: "";
 
       width: 32px;
-
       height: 1px;
 
       background: currentColor;
@@ -718,19 +676,14 @@
 
 
     .hero-title-line:nth-child(2) span {
-
       animation-delay: .12s;
-
     }
 
 
     @keyframes titleUp {
 
       to {
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
 
     }
@@ -748,8 +701,7 @@
 
       font-weight: 300;
 
-      color:
-        rgba(255,255,255,.86);
+      color: rgba(255,255,255,.86);
 
       opacity: 0;
 
@@ -788,7 +740,6 @@
     .scroll-circle {
 
       width: 42px;
-
       height: 42px;
 
       border:
@@ -813,7 +764,6 @@
     .scroll-circle span {
 
       width: 7px;
-
       height: 7px;
 
       border-right:
@@ -829,11 +779,9 @@
     }
 
 
-    .hero-action:hover
-    .scroll-circle {
+    .hero-action:hover .scroll-circle {
 
-      background:
-        var(--purple);
+      background: var(--purple);
 
       transform:
         translateY(3px);
@@ -905,12 +853,15 @@
     }
 
 
+    /* =====================================================
+       HERO INDEX
+       ===================================================== */
+
     .hero-index {
 
       position: absolute;
 
       right: 40px;
-
       bottom: 46px;
 
       z-index: 3;
@@ -921,33 +872,6 @@
 
       color:
         rgba(255,255,255,.7);
-
-    }
-
-
-    /* =====================================================
-       ANIMAÇÕES
-       ===================================================== */
-
-    @keyframes fadeUp {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(20px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
 
     }
 
@@ -966,8 +890,7 @@
 
     .section-label {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 9px;
 
@@ -984,8 +907,7 @@
 
     .section-title {
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size:
         clamp(
@@ -1012,8 +934,7 @@
 
     .section-title em {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-style: normal;
 
@@ -1022,8 +943,7 @@
 
     .section-text {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 14px;
 
@@ -1040,8 +960,7 @@
 
     .about {
 
-      background:
-        var(--cream);
+      background: var(--cream);
 
     }
 
@@ -1136,16 +1055,14 @@
 
       height: 1px;
 
-      background:
-        var(--purple);
+      background: var(--purple);
 
     }
 
 
     .about-signature span {
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 10px;
 
@@ -1157,7 +1074,7 @@
 
 
     /* =====================================================
-       STATS
+       MINI STATS
        ===================================================== */
 
     .stats {
@@ -1202,8 +1119,7 @@
 
     .stat-number {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 28px;
 
@@ -1216,8 +1132,7 @@
 
     .stat-label {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 9px;
 
@@ -1238,8 +1153,7 @@
 
     .formation {
 
-      background:
-        white;
+      background: white;
 
     }
 
@@ -1249,26 +1163,15 @@
       display: grid;
 
       grid-template-columns:
-        1.25fr
-        .75fr;
+        .65fr
+        1.35fr;
 
       gap: 100px;
-
-      align-items: start;
-
-    }
-
-
-    .formation-heading {
-
-      order: 2;
 
     }
 
 
     .formation-list {
-
-      order: 1;
 
       border-top:
         1px solid var(--line);
@@ -1307,8 +1210,7 @@
 
     .formation-number {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 9px;
 
@@ -1321,8 +1223,7 @@
 
     .formation-item h3 {
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 19px;
 
@@ -1335,8 +1236,7 @@
 
     .formation-item p {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 12px;
 
@@ -1349,15 +1249,15 @@
 
     /* =====================================================
        PARA QUEM
+       SEM FUNDO AZUL
        ===================================================== */
 
     .audience {
 
       background:
-        #EEE8F5;
+        var(--cream-dark);
 
-      color:
-        var(--black);
+      color: var(--black);
 
       overflow: hidden;
 
@@ -1372,9 +1272,23 @@
         .85fr
         1.15fr;
 
-      gap: 100px;
+      gap: 110px;
 
       align-items: center;
+
+    }
+
+
+    .audience .section-label {
+
+      color: var(--purple);
+
+    }
+
+
+    .audience .section-title {
+
+      color: var(--blue);
 
     }
 
@@ -1388,14 +1302,15 @@
 
     .audience-copy p {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 13px;
 
       line-height: 1.9;
 
       margin-top: 24px;
+
+      max-width: 470px;
 
     }
 
@@ -1408,40 +1323,30 @@
         repeat(2,1fr);
 
       border-top:
-        1px solid
-        rgba(96,72,172,.18);
+        1px solid var(--line);
+
+      border-left:
+        1px solid var(--line);
 
     }
 
 
     .audience-item {
 
-      min-height: 155px;
+      min-height: 165px;
 
       padding:
-        27px 25px 25px 0;
+        27px 25px;
 
       border-bottom:
-        1px solid
-        rgba(96,72,172,.18);
+        1px solid var(--line);
 
       border-right:
-        1px solid
-        rgba(96,72,172,.18);
+        1px solid var(--line);
 
       transition:
-        background .4s ease,
-        transform .4s ease,
-        padding .4s ease;
-
-    }
-
-
-    .audience-item:nth-child(even) {
-
-      padding-left: 25px;
-
-      border-right: 0;
+        background .35s ease,
+        transform .35s ease;
 
     }
 
@@ -1452,15 +1357,14 @@
         rgba(255,255,255,.55);
 
       transform:
-        translateY(-4px);
+        translateY(-3px);
 
     }
 
 
     .audience-item span {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 9px;
 
@@ -1471,10 +1375,9 @@
 
     .audience-item h3 {
 
-      margin-top: 14px;
+      margin-top: 40px;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 18px;
 
@@ -1491,8 +1394,7 @@
 
     .process {
 
-      background:
-        var(--cream);
+      background: white;
 
     }
 
@@ -1502,8 +1404,8 @@
       display: grid;
 
       grid-template-columns:
-        1.2fr
-        .8fr;
+        1fr
+        1fr;
 
       gap: 100px;
 
@@ -1548,9 +1450,6 @@
 
       overflow: hidden;
 
-      transition:
-        transform .35s ease;
-
     }
 
 
@@ -1568,18 +1467,9 @@
     }
 
 
-    .step:hover {
-
-      transform:
-        translateY(-5px);
-
-    }
-
-
     .step-number {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 10px;
 
@@ -1592,8 +1482,7 @@
 
       margin-top: 55px;
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 19px;
 
@@ -1604,8 +1493,7 @@
 
     .step p {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 11px;
 
@@ -1625,15 +1513,13 @@
       position: absolute;
 
       left: 0;
-
       bottom: 0;
 
       width: 0;
 
       height: 3px;
 
-      background:
-        var(--purple);
+      background: var(--purple);
 
       transition:
         width .5s ease;
@@ -1649,389 +1535,12 @@
 
 
     /* =====================================================
-       CONTATO
-       ===================================================== */
-
-    .contact {
-
-      background:
-        #FFFFFF;
-
-      padding:
-        130px 0;
-
-    }
-
-
-    .contact-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .85fr
-        1.15fr;
-
-      gap: 100px;
-
-      align-items: start;
-
-    }
-
-
-    .contact-intro {
-
-      position: sticky;
-
-      top: 130px;
-
-    }
-
-
-    .contact-title {
-
-      color:
-        var(--blue);
-
-      font-size:
-        clamp(
-          42px,
-          5vw,
-          70px
-        );
-
-      line-height: 1;
-
-      letter-spacing: -3px;
-
-      font-weight: 300;
-
-    }
-
-
-    .contact-title span {
-
-      color:
-        var(--purple);
-
-      font-weight: 500;
-
-    }
-
-
-    .contact-description {
-
-      max-width: 470px;
-
-      margin:
-        25px 0 0;
-
-      color:
-        var(--muted);
-
-      font-size: 13px;
-
-      line-height: 1.8;
-
-    }
-
-
-    /* =====================================================
-       FORMULÁRIO PSICOPEDAGÓGICO
-       ===================================================== */
-
-    .contact-form {
-
-      background:
-        var(--cream);
-
-      padding:
-        42px;
-
-      border:
-        1px solid
-        rgba(0,83,135,.10);
-
-    }
-
-
-    .form-heading {
-
-      margin-bottom: 30px;
-
-    }
-
-
-    .form-heading h3 {
-
-      color:
-        var(--blue);
-
-      font-size: 22px;
-
-      font-weight: 500;
-
-      letter-spacing: -.5px;
-
-    }
-
-
-    .form-heading p {
-
-      color:
-        var(--muted);
-
-      font-size: 11px;
-
-      line-height: 1.7;
-
-      margin-top: 8px;
-
-    }
-
-
-    .form-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      gap: 18px;
-
-    }
-
-
-    .form-field {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 8px;
-
-    }
-
-
-    .form-field.full {
-
-      grid-column:
-        1 / -1;
-
-    }
-
-
-    .form-field label {
-
-      color:
-        var(--blue);
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.4px;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-
-      width: 100%;
-
-      border:
-        1px solid
-        rgba(0,83,135,.16);
-
-      background:
-        rgba(255,255,255,.72);
-
-      color:
-        var(--black);
-
-      outline: none;
-
-      border-radius: 0;
-
-      padding:
-        14px 15px;
-
-      font-size: 12px;
-
-      transition:
-        border .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-
-    }
-
-
-    .form-field textarea {
-
-      min-height: 125px;
-
-      resize: vertical;
-
-    }
-
-
-    .form-field input:focus,
-    .form-field select:focus,
-    .form-field textarea:focus {
-
-      border-color:
-        var(--purple);
-
-      background:
-        white;
-
-      box-shadow:
-        0 0 0 3px
-        rgba(96,72,172,.07);
-
-    }
-
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-
-      color:
-        #9AA1A4;
-
-    }
-
-
-    .form-submit {
-
-      margin-top: 25px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .form-note {
-
-      color:
-        var(--muted);
-
-      font-size: 9px;
-
-      line-height: 1.6;
-
-      max-width: 270px;
-
-    }
-
-
-    /* =====================================================
-       BOTÕES
-       ===================================================== */
-
-    .button {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      min-height: 46px;
-
-      padding:
-        0 23px;
-
-      border-radius: 100px;
-
-      font-size: 9px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
-
-      text-transform: uppercase;
-
-      transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease,
-        box-shadow .3s ease;
-
-      border: 0;
-
-    }
-
-
-    .button-primary {
-
-      background:
-        var(--purple);
-
-      color:
-        white;
-
-    }
-
-
-    .button-primary:hover {
-
-      background:
-        #50399A;
-
-      transform:
-        translateY(-2px);
-
-      box-shadow:
-        0 10px 25px
-        rgba(96,72,172,.20);
-
-    }
-
-
-    .button-outline {
-
-      color:
-        var(--blue);
-
-      border:
-        1px solid var(--blue);
-
-      background:
-        transparent;
-
-    }
-
-
-    .button-outline:hover {
-
-      background:
-        var(--blue);
-
-      color:
-        white;
-
-    }
-
-
-    /* =====================================================
        LOCALIZAÇÃO
        ===================================================== */
 
     .location {
 
-      background:
-        var(--cream);
+      background: var(--cream);
 
     }
 
@@ -2041,10 +1550,10 @@
       display: grid;
 
       grid-template-columns:
-        1.15fr
-        .85fr;
+        1fr
+        1fr;
 
-      gap: 90px;
+      gap: 100px;
 
       align-items: center;
 
@@ -2053,16 +1562,14 @@
 
     .location-info {
 
-      order: 2;
+      max-width: 560px;
 
-      max-width: 470px;
+      order: 1;
 
     }
 
 
     .location-photo {
-
-      order: 1;
 
       height: 530px;
 
@@ -2070,8 +1577,9 @@
 
       position: relative;
 
-      background:
-        #E6DFD8;
+      order: 2;
+
+      background: var(--cream-dark);
 
     }
 
@@ -2079,7 +1587,6 @@
     .location-photo img {
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -2110,7 +1617,7 @@
 
       border:
         1px solid
-        rgba(255,255,255,.35);
+        rgba(255,255,255,.45);
 
       pointer-events: none;
 
@@ -2131,8 +1638,7 @@
 
     .address-label {
 
-      color:
-        var(--purple);
+      color: var(--purple);
 
       font-size: 9px;
 
@@ -2149,8 +1655,7 @@
 
     .address-text {
 
-      color:
-        var(--blue);
+      color: var(--blue);
 
       font-size: 15px;
 
@@ -2163,8 +1668,7 @@
 
     .address-note {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 11px;
 
@@ -2189,19 +1693,377 @@
 
 
     /* =====================================================
+       BOTÕES
+       ===================================================== */
+
+    .button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 44px;
+
+      padding:
+        0 21px;
+
+      border-radius: 100px;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+
+    }
+
+
+    .button-primary {
+
+      background: var(--purple);
+
+      color: white;
+
+    }
+
+
+    .button-primary:hover {
+
+      background:
+        var(--purple-dark);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .button-outline {
+
+      color: var(--blue);
+
+      border:
+        1px solid var(--blue);
+
+    }
+
+
+    .button-outline:hover {
+
+      background: var(--blue);
+
+      color: white;
+
+    }
+
+
+    /* =====================================================
+       CONTATO / FORMULÁRIO
+       ===================================================== */
+
+    .contact {
+
+      background: white;
+
+      padding:
+        135px 0;
+
+    }
+
+
+    .contact-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        .8fr
+        1.2fr;
+
+      gap: 100px;
+
+      align-items: start;
+
+    }
+
+
+    .contact-intro {
+
+      position: sticky;
+
+      top: 130px;
+
+    }
+
+
+    .contact-title {
+
+      color: var(--blue);
+
+      font-size:
+        clamp(
+          42px,
+          5.5vw,
+          72px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      font-weight: 300;
+
+    }
+
+
+    .contact-title span {
+
+      color: var(--purple);
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-description {
+
+      max-width: 470px;
+
+      margin:
+        25px 0 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       FORM
+       ===================================================== */
+
+    .contact-form {
+
+      background: var(--cream);
+
+      padding:
+        42px;
+
+      border:
+        1px solid rgba(0,83,135,.08);
+
+    }
+
+
+    .form-heading {
+
+      color: var(--blue);
+
+      font-size: 20px;
+
+      font-weight: 500;
+
+      margin-bottom: 28px;
+
+      letter-spacing: -.5px;
+
+    }
+
+
+    .form-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .form-group {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+    .form-group.full {
+
+      grid-column:
+        1 / -1;
+
+    }
+
+
+    .form-group label {
+
+      color: var(--blue);
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 9px;
+
+    }
+
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+
+      width: 100%;
+
+      border:
+        1px solid
+        rgba(0,83,135,.15);
+
+      background: white;
+
+      color: var(--black);
+
+      padding:
+        14px 15px;
+
+      outline: none;
+
+      border-radius: 0;
+
+      font-size: 13px;
+
+      transition:
+        border .3s ease,
+        box-shadow .3s ease;
+
+    }
+
+
+    .form-group input,
+    .form-group select {
+
+      height: 48px;
+
+    }
+
+
+    .form-group textarea {
+
+      min-height: 125px;
+
+      resize: vertical;
+
+      line-height: 1.6;
+
+    }
+
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+
+      border-color:
+        var(--purple);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(96,72,172,.08);
+
+    }
+
+
+    .form-note {
+
+      margin-top: 18px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+
+      line-height: 1.7;
+
+    }
+
+
+    .form-submit {
+
+      width: 100%;
+
+      border: 0;
+
+      margin-top: 25px;
+
+      min-height: 52px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.7px;
+
+      text-transform: uppercase;
+
+      transition:
+        background .3s ease,
+        transform .3s ease;
+
+    }
+
+
+    .form-submit:hover {
+
+      background:
+        var(--purple-dark);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    /* =====================================================
        FOOTER
        ===================================================== */
 
     footer {
 
       background:
-        #F1ECE6;
+        var(--cream);
 
       padding:
         55px 0 30px;
 
-      color:
-        var(--black);
+    }
+
+
+    .footer-inner {
+
+      padding-top: 28px;
+
+      border-top:
+        1px solid var(--line);
 
     }
 
@@ -2218,7 +2080,7 @@
 
       gap: 50px;
 
-      padding-bottom: 42px;
+      align-items: start;
 
     }
 
@@ -2227,79 +2089,64 @@
 
       display: flex;
 
-      flex-direction: column;
+      align-items: center;
 
-      align-items: flex-start;
+      gap: 13px;
 
-      gap: 15px;
+      color: var(--blue);
 
-      color:
-        var(--blue);
+      font-size: 14px;
+
+      font-weight: 600;
 
     }
 
 
     .footer-brand img {
 
-      width: 72px;
-
-      height: 72px;
+      width: 58px;
+      height: 58px;
 
       object-fit: contain;
 
     }
 
 
-    .footer-brand-name {
-
-      font-size: 15px;
-
-      font-weight: 600;
-
-      letter-spacing: -.3px;
-
-    }
-
-
     .footer-brand-description {
 
-      max-width: 300px;
-
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 11px;
 
-      line-height: 1.8;
+      line-height: 1.7;
+
+      max-width: 300px;
+
+      margin-top: 15px;
 
     }
 
 
-    .footer-column h4 {
+    .footer-column-title {
 
-      color:
-        var(--blue);
+      color: var(--purple);
 
       font-size: 9px;
 
       font-weight: 600;
 
-      text-transform: uppercase;
-
       letter-spacing: 1.8px;
 
-      margin-bottom: 17px;
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
 
     }
 
 
-    .footer-column p,
-    .footer-column a {
+    .footer-column-text {
 
-      display: block;
-
-      color:
-        var(--muted);
+      color: var(--blue);
 
       font-size: 11px;
 
@@ -2308,29 +2155,14 @@
     }
 
 
-    .footer-column a {
+    .footer-column-text a:hover {
 
-      transition:
-        color .25s ease;
-
-    }
-
-
-    .footer-column a:hover {
-
-      color:
-        var(--purple);
+      color: var(--purple);
 
     }
 
 
     .footer-bottom {
-
-      padding-top: 22px;
-
-      border-top:
-        1px solid
-        rgba(0,83,135,.12);
 
       display: flex;
 
@@ -2340,13 +2172,19 @@
 
       gap: 20px;
 
+      padding-top: 30px;
+
+      margin-top: 35px;
+
+      border-top:
+        1px solid var(--line);
+
     }
 
 
     .footer-copy {
 
-      color:
-        var(--muted);
+      color: var(--muted);
 
       font-size: 9px;
 
@@ -2355,14 +2193,15 @@
     }
 
 
-    .footer-professional {
+    .footer-link {
 
-      color:
-        var(--muted);
+      color: var(--purple);
 
       font-size: 9px;
 
-      text-align: right;
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
 
     }
 
@@ -2376,22 +2215,18 @@
       position: fixed;
 
       right: 25px;
-
       bottom: 24px;
 
       width: 53px;
-
       height: 53px;
 
       z-index: 900;
 
       border-radius: 50%;
 
-      background:
-        #25D366;
+      background: #25D366;
 
-      color:
-        white;
+      color: white;
 
       display: flex;
 
@@ -2421,11 +2256,9 @@
     .whatsapp svg {
 
       width: 23px;
-
       height: 23px;
 
-      fill:
-        currentColor;
+      fill: currentColor;
 
     }
 
@@ -2460,28 +2293,49 @@
 
 
     .delay-1 {
-
       transition-delay: .1s;
-
     }
 
 
     .delay-2 {
-
       transition-delay: .2s;
-
     }
 
 
     .delay-3 {
-
       transition-delay: .3s;
+    }
+
+
+    /* =====================================================
+       FADE UP
+       ===================================================== */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(25px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
 
     }
 
 
     /* =====================================================
-       RESPONSIVE 1000
+       RESPONSIVE
        ===================================================== */
 
     @media (max-width: 1000px) {
@@ -2514,41 +2368,6 @@
       }
 
 
-      .formation-heading {
-
-        order: 1;
-
-      }
-
-
-      .formation-list {
-
-        order: 2;
-
-      }
-
-
-      .location-info {
-
-        order: 1;
-
-      }
-
-
-      .location-photo {
-
-        order: 2;
-
-      }
-
-
-      .contact-intro {
-
-        position: static;
-
-      }
-
-
       .process-head {
 
         grid-template-columns: 1fr;
@@ -2573,6 +2392,27 @@
       }
 
 
+      .contact-intro {
+
+        position: static;
+
+      }
+
+
+      .location-info {
+
+        order: 1;
+
+      }
+
+
+      .location-photo {
+
+        order: 2;
+
+      }
+
+
       .footer-top {
 
         grid-template-columns:
@@ -2584,7 +2424,7 @@
 
 
     /* =====================================================
-       RESPONSIVE 720
+       CELULAR
        ===================================================== */
 
     @media (max-width: 720px) {
@@ -2597,9 +2437,13 @@
       }
 
 
+      /* ---------------------------------------------------
+         HEADER
+         --------------------------------------------------- */
+
       .header {
 
-        height: 86px;
+        height: 76px;
 
       }
 
@@ -2613,25 +2457,15 @@
 
       .brand {
 
-        gap: 10px;
+        gap: 9px;
 
       }
 
 
       .brand img {
 
-        width: 60px;
-
-        height: 60px;
-
-      }
-
-
-      .header.scrolled .brand img {
-
-        width: 52px;
-
-        height: 52px;
+        width: 56px;
+        height: 56px;
 
       }
 
@@ -2647,10 +2481,9 @@
 
         position: fixed;
 
-        top: 86px;
+        top: 76px;
 
         left: 15px;
-
         right: 15px;
 
         padding: 25px;
@@ -2658,8 +2491,7 @@
         background:
           rgba(247,243,238,.98);
 
-        color:
-          var(--blue);
+        color: var(--blue);
 
         display: flex;
 
@@ -2687,13 +2519,6 @@
       }
 
 
-      .header.scrolled .menu {
-
-        top: 70px;
-
-      }
-
-
       .menu.open {
 
         opacity: 1;
@@ -2708,24 +2533,25 @@
 
       .menu-contact {
 
-        text-align:
-          center;
+        text-align: center;
 
       }
 
 
       .mobile-toggle {
 
-        display:
-          block;
+        display: block;
 
       }
 
 
+      /* ---------------------------------------------------
+         HERO
+         --------------------------------------------------- */
+
       .hero {
 
-        min-height:
-          650px;
+        min-height: 650px;
 
       }
 
@@ -2752,8 +2578,7 @@
 
       .hero-content {
 
-        padding-bottom:
-          75px;
+        padding-bottom: 75px;
 
       }
 
@@ -2775,36 +2600,54 @@
 
       .hero-description {
 
-        font-size:
-          12px;
+        font-size: 12px;
 
-        max-width:
-          360px;
+        max-width: 360px;
 
       }
 
 
+      /*
+        ===================================================
+        NOME VERTICAL — SOMENTE CELULAR
+
+        No desktop ele permanece exatamente na posição
+        original.
+
+        No celular ele é jogado para a direita e um
+        pouco para baixo para não passar pelo rosto/
+        queixo da Jaqueline.
+        ===================================================
+      */
+
       .vertical-name {
 
-        right:
-          -18px;
+        right: -82px;
 
-        font-size:
-          8px;
+        top: 54%;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+        color:
+          rgba(255,255,255,.68);
 
       }
 
 
       .hero-index {
 
-        right:
-          20px;
+        right: 20px;
 
-        bottom:
-          25px;
+        bottom: 25px;
 
       }
 
+
+      /* ---------------------------------------------------
+         SEÇÕES
+         --------------------------------------------------- */
 
       .section {
 
@@ -2829,16 +2672,17 @@
       }
 
 
+      /* ---------------------------------------------------
+         SOBRE
+         --------------------------------------------------- */
+
       .about-intro::before {
 
-        left:
-          -5px;
+        left: -5px;
 
-        top:
-          -35px;
+        top: -35px;
 
-        font-size:
-          100px;
+        font-size: 100px;
 
       }
 
@@ -2853,60 +2697,67 @@
 
       .stat {
 
-        padding-right:
-          10px;
+        padding-right: 10px;
 
       }
 
 
       .stat:not(:first-child) {
 
-        padding-left:
-          10px;
+        padding-left: 10px;
 
       }
 
 
       .stat-number {
 
-        font-size:
-          22px;
+        font-size: 22px;
 
       }
 
 
       .stat-label {
 
-        font-size:
-          8px;
+        font-size: 8px;
 
       }
 
+
+      /* ---------------------------------------------------
+         PARA QUEM
+         --------------------------------------------------- */
 
       .audience-list {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
       }
 
 
-      .audience-item,
-      .audience-item:nth-child(even) {
+      .audience-item {
+
+        min-height: auto;
 
         padding:
-          25px 0;
-
-        border-right:
-          0;
+          25px 20px;
 
       }
 
+
+      .audience-item h3 {
+
+        margin-top: 20px;
+
+      }
+
+
+      /* ---------------------------------------------------
+         PROCESSO
+         --------------------------------------------------- */
 
       .process-steps {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
       }
 
@@ -2914,8 +2765,7 @@
       .step,
       .step:not(:first-child) {
 
-        border-right:
-          0;
+        border-right: 0;
 
         border-bottom:
           1px solid var(--line);
@@ -2928,19 +2778,32 @@
 
       .step:last-child {
 
-        border-bottom:
-          0;
+        border-bottom: 0;
 
       }
 
 
       .step h3 {
 
-        margin-top:
-          35px;
+        margin-top: 35px;
 
       }
 
+
+      /* ---------------------------------------------------
+         LOCALIZAÇÃO
+         --------------------------------------------------- */
+
+      .location-photo {
+
+        height: 430px;
+
+      }
+
+
+      /* ---------------------------------------------------
+         FORMULÁRIO
+         --------------------------------------------------- */
 
       .contact {
 
@@ -2950,21 +2813,17 @@
       }
 
 
-      .contact-grid {
-
-        gap:
-          45px;
-
-      }
-
-
       .contact-title {
 
         font-size:
-          43px;
+          clamp(
+            42px,
+            12vw,
+            60px
+          );
 
         letter-spacing:
-          -2px;
+          -2.5px;
 
       }
 
@@ -2979,13 +2838,14 @@
 
       .form-grid {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
+
+        gap: 18px;
 
       }
 
 
-      .form-field.full {
+      .form-group.full {
 
         grid-column:
           auto;
@@ -2993,29 +2853,14 @@
       }
 
 
-      .form-submit {
+      /* ---------------------------------------------------
+         FOOTER
+         --------------------------------------------------- */
 
-        align-items:
-          stretch;
+      footer {
 
-        flex-direction:
-          column;
-
-      }
-
-
-      .form-submit .button {
-
-        width:
-          100%;
-
-      }
-
-
-      .location-photo {
-
-        height:
-          430px;
+        padding:
+          45px 0 25px;
 
       }
 
@@ -3025,8 +2870,7 @@
         grid-template-columns:
           1fr;
 
-        gap:
-          35px;
+        gap: 30px;
 
       }
 
@@ -3039,30 +2883,22 @@
         flex-direction:
           column;
 
-      }
-
-
-      .footer-professional {
-
-        text-align:
-          left;
+        gap: 15px;
 
       }
 
+
+      /* ---------------------------------------------------
+         WHATSAPP
+         --------------------------------------------------- */
 
       .whatsapp {
 
-        width:
-          50px;
+        width: 50px;
+        height: 50px;
 
-        height:
-          50px;
-
-        right:
-          17px;
-
-        bottom:
-          17px;
+        right: 17px;
+        bottom: 17px;
 
       }
 
@@ -3070,7 +2906,7 @@
 
 
     /* =====================================================
-       REDUCED MOTION
+       ACESSIBILIDADE
        ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
@@ -3236,6 +3072,7 @@
       class="hero"
       id="inicio"
     >
+
 
       <img
         class="hero-image"
@@ -3443,6 +3280,27 @@
       <div class="container formation-grid">
 
 
+        <div class="reveal">
+
+          <div class="section-label">
+            03 — Formação
+          </div>
+
+
+          <h2 class="section-title">
+
+            Conhecimento para
+            <strong>
+              compreender
+            </strong>
+            cada
+            <em>história.</em>
+
+          </h2>
+
+        </div>
+
+
         <div class="formation-list">
 
 
@@ -3539,27 +3397,6 @@
 
         </div>
 
-
-        <div class="formation-heading reveal">
-
-          <div class="section-label">
-            03 — Formação
-          </div>
-
-
-          <h2 class="section-title">
-
-            Conhecimento para
-            <strong>
-              compreender
-            </strong>
-            cada
-            <em>história.</em>
-
-          </h2>
-
-        </div>
-
       </div>
 
     </section>
@@ -3586,19 +3423,28 @@
 
           <h2 class="section-title">
 
-            Um olhar para
-            diferentes formas
-            de <em>aprender.</em>
+            Cada criança
+            aprende de um
+            jeito.
 
           </h2>
 
 
           <p>
 
-            O acompanhamento psicopedagógico é destinado
-            a crianças e adolescentes que apresentam
-            dificuldades ou necessidades específicas
-            relacionadas à aprendizagem e ao desenvolvimento.
+            O acompanhamento psicopedagógico é indicado
+            para crianças e adolescentes que apresentam
+            dificuldades ou desafios relacionados à
+            aprendizagem e ao desenvolvimento.
+
+          </p>
+
+
+          <p>
+
+            O objetivo é compreender o que está por trás
+            dessas dificuldades e construir estratégias
+            respeitando a singularidade de cada pessoa.
 
           </p>
 
@@ -3834,19 +3680,7 @@
       <div class="container location-grid">
 
 
-        <div class="location-photo reveal">
-
-          <img
-            src="https://i.imgur.com/fqEDfKr.png"
-            alt="Espaço de atendimento psicopedagógico"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="location-info reveal delay-1">
-
+        <div class="location-info reveal">
 
           <div class="section-label">
             06 — Localização
@@ -3924,13 +3758,27 @@
 
         </div>
 
+
+        <div
+          class="location-photo reveal delay-1"
+        >
+
+          <img
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Espaço de atendimento"
+            loading="lazy"
+          >
+
+        </div>
+
       </div>
 
     </section>
 
 
     <!-- =====================================================
-         CONTATO / FORMULÁRIO
+         CONTATO
+         FORMULÁRIO PSICOPEDAGÓGICO
          ===================================================== -->
 
     <section
@@ -3942,6 +3790,7 @@
 
 
         <div class="contact-intro reveal">
+
 
           <div class="section-label">
             07 — Contato
@@ -3959,33 +3808,26 @@
 
           <p class="contact-description">
 
-            Preencha as informações abaixo para que
-            possamos entender melhor a necessidade e
-            iniciar uma conversa sobre o acompanhamento
-            psicopedagógico.
+            Preencha algumas informações para que eu
+            possa compreender melhor a sua necessidade.
+            Ao enviar, os dados serão encaminhados
+            diretamente pelo WhatsApp.
 
           </p>
+
 
         </div>
 
 
         <form
           class="contact-form reveal delay-1"
-          id="contactForm"
+          id="whatsappForm"
         >
 
 
           <div class="form-heading">
 
-            <h3>
-              Vamos conhecer melhor a sua demanda
-            </h3>
-
-            <p>
-              As informações serão organizadas em uma
-              mensagem e encaminhadas diretamente para
-              o WhatsApp.
-            </p>
+            Fale sobre a necessidade de acompanhamento
 
           </div>
 
@@ -3993,27 +3835,27 @@
           <div class="form-grid">
 
 
-            <div class="form-field">
+            <div class="form-group">
 
-              <label for="responsavel">
+              <label for="nome">
                 Nome do responsável
               </label>
 
               <input
                 type="text"
-                id="responsavel"
-                name="responsavel"
-                placeholder="Digite seu nome"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
                 required
               >
 
             </div>
 
 
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="telefone">
-                Telefone
+                WhatsApp
               </label>
 
               <input
@@ -4027,27 +3869,10 @@
             </div>
 
 
-            <div class="form-field">
-
-              <label for="nomeCrianca">
-                Nome da criança/adolescente
-              </label>
-
-              <input
-                type="text"
-                id="nomeCrianca"
-                name="nomeCrianca"
-                placeholder="Nome"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="idade">
-                Idade
+                Idade da criança/adolescente
               </label>
 
               <input
@@ -4055,18 +3880,59 @@
                 id="idade"
                 name="idade"
                 min="1"
-                max="25"
-                placeholder="Idade"
+                max="18"
+                placeholder="Ex.: 8"
                 required
               >
 
             </div>
 
 
-            <div class="form-field full">
+            <div class="form-group">
+
+              <label for="escolaridade">
+                Escolaridade
+              </label>
+
+              <select
+                id="escolaridade"
+                name="escolaridade"
+                required
+              >
+
+                <option
+                  value=""
+                  selected
+                  disabled
+                >
+                  Selecione
+                </option>
+
+                <option value="Educação Infantil">
+                  Educação Infantil
+                </option>
+
+                <option value="Ensino Fundamental I">
+                  Ensino Fundamental I
+                </option>
+
+                <option value="Ensino Fundamental II">
+                  Ensino Fundamental II
+                </option>
+
+                <option value="Ensino Médio">
+                  Ensino Médio
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group full">
 
               <label for="demanda">
-                Principal motivo da procura
+                O que motivou a busca pelo acompanhamento?
               </label>
 
               <select
@@ -4087,12 +3953,12 @@
                   Dificuldades de aprendizagem
                 </option>
 
-                <option value="Atenção e concentração">
-                  Atenção e concentração
-                </option>
-
                 <option value="Leitura e escrita">
                   Leitura e escrita
+                </option>
+
+                <option value="Atenção e concentração">
+                  Atenção e concentração
                 </option>
 
                 <option value="Raciocínio lógico">
@@ -4107,8 +3973,12 @@
                   Neurodivergência
                 </option>
 
-                <option value="Outro motivo">
-                  Outro motivo
+                <option value="Orientação sobre aprendizagem">
+                  Orientação sobre aprendizagem
+                </option>
+
+                <option value="Outra situação">
+                  Outra situação
                 </option>
 
               </select>
@@ -4116,16 +3986,16 @@
             </div>
 
 
-            <div class="form-field full">
+            <div class="form-group full">
 
               <label for="mensagem">
-                Conte brevemente o que está acontecendo
+                Conte um pouco sobre a situação
               </label>
 
               <textarea
                 id="mensagem"
                 name="mensagem"
-                placeholder="Escreva aqui, de forma breve, o que motivou a procura pelo atendimento."
+                placeholder="Conte brevemente o que vocês têm observado e o que motivou a busca pelo atendimento."
                 required
               ></textarea>
 
@@ -4135,28 +4005,23 @@
           </div>
 
 
-          <div class="form-submit">
+          <div class="form-note">
 
-
-            <div class="form-note">
-
-              Ao enviar, o WhatsApp será aberto com as
-              informações preenchidas para facilitar o
-              primeiro contato.
-
-            </div>
-
-
-            <button
-              type="submit"
-              class="button button-primary"
-            >
-
-              Enviar pelo WhatsApp
-
-            </button>
+            Suas informações serão utilizadas apenas para
+            facilitar o primeiro contato e compreender a
+            demanda apresentada.
 
           </div>
+
+
+          <button
+            type="submit"
+            class="form-submit"
+          >
+
+            Enviar pelo WhatsApp
+
+          </button>
 
 
         </form>
@@ -4176,120 +4041,127 @@
 
     <div class="container">
 
+      <div class="footer-inner">
 
-      <div class="footer-top">
+
+        <div class="footer-top">
 
 
-        <div class="footer-brand">
+          <div>
 
-          <img
-            src="https://i.imgur.com/FQjVmY5.png"
-            alt="Jaqueline Caldi"
-          >
+            <a
+              href="#inicio"
+              class="footer-brand"
+            >
 
-          <div class="footer-brand-name">
-            Jaqueline Caldi
+              <img
+                src="https://i.imgur.com/FQjVmY5.png"
+                alt="Jaqueline Caldi"
+              >
+
+              <span>
+                Jaqueline Caldi
+              </span>
+
+            </a>
+
+
+            <p class="footer-brand-description">
+
+              Psicopedagogia Clínica com um olhar
+              individualizado para crianças,
+              adolescentes e suas famílias.
+
+            </p>
+
           </div>
 
-          <p class="footer-brand-description">
 
-            Psicopedagogia Clínica com olhar individualizado,
-            acolhedor e atento às diferentes formas de
-            aprender.
+          <div>
 
-          </p>
+            <div class="footer-column-title">
+              Atendimento
+            </div>
+
+            <div class="footer-column-text">
+
+              Psicopedagogia Clínica<br>
+              Crianças e adolescentes<br>
+              Atendimento com horário agendado
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="footer-column-title">
+              Localização
+            </div>
+
+            <div class="footer-column-text">
+
+              <!-- ALTERE A CIDADE ABAIXO -->
+
+              Cidade — Estado
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="footer-column-title">
+              Contato
+            </div>
+
+            <div class="footer-column-text">
+
+              <!-- ALTERE O E-MAIL ABAIXO -->
+
+              <a href="mailto:contato@jaquelinecaldi.com.br">
+                contato@jaquelinecaldi.com.br
+              </a>
+
+              <br><br>
+
+              <!-- ALTERE O TELEFONE ABAIXO -->
+
+              <a
+                href="tel:+5543999999999"
+              >
+                (43) 99999-9999
+              </a>
+
+            </div>
+
+          </div>
+
 
         </div>
 
 
-        <div class="footer-column">
+        <div class="footer-bottom">
 
-          <h4>
-            Atendimento
-          </h4>
 
-          <a href="#sobre">
-            Sobre mim
+          <div class="footer-copy">
+
+            ©
+            <span id="year"></span>
+            Jaqueline Caldi · Psicopedagoga Clínica
+
+          </div>
+
+
+          <a
+            href="#inicio"
+            class="footer-link"
+          >
+            Voltar ao início
           </a>
 
-          <a href="#formacao">
-            Formação
-          </a>
-
-          <a href="#publico">
-            Para quem
-          </a>
-
-          <a href="#processo">
-            Como funciona
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Contato
-          </h4>
-
-          <!-- SUBSTITUA PELOS DADOS REAIS -->
-
-          <a href="mailto:contato@jaquelinecaldi.com.br">
-            contato@jaquelinecaldi.com.br
-          </a>
-
-          <a href="tel:+5543999999999">
-            (43) 99999-9999
-          </a>
-
-          <a href="#contato">
-            Agendar atendimento
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>
-            Localização
-          </h4>
-
-          <!-- SUBSTITUA PELA CIDADE REAL -->
-
-          <p>
-            Londrina — Paraná
-          </p>
-
-          <p>
-            Atendimento com horário previamente agendado.
-          </p>
-
-          <a href="#localizacao">
-            Ver localização
-          </a>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-
-        <div class="footer-copy">
-
-          © <span id="year"></span>
-          Jaqueline Caldi · Psicopedagoga Clínica
-
-        </div>
-
-
-        <div class="footer-professional">
-
-          Psicopedagogia Clínica · Atendimento individualizado
 
         </div>
 
@@ -4515,7 +4387,7 @@
 
 
     /* =====================================================
-       PARALLAX SUAVE DO HERO
+       PARALLAX HERO
        ===================================================== */
 
     const heroImage =
@@ -4545,20 +4417,20 @@
        FORMULÁRIO → WHATSAPP
        ===================================================== */
 
-    const contactForm =
-      document.getElementById("contactForm");
+    const whatsappForm =
+      document.getElementById("whatsappForm");
 
 
-    contactForm.addEventListener(
+    whatsappForm.addEventListener(
       "submit",
       function(event) {
 
         event.preventDefault();
 
 
-        const responsavel =
+        const nome =
           document
-            .getElementById("responsavel")
+            .getElementById("nome")
             .value
             .trim();
 
@@ -4570,16 +4442,16 @@
             .trim();
 
 
-        const nomeCrianca =
+        const idade =
           document
-            .getElementById("nomeCrianca")
+            .getElementById("idade")
             .value
             .trim();
 
 
-        const idade =
+        const escolaridade =
           document
-            .getElementById("idade")
+            .getElementById("escolaridade")
             .value
             .trim();
 
@@ -4600,27 +4472,30 @@
 
         const texto =
 
-          `Olá, Jaqueline! Conheci seu trabalho pelo site e gostaria de saber mais sobre o acompanhamento psicopedagógico.
+`Olá, Jaqueline! Vim pelo site e gostaria de saber mais sobre o acompanhamento psicopedagógico.
 
-Nome do responsável: ${responsavel}
+*Nome do responsável:* ${nome}
 
-Telefone: ${telefone}
+*WhatsApp:* ${telefone}
 
-Nome da criança/adolescente: ${nomeCrianca}
+*Idade da criança/adolescente:* ${idade} anos
 
-Idade: ${idade} anos
+*Escolaridade:* ${escolaridade}
 
-Principal motivo da procura: ${demanda}
+*Motivo da busca:* ${demanda}
 
-Sobre a situação:
+*Sobre a situação:*
 ${mensagem}`;
 
 
         /*
-          NÚMERO DO WHATSAPP.
+          NÚMERO DO WHATSAPP
 
-          SUBSTITUA 5543999999999
-          PELO NÚMERO REAL, COM DDD.
+          Atualmente está usando:
+          55 43 99999-9999
+
+          SUBSTITUA somente os números
+          quando tiver o telefone definitivo.
         */
 
         const numeroWhatsApp =
@@ -4634,12 +4509,11 @@ ${mensagem}`;
         window.open(
           url,
           "_blank",
-          "noopener,noreferrer"
+          "noopener"
         );
 
       }
     );
-
 
   </script>
 
