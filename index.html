@@ -24,7 +24,7 @@
 
 
   <!-- =====================================================
-       GOOGLE FONT — INTER
+       GOOGLE FONT
        ===================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,9 +51,7 @@
 
       --purple: #6048AC;
 
-      --purple-dark: #50399A;
-
-      --purple-soft: #E9E3F5;
+      --purple-soft: #EEEAF8;
 
       --blue: #005387;
 
@@ -65,9 +63,7 @@
 
       --muted: #6F797D;
 
-      --line: rgba(0,83,135,.13);
-
-      --line-purple: rgba(96,72,172,.16);
+      --line: rgba(23,37,44,.12);
 
       --max: 1240px;
 
@@ -122,8 +118,8 @@
 
     button,
     input,
-    textarea,
-    select {
+    select,
+    textarea {
       font-family: inherit;
     }
 
@@ -189,7 +185,11 @@
 
     .loader-logo {
 
-      width: 72px;
+      width: 82px;
+
+      height: 82px;
+
+      object-fit: contain;
 
       margin: 0 auto 22px;
 
@@ -202,7 +202,7 @@
 
       height: 1px;
 
-      background: var(--blue);
+      background: rgba(0,83,135,.18);
 
       position: relative;
 
@@ -273,7 +273,7 @@
       background:
         rgba(247,243,238,.94);
 
-      color: var(--blue);
+      color: var(--black);
 
       backdrop-filter: blur(16px);
 
@@ -313,12 +313,10 @@
 
     .brand img {
 
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
 
       object-fit: contain;
-
-      background: rgba(255,255,255,.9);
 
     }
 
@@ -390,7 +388,7 @@
 
 
     /* =====================================================
-       MOBILE BUTTON
+       MOBILE
        ===================================================== */
 
     .mobile-toggle {
@@ -750,10 +748,6 @@
     }
 
 
-    /* =====================================================
-       NOME VERTICAL
-       ===================================================== */
-
     .vertical-name {
 
       position: absolute;
@@ -813,10 +807,6 @@
     }
 
 
-    /* =====================================================
-       HERO INDEX
-       ===================================================== */
-
     .hero-index {
 
       position: absolute;
@@ -836,7 +826,7 @@
 
 
     /* =====================================================
-       GENERIC SECTION
+       GENERIC
        ===================================================== */
 
     .section {
@@ -929,8 +919,8 @@
       display: grid;
 
       grid-template-columns:
-        .8fr
-        1.2fr;
+        .9fr
+        1.1fr;
 
       gap: 120px;
 
@@ -1030,10 +1020,6 @@
 
     }
 
-
-    /* =====================================================
-       MINI STATS
-       ===================================================== */
 
     .stats {
 
@@ -1206,8 +1192,7 @@
 
 
     /* =====================================================
-       PARA QUEM
-       NOVO DESIGN — SEM FUNDO AZUL
+       PARA QUEM — NOVO DESIGN
        ===================================================== */
 
     .audience {
@@ -1235,16 +1220,60 @@
 
       border-radius: 50%;
 
-      background:
-        rgba(96,72,172,.045);
+      border: 1px solid rgba(96,72,172,.12);
 
-      right: -170px;
+      right: -150px;
 
       top: 50%;
 
       transform: translateY(-50%);
 
-      pointer-events: none;
+      animation:
+        orbitPulse 7s ease-in-out infinite;
+
+    }
+
+
+    .audience::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+
+      height: 260px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(0,83,135,.10);
+
+      right: -65px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      animation:
+        orbitPulse 5s ease-in-out infinite reverse;
+
+    }
+
+
+    @keyframes orbitPulse {
+
+      0%,
+      100% {
+        transform:
+          translateY(-50%)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translateY(-50%)
+          scale(1.08);
+      }
 
     }
 
@@ -1254,16 +1283,16 @@
       display: grid;
 
       grid-template-columns:
-        .8fr
-        1.2fr;
+        1fr
+        1.15fr;
 
-      gap: 110px;
+      gap: 120px;
 
       align-items: center;
 
       position: relative;
 
-      z-index: 1;
+      z-index: 2;
 
     }
 
@@ -1285,8 +1314,6 @@
 
       margin-top: 24px;
 
-      max-width: 480px;
-
     }
 
 
@@ -1298,10 +1325,7 @@
         repeat(2,1fr);
 
       border-top:
-        1px solid var(--line-purple);
-
-      border-left:
-        1px solid var(--line-purple);
+        1px solid var(--line);
 
     }
 
@@ -1311,46 +1335,57 @@
       min-height: 155px;
 
       padding:
-        30px 28px;
+        27px 25px 25px 0;
 
       border-bottom:
-        1px solid var(--line-purple);
+        1px solid var(--line);
 
       border-right:
-        1px solid var(--line-purple);
-
-      background:
-        rgba(255,255,255,.34);
+        1px solid var(--line);
 
       transition:
-        transform .55s
-        cubic-bezier(.16,1,.3,1),
-        background .4s ease,
-        box-shadow .4s ease;
+        background .35s ease,
+        transform .35s ease,
+        padding .35s ease;
 
-    }
+      position: relative;
 
-
-    .audience-item:nth-child(odd) {
-
-      transform:
-        translateX(-28px);
+      overflow: hidden;
 
     }
 
 
     .audience-item:nth-child(even) {
 
-      transform:
-        translateX(28px);
+      padding-left: 25px;
+
+      border-right: 0;
 
     }
 
 
-    .audience-item.visible {
+    .audience-item::before {
 
-      transform:
-        translateX(0);
+      content: "";
+
+      position: absolute;
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--purple);
+
+      top: 31px;
+      right: 25px;
+
+      box-shadow:
+        0 0 0 0 rgba(96,72,172,.25);
+
+      transition:
+        box-shadow .45s ease,
+        transform .45s ease;
 
     }
 
@@ -1359,9 +1394,17 @@
 
       background: white;
 
+      transform: translateY(-5px);
+
+    }
+
+
+    .audience-item:hover::before {
+
+      transform: scale(1.5);
+
       box-shadow:
-        0 18px 45px
-        rgba(96,72,172,.08);
+        0 0 0 9px rgba(96,72,172,.08);
 
     }
 
@@ -1379,15 +1422,33 @@
 
     .audience-item h3 {
 
-      margin-top: 18px;
+      margin-top: 14px;
 
       color: var(--blue);
 
       font-size: 18px;
 
-      font-weight: 400;
+      font-weight: 500;
 
       letter-spacing: -.3px;
+
+    }
+
+
+    .audience-note {
+
+      margin-top: 28px;
+
+      padding-left: 18px;
+
+      border-left:
+        2px solid var(--purple);
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
 
     }
 
@@ -1563,13 +1624,22 @@
     }
 
 
+    .location-info {
+      order: 1;
+    }
+
+
     .location-photo {
+
+      order: 2;
 
       height: 530px;
 
       overflow: hidden;
 
       position: relative;
+
+      background: #e8e2dc;
 
     }
 
@@ -1607,7 +1677,7 @@
 
       border:
         1px solid
-        rgba(255,255,255,.35);
+        rgba(255,255,255,.55);
 
       pointer-events: none;
 
@@ -1689,6 +1759,10 @@
     }
 
 
+    /* =====================================================
+       BOTÕES
+       ===================================================== */
+
     .button {
 
       display: inline-flex;
@@ -1715,11 +1789,12 @@
       transition:
         transform .3s ease,
         background .3s ease,
-        color .3s ease;
-
-      border: none;
+        color .3s ease,
+        box-shadow .3s ease;
 
       cursor: pointer;
+
+      border: 0;
 
     }
 
@@ -1735,10 +1810,14 @@
 
     .button-primary:hover {
 
-      background: var(--purple-dark);
+      background: #50399A;
 
       transform:
         translateY(-2px);
+
+      box-shadow:
+        0 12px 25px
+        rgba(96,72,172,.18);
 
     }
 
@@ -1763,7 +1842,7 @@
 
 
     /* =====================================================
-       CONTATO
+       CONTATO / FORMULÁRIO
        ===================================================== */
 
     .contact {
@@ -1771,47 +1850,12 @@
       background: white;
 
       padding:
-        130px 0;
-
-      position: relative;
-
-      overflow: hidden;
+        140px 0;
 
     }
 
 
-    .contact::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 520px;
-
-      height: 520px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(96,72,172,.045);
-
-      left: -260px;
-
-      top: 50%;
-
-      transform:
-        translateY(-50%);
-
-      pointer-events: none;
-
-    }
-
-
-    .contact-layout {
-
-      position: relative;
-
-      z-index: 1;
+    .contact-grid {
 
       display: grid;
 
@@ -1821,14 +1865,16 @@
 
       gap: 100px;
 
-      align-items: center;
+      align-items: start;
 
     }
 
 
     .contact-intro {
 
-      text-align: left;
+      position: sticky;
+
+      top: 120px;
 
     }
 
@@ -1840,7 +1886,7 @@
       font-size:
         clamp(
           42px,
-          5.2vw,
+          5vw,
           68px
         );
 
@@ -1864,7 +1910,7 @@
 
     .contact-description {
 
-      max-width: 470px;
+      max-width: 450px;
 
       margin:
         25px 0 0;
@@ -1878,10 +1924,6 @@
     }
 
 
-    /* =====================================================
-       FORMULÁRIO PSICOPEDAGÓGICO
-       ===================================================== */
-
     .contact-form {
 
       background: var(--cream);
@@ -1889,31 +1931,50 @@
       padding: 42px;
 
       border:
-        1px solid var(--line-purple);
+        1px solid var(--line);
 
-      box-shadow:
-        0 25px 70px
-        rgba(23,37,44,.06);
-
-      text-align: left;
+      position: relative;
 
     }
 
 
-    .form-heading {
+    .contact-form::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 55px;
+      height: 55px;
+
+      border-top:
+        1px solid var(--purple);
+
+      border-left:
+        1px solid var(--purple);
+
+      top: -1px;
+      left: -1px;
+
+    }
+
+
+    .contact-form-title {
 
       color: var(--blue);
 
-      font-size: 18px;
+      font-size: 21px;
 
       font-weight: 500;
+
+      letter-spacing: -.5px;
 
       margin-bottom: 8px;
 
     }
 
 
-    .form-subheading {
+    .contact-form-subtitle {
 
       color: var(--muted);
 
@@ -1921,7 +1982,7 @@
 
       line-height: 1.7;
 
-      margin-bottom: 28px;
+      margin-bottom: 30px;
 
     }
 
@@ -1938,23 +1999,25 @@
     }
 
 
-    .form-field {
+    .form-group {
 
       display: flex;
 
       flex-direction: column;
 
+      gap: 8px;
+
     }
 
 
-    .form-field.full {
+    .form-group.full {
 
       grid-column: 1 / -1;
 
     }
 
 
-    .form-field label {
+    .form-group label {
 
       color: var(--blue);
 
@@ -1962,72 +2025,57 @@
 
       font-weight: 600;
 
-      letter-spacing: 1.3px;
+      letter-spacing: 1.4px;
 
       text-transform: uppercase;
-
-      margin-bottom: 8px;
 
     }
 
 
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
 
       width: 100%;
 
       border:
         1px solid
-        rgba(0,83,135,.16);
+        rgba(23,37,44,.16);
 
-      background: rgba(255,255,255,.72);
+      background: white;
 
       color: var(--black);
-
-      outline: none;
 
       padding:
         13px 14px;
 
+      outline: none;
+
       font-size: 12px;
+
+      transition:
+        border .25s ease,
+        box-shadow .25s ease;
 
       border-radius: 0;
 
-      transition:
-        border .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
-
     }
 
 
-    .form-field input,
-    .form-field select {
-
-      height: 46px;
-
-    }
-
-
-    .form-field textarea {
+    .form-group textarea {
 
       min-height: 105px;
 
       resize: vertical;
 
-      line-height: 1.6;
-
     }
 
 
-    .form-field input:focus,
-    .form-field select:focus,
-    .form-field textarea:focus {
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
 
       border-color: var(--purple);
-
-      background: white;
 
       box-shadow:
         0 0 0 3px
@@ -2044,14 +2092,12 @@
 
       min-height: 50px;
 
-      font-size: 9px;
-
-      letter-spacing: 1.8px;
-
     }
 
 
-    .form-note {
+    .form-privacy {
+
+      margin-top: 13px;
 
       color: var(--muted);
 
@@ -2060,8 +2106,6 @@
       line-height: 1.6;
 
       text-align: center;
-
-      margin-top: 12px;
 
     }
 
@@ -2074,29 +2118,34 @@
 
       background: var(--cream);
 
+      color: var(--black);
+
       padding:
-        45px 0 30px;
+        60px 0 25px;
 
     }
 
 
-    .footer-inner {
-
-      padding-top: 30px;
-
-      border-top:
-        1px solid var(--line);
+    .footer-top {
 
       display: grid;
 
       grid-template-columns:
+        1.2fr
         1fr
-        1.5fr
+        1fr
         1fr;
 
-      gap: 40px;
+      gap: 50px;
 
-      align-items: start;
+      padding-bottom: 45px;
+
+    }
+
+
+    .footer-brand-block {
+
+      max-width: 300px;
 
     }
 
@@ -2107,73 +2156,98 @@
 
       align-items: center;
 
-      gap: 10px;
+      gap: 12px;
 
-      color: var(--black);
+      color: var(--blue);
 
-      font-size: 13px;
+      font-size: 15px;
 
-      font-weight: 500;
+      font-weight: 600;
 
     }
 
 
     .footer-brand img {
 
-      width: 38px;
-      height: 38px;
+      width: 50px;
+      height: 50px;
 
       object-fit: contain;
 
     }
 
 
-    .footer-contact {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 7px;
-
-    }
-
-
-    .footer-contact-label {
-
-      color: var(--purple);
-
-      font-size: 8px;
-
-      font-weight: 600;
-
-      letter-spacing: 1.8px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 5px;
-
-    }
-
-
-    .footer-contact a,
-    .footer-contact span {
+    .footer-description {
 
       color: var(--muted);
 
-      font-size: 10px;
+      font-size: 11px;
 
-      line-height: 1.5;
+      line-height: 1.8;
 
-      transition:
-        color .3s ease;
+      margin-top: 18px;
 
     }
 
 
-    .footer-contact a:hover {
+    .footer-column-title {
 
       color: var(--purple);
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 17px;
+
+    }
+
+
+    .footer-column p,
+    .footer-column a {
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
+    }
+
+
+    .footer-column a {
+
+      transition:
+        color .25s ease;
+
+    }
+
+
+    .footer-column a:hover {
+
+      color: var(--purple);
+
+    }
+
+
+    .footer-bottom {
+
+      padding-top: 22px;
+
+      border-top:
+        1px solid var(--line);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      align-items: center;
 
     }
 
@@ -2186,9 +2260,20 @@
 
       letter-spacing: .5px;
 
-      line-height: 1.7;
+    }
 
-      text-align: right;
+
+    .footer-back {
+
+      color: var(--purple);
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
 
     }
 
@@ -2295,41 +2380,34 @@
 
 
     /* =====================================================
-       ANIMAÇÃO LATERAL PARA AUDIÊNCIA
+       FADE UP
        ===================================================== */
 
-    .audience-copy.reveal {
+    @keyframes fadeUp {
 
-      transform:
-        translateX(-45px);
+      from {
 
-    }
+        opacity: 0;
 
+        transform:
+          translateY(20px);
 
-    .audience-copy.reveal.visible {
+      }
 
-      transform:
-        translateX(0);
+      to {
 
-    }
+        opacity: 1;
 
+        transform:
+          translateY(0);
 
-    .audience-list .audience-item:nth-child(odd) {
-
-      transition-delay: .05s;
-
-    }
-
-
-    .audience-list .audience-item:nth-child(even) {
-
-      transition-delay: .15s;
+      }
 
     }
 
 
     /* =====================================================
-       RESPONSIVE
+       RESPONSIVE TABLET
        ===================================================== */
 
     @media (max-width: 1000px) {
@@ -2350,10 +2428,16 @@
 
 
       .about-grid,
-      .formation-grid,
-      .audience-grid,
-      .location-grid,
-      .contact-layout {
+      .formation-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+      }
+
+
+      .audience-grid {
 
         grid-template-columns: 1fr;
 
@@ -2386,36 +2470,45 @@
       }
 
 
-      .audience-copy {
+      .location-grid {
 
-        max-width: 650px;
+        grid-template-columns:
+          1fr 1fr;
+
+        gap: 50px;
+
+      }
+
+
+      .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
 
       }
 
 
       .contact-intro {
 
-        max-width: 650px;
+        position: static;
 
       }
 
 
-      .footer-inner {
+      .footer-top {
 
         grid-template-columns:
           1fr 1fr;
 
       }
 
-
-      .footer-copy {
-
-        text-align: left;
-
-      }
-
     }
 
+
+    /* =====================================================
+       RESPONSIVE MOBILE
+       ===================================================== */
 
     @media (max-width: 720px) {
 
@@ -2436,8 +2529,8 @@
 
       .brand img {
 
-        width: 43px;
-        height: 43px;
+        width: 44px;
+        height: 44px;
 
       }
 
@@ -2616,6 +2709,15 @@
       }
 
 
+      .about-grid,
+      .formation-grid,
+      .audience-grid {
+
+        gap: 45px;
+
+      }
+
+
       .about-intro::before {
 
         left: -5px;
@@ -2663,13 +2765,22 @@
       }
 
 
-      /* ============================================
-         PARA QUEM — MOBILE
-         ============================================ */
+      .audience::before {
 
-      .audience-grid {
+        width: 260px;
+        height: 260px;
 
-        gap: 50px;
+        right: -160px;
+
+      }
+
+
+      .audience::after {
+
+        width: 160px;
+        height: 160px;
+
+        right: -105px;
 
       }
 
@@ -2682,26 +2793,21 @@
 
 
       .audience-item,
-      .audience-item:nth-child(odd),
       .audience-item:nth-child(even) {
 
-        min-height: auto;
+        min-height: 125px;
 
         padding:
-          25px 20px;
+          25px 0;
 
-        border-right: 1px solid var(--line-purple);
-
-        transform:
-          translateX(0);
+        border-right: 0;
 
       }
 
 
-      .audience-item:hover {
+      .audience-item::before {
 
-        transform:
-          translateY(-3px);
+        right: 5px;
 
       }
 
@@ -2748,21 +2854,56 @@
       }
 
 
-      .location-photo {
+      .location-grid {
 
-        height: 430px;
+        grid-template-columns: 1fr;
+
+        gap: 45px;
 
       }
 
 
-      /* ============================================
-         CONTATO — MOBILE
-         ============================================ */
+      .location-info {
+
+        order: 1;
+
+      }
+
+
+      .location-photo {
+
+        order: 2;
+
+        height: 390px;
+
+      }
+
+
+      .location-actions {
+
+        flex-direction: column;
+
+      }
+
+
+      .location-actions .button {
+
+        width: 100%;
+
+      }
+
 
       .contact {
 
         padding:
-          95px 0;
+          100px 0;
+
+      }
+
+
+      .contact-grid {
+
+        gap: 45px;
 
       }
 
@@ -2771,20 +2912,20 @@
 
         font-size:
           clamp(
-            40px,
-            11vw,
-            55px
+            42px,
+            12vw,
+            58px
           );
 
         letter-spacing:
-          -2px;
+          -2.4px;
 
       }
 
 
       .contact-form {
 
-        padding: 27px 20px;
+        padding: 28px 20px;
 
       }
 
@@ -2793,34 +2934,42 @@
 
         grid-template-columns: 1fr;
 
-        gap: 16px;
+        gap: 17px;
 
       }
 
 
-      .form-field.full {
+      .form-group.full {
 
         grid-column: auto;
 
       }
 
 
-      /* ============================================
-         FOOTER — MOBILE
-         ============================================ */
-
-      .footer-inner {
+      .footer-top {
 
         grid-template-columns: 1fr;
 
-        gap: 28px;
+        gap: 32px;
 
       }
 
 
-      .footer-copy {
+      footer {
 
-        text-align: left;
+        padding:
+          50px 0 22px;
+
+      }
+
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
 
       }
 
@@ -2838,19 +2987,79 @@
     }
 
 
+    /* =====================================================
+       CELULAR PEQUENO
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      .container {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .hero-title {
+
+        font-size: 40px;
+
+      }
+
+
+      .stats {
+
+        gap: 0;
+
+      }
+
+
+      .stat-number {
+
+        font-size: 20px;
+
+      }
+
+
+      .stat-label {
+
+        font-size: 7px;
+
+      }
+
+
+      .contact-form {
+
+        padding:
+          24px 16px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUÇÃO DE MOVIMENTO
+       ===================================================== */
+
     @media (prefers-reduced-motion: reduce) {
 
       *,
       *::before,
       *::after {
 
-        animation-duration: .01ms !important;
+        animation-duration:
+          .01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+          1 !important;
 
-        scroll-behavior: auto !important;
+        scroll-behavior:
+          auto !important;
 
-        transition-duration: .01ms !important;
+        transition-duration:
+          .01ms !important;
 
       }
 
@@ -2868,13 +3077,16 @@
        LOADER
        ===================================================== -->
 
-  <div class="loader" id="loader">
+  <div
+    class="loader"
+    id="loader"
+  >
 
     <div class="loader-inner">
 
       <img
         class="loader-logo"
-        src="https://i.imgur.com/J1b0lX4.png"
+        src="https://i.imgur.com/FQjVmY5.png"
         alt=""
       >
 
@@ -2898,14 +3110,13 @@
 
       <nav class="nav">
 
-
         <a
           href="#inicio"
           class="brand"
         >
 
           <img
-            src="https://i.imgur.com/J1b0lX4.png"
+            src="https://i.imgur.com/FQjVmY5.png"
             alt="Jaqueline Caldi"
           >
 
@@ -2920,6 +3131,7 @@
           class="mobile-toggle"
           id="mobileToggle"
           aria-label="Abrir menu"
+          type="button"
         >
 
           <span></span>
@@ -2949,6 +3161,12 @@
           <li>
             <a href="#publico">
               Para quem
+            </a>
+          </li>
+
+          <li>
+            <a href="#processo">
+              Como funciona
             </a>
           </li>
 
@@ -2988,7 +3206,6 @@
       id="inicio"
     >
 
-
       <img
         class="hero-image"
         src="https://i.imgur.com/Nxb6CG6.png"
@@ -3014,7 +3231,6 @@
       <div class="container hero-content">
 
         <div class="hero-copy">
-
 
           <div class="eyebrow">
             Psicopedagogia Clínica
@@ -3077,7 +3293,6 @@
     >
 
       <div class="container about-grid">
-
 
         <div class="about-intro reveal">
 
@@ -3194,7 +3409,6 @@
 
       <div class="container formation-grid">
 
-
         <div class="reveal">
 
           <div class="section-label">
@@ -3217,7 +3431,6 @@
 
 
         <div class="formation-list">
-
 
           <div class="formation-item reveal">
 
@@ -3309,7 +3522,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -3328,7 +3540,6 @@
 
       <div class="container audience-grid">
 
-
         <div class="audience-copy reveal">
 
           <div class="section-label">
@@ -3338,28 +3549,35 @@
 
           <h2 class="section-title">
 
-            Para quem a
-            psicopedagogia
-            pode <em>ajudar?</em>
+            Para quem precisa
+            de um olhar mais
+            <em>individualizado.</em>
 
           </h2>
 
 
           <p>
 
-            O acompanhamento psicopedagógico é indicado
-            para crianças e adolescentes que apresentam
-            dificuldades ou mudanças no processo de
-            aprendizagem, atenção, organização ou
-            desenvolvimento de habilidades.
+            A psicopedagogia clínica pode contribuir
+            quando as dificuldades de aprendizagem,
+            atenção ou desenvolvimento começam a
+            interferir na rotina escolar e familiar.
 
           </p>
+
+
+          <div class="audience-note">
+
+            O acompanhamento considera a história,
+            o ritmo e as características de cada
+            criança ou adolescente.
+
+          </div>
 
         </div>
 
 
         <div class="audience-list">
-
 
           <div class="audience-item reveal">
 
@@ -3420,7 +3638,7 @@
             </span>
 
             <h3>
-              Organização e funções executivas
+              Funções executivas
             </h3>
 
           </div>
@@ -3433,11 +3651,10 @@
             </span>
 
             <h3>
-              Neurodivergências e diferentes formas de aprender
+              Neurodivergências
             </h3>
 
           </div>
-
 
         </div>
 
@@ -3447,7 +3664,7 @@
 
 
     <!-- =====================================================
-         PROCESSO
+         COMO FUNCIONA
          ===================================================== -->
 
     <section
@@ -3457,9 +3674,7 @@
 
       <div class="container">
 
-
         <div class="process-head">
-
 
           <div class="reveal">
 
@@ -3494,7 +3709,6 @@
 
 
         <div class="process-steps">
-
 
           <div class="step reveal">
 
@@ -3567,7 +3781,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -3586,22 +3799,7 @@
 
       <div class="container location-grid">
 
-
-        <div
-          class="location-photo reveal"
-        >
-
-          <img
-            src="https://i.imgur.com/fqEDfKr.png"
-            alt="Espaço de atendimento"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="location-info reveal delay-1">
-
+        <div class="location-info reveal">
 
           <div class="section-label">
             06 — Localização
@@ -3631,7 +3829,6 @@
 
           <div class="address">
 
-
             <div class="address-label">
               Endereço
             </div>
@@ -3654,7 +3851,6 @@
 
 
             <div class="location-actions">
-
 
               <a
                 class="button button-primary"
@@ -3679,6 +3875,19 @@
 
         </div>
 
+
+        <div
+          class="location-photo reveal delay-1"
+        >
+
+          <img
+            src="https://i.imgur.com/fqEDfKr.png"
+            alt="Espaço de atendimento"
+            loading="lazy"
+          >
+
+        </div>
+
       </div>
 
     </section>
@@ -3693,15 +3902,9 @@
       id="contato"
     >
 
-      <div class="container contact-layout">
-
-
-        <!-- ===============================================
-             TEXTO
-             =============================================== -->
+      <div class="container contact-grid">
 
         <div class="contact-intro">
-
 
           <div class="section-label reveal">
             07 — Contato
@@ -3721,36 +3924,36 @@
             class="contact-description reveal delay-1"
           >
 
-            Conte um pouco sobre a criança ou adolescente
-            e sobre o que vocês estão percebendo no
-            processo de aprendizagem. Essas informações
-            ajudam a compreender melhor a demanda antes
-            da primeira conversa.
+            Se você está buscando acompanhamento
+            psicopedagógico para seu filho ou filha,
+            preencha os dados ao lado. Ao enviar,
+            suas informações serão encaminhadas
+            diretamente pelo WhatsApp.
 
           </p>
 
         </div>
 
 
-        <!-- ===============================================
+        <!-- =================================================
              FORMULÁRIO
-             =============================================== -->
+             ================================================= -->
 
         <form
-          class="contact-form reveal delay-2"
+          class="contact-form reveal delay-1"
           id="contactForm"
         >
 
-          <h3 class="form-heading">
-            Vamos entender a demanda
+          <h3 class="contact-form-title">
+            Vamos conhecer essa necessidade.
           </h3>
 
 
-          <p class="form-subheading">
+          <p class="contact-form-subtitle">
 
-            Preencha os dados abaixo. Ao enviar,
-            as informações serão encaminhadas pelo
-            WhatsApp para Jaqueline.
+            Conte brevemente sobre quem você está
+            buscando atendimento. Assim podemos iniciar
+            a conversa de forma mais objetiva.
 
           </p>
 
@@ -3758,7 +3961,7 @@
           <div class="form-grid">
 
 
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="responsavel">
                 Nome do responsável
@@ -3775,24 +3978,24 @@
             </div>
 
 
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="telefone">
-                Seu telefone
+                WhatsApp
               </label>
 
               <input
                 type="tel"
                 id="telefone"
                 name="telefone"
-                placeholder="(43) 99999-9999"
+                placeholder="(00) 00000-0000"
                 required
               >
 
             </div>
 
 
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="crianca">
                 Nome da criança/adolescente
@@ -3809,7 +4012,7 @@
             </div>
 
 
-            <div class="form-field">
+            <div class="form-group">
 
               <label for="idade">
                 Idade
@@ -3828,15 +4031,15 @@
             </div>
 
 
-            <div class="form-field full">
+            <div class="form-group full">
 
-              <label for="demanda">
-                Principal motivo do contato
+              <label for="motivo">
+                Principal motivo da busca
               </label>
 
               <select
-                id="demanda"
-                name="demanda"
+                id="motivo"
+                name="motivo"
                 required
               >
 
@@ -3864,16 +4067,16 @@
                   Raciocínio lógico
                 </option>
 
-                <option value="Organização e funções executivas">
-                  Organização e funções executivas
+                <option value="Funções executivas">
+                  Funções executivas
                 </option>
 
                 <option value="Neurodivergência">
                   Neurodivergência
                 </option>
 
-                <option value="Outro">
-                  Outro
+                <option value="Outra necessidade">
+                  Outra necessidade
                 </option>
 
               </select>
@@ -3881,16 +4084,16 @@
             </div>
 
 
-            <div class="form-field full">
+            <div class="form-group full">
 
               <label for="mensagem">
-                Conte brevemente o que está acontecendo
+                Conte um pouco sobre a situação
               </label>
 
               <textarea
                 id="mensagem"
                 name="mensagem"
-                placeholder="Ex.: percebemos dificuldades na leitura, concentração, organização das tarefas..."
+                placeholder="Ex.: dificuldade escolar, atenção, leitura, escrita, rotina de estudos..."
                 required
               ></textarea>
 
@@ -3910,10 +4113,10 @@
           </button>
 
 
-          <p class="form-note">
+          <p class="form-privacy">
 
-            Ao clicar em enviar, o WhatsApp será aberto
-            com as informações preenchidas.
+            Ao enviar, o WhatsApp será aberto com as
+            informações preenchidas para iniciar o atendimento.
 
           </p>
 
@@ -3934,39 +4137,58 @@
 
     <div class="container">
 
-      <div class="footer-inner">
+      <div class="footer-top">
 
 
-        <a
-          href="#inicio"
-          class="footer-brand"
-        >
+        <div class="footer-brand-block">
 
-          <img
-            src="https://i.imgur.com/J1b0lX4.png"
-            alt="Jaqueline Caldi"
+          <a
+            href="#inicio"
+            class="footer-brand"
           >
 
-          <span>
-            Jaqueline Caldi
-          </span>
+            <img
+              src="https://i.imgur.com/FQjVmY5.png"
+              alt="Jaqueline Caldi"
+            >
 
-        </a>
+            <span>
+              Jaqueline Caldi
+            </span>
+
+          </a>
 
 
-        <div class="footer-contact">
+          <p class="footer-description">
 
-          <div class="footer-contact-label">
-            Atendimento
+            Psicopedagoga Clínica dedicada a compreender
+            diferentes formas de aprender e acompanhar
+            cada criança e adolescente de maneira
+            individualizada e acolhedora.
+
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <div class="footer-column-title">
+            Localização
           </div>
 
-          <!-- ALTERE A CIDADE -->
-
-          <span>
+          <p>
             Londrina — Paraná
-          </span>
+          </p>
 
-          <!-- ALTERE O E-MAIL -->
+        </div>
+
+
+        <div class="footer-column">
+
+          <div class="footer-column-title">
+            E-mail
+          </div>
 
           <a
             href="mailto:contato@jaquelinecaldi.com.br"
@@ -3974,7 +4196,14 @@
             contato@jaquelinecaldi.com.br
           </a>
 
-          <!-- ALTERE O TELEFONE -->
+        </div>
+
+
+        <div class="footer-column">
+
+          <div class="footer-column-title">
+            Telefone
+          </div>
 
           <a
             href="tel:+5543999999999"
@@ -3985,17 +4214,25 @@
         </div>
 
 
+      </div>
+
+
+      <div class="footer-bottom">
+
         <div class="footer-copy">
 
           © <span id="year"></span>
           Jaqueline Caldi · Psicopedagoga Clínica
 
-          <br>
-
-          Atendimento com horário previamente agendado.
-
         </div>
 
+
+        <a
+          href="#inicio"
+          class="footer-back"
+        >
+          Voltar ao início ↑
+        </a>
 
       </div>
 
@@ -4009,7 +4246,7 @@
        ===================================================== -->
 
   <a
-    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
+    href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedag%C3%B3gico."
     class="whatsapp"
     target="_blank"
     rel="noopener"
@@ -4218,7 +4455,7 @@
 
 
     /* =====================================================
-       PARALLAX MUITO SUAVE NA FOTO DO HERO
+       PARALLAX SUAVE
        ===================================================== */
 
     const heroImage =
@@ -4287,11 +4524,10 @@
             .trim();
 
 
-        const demanda =
+        const motivo =
           document
-            .getElementById("demanda")
-            .value
-            .trim();
+            .getElementById("motivo")
+            .value;
 
 
         const mensagem =
@@ -4303,42 +4539,29 @@
 
         const texto =
 
-`Olá, Jaqueline! Gostaria de saber mais sobre o acompanhamento psicopedagógico.
+`Olá Jaqueline! Gostaria de informações sobre o acompanhamento psicopedagógico.
 
-*Nome do responsável:* ${responsavel}
-
-*Telefone:* ${telefone}
-
+*Responsável:* ${responsavel}
+*WhatsApp:* ${telefone}
 *Nome da criança/adolescente:* ${crianca}
-
 *Idade:* ${idade} anos
+*Principal motivo:* ${motivo}
 
-*Principal motivo:* ${demanda}
-
-*Sobre a demanda:*
+*Sobre a situação:*
 ${mensagem}`;
 
 
-        /*
-          NÚMERO DO WHATSAPP
-          ALTERE AQUI PELO NÚMERO REAL.
-        */
-
-        const numero =
+        const whatsappNumber =
           "5543999999999";
 
 
         const whatsappURL =
-          "https://wa.me/" +
-          numero +
-          "?text=" +
-          encodeURIComponent(texto);
+          `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(texto)}`;
 
 
         window.open(
           whatsappURL,
-          "_blank",
-          "noopener"
+          "_blank"
         );
 
       }
