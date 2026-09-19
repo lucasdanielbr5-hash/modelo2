@@ -1580,7 +1580,12 @@
       .mobile-toggle { display: block; }
 
       /* =========================================
-         HERO NO MOBILE — TELA CHEIA + SEM CORTAR CABEÇA
+         HERO NO MOBILE — FOTO INTEIRA (SEM CORTE)
+         =========================================
+         Usa object-fit: contain para mostrar a
+         imagem 100% inteira, e um fundo com a
+         MESMA imagem desfocada atrás para não
+         ficar faixas vazias.
          ========================================= */
 
       .hero {
@@ -1588,33 +1593,51 @@
         height: 100svh;
         min-height: 600px;
         max-height: none;
-        aspect-ratio: auto;
+        background: #4B433E;
       }
 
+      /* Camada de fundo: mesma imagem desfocada preenchendo */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: -30px;
+        background-image:
+          url("https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png");
+        background-size: cover;
+        background-position: center;
+        filter: blur(30px) brightness(.55);
+        transform: scale(1.15);
+        z-index: 0;
+      }
+
+      /* Imagem principal: inteira, sem corte */
       .hero-image {
-        object-position: 50% 8%;
-        transform: scale(1.02);
-        animation: heroZoomMobile 2.2s cubic-bezier(.2,.6,.2,1) forwards;
-      }
-
-      @keyframes heroZoomMobile {
-        from { transform: scale(1.08); }
-        to { transform: scale(1.02); }
+        object-fit: contain;
+        object-position: center center;
+        transform: scale(1);
+        animation: none;
+        z-index: 1;
       }
 
       .hero-overlay {
+        z-index: 2;
         background:
           linear-gradient(
             180deg,
             rgba(12,21,24,.05) 0%,
-            rgba(12,21,24,.15) 35%,
-            rgba(12,21,24,.55) 65%,
-            rgba(12,21,24,.80) 100%
+            rgba(12,21,24,.20) 35%,
+            rgba(12,21,24,.55) 70%,
+            rgba(12,21,24,.82) 100%
           );
+      }
+
+      .hero-bottom {
+        z-index: 2;
       }
 
       .hero-content {
         padding-bottom: 60px;
+        z-index: 3;
       }
 
       .hero-title {
@@ -1643,6 +1666,7 @@
         right: 20px;
         bottom: 20px;
         font-size: 8px;
+        z-index: 3;
       }
 
       .hero-action {
