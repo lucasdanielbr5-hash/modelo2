@@ -1580,40 +1580,41 @@
       .mobile-toggle { display: block; }
 
       /* =========================================
-         HERO NO MOBILE — correção do corte
+         HERO NO MOBILE — TELA CHEIA + SEM CORTAR CABEÇA
          ========================================= */
 
       .hero {
-        height: auto;
-        min-height: 0;
-        max-height: 100svh;
-        aspect-ratio: 3 / 4;
+        height: 100vh;
+        height: 100svh;
+        min-height: 600px;
+        max-height: none;
+        aspect-ratio: auto;
       }
 
       .hero-image {
-        object-position: center top;
-        transform: scale(1);
+        object-position: 50% 8%;
+        transform: scale(1.02);
         animation: heroZoomMobile 2.2s cubic-bezier(.2,.6,.2,1) forwards;
       }
 
       @keyframes heroZoomMobile {
-        from { transform: scale(1.04); }
-        to { transform: scale(1); }
+        from { transform: scale(1.08); }
+        to { transform: scale(1.02); }
       }
 
       .hero-overlay {
         background:
           linear-gradient(
             180deg,
-            rgba(12,21,24,.10) 0%,
-            rgba(12,21,24,.25) 40%,
-            rgba(12,21,24,.55) 70%,
+            rgba(12,21,24,.05) 0%,
+            rgba(12,21,24,.15) 35%,
+            rgba(12,21,24,.55) 65%,
             rgba(12,21,24,.80) 100%
           );
       }
 
       .hero-content {
-        padding-bottom: 55px;
+        padding-bottom: 60px;
       }
 
       .hero-title {
@@ -1775,28 +1776,10 @@
 
 
     /* =====================================================
-       CELULARES ESTREITOS
+       TELAS MUITO ESTREITAS
        ===================================================== */
 
-    @media (max-width: 480px) {
-
-      .hero {
-        aspect-ratio: 5 / 7;
-      }
-
-      .hero-title {
-        font-size: 38px;
-        letter-spacing: -2px;
-      }
-
-    }
-
-
     @media (max-width: 380px) {
-
-      .hero {
-        aspect-ratio: 3 / 4;
-      }
 
       .hero-title {
         font-size: 34px;
