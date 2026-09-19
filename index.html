@@ -23,10 +23,6 @@
   <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
 
 
-  <!-- =====================================================
-       GOOGLE FONT
-       ===================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -42,10 +38,6 @@
 
 
   <style>
-
-    /* =====================================================
-       CORES
-       ===================================================== */
 
     :root {
 
@@ -65,18 +57,12 @@
 
       --muted: #747B7D;
 
-      --soft-purple: #E9E3F5;
-
       --line: rgba(52,92,112,.14);
 
       --max: 1240px;
 
     }
 
-
-    /* =====================================================
-       RESET
-       ===================================================== */
 
     * {
       margin: 0;
@@ -100,11 +86,6 @@
 
       overflow-x: hidden;
 
-    }
-
-
-    body.no-scroll {
-      overflow: hidden;
     }
 
 
@@ -193,9 +174,9 @@
 
     .loader-logo {
 
-      width: 160px;
+      width: 200px;
 
-      height: 160px;
+      height: 200px;
 
       object-fit: contain;
 
@@ -206,7 +187,7 @@
 
     .loader-line {
 
-      width: 160px;
+      width: 200px;
 
       height: 1px;
 
@@ -307,7 +288,7 @@
 
 
     /* =====================================================
-       LOGO DO HEADER (símbolo horizontal)
+       LOGO (circular — quadrada)
        ===================================================== */
 
     .brand {
@@ -325,8 +306,8 @@
 
       position: relative;
 
-      width: 90px;
-      height: 60px;
+      width: 68px;
+      height: 68px;
 
       flex-shrink: 0;
 
@@ -354,8 +335,6 @@
     }
 
 
-    /* Logo branca — visível sobre a foto */
-
     .brand-logo .logo-light {
 
       opacity: 1;
@@ -363,16 +342,12 @@
     }
 
 
-    /* Logo colorida — escondida inicialmente */
-
     .brand-logo .logo-color {
 
       opacity: 0;
 
     }
 
-
-    /* Ao rolar: troca as logos */
 
     .header.scrolled .brand-logo .logo-light {
 
@@ -456,10 +431,6 @@
 
     }
 
-
-    /* =====================================================
-       MOBILE BUTTON
-       ===================================================== */
 
     .mobile-toggle {
 
@@ -592,10 +563,6 @@
 
     }
 
-
-    /* =====================================================
-       HERO CONTENT
-       ===================================================== */
 
     .hero-content {
 
@@ -823,10 +790,6 @@
     }
 
 
-    /* =====================================================
-       NOME VERTICAL
-       ===================================================== */
-
     .vertical-name {
 
       position: absolute;
@@ -887,10 +850,6 @@
     }
 
 
-    /* =====================================================
-       HERO INDEX
-       ===================================================== */
-
     .hero-index {
 
       position: absolute;
@@ -911,7 +870,7 @@
 
 
     /* =====================================================
-       GENERIC SECTION
+       SEÇÕES GENÉRICAS
        ===================================================== */
 
     .section {
@@ -962,9 +921,7 @@
 
 
     .section-title strong {
-
       font-weight: 500;
-
     }
 
 
@@ -997,10 +954,7 @@
        ===================================================== */
 
     .about {
-
-      background:
-        var(--cream);
-
+      background: var(--cream);
     }
 
 
@@ -1020,9 +974,7 @@
 
 
     .about-intro {
-
       position: relative;
-
     }
 
 
@@ -1062,16 +1014,12 @@
 
 
     .about-text-wrap {
-
       max-width: 620px;
-
     }
 
 
     .about-text-wrap p + p {
-
       margin-top: 20px;
-
     }
 
 
@@ -1141,16 +1089,12 @@
 
 
     .stat:not(:first-child) {
-
       padding-left: 25px;
-
     }
 
 
     .stat:last-child {
-
       border-right: 0;
-
     }
 
 
@@ -1191,10 +1135,7 @@
        ===================================================== */
 
     .formation {
-
-      background:
-        var(--white);
-
+      background: var(--white);
     }
 
 
@@ -1214,10 +1155,7 @@
 
 
     .formation-list {
-
-      border-top:
-        1px solid var(--line);
-
+      border-top: 1px solid var(--line);
     }
 
 
@@ -1244,9 +1182,7 @@
 
 
     .formation-item:hover {
-
       padding-left: 12px;
-
     }
 
 
@@ -1434,10 +1370,7 @@
        ===================================================== */
 
     .process {
-
-      background:
-        var(--cream);
-
+      background: var(--cream);
     }
 
 
@@ -1459,9 +1392,7 @@
 
 
     .process-head p {
-
       max-width: 470px;
-
     }
 
 
@@ -1496,16 +1427,12 @@
 
 
     .step:not(:first-child) {
-
       padding-left: 25px;
-
     }
 
 
     .step:last-child {
-
       border-right: 0;
-
     }
 
 
@@ -1574,9 +1501,7 @@
 
 
     .step:hover::after {
-
       width: 100%;
-
     }
 
 
@@ -1585,10 +1510,7 @@
        ===================================================== */
 
     .location {
-
-      background:
-        var(--white);
-
+      background: var(--white);
     }
 
 
@@ -1634,10 +1556,7 @@
 
 
     .location-photo:hover img {
-
-      transform:
-        scale(1.04);
-
+      transform: scale(1.04);
     }
 
 
@@ -1659,9 +1578,7 @@
 
 
     .location-info {
-
       max-width: 470px;
-
     }
 
 
@@ -2010,10 +1927,7 @@
 
 
     .form-group.full {
-
-      grid-column:
-        1 / -1;
-
+      grid-column: 1 / -1;
     }
 
 
@@ -2117,9 +2031,7 @@
 
 
     .form-submit {
-
       min-width: 190px;
-
     }
 
 
@@ -2180,8 +2092,8 @@
 
     .footer-brand img {
 
-      width: 56px;
-      height: 56px;
+      width: 60px;
+      height: 60px;
 
       object-fit: contain;
 
@@ -2221,18 +2133,12 @@
 
 
     .footer-column-text a {
-
-      transition:
-        color .25s ease;
-
+      transition: color .25s ease;
     }
 
 
     .footer-column-text a:hover {
-
-      color:
-        var(--purple);
-
+      color: var(--purple);
     }
 
 
@@ -2369,24 +2275,12 @@
     }
 
 
-    .delay-1 {
-      transition-delay: .1s;
-    }
+    .delay-1 { transition-delay: .1s; }
 
+    .delay-2 { transition-delay: .2s; }
 
-    .delay-2 {
-      transition-delay: .2s;
-    }
+    .delay-3 { transition-delay: .3s; }
 
-
-    .delay-3 {
-      transition-delay: .3s;
-    }
-
-
-    /* =====================================================
-       ANIMAÇÃO DO FORMULÁRIO
-       ===================================================== */
 
     @keyframes fadeUp {
 
@@ -2418,19 +2312,10 @@
     @media (max-width: 1000px) {
 
       .container {
-
-        width:
-          calc(100% - 48px);
-
+        width: calc(100% - 48px);
       }
 
-
-      .menu {
-
-        gap: 20px;
-
-      }
-
+      .menu { gap: 20px; }
 
       .about-grid,
       .formation-grid,
@@ -2438,13 +2323,11 @@
       .location-grid,
       .contact-grid {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 60px;
 
       }
-
 
       .formation-grid {
 
@@ -2454,13 +2337,7 @@
 
       }
 
-
-      .formation-grid > div:first-child {
-
-        order: 1;
-
-      }
-
+      .formation-grid > div:first-child { order: 1; }
 
       .formation-list {
 
@@ -2470,30 +2347,17 @@
 
       }
 
+      .audience-copy { order: 1; }
 
-      .audience-copy {
-
-        order: 1;
-
-      }
-
-
-      .audience-list {
-
-        order: 2;
-
-      }
-
+      .audience-list { order: 2; }
 
       .process-head {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 25px;
 
       }
-
 
       .process-steps {
 
@@ -2502,20 +2366,13 @@
 
       }
 
-
       .step:nth-child(2) {
-
         border-right: 0;
-
       }
-
 
       .contact-copy {
-
         position: static;
-
       }
-
 
       .footer-inner {
 
@@ -2534,50 +2391,23 @@
     @media (max-width: 720px) {
 
       .container {
-
-        width:
-          calc(100% - 36px);
-
+        width: calc(100% - 36px);
       }
 
+      .header { height: 76px; }
 
-      /* HEADER */
+      .header.scrolled { height: 70px; }
 
-      .header {
-
-        height: 76px;
-
-      }
-
-
-      .header.scrolled {
-
-        height: 70px;
-
-      }
-
-
-      .brand {
-
-        gap: 9px;
-
-      }
-
+      .brand { gap: 9px; }
 
       .brand-logo {
 
-        width: 70px;
-        height: 48px;
+        width: 52px;
+        height: 52px;
 
       }
 
-
-      .brand-name {
-
-        font-size: 14px;
-
-      }
-
+      .brand-name { font-size: 14px; }
 
       .menu {
 
@@ -2621,7 +2451,6 @@
 
       }
 
-
       .menu.open {
 
         opacity: 1;
@@ -2633,29 +2462,11 @@
 
       }
 
+      .menu-contact { text-align: center; }
 
-      .menu-contact {
+      .mobile-toggle { display: block; }
 
-        text-align: center;
-
-      }
-
-
-      .mobile-toggle {
-
-        display: block;
-
-      }
-
-
-      /* HERO */
-
-      .hero {
-
-        min-height: 650px;
-
-      }
-
+      .hero { min-height: 650px; }
 
       .hero-image {
 
@@ -2663,7 +2474,6 @@
           52% 12%;
 
       }
-
 
       .hero-overlay {
 
@@ -2676,14 +2486,9 @@
 
       }
 
-
       .hero-content {
-
-        padding-bottom:
-          72px;
-
+        padding-bottom: 72px;
       }
-
 
       .hero-title {
 
@@ -2699,7 +2504,6 @@
 
       }
 
-
       .hero-description {
 
         font-size: 12px;
@@ -2707,7 +2511,6 @@
         max-width: 360px;
 
       }
-
 
       .vertical-name {
 
@@ -2723,7 +2526,6 @@
 
       }
 
-
       .hero-index {
 
         right: 20px;
@@ -2732,13 +2534,7 @@
 
       }
 
-
-      .hero-action {
-
-        margin-top: 28px;
-
-      }
-
+      .hero-action { margin-top: 28px; }
 
       .scroll-circle {
 
@@ -2747,16 +2543,7 @@
 
       }
 
-
-      /* SEÇÕES */
-
-      .section {
-
-        padding:
-          95px 0;
-
-      }
-
+      .section { padding: 95px 0; }
 
       .section-title {
 
@@ -2767,13 +2554,9 @@
             52px
           );
 
-        letter-spacing:
-          -2px;
+        letter-spacing: -2px;
 
       }
-
-
-      /* SOBRE */
 
       .about-intro::before {
 
@@ -2785,7 +2568,6 @@
 
       }
 
-
       .stats {
 
         grid-template-columns:
@@ -2793,99 +2575,48 @@
 
       }
 
+      .stat { padding-right: 10px; }
 
-      .stat {
+      .stat:not(:first-child) { padding-left: 10px; }
 
-        padding-right: 10px;
+      .stat-number { font-size: 22px; }
 
-      }
+      .stat-label { font-size: 8px; }
 
-
-      .stat:not(:first-child) {
-
-        padding-left: 10px;
-
-      }
-
-
-      .stat-number {
-
-        font-size: 22px;
-
-      }
-
-
-      .stat-label {
-
-        font-size: 8px;
-
-      }
-
-
-      /* FORMAÇÃO */
-
-      .formation-grid {
-
-        gap: 50px;
-
-      }
-
+      .formation-grid { gap: 50px; }
 
       .formation-item {
 
-        grid-template-columns:
-          45px 1fr;
+        grid-template-columns: 45px 1fr;
 
         gap: 15px;
 
       }
 
-
-      /* PARA QUEM */
-
-      .audience {
-
-        padding:
-          95px 0;
-
-      }
-
+      .audience { padding: 95px 0; }
 
       .audience-list {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
       }
-
 
       .audience-item,
       .audience-item:nth-child(even) {
 
-        padding:
-          25px 0;
+        padding: 25px 0;
 
         border-right: 0;
 
       }
 
-
-      .audience-item:hover {
-
-        padding-top: 30px;
-
-      }
-
-
-      /* PROCESSO */
+      .audience-item:hover { padding-top: 30px; }
 
       .process-steps {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
       }
-
 
       .step,
       .step:not(:first-child) {
@@ -2895,51 +2626,19 @@
         border-bottom:
           1px solid var(--line);
 
-        padding:
-          25px 0;
+        padding: 25px 0;
 
       }
 
+      .step:last-child { border-bottom: 0; }
 
-      .step:last-child {
+      .step h3 { margin-top: 35px; }
 
-        border-bottom: 0;
+      .location-photo { height: 430px; }
 
-      }
+      .contact { padding: 95px 0; }
 
-
-      .step h3 {
-
-        margin-top: 35px;
-
-      }
-
-
-      /* LOCALIZAÇÃO */
-
-      .location-photo {
-
-        height: 430px;
-
-      }
-
-
-      /* CONTATO */
-
-      .contact {
-
-        padding:
-          95px 0;
-
-      }
-
-
-      .contact-grid {
-
-        gap: 45px;
-
-      }
-
+      .contact-grid { gap: 45px; }
 
       .contact-title {
 
@@ -2950,90 +2649,51 @@
             60px
           );
 
-        letter-spacing:
-          -2.5px;
+        letter-spacing: -2.5px;
 
       }
 
-
-      .contact-form {
-
-        padding:
-          25px 20px;
-
-      }
-
+      .contact-form { padding: 25px 20px; }
 
       .form-grid {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 16px;
 
       }
 
-
-      .form-group.full {
-
-        grid-column:
-          auto;
-
-      }
-
+      .form-group.full { grid-column: auto; }
 
       .form-footer {
 
-        align-items:
-          stretch;
+        align-items: stretch;
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
       }
 
+      .form-submit { width: 100%; }
 
-      .form-submit {
-
-        width: 100%;
-
-      }
-
-
-      /* FOOTER */
-
-      footer {
-
-        padding:
-          45px 0 25px;
-
-      }
-
+      footer { padding: 45px 0 25px; }
 
       .footer-inner {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
         gap: 28px;
 
       }
 
-
       .footer-bottom {
 
-        align-items:
-          flex-start;
+        align-items: flex-start;
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
         gap: 10px;
 
       }
-
-
-      /* WHATSAPP */
 
       .whatsapp {
 
@@ -3048,27 +2708,19 @@
     }
 
 
-    /* =====================================================
-       REDUÇÃO DE MOVIMENTO
-       ===================================================== */
-
     @media (prefers-reduced-motion: reduce) {
 
       *,
       *::before,
       *::after {
 
-        animation-duration:
-          .01ms !important;
+        animation-duration: .01ms !important;
 
-        animation-iteration-count:
-          1 !important;
+        animation-iteration-count: 1 !important;
 
-        scroll-behavior:
-          auto !important;
+        scroll-behavior: auto !important;
 
-        transition-duration:
-          .01ms !important;
+        transition-duration: .01ms !important;
 
       }
 
@@ -3082,9 +2734,7 @@
 <body>
 
 
-  <!-- =====================================================
-       LOADER
-       ===================================================== -->
+  <!-- LOADER -->
 
   <div
     class="loader"
@@ -3095,8 +2745,8 @@
 
       <img
         class="loader-logo"
-        src="https://i.imgur.com/yCIZoqr.png"
-        alt="Jaqueline Caldi — Psicopedagoga Clínica"
+        src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/image-removebg-preview_5.png"
+        alt="Jaqueline Caldi"
       >
 
       <div class="loader-line"></div>
@@ -3106,9 +2756,7 @@
   </div>
 
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+  <!-- HEADER -->
 
   <header
     class="header"
@@ -3129,13 +2777,13 @@
 
             <img
               class="logo-light"
-              src="https://i.imgur.com/EIzf9kf.png"
+              src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/image-removebg-preview_4.png"
               alt="Jaqueline Caldi"
             >
 
             <img
               class="logo-color"
-              src="https://i.imgur.com/DCA5Cul.png"
+              src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/image-removebg-preview_5.png"
               alt=""
               aria-hidden="true"
             >
@@ -3167,29 +2815,13 @@
           id="menu"
         >
 
-          <li>
-            <a href="#sobre">
-              Sobre
-            </a>
-          </li>
+          <li><a href="#sobre">Sobre</a></li>
 
-          <li>
-            <a href="#formacao">
-              Formação
-            </a>
-          </li>
+          <li><a href="#formacao">Formação</a></li>
 
-          <li>
-            <a href="#publico">
-              Para quem
-            </a>
-          </li>
+          <li><a href="#publico">Para quem</a></li>
 
-          <li>
-            <a href="#localizacao">
-              Localização
-            </a>
-          </li>
+          <li><a href="#localizacao">Localização</a></li>
 
           <li>
             <a
@@ -3212,9 +2844,7 @@
   <main>
 
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+    <!-- HERO -->
 
     <section
       class="hero"
@@ -3223,10 +2853,9 @@
 
       <img
         class="hero-image"
-        src="https://i.imgur.com/UkGqaBU.png"
+        src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/WhatsApp_Image_2026-09-18_at_08.29.51.png"
         alt="Jaqueline Caldi — Psicopedagoga Clínica"
       >
-
 
       <div class="hero-overlay"></div>
 
@@ -3247,7 +2876,6 @@
 
         <div class="hero-copy">
 
-
           <div class="eyebrow">
             Psicopedagogia Clínica
           </div>
@@ -3256,20 +2884,11 @@
           <h1 class="hero-title">
 
             <span class="hero-title-line">
-
-              <span>
-                Acolher antes de
-              </span>
-
+              <span>Acolher antes de</span>
             </span>
 
-
             <span class="hero-title-line">
-
-              <span>
-                intervir.
-              </span>
-
+              <span>intervir.</span>
             </span>
 
           </h1>
@@ -3297,7 +2916,6 @@
 
           </a>
 
-
         </div>
 
       </div>
@@ -3305,9 +2923,7 @@
     </section>
 
 
-    <!-- =====================================================
-         SOBRE
-         ===================================================== -->
+    <!-- SOBRE -->
 
     <section
       class="section about"
@@ -3322,7 +2938,6 @@
           <div class="section-label">
             02 — Sobre mim
           </div>
-
 
           <h2 class="section-title">
 
@@ -3367,9 +2982,7 @@
 
             <div class="about-signature-line"></div>
 
-            <span>
-              Jaqueline Caldi
-            </span>
+            <span>Jaqueline Caldi</span>
 
           </div>
 
@@ -3378,9 +2991,7 @@
 
             <div class="stat">
 
-              <div class="stat-number">
-                +6
-              </div>
+              <div class="stat-number">+6</div>
 
               <div class="stat-label">
                 anos na educação
@@ -3391,9 +3002,7 @@
 
             <div class="stat">
 
-              <div class="stat-number">
-                01
-              </div>
+              <div class="stat-number">01</div>
 
               <div class="stat-label">
                 olhar individualizado
@@ -3404,9 +3013,7 @@
 
             <div class="stat">
 
-              <div class="stat-number">
-                100%
-              </div>
+              <div class="stat-number">100%</div>
 
               <div class="stat-label">
                 acolhimento
@@ -3423,9 +3030,7 @@
     </section>
 
 
-    <!-- =====================================================
-         FORMAÇÃO
-         ===================================================== -->
+    <!-- FORMAÇÃO -->
 
     <section
       class="section formation"
@@ -3437,18 +3042,13 @@
 
         <div class="formation-list">
 
-
           <div class="formation-item reveal">
 
-            <div class="formation-number">
-              01
-            </div>
+            <div class="formation-number">01</div>
 
             <div>
 
-              <h3>
-                Psicopedagogia Clínica
-              </h3>
+              <h3>Psicopedagogia Clínica</h3>
 
               <p>
                 Atuação voltada à compreensão dos
@@ -3463,15 +3063,11 @@
 
           <div class="formation-item reveal delay-1">
 
-            <div class="formation-number">
-              02
-            </div>
+            <div class="formation-number">02</div>
 
             <div>
 
-              <h3>
-                Acadêmica de Psicologia
-              </h3>
+              <h3>Acadêmica de Psicologia</h3>
 
               <p>
                 Formação contínua para ampliar o olhar
@@ -3486,15 +3082,11 @@
 
           <div class="formation-item reveal delay-2">
 
-            <div class="formation-number">
-              03
-            </div>
+            <div class="formation-number">03</div>
 
             <div>
 
-              <h3>
-                Estudos em neurodivergências
-              </h3>
+              <h3>Estudos em neurodivergências</h3>
 
               <p>
                 Aprofundamento para compreender diferentes
@@ -3508,15 +3100,11 @@
 
           <div class="formation-item reveal delay-3">
 
-            <div class="formation-number">
-              04
-            </div>
+            <div class="formation-number">04</div>
 
             <div>
 
-              <h3>
-                Educação e experiência prática
-              </h3>
+              <h3>Educação e experiência prática</h3>
 
               <p>
                 Mais de seis anos de experiência na área
@@ -3528,7 +3116,6 @@
 
           </div>
 
-
         </div>
 
 
@@ -3538,13 +3125,10 @@
             03 — Formação
           </div>
 
-
           <h2 class="section-title">
 
             Conhecimento para
-            <strong>
-              compreender
-            </strong>
+            <strong>compreender</strong>
             cada
             <em>história.</em>
 
@@ -3557,9 +3141,7 @@
     </section>
 
 
-    <!-- =====================================================
-         PARA QUEM
-         ===================================================== -->
+    <!-- PARA QUEM -->
 
     <section
       class="section audience"
@@ -3571,84 +3153,35 @@
 
         <div class="audience-list">
 
-
           <div class="audience-item reveal">
-
-            <span>
-              01
-            </span>
-
-            <h3>
-              Dificuldades de aprendizagem
-            </h3>
-
+            <span>01</span>
+            <h3>Dificuldades de aprendizagem</h3>
           </div>
-
 
           <div class="audience-item reveal delay-1">
-
-            <span>
-              02
-            </span>
-
-            <h3>
-              Atenção e concentração
-            </h3>
-
+            <span>02</span>
+            <h3>Atenção e concentração</h3>
           </div>
-
 
           <div class="audience-item reveal delay-1">
-
-            <span>
-              03
-            </span>
-
-            <h3>
-              Leitura e escrita
-            </h3>
-
+            <span>03</span>
+            <h3>Leitura e escrita</h3>
           </div>
-
 
           <div class="audience-item reveal delay-2">
-
-            <span>
-              04
-            </span>
-
-            <h3>
-              Raciocínio lógico
-            </h3>
-
+            <span>04</span>
+            <h3>Raciocínio lógico</h3>
           </div>
-
 
           <div class="audience-item reveal delay-2">
-
-            <span>
-              05
-            </span>
-
-            <h3>
-              Funções executivas
-            </h3>
-
+            <span>05</span>
+            <h3>Funções executivas</h3>
           </div>
-
 
           <div class="audience-item reveal delay-3">
-
-            <span>
-              06
-            </span>
-
-            <h3>
-              Neurodivergências
-            </h3>
-
+            <span>06</span>
+            <h3>Neurodivergências</h3>
           </div>
-
 
         </div>
 
@@ -3659,7 +3192,6 @@
             04 — Para quem
           </div>
 
-
           <h2 class="section-title">
 
             Quando aprender
@@ -3667,7 +3199,6 @@
             <em>difícil.</em>
 
           </h2>
-
 
           <p>
 
@@ -3678,7 +3209,6 @@
             das habilidades necessárias para aprender.
 
           </p>
-
 
           <p>
 
@@ -3696,9 +3226,7 @@
     </section>
 
 
-    <!-- =====================================================
-         PROCESSO
-         ===================================================== -->
+    <!-- PROCESSO -->
 
     <section
       class="section process"
@@ -3707,16 +3235,13 @@
 
       <div class="container">
 
-
         <div class="process-head">
-
 
           <div class="reveal">
 
             <div class="section-label">
               05 — Como funciona
             </div>
-
 
             <h2 class="section-title">
 
@@ -3727,7 +3252,6 @@
             </h2>
 
           </div>
-
 
           <p
             class="section-text reveal delay-1"
@@ -3745,16 +3269,11 @@
 
         <div class="process-steps">
 
-
           <div class="step reveal">
 
-            <div class="step-number">
-              01
-            </div>
+            <div class="step-number">01</div>
 
-            <h3>
-              Conversa inicial
-            </h3>
+            <h3>Conversa inicial</h3>
 
             <p>
               Primeiro contato para compreender a demanda
@@ -3763,16 +3282,11 @@
 
           </div>
 
-
           <div class="step reveal delay-1">
 
-            <div class="step-number">
-              02
-            </div>
+            <div class="step-number">02</div>
 
-            <h3>
-              Avaliação
-            </h3>
+            <h3>Avaliação</h3>
 
             <p>
               Investigação das habilidades e dificuldades
@@ -3781,16 +3295,11 @@
 
           </div>
 
-
           <div class="step reveal delay-2">
 
-            <div class="step-number">
-              03
-            </div>
+            <div class="step-number">03</div>
 
-            <h3>
-              Intervenção
-            </h3>
+            <h3>Intervenção</h3>
 
             <p>
               Estratégias desenvolvidas de acordo com
@@ -3799,16 +3308,11 @@
 
           </div>
 
-
           <div class="step reveal delay-3">
 
-            <div class="step-number">
-              04
-            </div>
+            <div class="step-number">04</div>
 
-            <h3>
-              Acompanhamento
-            </h3>
+            <h3>Acompanhamento</h3>
 
             <p>
               Observação dos avanços e ajustes ao longo
@@ -3817,7 +3321,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -3825,9 +3328,7 @@
     </section>
 
 
-    <!-- =====================================================
-         LOCALIZAÇÃO
-         ===================================================== -->
+    <!-- LOCALIZAÇÃO -->
 
     <section
       class="section location"
@@ -3840,7 +3341,7 @@
         <div class="location-photo reveal">
 
           <img
-            src="https://i.imgur.com/fqEDfKr.png"
+            src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/6._SUBLOGO_MARCA_D_AGUA.png"
             alt="Espaço de atendimento psicopedagógico"
             loading="lazy"
           >
@@ -3848,14 +3349,11 @@
         </div>
 
 
-        <div
-          class="location-info reveal delay-1"
-        >
+        <div class="location-info reveal delay-1">
 
           <div class="section-label">
             06 — Localização
           </div>
-
 
           <h2 class="section-title">
 
@@ -3863,7 +3361,6 @@
             para acolher.
 
           </h2>
-
 
           <p
             class="section-text"
@@ -3880,11 +3377,9 @@
 
           <div class="address">
 
-
             <div class="address-label">
               Endereço
             </div>
-
 
             <div class="address-text">
 
@@ -3893,7 +3388,6 @@
               Cidade — Estado
 
             </div>
-
 
             <div class="address-note">
 
@@ -3904,28 +3398,21 @@
 
             <div class="location-actions">
 
-
               <a
                 class="button button-primary"
                 href="https://www.google.com/maps"
                 target="_blank"
                 rel="noopener"
               >
-
                 Como chegar
-
               </a>
-
 
               <a
                 class="button button-outline"
                 href="#contato"
               >
-
                 Agendar horário
-
               </a>
-
 
             </div>
 
@@ -3938,9 +3425,7 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTATO / FORMULÁRIO
-         ===================================================== -->
+    <!-- CONTATO -->
 
     <section
       class="contact"
@@ -3950,14 +3435,11 @@
       <div class="container contact-grid">
 
 
-        <div
-          class="contact-copy reveal"
-        >
+        <div class="contact-copy reveal">
 
           <div class="section-label">
             07 — Contato
           </div>
-
 
           <h2 class="contact-title">
 
@@ -3967,7 +3449,6 @@
 
           </h2>
 
-
           <p class="contact-description">
 
             Preencha algumas informações sobre a criança
@@ -3976,7 +3457,6 @@
             WhatsApp para facilitar o primeiro contato.
 
           </p>
-
 
           <div class="contact-note">
 
@@ -3992,7 +3472,6 @@
           id="contactForm"
         >
 
-
           <div class="form-intro">
 
             Conte um pouco sobre quem será acompanhado.
@@ -4001,7 +3480,6 @@
 
 
           <div class="form-grid">
-
 
             <div class="form-group">
 
@@ -4039,9 +3517,7 @@
 
             <div class="form-group">
 
-              <label for="idade">
-                Idade
-              </label>
+              <label for="idade">Idade</label>
 
               <input
                 type="number"
@@ -4085,41 +3561,17 @@
                 required
               >
 
-                <option
-                  value=""
-                  selected
-                  disabled
-                >
+                <option value="" selected disabled>
                   Selecione uma opção
                 </option>
 
-                <option>
-                  Dificuldades de aprendizagem
-                </option>
-
-                <option>
-                  Atenção e concentração
-                </option>
-
-                <option>
-                  Leitura e escrita
-                </option>
-
-                <option>
-                  Raciocínio lógico
-                </option>
-
-                <option>
-                  Funções executivas
-                </option>
-
-                <option>
-                  Neurodivergência
-                </option>
-
-                <option>
-                  Outra demanda
-                </option>
+                <option>Dificuldades de aprendizagem</option>
+                <option>Atenção e concentração</option>
+                <option>Leitura e escrita</option>
+                <option>Raciocínio lógico</option>
+                <option>Funções executivas</option>
+                <option>Neurodivergência</option>
+                <option>Outra demanda</option>
 
               </select>
 
@@ -4141,12 +3593,10 @@
 
             </div>
 
-
           </div>
 
 
           <div class="form-footer">
-
 
             <div class="form-small">
 
@@ -4155,19 +3605,14 @@
 
             </div>
 
-
             <button
               type="submit"
               class="button button-primary form-submit"
             >
-
               Enviar pelo WhatsApp
-
             </button>
 
-
           </div>
-
 
         </form>
 
@@ -4178,14 +3623,11 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="container">
-
 
       <div class="footer-inner">
 
@@ -4196,13 +3638,11 @@
         >
 
           <img
-            src="https://i.imgur.com/yCIZoqr.png"
+            src="https://res.cloudinary.com/i7tc6kk8/image/upload/f_auto,q_auto/image-removebg-preview_5.png"
             alt="Jaqueline Caldi"
           >
 
-          <span>
-            Jaqueline Caldi
-          </span>
+          <span>Jaqueline Caldi</span>
 
         </a>
 
@@ -4214,9 +3654,7 @@
           </div>
 
           <div class="footer-column-text">
-
             Cidade — Estado
-
           </div>
 
         </div>
@@ -4231,9 +3669,7 @@
           <div class="footer-column-text">
 
             <a href="mailto:contato@jaquelinecaldi.com.br">
-
               contato@jaquelinecaldi.com.br
-
             </a>
 
           </div>
@@ -4250,21 +3686,17 @@
           <div class="footer-column-text">
 
             <a href="tel:+5543999999999">
-
               (43) 99999-9999
-
             </a>
 
           </div>
 
         </div>
 
-
       </div>
 
 
       <div class="footer-bottom">
-
 
         <div class="footer-copy">
 
@@ -4274,25 +3706,18 @@
 
         </div>
 
-
         <div class="footer-credit">
-
           Psicopedagogia Clínica
-
         </div>
 
-
       </div>
-
 
     </div>
 
   </footer>
 
 
-  <!-- =====================================================
-       WHATSAPP FLUTUANTE
-       ===================================================== -->
+  <!-- WHATSAPP -->
 
   <a
     href="https://wa.me/5543999999999?text=Ol%C3%A1%20Jaqueline!%20Conheci%20seu%20trabalho%20pelo%20site."
@@ -4302,10 +3727,7 @@
     aria-label="Falar com Jaqueline pelo WhatsApp"
   >
 
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
 
       <path
         d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
@@ -4350,10 +3772,6 @@
 
   <script>
 
-    /* =====================================================
-       LOADER
-       ===================================================== */
-
     window.addEventListener(
       "load",
       () => {
@@ -4372,10 +3790,6 @@
       }
     );
 
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
 
     const header =
       document.getElementById("header");
@@ -4399,22 +3813,15 @@
     window.addEventListener(
       "scroll",
       updateHeader,
-      {
-        passive: true
-      }
+      { passive: true }
     );
 
 
     updateHeader();
 
 
-    /* =====================================================
-       MENU MOBILE
-       ===================================================== */
-
     const toggle =
       document.getElementById("mobileToggle");
-
 
     const menu =
       document.getElementById("menu");
@@ -4448,10 +3855,6 @@
       );
 
 
-    /* =====================================================
-       REVEAL
-       ===================================================== */
-
     const reveals =
       document.querySelectorAll(".reveal");
 
@@ -4463,17 +3866,11 @@
           entries.forEach(
             entry => {
 
-              if (
-                entry.isIntersecting
-              ) {
+              if (entry.isIntersecting) {
 
-                entry.target.classList.add(
-                  "visible"
-                );
+                entry.target.classList.add("visible");
 
-                observer.unobserve(
-                  entry.target
-                );
+                observer.unobserve(entry.target);
 
               }
 
@@ -4481,9 +3878,7 @@
           );
 
         },
-        {
-          threshold: .12
-        }
+        { threshold: .12 }
       );
 
 
@@ -4496,19 +3891,11 @@
     );
 
 
-    /* =====================================================
-       ANO
-       ===================================================== */
-
     document
       .getElementById("year")
       .textContent =
       new Date().getFullYear();
 
-
-    /* =====================================================
-       PARALLAX MUITO SUAVE NA FOTO
-       ===================================================== */
 
     const heroImage =
       document.querySelector(".hero-image");
@@ -4529,15 +3916,9 @@
         }
 
       },
-      {
-        passive: true
-      }
+      { passive: true }
     );
 
-
-    /* =====================================================
-       FORMULÁRIO → WHATSAPP
-       ===================================================== */
 
     const contactForm =
       document.getElementById("contactForm");
@@ -4555,45 +3936,22 @@
 
 
         const responsavel =
-          document
-            .getElementById("responsavel")
-            .value
-            .trim();
-
+          document.getElementById("responsavel").value.trim();
 
         const crianca =
-          document
-            .getElementById("crianca")
-            .value
-            .trim();
-
+          document.getElementById("crianca").value.trim();
 
         const idade =
-          document
-            .getElementById("idade")
-            .value
-            .trim();
-
+          document.getElementById("idade").value.trim();
 
         const telefone =
-          document
-            .getElementById("telefone")
-            .value
-            .trim();
-
+          document.getElementById("telefone").value.trim();
 
         const demanda =
-          document
-            .getElementById("demanda")
-            .value
-            .trim();
-
+          document.getElementById("demanda").value.trim();
 
         const mensagem =
-          document
-            .getElementById("mensagem")
-            .value
-            .trim();
+          document.getElementById("mensagem").value.trim();
 
 
         const text =
@@ -4623,10 +3981,7 @@ Gostaria de saber sobre a disponibilidade para uma conversa inicial.`;
           encodeURIComponent(text);
 
 
-        window.open(
-          whatsappURL,
-          "_blank"
-        );
+        window.open(whatsappURL, "_blank");
 
       }
     );
