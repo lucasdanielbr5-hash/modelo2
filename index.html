@@ -193,7 +193,9 @@
 
     .loader-logo {
 
-      width: 90px;
+      width: 140px;
+
+      height: auto;
 
       margin: 0 auto 22px;
 
@@ -202,7 +204,7 @@
 
     .loader-line {
 
-      width: 90px;
+      width: 140px;
 
       height: 1px;
 
@@ -211,6 +213,8 @@
       position: relative;
 
       overflow: hidden;
+
+      margin: 0 auto;
 
     }
 
@@ -315,42 +319,69 @@
     }
 
 
-    .brand img {
+    .brand-logo {
+
+      position: relative;
 
       width: 70px;
       height: 70px;
 
+      flex-shrink: 0;
+
+      transition:
+        width .45s ease,
+        height .45s ease;
+
+    }
+
+
+    .brand-logo img {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
       object-fit: contain;
 
       transition:
-        filter .45s ease,
-        transform .45s ease;
+        opacity .45s ease;
 
     }
 
 
-    /*
-      A logo fica branca sobre a primeira foto.
-      Agora usamos a imagem branca diretamente.
-    */
+    /* Logo branca — visível sobre a foto */
 
-    .brand img {
+    .brand-logo .logo-light {
 
-      content:
-        url("https://i.imgur.com/EIzf9kf.png");
+      opacity: 1;
 
     }
 
 
-    .header.scrolled .brand img {
+    /* Logo colorida — escondida inicialmente */
 
-      /*
-        Ao rolar, volta à cor original.
-        Usamos a imagem colorida diretamente.
-      */
+    .brand-logo .logo-color {
 
-      content:
-        url("https://i.imgur.com/DCA5Cul.png");
+      opacity: 0;
+
+    }
+
+
+    /* Ao rolar: troca as logos */
+
+    .header.scrolled .brand-logo .logo-light {
+
+      opacity: 0;
+
+    }
+
+
+    .header.scrolled .brand-logo .logo-color {
+
+      opacity: 1;
 
     }
 
@@ -1180,12 +1211,6 @@
     }
 
 
-    /*
-      JOGO VISUAL:
-      lista à esquerda,
-      título à direita.
-    */
-
     .formation-list {
 
       border-top:
@@ -1281,11 +1306,6 @@
 
     }
 
-
-    /*
-      Aqui o bloco azul foi removido.
-      O visual usa creme + branco + roxo.
-    */
 
     .audience-grid {
 
@@ -1570,12 +1590,6 @@
     }
 
 
-    /*
-      JOGO VISUAL:
-      imagem à esquerda,
-      conteúdo à direita.
-    */
-
     .location-grid {
 
       display: grid;
@@ -1820,12 +1834,6 @@
 
     }
 
-
-    /*
-      FORMATO DIVIDIDO:
-      texto de um lado,
-      formulário do outro.
-    */
 
     .contact-grid {
 
@@ -2174,6 +2182,8 @@
       height: 52px;
 
       object-fit: contain;
+
+      flex-shrink: 0;
 
     }
 
@@ -2552,10 +2562,10 @@
       }
 
 
-      .brand img {
+      .brand-logo {
 
-        width: 58px;
-        height: 58px;
+        width: 54px;
+        height: 54px;
 
       }
 
@@ -2696,15 +2706,6 @@
 
       }
 
-
-      /*
-        AJUSTE EXCLUSIVO DO MOBILE.
-
-        O nome vertical sai da região do rosto
-        e fica mais para a direita e mais para cima.
-
-        NÃO ALTERA O DESKTOP.
-      */
 
       .vertical-name {
 
@@ -3122,10 +3123,22 @@
           class="brand"
         >
 
-          <img
-            src="https://i.imgur.com/EIzf9kf.png"
-            alt="Jaqueline Caldi"
-          >
+          <span class="brand-logo">
+
+            <img
+              class="logo-light"
+              src="https://i.imgur.com/EIzf9kf.png"
+              alt="Jaqueline Caldi"
+            >
+
+            <img
+              class="logo-color"
+              src="https://i.imgur.com/DCA5Cul.png"
+              alt=""
+              aria-hidden="true"
+            >
+
+          </span>
 
           <span class="brand-name">
             Jaqueline Caldi
@@ -3268,8 +3281,6 @@
 
           </p>
 
-
-          <!-- VOLTOU O ARRASTE -->
 
           <a
             href="#sobre"
@@ -3422,8 +3433,6 @@
       <div class="container formation-grid">
 
 
-        <!-- LISTA PRIMEIRO -->
-
         <div class="formation-list">
 
 
@@ -3521,8 +3530,6 @@
         </div>
 
 
-        <!-- TÍTULO À DIREITA -->
-
         <div class="reveal">
 
           <div class="section-label">
@@ -3559,8 +3566,6 @@
 
       <div class="container audience-grid">
 
-
-        <!-- CARDS À ESQUERDA -->
 
         <div class="audience-list">
 
@@ -3645,8 +3650,6 @@
 
         </div>
 
-
-        <!-- TEXTO À DIREITA -->
 
         <div class="audience-copy reveal">
 
@@ -3945,8 +3948,6 @@
       <div class="container contact-grid">
 
 
-        <!-- TEXTO -->
-
         <div
           class="contact-copy reveal"
         >
@@ -3983,8 +3984,6 @@
 
         </div>
 
-
-        <!-- FORMULÁRIO -->
 
         <form
           class="contact-form reveal delay-1"
@@ -4548,20 +4547,6 @@
 
         event.preventDefault();
 
-
-        /*
-          ==================================================
-          NÚMERO DO WHATSAPP
-
-          TROQUE SOMENTE ESTE NÚMERO PELO REAL.
-
-          Formato:
-          55 + DDD + número
-
-          Exemplo:
-          5543999999999
-          ==================================================
-        */
 
         const whatsappNumber =
           "5543999999999";
