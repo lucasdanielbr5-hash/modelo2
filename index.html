@@ -17,43 +17,10 @@
 
   <meta
     name="theme-color"
-    content="#512A69"
+    content="#F7F3EE"
   >
 
   <title>Jaqueline Caldi | Psicopedagoga Clínica</title>
-
-
-  <!-- =====================================================
-       PRELOAD DE IMAGENS CRÍTICAS (carregamento rápido)
-       ===================================================== -->
-
-  <link
-    rel="preload"
-    as="image"
-    href="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png"
-    fetchpriority="high"
-  >
-
-  <link
-    rel="preload"
-    as="image"
-    href="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782153/6._SUBLOGO_MARCA_D_AGUA.png"
-    fetchpriority="high"
-  >
-
-  <link
-    rel="preload"
-    as="image"
-    href="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782116/image-removebg-preview_5.png"
-    fetchpriority="high"
-  >
-
-
-  <!-- Preconnect para o Cloudinary (mais rápido ainda) -->
-
-  <link rel="preconnect" href="https://res.cloudinary.com">
-
-  <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,29 +39,25 @@
 
   <style>
 
-    /* =====================================================
-       PALETA DE CORES
-       ===================================================== */
-
     :root {
 
-      --purple: #512A69;
+      --purple: #6048AC;
 
-      --purple-dark: #3D1F50;
+      --purple-dark: #503B91;
 
-      --purple-light: #BD37D3;
-
-      --white: #FFFFFF;
+      --blue: #345C70;
 
       --cream: #F7F3EE;
 
       --cream-dark: #EEE8E0;
 
+      --white: #FFFFFF;
+
       --black: #263238;
 
       --muted: #747B7D;
 
-      --line: rgba(81,42,105,.14);
+      --line: rgba(52,92,112,.14);
 
       --max: 1240px;
 
@@ -148,7 +111,7 @@
 
     ::selection {
 
-      background: var(--purple-light);
+      background: var(--purple);
 
       color: white;
 
@@ -169,7 +132,7 @@
 
 
     /* =====================================================
-       LOADER (mais rápido e logos maiores)
+       LOADER
        ===================================================== */
 
     .loader {
@@ -189,8 +152,8 @@
       justify-content: center;
 
       transition:
-        opacity .5s ease,
-        visibility .5s ease;
+        opacity .8s ease,
+        visibility .8s ease;
 
     }
 
@@ -211,51 +174,30 @@
 
     .loader-logo {
 
-      width: 220px;
+      width: 200px;
 
-      height: 220px;
+      height: 200px;
 
       object-fit: contain;
 
       margin: 0 auto 22px;
-
-      animation:
-        loaderPulse 1.6s ease-in-out infinite;
-
-    }
-
-
-    @keyframes loaderPulse {
-
-      0%, 100% {
-        opacity: .85;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scale(1.03);
-      }
 
     }
 
 
     .loader-line {
 
-      width: 220px;
+      width: 200px;
 
-      height: 2px;
+      height: 1px;
 
-      background:
-        rgba(81,42,105,.15);
+      background: var(--blue);
 
       position: relative;
 
       overflow: hidden;
 
       margin: 0 auto;
-
-      border-radius: 2px;
 
     }
 
@@ -268,17 +210,12 @@
 
       inset: 0;
 
-      background:
-        linear-gradient(
-          90deg,
-          var(--purple),
-          var(--purple-light)
-        );
+      background: var(--purple);
 
       transform: translateX(-100%);
 
       animation:
-        loading 1s ease infinite;
+        loading 1.2s ease infinite;
 
     }
 
@@ -312,10 +249,10 @@
       color: white;
 
       transition:
-        background .35s ease,
-        color .35s ease,
-        height .35s ease,
-        box-shadow .35s ease;
+        background .45s ease,
+        color .45s ease,
+        height .45s ease,
+        box-shadow .45s ease;
 
     }
 
@@ -327,12 +264,12 @@
       background:
         rgba(247,243,238,.96);
 
-      color: var(--purple);
+      color: var(--blue);
 
       backdrop-filter: blur(16px);
 
       box-shadow:
-        0 8px 30px rgba(81,42,105,.06);
+        0 8px 30px rgba(0,0,0,.04);
 
     }
 
@@ -375,8 +312,8 @@
       flex-shrink: 0;
 
       transition:
-        width .35s ease,
-        height .35s ease;
+        width .45s ease,
+        height .45s ease;
 
     }
 
@@ -393,28 +330,36 @@
       object-fit: contain;
 
       transition:
-        opacity .35s ease;
+        opacity .45s ease;
 
     }
 
 
     .brand-logo .logo-light {
+
       opacity: 1;
+
     }
 
 
     .brand-logo .logo-color {
+
       opacity: 0;
+
     }
 
 
     .header.scrolled .brand-logo .logo-light {
+
       opacity: 0;
+
     }
 
 
     .header.scrolled .brand-logo .logo-color {
+
       opacity: 1;
+
     }
 
 
@@ -427,7 +372,7 @@
       letter-spacing: -.4px;
 
       transition:
-        color .35s ease;
+        color .4s ease;
 
     }
 
@@ -536,7 +481,7 @@
 
       overflow: hidden;
 
-      background: #2A1A38;
+      background: #4B433E;
 
       color: white;
 
@@ -561,7 +506,7 @@
         scale(1.035);
 
       animation:
-        heroZoom 1.6s
+        heroZoom 2.2s
         cubic-bezier(.2,.6,.2,1)
         forwards;
 
@@ -571,7 +516,7 @@
     @keyframes heroZoom {
 
       from {
-        transform: scale(1.08);
+        transform: scale(1.09);
       }
 
       to {
@@ -590,9 +535,9 @@
       background:
         linear-gradient(
           90deg,
-          rgba(28,12,40,.72) 0%,
-          rgba(28,12,40,.35) 48%,
-          rgba(28,12,40,.05) 100%
+          rgba(12,21,24,.66) 0%,
+          rgba(12,21,24,.30) 48%,
+          rgba(12,21,24,.05) 100%
         );
 
     }
@@ -611,7 +556,7 @@
       background:
         linear-gradient(
           transparent,
-          rgba(20,8,30,.35)
+          rgba(8,17,20,.28)
         );
 
       pointer-events: none;
@@ -637,7 +582,9 @@
 
 
     .hero-copy {
+
       max-width: 720px;
+
     }
 
 
@@ -662,7 +609,7 @@
       opacity: 0;
 
       animation:
-        fadeUp .7s .2s forwards;
+        fadeUp .9s .3s forwards;
 
     }
 
@@ -718,7 +665,7 @@
         translateY(110%);
 
       animation:
-        titleUp .85s
+        titleUp 1.05s
         cubic-bezier(.16,1,.3,1)
         forwards;
 
@@ -726,7 +673,9 @@
 
 
     .hero-title-line:nth-child(2) span {
-      animation-delay: .1s;
+
+      animation-delay: .12s;
+
     }
 
 
@@ -757,7 +706,7 @@
       opacity: 0;
 
       animation:
-        fadeUp .7s .5s forwards;
+        fadeUp .9s .65s forwards;
 
     }
 
@@ -783,7 +732,7 @@
       opacity: 0;
 
       animation:
-        fadeUp .7s .65s forwards;
+        fadeUp .9s .8s forwards;
 
     }
 
@@ -833,7 +782,7 @@
     .hero-action:hover .scroll-circle {
 
       background:
-        var(--purple-light);
+        var(--purple);
 
       transform:
         translateY(3px);
@@ -871,7 +820,7 @@
       white-space: nowrap;
 
       animation:
-        verticalIn 1s .6s both;
+        verticalIn 1.3s .8s both;
 
     }
 
@@ -925,14 +874,17 @@
        ===================================================== */
 
     .section {
-      padding: 145px 0;
+
+      padding:
+        145px 0;
+
     }
 
 
     .section-label {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 9px;
 
@@ -950,7 +902,7 @@
     .section-title {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size:
         clamp(
@@ -976,7 +928,7 @@
     .section-title em {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-style: normal;
 
@@ -1037,7 +989,7 @@
       top: -55px;
 
       color:
-        rgba(189,55,211,.07);
+        rgba(96,72,172,.06);
 
       font-size: 150px;
 
@@ -1091,7 +1043,7 @@
       height: 1px;
 
       background:
-        var(--purple-light);
+        var(--purple);
 
     }
 
@@ -1099,7 +1051,7 @@
     .about-signature span {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 10px;
 
@@ -1149,7 +1101,7 @@
     .stat-number {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 28px;
 
@@ -1217,7 +1169,8 @@
 
       gap: 25px;
 
-      padding: 28px 0;
+      padding:
+        28px 0;
 
       border-bottom:
         1px solid var(--line);
@@ -1236,7 +1189,7 @@
     .formation-number {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 9px;
 
@@ -1250,7 +1203,7 @@
     .formation-item h3 {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 19px;
 
@@ -1387,7 +1340,7 @@
     .audience-item span {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 9px;
 
@@ -1401,7 +1354,7 @@
       margin-top: 14px;
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 18px;
 
@@ -1486,7 +1439,7 @@
     .step-number {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 10px;
 
@@ -1500,7 +1453,7 @@
       margin-top: 55px;
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 19px;
 
@@ -1539,11 +1492,7 @@
       height: 3px;
 
       background:
-        linear-gradient(
-          90deg,
-          var(--purple),
-          var(--purple-light)
-        );
+        var(--purple);
 
       transition:
         width .5s ease;
@@ -1648,7 +1597,7 @@
     .address-label {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 9px;
 
@@ -1666,7 +1615,7 @@
     .address-text {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 15px;
 
@@ -1744,11 +1693,7 @@
     .button-primary {
 
       background:
-        linear-gradient(
-          135deg,
-          var(--purple),
-          var(--purple-light)
-        );
+        var(--purple);
 
       color:
         white;
@@ -1761,11 +1706,7 @@
     .button-primary:hover {
 
       background:
-        linear-gradient(
-          135deg,
-          var(--purple-dark),
-          var(--purple)
-        );
+        var(--purple-dark);
 
       transform:
         translateY(-2px);
@@ -1776,10 +1717,10 @@
     .button-outline {
 
       color:
-        var(--purple);
+        var(--blue);
 
       border:
-        1px solid var(--purple);
+        1px solid var(--blue);
 
       background:
         transparent;
@@ -1790,7 +1731,7 @@
     .button-outline:hover {
 
       background:
-        var(--purple);
+        var(--blue);
 
       color:
         white;
@@ -1840,7 +1781,7 @@
     .contact-title {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size:
         clamp(
@@ -1861,7 +1802,7 @@
     .contact-title span {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-weight: 500;
 
@@ -1896,7 +1837,7 @@
       margin-top: 35px;
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 10px;
 
@@ -1918,7 +1859,7 @@
       height: 1px;
 
       background:
-        var(--purple-light);
+        var(--purple);
 
     }
 
@@ -1937,11 +1878,11 @@
 
       box-shadow:
         0 20px 60px
-        rgba(81,42,105,.08);
+        rgba(52,92,112,.08);
 
       border:
         1px solid
-        rgba(81,42,105,.08);
+        rgba(52,92,112,.08);
 
     }
 
@@ -1949,7 +1890,7 @@
     .form-intro {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 18px;
 
@@ -1993,7 +1934,7 @@
     .form-group label {
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 9px;
 
@@ -2014,7 +1955,7 @@
 
       border:
         1px solid
-        rgba(81,42,105,.18);
+        rgba(52,92,112,.18);
 
       background:
         #FCFAF8;
@@ -2052,7 +1993,7 @@
     .form-group select:focus {
 
       border-color:
-        var(--purple-light);
+        var(--purple);
 
       background:
         white;
@@ -2140,7 +2081,7 @@
       gap: 12px;
 
       color:
-        var(--purple);
+        var(--blue);
 
       font-size: 13px;
 
@@ -2164,7 +2105,7 @@
     .footer-column-title {
 
       color:
-        var(--purple-light);
+        var(--purple);
 
       font-size: 8px;
 
@@ -2197,7 +2138,7 @@
 
 
     .footer-column-text a:hover {
-      color: var(--purple-light);
+      color: var(--purple);
     }
 
 
@@ -2317,8 +2258,8 @@
         translateY(35px);
 
       transition:
-        opacity .7s ease,
-        transform .8s
+        opacity .8s ease,
+        transform .9s
         cubic-bezier(.2,.7,.2,1);
 
     }
@@ -2483,7 +2424,7 @@
           rgba(247,243,238,.98);
 
         color:
-          var(--purple);
+          var(--blue);
 
         display: flex;
 
@@ -2539,8 +2480,8 @@
         background:
           linear-gradient(
             90deg,
-            rgba(28,12,40,.68),
-            rgba(28,12,40,.25)
+            rgba(12,21,24,.63),
+            rgba(12,21,24,.22)
           );
 
       }
@@ -2838,7 +2779,6 @@
               class="logo-light"
               src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782153/6._SUBLOGO_MARCA_D_AGUA.png"
               alt="Jaqueline Caldi"
-              fetchpriority="high"
             >
 
             <img
@@ -2846,7 +2786,6 @@
               src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782136/image-removebg-preview_4.png"
               alt=""
               aria-hidden="true"
-              loading="lazy"
             >
 
           </span>
@@ -2916,9 +2855,6 @@
         class="hero-image"
         src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png"
         alt="Jaqueline Caldi — Psicopedagoga Clínica"
-        fetchpriority="high"
-        loading="eager"
-        decoding="sync"
       >
 
       <div class="hero-overlay"></div>
@@ -3408,7 +3344,6 @@
             src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782501/WhatsApp_Image_2026-09-18_at_08.33.41.jpg"
             alt="Espaço de atendimento psicopedagógico"
             loading="lazy"
-            decoding="async"
           >
 
         </div>
@@ -3705,7 +3640,6 @@
           <img
             src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782116/image-removebg-preview_5.png"
             alt="Jaqueline Caldi"
-            loading="lazy"
           >
 
           <span>Jaqueline Caldi</span>
@@ -3838,40 +3772,24 @@
 
   <script>
 
-    /* LOADER — esconde assim que a página estiver pronta */
-
-    function hideLoader() {
-
-      const loader =
-        document.getElementById("loader");
-
-      if (loader) {
-
-        loader.classList.add("hide");
-
-      }
-
-    }
-
-
-    /* Esconde o loader quando a janela carregar */
-
     window.addEventListener(
       "load",
       () => {
 
-        setTimeout(hideLoader, 300);
+        setTimeout(
+          () => {
+
+            document
+              .getElementById("loader")
+              .classList.add("hide");
+
+          },
+          500
+        );
 
       }
     );
 
-
-    /* Fallback: esconde após 2s no máximo (mesmo que imagens atrasem) */
-
-    setTimeout(hideLoader, 2000);
-
-
-    /* HEADER */
 
     const header =
       document.getElementById("header");
@@ -3901,8 +3819,6 @@
 
     updateHeader();
 
-
-    /* MENU MOBILE */
 
     const toggle =
       document.getElementById("mobileToggle");
@@ -3938,8 +3854,6 @@
         }
       );
 
-
-    /* REVEAL */
 
     const reveals =
       document.querySelectorAll(".reveal");
@@ -3977,15 +3891,11 @@
     );
 
 
-    /* ANO */
-
     document
       .getElementById("year")
       .textContent =
       new Date().getFullYear();
 
-
-    /* PARALLAX SUAVE */
 
     const heroImage =
       document.querySelector(".hero-image");
@@ -4009,8 +3919,6 @@
       { passive: true }
     );
 
-
-    /* FORMULÁRIO → WHATSAPP */
 
     const contactForm =
       document.getElementById("contactForm");
