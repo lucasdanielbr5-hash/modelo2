@@ -1740,6 +1740,257 @@
 
 
     /* =====================================================
+       INSTAGRAM CARD
+       ===================================================== */
+
+    .instagram-section {
+
+      background: var(--white);
+
+      padding: 0 0 145px;
+
+    }
+
+
+    .instagram-card {
+
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      align-items: center;
+
+      gap: 60px;
+
+      background: var(--cream);
+
+      padding: 55px 60px;
+
+      overflow: hidden;
+
+    }
+
+
+    .instagram-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--purple),
+          var(--blue)
+        );
+
+    }
+
+
+    .instagram-card::after {
+
+      content: "@";
+
+      position: absolute;
+
+      right: 30px;
+      bottom: -55px;
+
+      font-size: 200px;
+
+      font-weight: 700;
+
+      line-height: 1;
+
+      color:
+        rgba(96,72,172,.05);
+
+      pointer-events: none;
+
+    }
+
+
+    .instagram-copy {
+
+      position: relative;
+
+      z-index: 1;
+
+    }
+
+
+    .instagram-copy .section-label {
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .instagram-title {
+
+      color:
+        var(--blue);
+
+      font-size:
+        clamp(
+          28px,
+          3.4vw,
+          42px
+        );
+
+      font-weight: 300;
+
+      letter-spacing: -1.8px;
+
+      line-height: 1.1;
+
+    }
+
+
+    .instagram-title strong {
+
+      color:
+        var(--purple);
+
+      font-weight: 500;
+
+    }
+
+
+    .instagram-text {
+
+      color:
+        var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      font-weight: 300;
+
+      margin-top: 18px;
+
+      max-width: 420px;
+
+    }
+
+
+    .instagram-action {
+
+      position: relative;
+
+      z-index: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: flex-end;
+
+      gap: 22px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .instagram-handle {
+
+      color:
+        var(--blue);
+
+      font-size: 15px;
+
+      font-weight: 500;
+
+      letter-spacing: -.3px;
+
+    }
+
+
+    .instagram-handle span {
+
+      color:
+        var(--purple);
+
+    }
+
+
+    .instagram-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      min-height: 52px;
+
+      padding:
+        0 28px;
+
+      border-radius: 100px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--purple),
+          var(--blue)
+        );
+
+      color:
+        white;
+
+      font-size: 9px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+      box-shadow:
+        0 12px 30px
+        rgba(96,72,172,.22);
+
+    }
+
+
+    .instagram-button:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 18px 40px
+        rgba(96,72,172,.3);
+
+    }
+
+
+    .instagram-button svg {
+
+      width: 18px;
+      height: 18px;
+
+      flex-shrink: 0;
+
+    }
+
+
+    /* =====================================================
        CONTATO
        ===================================================== */
 
@@ -2381,6 +2632,22 @@
 
       }
 
+      .instagram-card {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 45px 40px;
+
+      }
+
+      .instagram-action {
+
+        justify-content: flex-start;
+
+      }
+
     }
 
 
@@ -2674,6 +2941,49 @@
       }
 
       .form-submit { width: 100%; }
+
+      .instagram-section {
+
+        padding: 0 0 95px;
+
+      }
+
+      .instagram-card {
+
+        padding: 35px 25px;
+
+        gap: 30px;
+
+      }
+
+      .instagram-title {
+
+        font-size:
+          clamp(
+            26px,
+            8.5vw,
+            34px
+          );
+
+        letter-spacing: -1.2px;
+
+      }
+
+      .instagram-action {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+      }
+
+      .instagram-button {
+
+        justify-content: center;
+
+        width: 100%;
+
+      }
 
       footer { padding: 45px 0 25px; }
 
@@ -3415,6 +3725,79 @@
               </a>
 
             </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INSTAGRAM CARD -->
+
+    <section
+      class="instagram-section"
+      id="instagram"
+    >
+
+      <div class="container">
+
+        <div class="instagram-card reveal">
+
+          <div class="instagram-copy">
+
+            <div class="section-label">
+              Acompanhe de perto
+            </div>
+
+            <h2 class="instagram-title">
+
+              Nos bastidores,
+              no dia a dia e
+              <strong>no Instagram.</strong>
+
+            </h2>
+
+            <p class="instagram-text">
+
+              Conteúdos sobre psicopedagogia, neurodivergências,
+              aprendizagem e acolhimento — para famílias,
+              educadores e quem se interessa pelo tema.
+
+            </p>
+
+          </div>
+
+
+          <div class="instagram-action">
+
+            <div class="instagram-handle">
+              <span>@</span>jaquelinecaldi
+            </div>
+
+            <a
+              class="instagram-button"
+              href="https://www.instagram.com/jaquelinecaldi/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Seguir Jaqueline Caldi no Instagram"
+            >
+
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+
+              </svg>
+
+              Seguir no Instagram
+
+            </a>
 
           </div>
 
