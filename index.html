@@ -1580,12 +1580,7 @@
       .mobile-toggle { display: block; }
 
       /* =========================================
-         HERO NO MOBILE — FOTO INTEIRA (SEM CORTE)
-         =========================================
-         Usa object-fit: contain para mostrar a
-         imagem 100% inteira, e um fundo com a
-         MESMA imagem desfocada atrás para não
-         ficar faixas vazias.
+         HERO NO MOBILE — usa a foto via <picture>
          ========================================= */
 
       .hero {
@@ -1593,51 +1588,35 @@
         height: 100svh;
         min-height: 600px;
         max-height: none;
-        background: #4B433E;
+        aspect-ratio: auto;
       }
 
-      /* Camada de fundo: mesma imagem desfocada preenchendo */
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: -30px;
-        background-image:
-          url("https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png");
-        background-size: cover;
-        background-position: center;
-        filter: blur(30px) brightness(.55);
-        transform: scale(1.15);
-        z-index: 0;
-      }
-
-      /* Imagem principal: inteira, sem corte */
+      /* a imagem mobile vem do <source> da tag <picture> */
       .hero-image {
-        object-fit: contain;
-        object-position: center center;
+        object-fit: cover;
+        object-position: center top;
         transform: scale(1);
-        animation: none;
-        z-index: 1;
+        animation: heroZoomMobile 2.2s cubic-bezier(.2,.6,.2,1) forwards;
+      }
+
+      @keyframes heroZoomMobile {
+        from { transform: scale(1.05); }
+        to { transform: scale(1); }
       }
 
       .hero-overlay {
-        z-index: 2;
         background:
           linear-gradient(
             180deg,
             rgba(12,21,24,.05) 0%,
-            rgba(12,21,24,.20) 35%,
-            rgba(12,21,24,.55) 70%,
+            rgba(12,21,24,.18) 35%,
+            rgba(12,21,24,.55) 68%,
             rgba(12,21,24,.82) 100%
           );
       }
 
-      .hero-bottom {
-        z-index: 2;
-      }
-
       .hero-content {
         padding-bottom: 60px;
-        z-index: 3;
       }
 
       .hero-title {
@@ -1666,7 +1645,6 @@
         right: 20px;
         bottom: 20px;
         font-size: 8px;
-        z-index: 3;
       }
 
       .hero-action {
@@ -1946,14 +1924,25 @@
 
     <section class="hero" id="inicio">
 
-      <img
-        class="hero-image"
-        src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png"
-        alt="Jaqueline Caldi — Psicopedagoga Clínica"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      >
+      <picture>
+
+        <!-- FOTO NO CELULAR -->
+        <source
+          media="(max-width: 720px)"
+          srcset="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789830742/watermarked_img_7784437274613033959.jpg"
+        >
+
+        <!-- FOTO PADRÃO (DESKTOP / TABLET) -->
+        <img
+          class="hero-image"
+          src="https://res.cloudinary.com/i7tc6kk8/image/upload/v1789782903/8d275b2a-ecc6-4e7d-a18d-57343c47157e.png"
+          alt="Jaqueline Caldi — Psicopedagoga Clínica"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+      </picture>
 
       <div class="hero-overlay"></div>
 
